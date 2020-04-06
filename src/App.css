@@ -1,55 +1,67 @@
 .App {
   text-align: center;
-}
-
-.App-header {
+  max-height: 100vh;
   background-color: #ffffff;
-  min-height: 90vh;
-  min-width: 90vw;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  flex-basis: 33.333333%;
   font-size: calc(10px + 2vmin);
   color: black;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
 .Minigame {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
   position: relative;
-  padding: 5px;
-  /* width: 250px; */
+  width: 50%;
   padding: 5px;
   margin: 5px;
   flex-basis: 25%;
   border: 2px solid black;
 }
+
 .Minigame:after {
   content: "";
   display: block;
   padding-bottom: 100%;
 }
+
 .content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   position: absolute;
   width: 100%;
   height: 100%;
 }
 
-.Minigame h2 {
+.title {
+  font-family: 'Pathway Gothic One', sans-serif;
   text-transform: uppercase;
-  font-size: 0.75em;
+  font-size: 1em;
+  top: -5%;
+  position: relative;
+}
+
+.round {
+  color: gray;
+  width: 30px;
+  height: 30px;
+  background-color: gray;
+  border-radius: 50%;
+  border: 1px solid black;
+  position: absolute;
+  right: 1%;
 }
 
 .Minigame p {
-  font-size: 0.4em;
+  font-size: 0.5em;
+}
+
+.Minigame img {
+
 }
 
 .Minigame table {
@@ -63,9 +75,12 @@
 .stars {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  justify-self: end;
 }
 
 img[alt="star"] {
-  max-width: 15px;
-  max-height: 15px;
+  max-width: 25px;
+  max-height: 25px;
 }

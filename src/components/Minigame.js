@@ -5,27 +5,12 @@ class Minigame extends React.Component {
     return (
       <div className="Minigame">
         <div className="content">
-          <h2>Minigame</h2>
-          <p>Some rules about this minigame. Use 1 die to do a thing, and that thing will give you points.</p>
+          <div className="round"></div>
+          <h2 className="title">{this.props.minigame.name}</h2>
+          <p>{this.props.minigame.rulesA}</p>
           {/* <Game /> */}
-            {/* <table>
-              <tr>
-                <td>Tacos</td>
-                <td>Tacos</td>
-                <td>Tacos</td>
-              </tr>
-              <tr>
-                <td>Tacos</td>
-                <td>Tacos</td>
-                <td>Tacos</td>
-              </tr>
-              <tr>
-                <td>Tacos</td>
-                <td>Tacos</td>
-                <td>Tacos</td>
-              </tr>
-            </table> */}
-          <p>Some extra clarifying rules and probably some star icons too.</p>
+          <img src={this.props.minigame.game} alt="game"/>
+          <p>{this.props.minigame.rulesB}</p>
           <div className="stars">
             <img src='/assets/Links/outline_star.png' alt="star"></img>
             <img src='/assets/Links/outline_star.png' alt="star"></img>

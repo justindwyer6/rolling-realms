@@ -11,17 +11,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <Minigame name rulesA game rulesB/>
-          <Minigame />
-          <Minigame />
-          <Minigame />
-          <Minigame />
-          <Minigame />
-          <Minigame />
-          <Minigame />
-          <Minigame />
-        </header>
+          {Object.keys(this.state.minigames).map(key => <Minigame key={key} minigame={this.state.minigames[key]} />)}
       </div>
     );
   }
