@@ -7,11 +7,10 @@ class App extends React.Component {
   state = {
     minigames: minigames
   };
-
   render() {
     return (
       <div className="App">
-          {Object.keys(this.state.minigames).map(key => <Minigame key={key} minigame={this.state.minigames[key]} />)}
+          {Object.keys(this.state.minigames).map(key => <Minigame key={key} index={key} minigame={this.state.minigames[key]} />)}
       </div>
     );
   }

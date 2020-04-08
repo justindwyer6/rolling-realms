@@ -8,13 +8,13 @@ const minigames = {
   betweenTwoCities: {
     name: "Between Two Cities",
     rulesA: "Use 1 die in a square; same #s can’t be orthogonally adjacent. Gain a bonus when you complete a row/column.",
-    game: "/assets/Links/betweenTwoCities.png",
+    game: "",
     rulesB: "Score stars equal to the lowest of the other 2 realms. This # cannot be higher than filled squares here."
   },
   charterstone: {
     name: "Charterstone",
     rulesA: "Use 1 die to mark either a bonus (note the other rolled die on the crate) or all crates matching the die.",
-    game: "/assets/Links/charterstone.png",
+    game: "",
     rulesB: ""
   },
   euphoria: {

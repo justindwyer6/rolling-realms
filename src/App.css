@@ -1,5 +1,15 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .App {
+  position: relative;
+  top: 50px;
+  margin: 0 auto;
   text-align: center;
+  max-width: 1050px;
   max-height: 100vh;
   background-color: #ffffff;
   display: flex;
@@ -8,7 +18,7 @@
   justify-content: center;
   flex-wrap: wrap;
   flex-basis: 33.333333%;
-  font-size: calc(10px + 2vmin);
+  font-size: 10px;
   color: black;
 }
 
@@ -17,12 +27,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  width: 400px;
+  flex-basis: 32%;
   position: relative;
-  width: 50%;
-  padding: 5px;
-  margin: 5px;
-  flex-basis: 25%;
   border: 2px solid black;
+  /* background-image: url(/assets/Links/charterstone-box-art.jpg);
+  background-position-x: -395px;
+  background-position-y: -260px; */
 }
 
 .Minigame:after {
@@ -40,47 +51,119 @@
 .title {
   font-family: 'Pathway Gothic One', sans-serif;
   text-transform: uppercase;
-  font-size: 1em;
+  font-size: 24px;
   top: -5%;
   position: relative;
+  margin-block-end: -15px;
 }
 
 .round {
   color: gray;
   width: 30px;
   height: 30px;
-  background-color: gray;
+  background-color: rgba(168, 168, 168, 0.705);
   border-radius: 50%;
   border: 1px solid black;
   position: absolute;
+  top: 1%;
   right: 1%;
 }
 
 .Minigame p {
-  font-size: 0.5em;
+  font-size: 13px;
+  margin-inline-start: 5px;
+  margin-inline-end: 5px;
 }
 
 .Minigame img {
-
+  max-width: 50px;
 }
 
-.Minigame table {
+table.betweenTwoCities {
   border-collapse: collapse;
+  margin: 0 auto;
 }
-.Minigame td {
+.betweenTwoCities td {
+  width: 20px;
+  height: 20px;
+  max-height: 20px !important;
   border: 1px solid black;
   margin: 0;
 }
+.betweenTwoCities td:last-child {
+  border: none;
+  position: relative;
+  padding: 1px;
+}
+.betweenTwoCities tr:last-child td {
+  border: none;
+  position: relative;
+  padding: 2px;
+}
 
-.stars {
+.med-icon {
+  width: 30px;
+  height: 30px;
+  -webkit-filter: drop-shadow(1px 1px 0 black);
+  filter: drop-shadow(0px 1px 0 black);
+}
+.overlap {
+  position: relative;
+  z-index: 1;
+}
+.underlap {
+  position: absolute;
+  top: 4px;
+  left: 13px;
+}
+.same {
+  left: 8px;
+}
+
+.stars-row {
+  position: absolute;
+  bottom: 0;
+  left: 23%;
+}
+.image-row {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  justify-self: end;
 }
 
-img[alt="star"] {
-  max-width: 25px;
-  max-height: 25px;
+.image-row img {
+  max-width: 30px;
+  max-height: 30px;
+}
+
+.crate {
+  position: relative;
+}
+
+.image-row.crate img {
+  max-width: 40px;
+  max-height: 40px;
+  margin: 0 -2.5px;
+}
+.image-row.arrow img {
+  padding: 0 2.5px;
+}
+
+input[type="number"] {
+  width: 90%;
+  border: none;
+  background: none;
+  font-size: 18px;
+  text-align: center;
+}
+
+.crate input[type="number"] {
+  position: absolute;
+  margin-left: 8px;
+  bottom: 11px;
+  width: 30px;
+  height: 30px;
+  /* background: rgba(255, 255, 255, 0.5); */
+  text-shadow: 1px 1px 1px #ffffff, -1px -1px 1px #ffffff;
 }
