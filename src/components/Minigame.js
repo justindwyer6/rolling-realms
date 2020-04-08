@@ -3,18 +3,22 @@ import Board from './Board';
 // import Star from './Star';
 
 class Minigame extends React.Component {
+  state = {
+    star: '/assets/Links/outline_star.png'
+  }
   renderStars = (star, index) => {
     function updateStar() {
-      this.src = "/assets/Links/star_victory.png"
       console.log(this);
+      this.setState({star: "/assets/Links/star_victory.png"})
     }
+    console.log(this.props.index + index)
     return (
-      <img key={this.props.index + index} src='/assets/Links/outline_star.png' alt="star" onClick={updateStar}></img>
+      <img key={this.props.index + index} src={this.state.star} alt="star" onClick={updateStar.bind(this)}></img>
     );
   }
   render() {
     const stars = [1,2,3,4,5,6]
-    console.log(this.props.index)
+    // console.log(this.props.index)
     return (
       <div className="Minigame">
         <div className="content">
