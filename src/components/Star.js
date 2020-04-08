@@ -1,14 +1,17 @@
 import React from 'react';
 
 class Star extends React.Component {
+  state = {
+    src: "/assets/Links/outline_star.png"
+  }
   render() {
     function updateStar() {
-      this.src = "/assets/Links/star_victory.png"
-      console.log(this);
+      this.state.src === "/assets/Links/outline_star.png"
+        ? this.setState({src: "/assets/Links/star_victory.png"})
+        : this.setState({src: "/assets/Links/outline_star.png"});
     }
-    console.log(this.props)
     return (
-      <img src='/assets/Links/outline_star.png' alt="star" onClick={updateStar}></img>
+      <img src={this.state.src} alt="star" onClick={() => this.setState(updateStar)}></img>
     );
   }
 }

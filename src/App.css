@@ -159,11 +159,12 @@ input[type="number"] {
 }
 
 .crate input[type="number"] {
+  font-weight: 800;
   position: absolute;
   margin-left: 8px;
   bottom: 11px;
   width: 30px;
   height: 30px;
   /* background: rgba(255, 255, 255, 0.5); */
-  text-shadow: 1px 1px 1px #ffffff, -1px -1px 1px #ffffff;
+  text-shadow: 0 2px 5px #ffffff, 2px 0 5px #ffffff, -2px 0 5px #ffffff, 0 -2px 5px #ffffff;
 }

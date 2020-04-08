@@ -2,7 +2,7 @@ const minigames = {
   betweenTwoCastles: {
     name: "Between Two Castles",
     rulesA: "Use 1 or 2 dice (1 per castle) to fill squares from the bottom up; #s on top must be lower than those below. When you complete a column, gain a bonus.",
-    game: "/assets/Links/betweenTwoCastles.png",
+    game: "",
     rulesB: "Score 1 {str} per completed row (each castle has 3 rows)."
   },
   betweenTwoCities: {
