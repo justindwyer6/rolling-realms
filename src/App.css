@@ -76,29 +76,30 @@ body {
 }
 
 .Minigame img {
-  max-width: 50px;
+  /* max-width: 50px; */
 }
 
-table.betweenTwoCities {
+table {
   border-collapse: collapse;
   margin: 0 auto;
 }
-.betweenTwoCities td {
-  width: 20px;
-  height: 20px;
+td {
+  width: 35px;
+  height: 35px;
   max-height: 20px !important;
   border: 1px solid black;
   margin: 0;
-}
-.betweenTwoCities td:last-child {
-  border: none;
-  position: relative;
   padding: 1px;
-}
-.betweenTwoCities tr:last-child td {
-  border: none;
   position: relative;
-  padding: 2px;
+}
+.no-border {
+  border: none;
+}
+.no-border-top {
+  border-top: none;
+}
+.no-border-bottom {
+  border-bottom: none;
 }
 
 .med-icon {
@@ -113,11 +114,8 @@ table.betweenTwoCities {
 }
 .underlap {
   position: absolute;
-  top: 4px;
-  left: 13px;
-}
-.same {
-  left: 8px;
+  top: 6px;
+  left: 16px;
 }
 
 .stars-row {
@@ -157,6 +155,9 @@ input[type="number"] {
   font-size: 18px;
   text-align: center;
 }
+input[type="number"]:focus {
+  outline: none;
+}
 
 .crate input[type="number"] {
   font-weight: 800;
@@ -165,6 +166,176 @@ input[type="number"] {
   bottom: 11px;
   width: 30px;
   height: 30px;
-  /* background: rgba(255, 255, 255, 0.5); */
   text-shadow: 0 2px 5px #ffffff, 2px 0 5px #ffffff, -2px 0 5px #ffffff, 0 -2px 5px #ffffff;
+}
+
+div.betweenTwoCastles, div.euphoria {
+  display: flex;
+  flex-direction: row;
+}
+
+.tapestry-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.tapestry {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+}
+.tapestry table {
+  display: block;
+  position: relative;
+  margin: 0;
+  border-collapse: collapse;
+}
+.tapestry table.pumpkin::after {
+  content: "";
+  background: url("/assets/Links/Charterstone_Icon_Pumpkin.png");
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.tapestry table.coin::after {
+  content: "";
+  background: url("/assets/Links/Charterstone_Icon_Coin.png");
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.tapestry table.heart::after {
+  content: "";
+  background: url("/assets/Links/heart.png");
+  opacity: 0.5;
+  top: 10px;
+  left: 10px;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: 1;
+  width: 70%;
+  height: 70%;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.tapestry td {
+  width: 25px;
+  height: 25px;
+  position: relative;
+  z-index: 2;
+  border-collapse: collapse;
+}
+.tapestry-container img {
+  max-width: 130px;
+}
+.tapestry>img {
+  width: 20px;
+}
+.bottom-row {
+  position: relative;
+  margin: 0 20px;
+  right: 10px;
+}
+.tapestry input {
+
+}
+
+/* HEX GRID */
+#grid {
+  position: relative;
+  width: 60%;
+  margin: 0 auto;
+  padding: 0; /* Clears unordered list default of 40px */
+}
+
+.clear:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+#grid li {
+  list-style-type: none;
+  position: relative;
+  float: left;
+  width: 27.85714285714286%;
+  padding: 0 0 32.16760145166612% 0;
+  -o-transform: rotate(-60deg) skewY(30deg);
+  -moz-transform: rotate(-60deg) skewY(30deg);
+  -webkit-transform: rotate(-60deg) skewY(30deg);
+  -ms-transform: rotate(-60deg) skewY(30deg);
+  transform: rotate(-60deg) skewY(30deg);
+  overflow: hidden;
+  visibility: hidden;
+}
+
+#grid li .hexagon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #dddddd;
+  filter: black;
+  -o-transform: skewY(-30deg) rotate(60deg);
+  -moz-transform: skewY(-30deg) rotate(60deg);
+  -webkit-transform: skewY(-30deg) rotate(60deg);
+  -ms-transform: skewY(-30deg) rotate(60deg);
+  transform: skewY(-30deg) rotate(60deg);
+  overflow: hidden;
+}
+
+#grid li * {
+  visibility: visible;
+}
+
+#grid li:nth-child(2) {
+  margin: 0 1%;
+}
+
+#grid li:nth-child(3n+2) {
+  margin: 0 1%;
+}
+
+#grid li:nth-child(6n+4), #grid li:nth-child(6n+5), #grid li:nth-child(6n+6) {
+  margin-top: -6.9285714285%;
+  margin-bottom: -6.9285714285%;
+  -o-transform: translateX(50%) rotate(-60deg) skewY(30deg);
+  -moz-transform: translateX(50%) rotate(-60deg) skewY(30deg);
+  -webkit-transform: translateX(50%) rotate(-60deg) skewY(30deg);
+  -ms-transform: translateX(50%) rotate(-60deg) skewY(30deg);
+  transform: translateX(50%) rotate(-60deg) skewY(30deg);
+}
+
+#grid li:nth-child(6n+4) {
+  margin-left: 0.5%;
+}
+
+#grid li:nth-child(1) .hexagon {
+  visibility: hidden;
+}
+#grid li:nth-child(7) .hexagon {
+  visibility: hidden;
 }
