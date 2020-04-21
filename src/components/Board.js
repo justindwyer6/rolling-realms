@@ -6,12 +6,11 @@ import Euphoria from './Euphoria';
 import MyLittleScythe from './MyLittleScythe';
 import Scythe from './Scythe';
 import Tapestry from './Tapestry';
+import Viticulture from './Viticulture';
+import Wingspan from './Wingspan';
 
 class Board extends React.Component {
   render() {
-    if (this.props.board) {
-      return <img src={this.props.board} alt="game"/>
-    } else {
       if (this.props.name === "Between Two Castles") {
         return <BetweenTwoCastles />
       } else if (this.props.name === "Between Two Cities") {
@@ -26,8 +25,11 @@ class Board extends React.Component {
         return <Scythe />
       } else if (this.props.name === "Tapestry") {
         return <Tapestry />
+      } else if (this.props.name === "Viticulture") {
+        return <Viticulture />
+      } else if (this.props.name === "Wingspan") {
+        return <Wingspan />
       }
-    }
   }
 }
 

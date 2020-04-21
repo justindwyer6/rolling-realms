@@ -2,10 +2,11 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .App {
-  position: relative;
+  /* position: relative;
   top: 50px;
   margin: 0 auto;
   text-align: center;
@@ -19,7 +20,10 @@ body {
   flex-wrap: wrap;
   flex-basis: 33.333333%;
   font-size: 10px;
-  color: black;
+  color: black; */
+  display: grid;
+  grid-template-columns: 400px 400px 400px;
+  grid-template-rows: 400px 400px 400px;
 }
 
 .Minigame {

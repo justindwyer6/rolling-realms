@@ -11,7 +11,7 @@ class Minigame extends React.Component {
           <div className="round"></div>
           <h2 className="title">{this.props.minigame.name}</h2>
           <p>{this.props.minigame.rulesA}</p>
-          <Board board={this.props.minigame.board} name={this.props.minigame.name} />
+          <Board index={this.props.index} board={this.props.minigame.board} name={this.props.minigame.name} />
           <p>{this.props.minigame.rulesB}</p>
           <div className="image-row stars-row">
             {stars.map((star) => <Star key={star} index={this.props.index} />)}
