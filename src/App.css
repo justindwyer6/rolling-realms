@@ -6,24 +6,11 @@ body {
 }
 
 .App {
-  /* position: relative;
-  top: 50px;
-  margin: 0 auto;
-  text-align: center;
-  max-width: 1050px;
-  max-height: 100vh;
-  background-color: #ffffff;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  flex-basis: 33.333333%;
-  font-size: 10px;
-  color: black; */
   display: grid;
   grid-template-columns: 400px 400px 400px;
   grid-template-rows: 400px 400px 400px;
+  text-align: center;
+  margin: 30px 0;
 }
 
 .Minigame {

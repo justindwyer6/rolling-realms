@@ -1,26 +1,14 @@
 import React from 'react';
+import { times } from 'lodash';
 
 class TapestryTable extends React.Component {
   render() {
+    const Input = () => <td><input type="checkbox" name="test" id="test"/></td>
+    const Row = () => <tr>{times(2, () => <Input />)}</tr>
     return (
         <table className={this.props.reward}>
           <tbody>
-            <tr>
-              <td>
-                <input type="checkbox" name="test" id="test"/>
-              </td>
-              <td>
-                <input type="checkbox" name="test" id="test"/>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <input type="checkbox" name="test" id="test"/>
-              </td>
-              <td>
-                <input type="checkbox" name="test" id="test"/>
-              </td>
-            </tr>
+            {times(2, () => <Row />)}
           </tbody>
         </table>
     );

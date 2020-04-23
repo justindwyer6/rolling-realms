@@ -1,0 +1,44 @@
+.grapes {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(2, 1fr) 2fr;
+  width: 80%;
+  margin: 0 auto;
+  img {
+    justify-self: center;
+    width: 30px;
+    height: 30px;
+    &.die {
+      padding: 5px;
+      border: 2px dotted #5B4863;
+      border-radius: 100%;
+      filter: hue-rotate(#5B4863);
+    }
+    &.reward {
+      position: relative;
+      top: -5px;
+    }
+  }
+  .wineOrder {
+    grid-column: span 2;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 8px;
+    background-color: rgb(173, 173, 124);
+    width: fit-content;
+    margin: 0 auto;
+    .wineGlass {
+      border: 1px solid black;
+      border-top-left-radius: 2px;
+      border-top-right-radius: 2px;
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
+      width: 25px;
+      height: 35px;
+      margin: auto;
+      background-color: white;
+    }
+  }
+}
