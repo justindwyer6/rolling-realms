@@ -37,33 +37,14 @@ class Tapestry extends React.Component {
   }
 
   render() {
-    // const VictoryStar = () => <img src="/assets/Links/star_victory.png" alt="star" />
-    // const VictoryStarBottom = () => <img src="/assets/Links/star_victory.png" alt="star" className="bottom-row" />
-    // return (
-    //   <div className="tapestry-container">
-    //     <div className="tapestry">
-    //       <TapestryTable reward="pumpkin" />
-    //       <TapestryTable reward="heart"/>
-    //       <TapestryTable reward="coin"/>
-    //       <VictoryStar />
-    //       <TapestryTable reward="coin"/>
-    //       <TapestryTable reward="pumpkin" />
-    //       <TapestryTable reward="heart"/>
-    //       <VictoryStar />
-    //       <TapestryTable reward="heart"/>
-    //       <TapestryTable reward="coin"/>
-    //       <TapestryTable reward="pumpkin" />
-    //       <VictoryStar />
-    //       {times(3, () => <VictoryStarBottom />)}
-    //     </div>
-    //     <img src="/assets/Links/tapestry-shapes.jpg" alt="star"/>
-    //   </div>
-    // );
     return (
       <>
         <p>Use 1 die to fill a shape (rotating is ok; no limit to uses of each #). If you complete a BIG square, gain a bonus.</p>
-        <div className="tapestryC">
-          {times(9, i => this.renderSubgrid(i))}
+        <div className="gridGuideAlign">
+          <div className="tapestryC">
+            {times(9, i => this.renderSubgrid(i))}
+          </div>
+          <img class="guide" src="/assets/Links/tapestry-shapes.jpg" alt="guide"/>
         </div>
         <p>Score 1 star per completed BIG row/column (6 total).</p>
       </>

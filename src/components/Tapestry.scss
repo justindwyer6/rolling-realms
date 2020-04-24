@@ -1,37 +1,47 @@
-.tapestryC {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  width: 55%;
-  height: 55%;
-  .pumpkin {
-    background: url("/assets/Links/pumpkin.png");
-  }
-  .heart {
-    background: url("/assets/Links/heart.png");
-  }
-  .coin {
-    background: url("/assets/Links/coin.png");
-  }
-  .subgrid {
+.gridGuideAlign {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  .tapestryC {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    align-items: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    border: 2px solid black;
-    div {
-      display: inline-flex;
-      width: 100%;
-      height: 100%;
-      border: 1px dashed black;
-      background-color: rgba(255, 255, 255, 0.5);
-      input {
-        margin: auto;
-        transform: scale(1.25);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    width: 55%;
+    height: 55%;
+    .pumpkin {
+      background: url("/assets/Links/pumpkin.png");
+    }
+    .heart {
+      background: url("/assets/Links/heart.png");
+    }
+    .coin {
+      background: url("/assets/Links/coin.png");
+    }
+    .subgrid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      align-items: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      border: 2px solid black;
+      div {
+        display: inline-flex;
+        width: 100%;
+        height: 100%;
+        border: 1px dashed black;
+        background-color: rgba(255, 255, 255, 0.5);
+        input {
+          margin: auto;
+          transform: scale(1.25);
+        }
       }
     }
+  }
+  .guide {
+    width: 45%;
+    height: 45%;
   }
 }

@@ -1,6 +1,8 @@
 .birds {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  column-gap: 10px;
   width: 80%;
   margin: 0 auto;
   .bird {
