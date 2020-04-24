@@ -37,21 +37,21 @@ const minigames = {
   },
   Tapestry: {
     name: "Tapestry",
-    rulesA: "Use 1 die to fill a shape (rotating is ok; no limit to uses of each #). If you complete a BIG square, gain a bonus.",
+    rulesA: "",
     board: "",
-    rulesB: "Score 1 {str} per completed BIG row/column (6 total)."
+    rulesB: ""
   },
   Viticulture: {
     name: "Viticulture",
-    rulesA: "Either use 1 die to gain a grape (circle it) or use the sum of 1 die and at least 1 gained grape (cross it off) to fill a wine order.",
+    rulesA: "",
     board: "",
     rulesB: ""
   },
   Wingspan: {
     name: "Wingspan",
-    rulesA: "Use 1 die in a square on any bird, left to right. The 1st and 2nd squares on each bird provide a bonus.",
+    rulesA: "",
     board: "/assets/Links/wingspan.png",
-    rulesB: "Score 2 {str} per complete bird whose sum = wingspan."
+    rulesB: ""
   },
 }
 
