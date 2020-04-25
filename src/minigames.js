@@ -31,9 +31,9 @@ const minigames = {
   },
   Scythe: {
     name: "Scythe",
-    rulesA: "Use 1 die to choose one of these options (all options remain available throughout the round):",
+    rulesA: "",
     board: "",
-    rulesB: "Score 1 {str} per resource type if you have 2 extra resources. Score 2 {str} instead for 3+ extra resources."
+    rulesB: ""
   },
   Tapestry: {
     name: "Tapestry",

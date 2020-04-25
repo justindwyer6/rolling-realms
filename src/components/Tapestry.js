@@ -15,8 +15,6 @@ class Tapestry extends React.Component {
     "7checkbox3",
   ]
 
-  subgrid = <div className="subgrid">hi</div>;
-
   renderSubgrid(i) {
     return (
       <div key={i} className={`subgrid ${this.reward[i]}`}>

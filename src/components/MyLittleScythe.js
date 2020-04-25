@@ -10,17 +10,17 @@ class MyLittleScythe extends React.Component {
           </li>
           <li>
               <div class="hexagon">
-                <img src="/assets/Links/dice-six-faces-six.png" alt="" className="med-icon"/>
+                <img src="/assets/Links/dice-six-faces-6.png" alt="" className="med-icon"/>
               </div>
           </li>
           <li>
               <div class="hexagon">
-                <img src="/assets/Links/dice-six-faces-one.png" alt="" className="med-icon"/>
+                <img src="/assets/Links/dice-six-faces-1.png" alt="" className="med-icon"/>
               </div>
           </li>
           <li>
               <div class="hexagon">
-                <img src="/assets/Links/dice-six-faces-five.png" alt="" className="med-icon"/>
+                <img src="/assets/Links/dice-six-faces-5.png" alt="" className="med-icon"/>
               </div>
           </li>
           <li>
@@ -30,7 +30,7 @@ class MyLittleScythe extends React.Component {
           </li>
           <li>
               <div class="hexagon">
-                <img src="/assets/Links/dice-six-faces-two.png" alt="" className="med-icon"/>
+                <img src="/assets/Links/dice-six-faces-2.png" alt="" className="med-icon"/>
               </div>
           </li>
           <li>
@@ -38,12 +38,12 @@ class MyLittleScythe extends React.Component {
           </li>
           <li>
               <div class="hexagon">
-                <img src="/assets/Links/dice-six-faces-three.png" alt="" className="med-icon"/>
+                <img src="/assets/Links/dice-six-faces-3.png" alt="" className="med-icon"/>
               </div>
           </li>
           <li>
               <div class="hexagon">
-                <img src="/assets/Links/dice-six-faces-four.png" alt="" className="med-icon"/>
+                <img src="/assets/Links/dice-six-faces-4.png" alt="" className="med-icon"/>
               </div>
           </li>
         </ul>

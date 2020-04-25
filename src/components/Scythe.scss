@@ -1,0 +1,49 @@
+.scytheC {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  width: 90%;
+  margin: 0 auto;
+  img {
+    justify-self: center;
+    width: 30px;
+    height: 30px;
+    &.topDie {
+      position: relative;
+      padding: 5px;
+      border: 2px solid black;
+      border-top: none;
+    }
+    &.topReward {
+      position: relative;
+      padding: 5px;
+      border: 2px solid black;
+      border-bottom: none;
+      background-color: rgba(0, 128, 0, 0.3);
+    }
+    &.bottomDie {
+      position: relative;
+      padding: 5px;
+      border: 2px solid black;
+      border-bottom: none;
+      top: -2px;
+    }
+    &.bottomReward {
+      position: relative;
+      padding: 5px;
+      border: 2px solid black;
+      border-top: none;
+      border-bottom: none;
+      top: -5px;
+      background-color: rgba(255, 0, 0, 0.3);
+    }
+    &.star {
+      position: relative;
+      padding: 5px;
+      border: 2px solid black;
+      border-top: none;
+      top: -7px;
+      background-color: rgba(0, 128, 0, 0.3);
+    }
+  }
+}
