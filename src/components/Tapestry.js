@@ -1,5 +1,4 @@
 import React from 'react';
-// import TapestryTable from './TapestryTable';
 import "./Tapestry.scss"
 import { times } from 'lodash';
 
@@ -27,7 +26,7 @@ class Tapestry extends React.Component {
               type="checkbox"
               name="check"
               id={i+"checkbox"+j}
-              checked={this.prechecked.includes(i+"checkbox"+j) ? true : false}
+              defaultChecked={this.prechecked.includes(i+"checkbox"+j) ? true : false}
               disabled={this.prechecked.includes(i+"checkbox"+j) ? true : false}
             />
           </div>
@@ -42,7 +41,16 @@ class Tapestry extends React.Component {
         <p>Use 1 die to fill a shape (rotating is ok; no limit to uses of each #). If you complete a BIG square, gain a bonus.</p>
         <div className="gridGuideAlign">
           <div className="tapestryC">
-            {times(9, i => this.renderSubgrid(i))}
+            {times(9, i => ( (i+1) % 3 )
+              ? this.renderSubgrid(i)
+              : [
+                this.renderSubgrid(i),
+                <img key={"star"+i} className="star" src="/assets/Links/star_victory.png" alt="star"/>
+              ]
+            )}
+            {times(3, i =>
+              <img key={"star"+i} className="star" src="/assets/Links/star_victory.png" alt="star"/>
+            )}
           </div>
           <img class="guide" src="/assets/Links/tapestry-shapes.jpg" alt="guide"/>
         </div>

@@ -1,14 +1,16 @@
 .gridGuideAlign {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: center;
   width: 100%;
-  height: 100%;
+  height: 55%;
   .tapestryC {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 4fr) 1fr;
     grid-template-rows: repeat(3, 1fr);
     width: 55%;
-    height: 55%;
+    height: 100%;
     .pumpkin {
       background: url("/assets/Links/pumpkin.png");
     }
@@ -23,6 +25,7 @@
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: repeat(2, 1fr);
       align-items: center;
+      position: relative;
       background-repeat: no-repeat;
       background-size: contain;
       background-position: center;
@@ -31,17 +34,30 @@
         display: inline-flex;
         width: 100%;
         height: 100%;
-        border: 1px dashed black;
         background-color: rgba(255, 255, 255, 0.5);
+        &:first-child{
+          border-bottom: 1px dashed black;
+          border-right: 1px dashed black;
+        }
+        &:last-child{
+          border-top: 1px dashed black;
+          border-left: 1px dashed black;
+        }
         input {
           margin: auto;
           transform: scale(1.25);
         }
       }
     }
+    .star {
+      width: 20px;
+      height: 20px;
+      align-self: center;
+      justify-self: center;
+    }
   }
-  .guide {
-    width: 45%;
-    height: 45%;
+  img.guide {
+    width: 40%;
+    height: 75%;
   }
 }
