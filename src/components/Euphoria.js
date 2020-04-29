@@ -1,63 +1,44 @@
 import React from 'react';
+import "./Euphoria.scss";
 
 class Euphoria extends React.Component {
   render() {
     return (
-      <div className="euphoria">
-        <table className="euphoria1">
-          <tbody>
-            <tr>
-              <td className="no-border" colspan="2"><img src="/assets/Links/Charterstone_Icon_Coin.png" alt="" className="med-icon"/></td>
-            </tr>
-            <tr>
-              <td><img src="/assets/Links/dice-six-faces-one.png" alt="" className="med-icon"/></td>
-              <td><img src="/assets/Links/dice-six-faces-two.png" alt="" className="med-icon"/></td>
-            </tr>
-            <tr>
-              <td><img src="/assets/Links/dice-six-faces-three.png" alt="" className="med-icon"/></td>
-              <td><img src="/assets/Links/dice-six-faces-four.png" alt="" className="med-icon"/></td>
-            </tr>
-            <tr>
-              <td><img src="/assets/Links/dice-six-faces-five.png" alt="" className="med-icon"/></td>
-              <td><img src="/assets/Links/dice-six-faces-six.png" alt="" className="med-icon"/></td>
-            </tr>
-          </tbody>
-        </table>
+      <div className="euphoriaC">
+        {/* <img src="/assets/Links/coin.png" alt="" className="med-icon"/> */}
+        <div className="table">
+          <img src="/assets/Links/dice-six-faces-1.png" alt="die" className="die"/>
+          <img src="/assets/Links/dice-six-faces-2.png" alt="die" className="die"/>
+          <img src="/assets/Links/dice-six-faces-3.png" alt="die" className="die"/>
+          <img src="/assets/Links/dice-six-faces-4.png" alt="die" className="die"/>
+          <img src="/assets/Links/dice-six-faces-5.png" alt="die" className="die"/>
+          <img src="/assets/Links/dice-six-faces-6.png" alt="die" className="die"/>
+        </div>
         <div className="euphoria-mid">
           <div>
-            <span>1-3:</span>
-            <span><img src="/assets/Links/Charterstone_Icon_Coin.png" alt="" className="med-icon"/></span>
+            <span>1-3: </span>
+            <span><img src="/assets/Links/coin.png" alt="coin" className="reward"/></span>
+          </div>
+          <div>
+            <span>4-10: </span>
+            <span><img src="/assets/Links/star_victory.png" alt="star" className="reward"/></span>
+          </div>
+          <div>
+            <span>11+: </span>
+            <span><img src="/assets/Links/heart.png" alt="heart" className="reward"/></span>
             <span>/</span>
-            <span><img src="/assets/Links/Charterstone_Icon_Pumpkin.png" alt="" className="med-icon"/></span>
-          </div>
-          <div>
-            <span>4-8:</span>
-            <span><img src="/assets/Links/star_victory.png" alt="" className="med-icon"/></span>
-          </div>
-          <div>
-            <span>9+:</span>
-            <span><img src="/assets/Links/heart.png" alt="" className="med-icon"/></span>
+            <span><img src="/assets/Links/pumpkin.png" alt="pumpkin" className="reward"/></span>
           </div>
         </div>
-        <table className="euphoria2">
-          <tbody>
-            <tr>
-              <td className="no-border" colspan="2"><img src="/assets/Links/Charterstone_Icon_Pumpkin.png" alt="" className="med-icon"/></td>
-            </tr>
-            <tr>
-              <td><img src="/assets/Links/dice-six-faces-one.png" alt="" className="med-icon"/></td>
-              <td><img src="/assets/Links/dice-six-faces-two.png" alt="" className="med-icon"/></td>
-            </tr>
-            <tr>
-              <td><img src="/assets/Links/dice-six-faces-three.png" alt="" className="med-icon"/></td>
-              <td><img src="/assets/Links/dice-six-faces-four.png" alt="" className="med-icon"/></td>
-            </tr>
-            <tr>
-              <td><img src="/assets/Links/dice-six-faces-five.png" alt="" className="med-icon"/></td>
-              <td><img src="/assets/Links/dice-six-faces-six.png" alt="" className="med-icon"/></td>
-            </tr>
-          </tbody>
-        </table>
+        {/* <img src="/assets/Links/pumpkin.png" alt="" className="med-icon"/> */}
+        <div className="table">
+          <img src="/assets/Links/dice-six-faces-1.png" alt="die" className="die"/>
+          <img src="/assets/Links/dice-six-faces-2.png" alt="die" className="die"/>
+          <img src="/assets/Links/dice-six-faces-3.png" alt="die" className="die"/>
+          <img src="/assets/Links/dice-six-faces-4.png" alt="die" className="die"/>
+          <img src="/assets/Links/dice-six-faces-5.png" alt="die" className="die"/>
+          <img src="/assets/Links/dice-six-faces-6.png" alt="die" className="die"/>
+        </div>
       </div>
     );
   }

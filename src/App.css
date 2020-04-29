@@ -160,7 +160,7 @@ input[type="number"]:focus {
   text-shadow: 0 2px 5px #ffffff, 2px 0 5px #ffffff, -2px 0 5px #ffffff, 0 -2px 5px #ffffff;
 }
 
-div.betweenTwoCastles, div.euphoria {
+div.betweenTwoCastles {
   display: flex;
   flex-direction: row;
 }

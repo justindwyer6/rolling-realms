@@ -1,0 +1,21 @@
+.euphoriaC {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  margin: 0 auto;
+  width: 90%;
+  .table {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    .die {
+      width: 30px;
+      padding: 5px;
+      border: 1px solid black;
+    }
+  }
+  .reward {
+    width: 30px;
+    position: relative;
+    top: 10px;
+  }
+}
