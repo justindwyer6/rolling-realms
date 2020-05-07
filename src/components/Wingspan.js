@@ -4,7 +4,7 @@ import { times } from "lodash";
 
 class Wingspan extends React.Component {
 
-  rewards = ["pumpkin", "coin", "heart", "pumpkin"];
+  rewards = ["pumpkin", "coin", "star_victory", "coin", "heart", "star_victory", "heart", "pumpkin", "star_victory"];
 
   renderBirds(i) {
     return (
@@ -14,7 +14,7 @@ class Wingspan extends React.Component {
         </p>
         <div className="birdCells">
           {times(3, (j) => <input key={j} type="text" className="cell" /> )}
-          {times(2, (j) => <img key={j} src={`/assets/Links/${this.rewards[j+i]}.png`} alt={this.rewards[j+i]} className="reward" /> )}
+          {times(3, (j) => <img key={j} src={`/assets/Links/${this.rewards[j+i+(2*i)]}.png`} alt={this.rewards[j+i]} className="reward" /> )}
         </div>
       </div>
     );
@@ -22,11 +22,11 @@ class Wingspan extends React.Component {
   render() {
     return (
       <>
-        <p>Fill a square on any bird. The 1st and 2nd squares on each bird provide a bonus.</p>
+        <p>Fill a square on any bird (left to right), then gain the bonus below that square</p>
         <div className="birds">
           {times(3, (i) => this.renderBirds(i))}
         </div>
-        <p className="margin20">Score 2 stars per complete bird whose sum = wingspan.</p>
+        <p className="margin20">Score 1 star per complete bird whose sum = wingspan.</p>
       </>
     );
   }
