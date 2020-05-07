@@ -4,6 +4,8 @@
   grid-template-rows: repeat(4, 1fr);
   width: 90%;
   margin: 0 auto;
+  position: relative;
+  top: 20px;
   img {
     justify-self: center;
     width: 25px;
@@ -37,13 +39,15 @@
       top: -5px;
       background-color: rgba(255, 0, 0, 0.3);
     }
-    &.star {
-      position: relative;
-      padding: 5px;
-      border: 2px solid black;
-      border-top: none;
-      top: -7px;
-      background-color: rgba(0, 128, 0, 0.3);
-    }
+  }
+  .star {
+    position: relative;
+    width: 35px;
+    height: 35px;
+    border: 2px solid black;
+    border-top: none;
+    top: -7px;
+    left: 3px;
+    background-color: rgba(0, 128, 0, 0.3);
   }
 }

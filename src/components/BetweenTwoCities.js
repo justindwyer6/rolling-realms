@@ -25,7 +25,7 @@ class BetweenTwoCities extends React.Component {
   render() {
     return (
       <>
-        <p>Fill a square; same #s can’t be orthogonally adjacent. Gain a bonus when you complete a row/column</p>
+        <p>Fill a square; same #s can’t be orthogonally adjacent. Gain a bonus when you complete a row/column.</p>
         <div className="gridGuideAlign">
           <div className="betweenTwoCitiesC">
             {times(9, i => ( (i+1) % 3 )
@@ -46,7 +46,7 @@ class BetweenTwoCities extends React.Component {
             )}
           </div>
         </div>
-        <p>Score stars equal to the lowest of the other 2 realms. This # cannot be higher than filled squares here.</p>
+        <p>Score stars equal to the lowest of the other 2 realms this round. This # cannot be higher than filled squares here.</p>
       </>
     );
   }

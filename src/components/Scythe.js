@@ -35,7 +35,8 @@ class Scythe extends React.Component {
 
   renderStars(i) {
     return (
-      <img className="star" key={i} src={`/assets/Links/star_victory.png`} alt="star"/>
+      // <img className="star" key={i} src={`/assets/Links/star_victory.png`} alt="star"/>
+      <div key={i} className="star"></div>
     );
   }
 
@@ -43,7 +44,7 @@ class Scythe extends React.Component {
     return (
       <>
         <p>
-        Mark a #: The top row provides bonuses; the bottom row costs resources.
+          Mark a #: The top row provides resource bonuses; the bottom row costs resources to gain stars. When you mark a top-row number, you may pay the bottom-row cost in the same column to mark it and gain its star.
         </p>
         <div className="scytheC">
           {times(6, (i) => this.renderTopDie(i))}

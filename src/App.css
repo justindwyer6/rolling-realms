@@ -122,8 +122,27 @@ input[type=number] {
   margin: 0 auto;
 }
 
-.usedDie {
-  background: black;
+.myLittleScytheC {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.myLittleScythe {
+  width: 70%;
+  height: 100%;
+}
+
+.myLittleScythe img {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  top: 9px;
+}
+
+.usedDie, .usedHexagon {
+  background: black !important;
 }
 
 p > span {
@@ -133,8 +152,8 @@ p > span {
 /* HEX GRID */
 #grid {
   position: relative;
-  width: 60%;
-  margin: 0 auto;
+  width: 100%;
+  margin: 0 -10px;
   padding: 0; /* Clears unordered list default of 40px */
 }
 
