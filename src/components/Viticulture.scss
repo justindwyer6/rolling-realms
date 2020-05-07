@@ -10,9 +10,11 @@
     height: 30px;
     &.die {
       padding: 5px;
-      border: 2px dotted #5B4863;
+      border: 2px dotted black;
       border-radius: 100%;
-      filter: hue-rotate(#5B4863);
+      &.gainedGrape {
+        border: 1px solid black;
+      }
     }
     &.reward {
       position: relative;
@@ -39,6 +41,9 @@
       height: 35px;
       margin: auto;
       background-color: white;
+      &.filled {
+        background: #722f37;
+      }
     }
   }
 }

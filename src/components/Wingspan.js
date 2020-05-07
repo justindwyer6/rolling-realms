@@ -12,7 +12,7 @@ class Wingspan extends React.Component {
         <p>
           {7+(i*4)+(i?1:0)}
         </p>
-        <div class="birdCells">
+        <div className="birdCells">
           {times(3, (j) => <input key={j} type="text" className="cell" /> )}
           {times(2, (j) => <img key={j} src={`/assets/Links/${this.rewards[j+i]}.png`} alt={this.rewards[j+i]} className="reward" /> )}
         </div>
@@ -22,11 +22,11 @@ class Wingspan extends React.Component {
   render() {
     return (
       <>
-        <p>Use 1 die in a square on any bird, left to right. The 1st and 2nd squares on each bird provide a bonus.</p>
+        <p>Fill a square on any bird. The 1st and 2nd squares on each bird provide a bonus.</p>
         <div className="birds">
           {times(3, (i) => this.renderBirds(i))}
         </div>
-        <p>Score 2 star per complete bird whose sum = wingspan.</p>
+        <p className="margin20">Score 2 stars per complete bird whose sum = wingspan.</p>
       </>
     );
   }

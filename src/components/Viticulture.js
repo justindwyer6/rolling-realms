@@ -1,4 +1,6 @@
 import React from "react";
+import Die from "./Die";
+import WineGlass from "./WineGlass";
 import "./Viticulture.scss";
 import { times } from "lodash";
 
@@ -7,7 +9,11 @@ class Viticulture extends React.Component {
 
   renderDie(i) {
     return (
-      <img className="die" key={`${i+1}die`} src={`/assets/Links/dice-six-faces-${i+1}.png`} alt={`${i+1}die`}/>
+      <Die
+        key={`${i+1}die`}
+        i={i+1}
+        dieClasses="die grapeDie"
+      />
     );
   }
 
@@ -20,7 +26,7 @@ class Viticulture extends React.Component {
   renderWineOrders(i) {
     return(
       <div className="wineOrder" key={i}>
-        <div className="wineGlass">11</div>
+        <WineGlass wineGlassClasses="wineGlass" i={i} />
         <div className="stars">
           <img src="/assets/Links/star_victory.png" alt="star"/>
           <img src="/assets/Links/star_victory.png" alt="star"/>

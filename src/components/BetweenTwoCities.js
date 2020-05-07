@@ -1,53 +1,53 @@
 import React from 'react';
+import "./BetweenTwoCities.scss";
+import { times } from 'lodash';
 
 class BetweenTwoCities extends React.Component {
+
+  rowRewards = {
+    "a2": "pumpkin",
+    "b2": "coin",
+    "a5": "coin",
+    "b5": "heart",
+    "a8": "heart",
+    "b8": "pumpkin"
+  };
+  columnRewards = ["pumpkin", "coin", "heart"];
+
+  renderCell(i) {
+    return (
+      <div  key={i} className="input">
+        <input type="number" className="" min="1" max="6" />
+      </div>
+    );
+  }
+
   render() {
     return (
-      <table className="betweenTwoCities">
-        <tbody>
-          <tr>
-          <td><input type="number" min="1" max="6"/></td>
-          <td><input type="number" min="1" max="6"/></td>
-          <td><input type="number" min="1" max="6"/></td>
-          <td className="no-border">
-            <img src="/assets/Links/Charterstone_Icon_Pumpkin.png" alt="" className="med-icon overlap"/>
-            <img src="/assets/Links/Charterstone_Icon_Coin.png" alt="" className="med-icon underlap"/>
-          </td>
-          </tr>
-          <tr>
-          <td><input type="number" min="1" max="6"/></td>
-          <td><input type="number" min="1" max="6"/></td>
-          <td><input type="number" min="1" max="6"/></td>
-          <td className="no-border">
-            <img src="/assets/Links/Charterstone_Icon_Coin.png" alt="" className="med-icon overlap"/>
-            <img src="/assets/Links/heart.png" alt="" className="med-icon underlap"/>
-          </td>
-          </tr>
-          <tr>
-          <td><input type="number" min="1" max="6"/></td>
-          <td><input type="number" min="1" max="6"/></td>
-          <td><input type="number" min="1" max="6"/></td>
-          <td className="no-border">
-            <img src="/assets/Links/heart.png" alt="" className="med-icon overlap"/>
-            <img src="/assets/Links/Charterstone_Icon_Pumpkin.png" alt="" className="med-icon underlap"/>
-          </td>
-          </tr>
-          <tr>
-          <td className="no-border">
-            <img src="/assets/Links/Charterstone_Icon_Pumpkin.png" alt="" className="med-icon overlap"/>
-            <img src="/assets/Links/Charterstone_Icon_Pumpkin.png" alt="" className="med-icon underlap"/>
-          </td>
-          <td className="no-border">
-            <img src="/assets/Links/Charterstone_Icon_Coin.png" alt="" className="med-icon overlap"/>
-            <img src="/assets/Links/Charterstone_Icon_Coin.png" alt="" className="med-icon underlap"/>
-          </td>
-          <td className="no-border">
-            <img src="/assets/Links/heart.png" alt="" className="med-icon overlap"/>
-            <img src="/assets/Links/heart.png" alt="" className="med-icon underlap"/>
-          </td>
-          </tr>
-        </tbody>
-      </table>
+      <>
+        <p>Fill a square; same #s can’t be orthogonally adjacent. Gain a bonus when you complete a row/column</p>
+        <div className="gridGuideAlign">
+          <div className="betweenTwoCitiesC">
+            {times(9, i => ( (i+1) % 3 )
+              ? this.renderCell(i)
+              : [
+                this.renderCell(i),
+                <div key={"rewards"+i} className="rewards">
+                  <img key={"rewardA"+i} className="reward" src={`/assets/Links/${this.rowRewards["a"+i]}.png`} alt={this.rowRewards[i-4]}/>
+                  <img key={"rewardB"+i} className="reward overlay" src={`/assets/Links/${this.rowRewards["b"+i]}.png`} alt={this.rowRewards[i-3]}/>
+                </div>
+              ]
+            )}
+            {times(3, i =>
+              <div key={"rewards"+i} className="rewards">
+                <img key={"rewardA"+i} className="reward" src={`/assets/Links/${this.columnRewards[i]}.png`} alt="reward"/>
+                <img key={"rewardB"+i} className="reward overlay" src={`/assets/Links/${this.columnRewards[i]}.png`} alt="reward"/>
+              </div>
+            )}
+          </div>
+        </div>
+        <p>Score stars equal to the lowest of the other 2 realms. This # cannot be higher than filled squares here.</p>
+      </>
     );
   }
 }

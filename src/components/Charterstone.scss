@@ -1,0 +1,40 @@
+.charterstoneC {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  width: 90%;
+  height: 60%;
+  margin: 0 auto;
+  img {
+    justify-self: center;
+    width: 30px;
+    height: 30px;
+    &.usedDie {
+      border-radius: 5px;
+    }
+  }
+  div {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    input {
+      position: absolute;
+      top: 4px;
+      text-align: center;
+      margin: 0 auto;
+      width: 60%;
+      font-size: 16px;
+      border: none;
+      background: none;
+      &:focus {
+        outline: none;
+      }
+    }
+    img {
+      width: 45px;
+      height: 55px;
+    }
+  }
+}
