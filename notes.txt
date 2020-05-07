@@ -22,9 +22,9 @@
 {-Viticulture
   -Styled
   -Functional}
--My Little Scythe
-  !Styled
-  !Functional
+{-My Little Scythe
+  -Styled
+  -Functional}
 
 -Header instructions
 -Scorekeeping

@@ -35,7 +35,6 @@ class Scythe extends React.Component {
 
   renderStars(i) {
     return (
-      // <img className="star" key={i} src={`/assets/Links/star_victory.png`} alt="star"/>
       <div key={i} className="star"></div>
     );
   }
