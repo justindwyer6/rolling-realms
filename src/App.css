@@ -5,7 +5,31 @@ body {
   align-items: center;
 }
 
-.App {
+.header {
+  font-family: 'Pathway Gothic One', sans-serif;
+  font-weight: 500;
+  display: flex;
+  width: 900px;
+  margin-top: 30px;
+  margin-bottom: -20px;
+}
+
+.header div {
+  height: 50px;
+  width: 350px;
+  font-size: 14px;
+}
+
+.header p {
+  font-size: 16px;
+}
+
+.sm-logo {
+  width: 85px;
+  height: 80px;
+}
+
+.MinigamesC {
   display: grid;
   grid-template-columns: 300px 300px 300px;
   grid-template-rows: 300px 300px 300px;
@@ -46,6 +70,10 @@ body {
   top: -5%;
   position: relative;
   margin-block-end: -15px;
+}
+
+.title > span {
+  text-transform: none;
 }
 
 .roundNumber {
