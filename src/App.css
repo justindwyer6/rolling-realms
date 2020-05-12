@@ -8,25 +8,58 @@ body {
 .header {
   font-family: 'Pathway Gothic One', sans-serif;
   font-weight: 500;
-  display: flex;
+  display: grid;
+  grid-template-columns: 0.5fr 1.25fr 5fr 0.5fr;
   width: 900px;
   margin-top: 30px;
-  margin-bottom: -20px;
+  align-items: flex-end;
 }
 
 .header div {
-  height: 50px;
-  width: 350px;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .header p {
   font-size: 16px;
+  padding: 0 10px;
 }
 
 .sm-logo {
   width: 85px;
   height: 80px;
+}
+
+.roundTotal {
+  font-family: 'Pathway Gothic One', sans-serif;
+  font-weight: 600;
+  font-size: 22px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid black;
+  border-radius: 5px;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  padding: 0 3px 3px 3px;
+}
+.roundTotal p {
+  grid-column: span 2;
+  margin-top: 5px;
+  font-size: 20px;
+}
+.roundTotal input {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-bottom: solid 3px black;
+  outline: none;
+  text-align: center;
+  font-size: 20px;
+  padding: 0;
+}
+.roundTotal img {
+  width: 35px;
+  height: 35px;
 }
 
 .MinigamesC {
@@ -175,6 +208,32 @@ input[type=number] {
 
 p > span {
   color: red;
+}
+
+footer {
+  display: flex;
+  width: 900px;
+}
+
+.rounds {
+  border-right: 2px solid black;
+}
+
+.rules {
+  margin-left: 5px;
+  width: 250px;
+}
+
+.rules p {
+  font-size: 11px;
+  position: relative;
+}
+
+.inline-image {
+  width: 16px;
+  height: 16px;
+  position: relative;
+  top: 3px;
 }
 
 /* HEX GRID */

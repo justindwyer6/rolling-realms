@@ -52,7 +52,7 @@ class Tapestry extends React.Component {
           </div>
           <img className="guide" src="/assets/Links/tapestry-shapes.jpg" alt="guide"/>
         </div>
-        <p>Score 1 star per completed BIG (2x6) row/column (6 total).</p>
+        <p>Score 1<img className="inline-image" src="/assets/Links/star_victory.png" alt="star"/> per completed BIG (2x6) row/column (6 total).</p>
       </>
     );
   }
