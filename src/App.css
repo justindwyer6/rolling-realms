@@ -64,8 +64,8 @@ body {
 
 .MinigamesC {
   display: grid;
-  grid-template-columns: 300px 300px 300px;
-  grid-template-rows: 300px 300px 300px;
+  grid-template-columns: 310px 310px 310px;
+  grid-template-rows: 300px 125px 300px 125px 300px 125px;
   text-align: center;
   margin: 30px 0;
 }
@@ -79,6 +79,7 @@ body {
   flex-basis: 32%;
   position: relative;
   border: 2px solid black;
+  border-radius: 5px;
   /* background-image: url(/assets/Links/charterstone-box-art.jpg);
   background-position-x: -395px;
   background-position-y: -260px; */
@@ -211,8 +212,29 @@ p > span {
 }
 
 footer {
+  position: fixed;
+  bottom: 10px;
   display: flex;
-  width: 900px;
+  flex-direction: column;
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 5px;
+  background: white;
+  z-index: 2;
+  left: 10px;
+}
+
+footer:hover {
+  cursor: pointer;
+  box-shadow: 3px 3px rgba(168, 168, 168, 0.9);
+}
+
+footer > div {
+  display: none;
+}
+
+footer.show > div {
+  display: block;
 }
 
 .rounds {

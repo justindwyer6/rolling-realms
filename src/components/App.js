@@ -3,10 +3,13 @@ import '../App.css';
 import Minigame from './Minigame';
 import Round from './Round';
 import minigames from '../minigames';
-import { times } from "lodash";
+// import { times } from "lodash";
 
 class App extends React.Component {
-  state = { minigames };
+  state = {
+    minigames: minigames,
+    footerClasses: ""
+  };
 
   reorderGames = (roundNumber, minigame) => {
     const unordered = { ...this.state.minigames };
@@ -30,6 +33,23 @@ class App extends React.Component {
     this.setState({ minigames: roundOrder });
   }
 
+  showRules = () => {
+    let footerClasses = this.state.footerClasses;
+    footerClasses.includes("show") ? footerClasses = "" : footerClasses += " show";
+    this.setState({ footerClasses })
+  }
+
+  renderRoundTracker = (i) => {
+    if ( !((i+1) % 3) ) {
+      return (
+        <Round key={i+1} round={((i+1)/3)-1} />
+      );
+    }
+    else {
+      return null;
+    }
+  }
+
   render() {
     return (
       <>
@@ -51,13 +71,21 @@ class App extends React.Component {
           </div>
         </div>
         <div className="MinigamesC">
-            {Object.keys(this.state.minigames).map(key => <Minigame key={key} index={key} minigame={this.state.minigames[key]} reorderGames={this.reorderGames} />)}
+          {Object.keys(this.state.minigames).map((key, i) => {
+            return (
+              <>
+                <Minigame key={key} index={key} i={i} minigame={this.state.minigames[key]} reorderGames={this.reorderGames} />
+                {this.renderRoundTracker(i)}
+              </>
+            );
+          })}
         </div>
-        <footer>
-          <div className="rounds">
+        <footer className={this.state.footerClasses} onClick={this.showRules}>
+          {/* <div className="rounds">
             {times(3, (i) => <Round key={i} round={i} />)}
             <div className="total"></div>
-          </div>
+          </div> */}
+          Rules
           <div className="rules">
             <p>
               • Pay 2<img className="inline-image" src="/assets/Links/pumpkin.png" alt="pumpkin"/> to adjust a die +/- 1
@@ -88,6 +116,9 @@ class App extends React.Component {
             </p>
             <p>
               • Resources do not carry over to the next round
+            </p>
+            <p>
+              • <a href="https://stonemaiergames.com/games/rolling-realms/" target="_blank" rel="noopener noreferrer">Details, Print, and FAQs</a>
             </p>
           </div>
         </footer>

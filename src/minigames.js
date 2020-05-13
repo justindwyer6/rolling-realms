@@ -1,39 +1,39 @@
 const minigames = {
   Scythe: {
     name: "Scythe",
-    roundNumber: 4
+    roundNumber: "3"
   },
   BetweenTwoCities: {
     name: "Between Two Cities",
-    roundNumber: 4
+    roundNumber: "3"
   },
   Charterstone: {
     name: "Charterstone",
-    roundNumber: 4
+    roundNumber: "3"
   },
   BetweenTwoCastles: {
     name: "Between Two Castles",
-    roundNumber: 4
+    roundNumber: "3"
   },
   Viticulture: {
     name: "Viticulture",
-    roundNumber: 4
+    roundNumber: "3"
   },
   Euphoria: {
     name: "Euphoria",
-    roundNumber: 4
+    roundNumber: "3"
   },
   MyLittleScythe: {
     name: "My Little Scythe",
-    roundNumber: 4
+    roundNumber: "3"
   },
   Tapestry: {
     name: "Tapestry",
-    roundNumber: 4
+    roundNumber: "3"
   },
   Wingspan: {
     name: "Wingspan",
-    roundNumber: 4
+    roundNumber: "3"
   }
 }
 
