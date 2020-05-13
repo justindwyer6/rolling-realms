@@ -138,10 +138,11 @@ body {
   text-align: center;
   -webkit-appearance: none;
   -moz-appearance: none;
+  appearance: none;
   text-indent: 1px;
   text-overflow: '';
-  left: 30%;
   position: relative;
+  left: 30%;
 }
 
 /* Chrome, Safari, Edge, Opera */
