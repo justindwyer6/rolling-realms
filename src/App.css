@@ -126,7 +126,7 @@ body {
   justify-content: center;
 }
 
-.roundNumber input {
+.roundNumber select {
   border: none;
   border-radius: 50%;
   background: transparent;
@@ -136,6 +136,12 @@ body {
   padding: 0;
   font-size: 16px;
   text-align: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: '';
+  left: 30%;
+  position: relative;
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -171,7 +177,7 @@ input[type=number] {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   width: 90%;
-  height: 30px;
+  height: 25px;
   margin: 0 auto;
   justify-content: center;
   bottom: 5px;
@@ -179,8 +185,8 @@ input[type=number] {
 }
 
 .stars-row img {
-  max-height: 30px;
-  max-width: 30px;
+  max-height: 25px;
+  max-width: 25px;
   margin: 0 auto;
 }
 

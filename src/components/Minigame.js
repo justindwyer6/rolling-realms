@@ -15,13 +15,16 @@ class Minigame extends React.Component {
         <div className="Minigame">
           <div className="content">
             <div className="roundNumber">
-              <input
-                type="number"
+              <select
                 name="roundNumber"
                 id={`${this.props.index}round`}
                 value={this.props.minigame.roundNumber}
                 onChange={(event) => this.handleChange(event, this.props.minigame)}
-              />
+              >
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
             </div>
             <h2 className="title">{this.props.minigame.name}</h2>
             <Board index={this.props.index} board={this.props.minigame.board} name={this.props.minigame.name} />
