@@ -9,6 +9,12 @@
     justify-self: center;
     width: 30px;
     height: 30px;
+    &.die {
+      cursor: pointer;
+      &:hover {
+        background: #eeeeee;
+      }
+    }
     &.usedDie {
       border-radius: 5px;
     }

@@ -15,6 +15,10 @@
       padding: 5px;
       border: 2px solid black;
       border-bottom: none;
+      cursor: pointer;
+      &:hover {
+        background: #eeeeee;
+      }
     }
     &.topReward {
       position: relative;
@@ -29,6 +33,10 @@
       border: 2px solid black;
       border-bottom: none;
       top: -2px;
+      cursor: pointer;
+      &:hover {
+        background: #eeeeee;
+      }
     }
     &.bottomReward {
       position: relative;

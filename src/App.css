@@ -80,9 +80,6 @@ body {
   position: relative;
   border: 2px solid black;
   border-radius: 5px;
-  /* background-image: url(/assets/Links/charterstone-box-art.jpg);
-  background-position-x: -395px;
-  background-position-y: -260px; */
 }
 
 .Minigame:after {
@@ -143,6 +140,10 @@ body {
   text-overflow: '';
   position: relative;
   left: 30%;
+  cursor: pointer;
+}
+.roundNumber select:hover {
+  opacity: 0.5;
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -189,6 +190,11 @@ input[type=number] {
   max-height: 25px;
   max-width: 25px;
   margin: 0 auto;
+  cursor: pointer;
+}
+
+.stars-row img:hover {
+  transform: scale(1.1);
 }
 
 .myLittleScytheC {
@@ -263,6 +269,13 @@ footer.show > div {
   height: 16px;
   position: relative;
   top: 3px;
+}
+
+.hexagon .die {
+  cursor: pointer;
+}
+.hexagon .die:hover {
+  opacity: 0.8;
 }
 
 /* HEX GRID */

@@ -11,6 +11,10 @@
       width: 30px;
       padding: 5px;
       border: 1px solid black;
+      cursor: pointer;
+      &:hover {
+        background: #eeeeee;
+      }
     }
   }
   .reward {

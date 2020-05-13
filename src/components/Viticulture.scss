@@ -12,6 +12,10 @@
       padding: 5px;
       border: 2px dotted black;
       border-radius: 100%;
+      cursor: pointer;
+      &:hover {
+        background: #eeeeee;
+      }
       &.gainedGrape {
         border: 1px solid black;
       }
@@ -41,6 +45,10 @@
       height: 35px;
       margin: auto;
       background-color: white;
+      cursor: pointer;
+      &:hover {
+        background: #eeeeee;
+      }
       &.filled {
         background: #722f37;
       }
