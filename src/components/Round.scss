@@ -1,7 +1,7 @@
 .roundC {
   display: grid;
   grid-column: span 3;
-  grid-template-columns: 4fr 1fr repeat(3, 2fr);
+  grid-template-columns: 2.75fr 0.5fr 1.5fr repeat(3, 1.5fr);
   margin: 10px;
   padding-bottom: 5px;
   padding-top: 5px;
@@ -78,10 +78,10 @@
     border: 1px solid black;
     border-radius: 5px;
     text-align: center;
-    margin-right: 50px;
-    margin-left: -50px;
-    padding: 0 5px 5px 5px;
     height: 90%;
+    width: 75px;
+    margin: auto;
+    padding: 0 5px 5px 5px;
     p {
       grid-column: span 2;
       margin-top: 5px;
@@ -101,5 +101,43 @@
       width: 35px;
       height: 35px;
     }
+  }
+}
+
+aside {
+  position: relative;
+  // bottom: 10px;
+  // left: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 5px;
+  background: white;
+  z-index: 2;
+  text-align: left;
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: 3px 3px rgba(168, 168, 168, 0.9);
+  }
+
+  & > div {
+    display: none;
+  }
+
+  &.show > div {
+    display: block;
+    position: absolute;
+    left: -40px;
+    top: 0px;
+    width: 200px;
+    height: 250px;
+    background: white;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 5px;
+    z-index: 3;
+    overflow: scroll;
   }
 }

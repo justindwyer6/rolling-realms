@@ -62,6 +62,12 @@ body {
   height: 35px;
 }
 
+@media (max-width: 930px) {
+  body {
+    transform: scale(0.4);
+  }
+}
+
 .MinigamesC {
   display: grid;
   grid-template-columns: 310px 310px 310px;
@@ -227,6 +233,7 @@ p > span {
 footer {
   position: fixed;
   bottom: 10px;
+  left: 10px;
   display: flex;
   flex-direction: column;
   padding: 10px;
@@ -234,7 +241,6 @@ footer {
   border-radius: 5px;
   background: white;
   z-index: 2;
-  left: 10px;
 }
 
 footer:hover {
