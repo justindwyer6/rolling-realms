@@ -1,5 +1,5 @@
 import React from 'react';
-import '../App.css';
+import './App.scss';
 import Minigame from './Minigame';
 import Round from './Round';
 import minigames from '../minigames';
@@ -36,7 +36,7 @@ class App extends React.Component {
   showRules = () => {
     let footerClasses = this.state.footerClasses;
     footerClasses.includes("show") ? footerClasses = "" : footerClasses += " show";
-    this.setState({ footerClasses })
+    this.setState({ footerClasses });
   }
 
   renderRoundTracker = (i) => {
@@ -123,6 +123,10 @@ class App extends React.Component {
             </p>
           </div>
         </footer>
+        {/* <div className="footer">
+          <a href="https://github.com/justin-dwyer/rolling-realms"><img src="/assets/github-icon.png" alt="Github"/> Contribute</a>
+          <a href="https://github.com/justin-dwyer/rolling-realms">Report a Bug</a>
+        </div> */}
       </>
     );
   }

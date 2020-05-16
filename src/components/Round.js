@@ -37,7 +37,7 @@ class Round extends React.Component {
           </div>
         </div>
         <aside className={this.state.asideClasses} onClick={this.showRules}>
-          Rules
+          Show Rules
           <div className="rules">
             <p>
               • Pay 2<img className="inline-image" src="/assets/Links/pumpkin.png" alt="pumpkin"/> to adjust a die +/- 1
