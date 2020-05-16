@@ -65,6 +65,14 @@ body {
 @media (max-width: 930px) {
   body {
     transform: scale(0.4);
+    margin-top: -100%;
+  }
+}
+
+@media only print {
+  body {
+    transform: scale(0.65);
+    margin-top: -35%;
   }
 }
 

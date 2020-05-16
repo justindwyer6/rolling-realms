@@ -35,10 +35,10 @@ class MyLittleScythe extends React.Component {
                 <div className="hexagon"></div>
               </li>
               <li>
-                <Hexagon hexagonClasses="hexagon" dieFace="3" />
+                <Hexagon hexagonClasses="hexagon" dieFace="4" />
               </li>
               <li>
-                <Hexagon hexagonClasses="hexagon" dieFace="4" />
+                <Hexagon hexagonClasses="hexagon" dieFace="3" />
               </li>
             </ul>
           </div>
@@ -68,10 +68,10 @@ class MyLittleScythe extends React.Component {
                 <div className="hexagon"></div>
               </li>
               <li>
-                <Hexagon hexagonClasses="hexagon" dieFace="3" />
+                <Hexagon hexagonClasses="hexagon" dieFace="4" />
               </li>
               <li>
-                <Hexagon hexagonClasses="hexagon" dieFace="4" />
+                <Hexagon hexagonClasses="hexagon" dieFace="3" />
               </li>
             </ul>
           </div>
