@@ -5,7 +5,7 @@ import { times } from "lodash";
 
 class Charterstone extends React.Component {
 
-  rewards = ["pumpkin", "pumpkin", "coin", "coin", "heart", "heart"]
+  rewards = ["pumpkin", "pumpkin", "heart", "heart", "coin", "coin"]
 
   renderDie(i) {
     return (
