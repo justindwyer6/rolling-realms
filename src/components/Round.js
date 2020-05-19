@@ -37,7 +37,9 @@ class Round extends React.Component {
           </div>
         </div>
         <aside className={this.state.asideClasses} onClick={this.showRules}>
-          Show Rules
+          <h4>
+            Show Rules
+          </h4>
           <div className="rules">
             <p>Pay:</p>
             <p>
