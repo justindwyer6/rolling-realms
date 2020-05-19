@@ -41,3 +41,9 @@
     }
   }
 }
+
+@media (max-width: 930px) {
+  input.cell {
+    max-width: 10px;
+  }
+}

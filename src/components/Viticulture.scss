@@ -2,22 +2,26 @@
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(2, 1fr) 2fr;
-  width: 90%;
+  width: 85%;
   margin: 0 auto;
   img {
     justify-self: center;
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     &.die {
-      padding: 5px;
-      border: 2px dotted black;
+      padding: 3px;
+      margin: 3px;
+      border: 3px dotted rgb(98, 37, 98);
       border-radius: 100%;
       cursor: pointer;
       &:hover {
         background: #eeeeee;
       }
       &.gainedGrape {
-        border: 1px solid black;
+        border: 3px solid rgb(98, 37, 98);
+      }
+      &.usedGrape {
+        background: rgb(148, 60, 148);
       }
     }
     &.reward {
@@ -32,8 +36,8 @@
     align-items: center;
     border: 1px solid black;
     border-radius: 8px;
-    background-color: rgb(173, 173, 124);
-    width: fit-content;
+    background-color: rgba(0, 128, 0, 0.7);
+    width: 70px;
     margin: 0 auto;
     .wineGlass {
       border: 1px solid black;
@@ -50,7 +54,7 @@
         background: #eeeeee;
       }
       &.filled {
-        background: #722f37;
+        background: #943065;
       }
     }
   }

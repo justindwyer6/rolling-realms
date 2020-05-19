@@ -15,10 +15,10 @@ class Die extends React.Component {
 
   updateGrapeDie() {
     let dieClasses = this.state.dieClasses;
-    dieClasses.includes("usedDie")
+    dieClasses.includes("usedGrape")
       ? dieClasses = this.props.dieClasses
       : dieClasses.includes("gainedGrape")
-        ? dieClasses += " usedDie"
+        ? dieClasses += " usedGrape"
         : dieClasses += " gainedGrape";
     this.setState({ dieClasses });
   }
