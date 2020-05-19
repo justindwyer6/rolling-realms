@@ -16,7 +16,23 @@ body {
 @media only print {
   body {
     transform: scale(0.68);
-    margin-top: -35%;
+    margin-top: -33%;
+
+    .warning {
+      display: none;
+    }
+
+    footer {
+      display: none;
+    }
+
+    .printIcon {
+      display: none;
+    }
+
+    #fixedRules {
+      display: none;
+    }
   }
 }
 
@@ -159,6 +175,12 @@ body {
 }
 .roundNumber select:hover {
   opacity: 0.5;
+}
+
+@-moz-document url-prefix() {
+  .roundNumber select {
+    left: -5%;
+  }
 }
 
 /* Chrome, Safari, Edge, Opera */
