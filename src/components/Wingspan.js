@@ -13,7 +13,7 @@ class Wingspan extends React.Component {
           {7+(i*4)+(i?1:0)}
         </p>
         <div className="birdCells">
-          {times(3, (j) => <input key={j} type="text" className="cell" /> )}
+          {times(3, (j) => <input key={j} type="number" className="cell" /> )}
           {times(3, (j) => <img key={j} src={`/assets/Links/${this.rewards[j+i+(2*i)]}.png`} alt={this.rewards[j+i]} className="reward" /> )}
         </div>
       </div>
