@@ -127,10 +127,13 @@ class App extends React.Component {
           <div class="contribute">
             <p>This is a fan-made, open-source project.</p>
             <p>
-              <a href="https://github.com/justin-dwyer/rolling-realms">Contribute on <img className="githubIcon" src="/assets/github-icon.png" alt="Github"/> Github</a>
+              <a href="https://github.com/justin-dwyer/rolling-realms" target="_blank" rel="noopener noreferrer">Contribute on <img className="githubIcon" src="/assets/github-icon.png" alt="Github"/> Github</a>
             </p>
             <p>
-              <a href="https://github.com/justin-dwyer/rolling-realms">Report a Bug</a>
+              <a href="https://github.com/justin-dwyer/rolling-realms" target="_blank" rel="noopener noreferrer">Report a Bug</a>
+            </p>
+            <p>
+              <a href="https://stonemaiergames.com/games/rolling-realms/" target="_blank" rel="noopener noreferrer">Print-and-play other versions and find FAQs</a>
             </p>
           </div>
         </div>
