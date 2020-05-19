@@ -39,24 +39,26 @@ class Round extends React.Component {
         <aside className={this.state.asideClasses} onClick={this.showRules}>
           Show Rules
           <div className="rules">
+            <p>Pay:</p>
             <p>
-              • Pay 2<img className="inline-image" src="/assets/Links/pumpkin.png" alt="pumpkin"/> to adjust a die +/- 1
+              • 2<img className="inline-image" src="/assets/Links/pumpkin.png" alt="pumpkin"/>: adjust a die +/- 1
             </p>
             <p>
-              • Pay 3<img className="inline-image" src="/assets/Links/pumpkin.png" alt="pumpkin"/> to adjust a die +/-1; you may use it in a realm you’ve already used this turn
+              • 3<img className="inline-image" src="/assets/Links/pumpkin.png" alt="pumpkin"/>: adjust a die +/-1; you may use it in a realm you’ve already used this turn
             </p>
             <p>
-              • Pay 2<img className="inline-image" src="/assets/Links/heart.png" alt="heart"/> if the non-adjusted dice show a pair to reuse a die
+              • 2<img className="inline-image" src="/assets/Links/heart.png" alt="heart"/>: reuse a die if the non-adjusted dice show a pair
             </p>
             <p>
-              • Pay 3<img className="inline-image" src="/assets/Links/heart.png" alt="heart"/> to reuse a die
+              • 3<img className="inline-image" src="/assets/Links/heart.png" alt="heart"/>: reuse a die
             </p>
             <p>
-              • Pay 2<img className="inline-image" src="/assets/Links/coin.png" alt="coin"/> if the non-adjusted dice sum is 7 to reuse a die
+              • 2<img className="inline-image" src="/assets/Links/coin.png" alt="coin"/>: reuse a die if the non-adjusted dice sum is 7
             </p>
             <p>
-              • Pay X<img className="inline-image" src="/assets/Links/coin.png" alt="coin"/> to gain a die of value X (1-6)
+              • X<img className="inline-image" src="/assets/Links/coin.png" alt="coin"/>: gain a die of value X (1-6)
             </p>
+            <hr/>
             <p>
               • Reused dice and extra #s can’t be used in the same realm(s) as other dice in the same turn
             </p>

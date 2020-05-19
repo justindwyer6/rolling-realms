@@ -261,12 +261,19 @@ p > span {
   color: red;
 }
 
-#fixedRules > div {
-  display: none;
-}
-
-#fixedRules.show > div {
-  display: block;
+#fixedRules {
+  h4 {
+    font-weight: 400;
+  }
+  > div {
+    display: none;
+  }
+  &.show > div {
+    display: block;
+  }
+  &.show h4 {
+    margin-top: 5px;
+  }
 }
 
 .rounds {
@@ -276,11 +283,15 @@ p > span {
 .rules {
   margin-left: 5px;
   width: 250px;
-}
-
-.rules p {
-  font-size: 11px;
-  position: relative;
+  p {
+    font-size: 11px;
+    position: relative;
+    &:first-of-type {
+      margin-top: 0;
+      font-weight: 600;
+      font-size: 14px;
+    }
+  }
 }
 
 .inline-image {
