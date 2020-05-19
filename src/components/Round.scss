@@ -1,12 +1,12 @@
 .roundC {
   display: grid;
   grid-column: span 3;
-  grid-template-columns: 2.75fr 0.5fr 1.5fr repeat(3, 1.5fr);
+  grid-template-columns: 2.75fr 0.5fr repeat(4, 1.5fr);
   margin: 10px;
-  padding-bottom: 5px;
-  padding-top: 5px;
+  padding: 5px 0;
   border: 2px solid black;
   border-radius: 5px;
+
   .turnsC {
     display: flex;
     position: relative;
@@ -24,12 +24,11 @@
     .turns {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: repeat(3, 1fr);
       gap: 5px;
       input {
         width: 25px;
         height: 25px;
-        border: solid 1px black;
+        border: 1px solid black;
         outline: none;
         text-align: center;
         font-size: 16px;
@@ -45,10 +44,10 @@
       }
     }
   }
+
   .rewards {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3, 1fr);
     align-items: center;
     justify-content: center;
     img.reward {
@@ -69,13 +68,14 @@
       }
     }
   }
+
   .roundTotal {
     font-family: 'Pathway Gothic One', sans-serif;
     font-weight: 600;
     font-size: 22px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    border: 1px solid black;
+    border: 2px solid black;
     border-radius: 5px;
     text-align: center;
     height: 90%;
@@ -85,12 +85,13 @@
     p {
       grid-column: span 2;
       margin-top: 5px;
+      font-size: 20px;
     }
     input {
       width: 100%;
       height: 30px;
       border: none;
-      border-bottom: solid 3px black;
+      border-bottom: 3px solid black;
       outline: none;
       text-align: center;
       font-size: 20px;
@@ -107,8 +108,6 @@
 
 aside {
   position: relative;
-  // bottom: 10px;
-  // left: 10px;
   display: flex;
   flex-direction: column;
   padding: 10px;
@@ -117,16 +116,13 @@ aside {
   background: white;
   z-index: 2;
   text-align: left;
-
   &:hover {
     cursor: pointer;
     box-shadow: 3px 3px rgba(168, 168, 168, 0.9);
   }
-
   & > div {
     display: none;
   }
-
   &.show > div {
     display: block;
     position: absolute;

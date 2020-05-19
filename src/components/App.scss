@@ -1,3 +1,5 @@
+@use '../css/hexGrid';
+
 body {
   display: flex;
   flex-direction: column;
@@ -42,25 +44,25 @@ body {
   height: 80px;
 }
 
-.roundTotal {
+.gameTotal {
   font-family: 'Pathway Gothic One', sans-serif;
   font-weight: 600;
   font-size: 22px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  border: 1px solid black;
+  border: 2px solid black;
   border-radius: 5px;
   text-align: center;
   width: 100%;
   height: 100%;
   padding: 0 3px 3px 3px;
 }
-.roundTotal p {
+.gameTotal p {
   grid-column: span 2;
   margin-top: 5px;
   font-size: 20px;
 }
-.roundTotal input {
+.gameTotal input {
   width: 100%;
   height: 30px;
   border: none;
@@ -70,7 +72,7 @@ body {
   font-size: 20px;
   padding: 0;
 }
-.roundTotal img {
+.gameTotal img {
   width: 35px;
   height: 35px;
 }
@@ -237,29 +239,11 @@ p > span {
   color: red;
 }
 
-footer {
-  position: fixed;
-  bottom: 10px;
-  left: 10px;
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
-  border: 2px solid black;
-  border-radius: 5px;
-  background: white;
-  z-index: 2;
-}
-
-footer:hover {
-  cursor: pointer;
-  box-shadow: 3px 3px rgba(168, 168, 168, 0.9);
-}
-
-footer > div {
+#fixedRules > div {
   display: none;
 }
 
-footer.show > div {
+#fixedRules.show > div {
   display: block;
 }
 
@@ -284,87 +268,62 @@ footer.show > div {
   top: 3px;
 }
 
-.hexagon .die {
+a {
+  text-decoration: none;
+  color: rgb(95, 95, 95);
+  &:visited {
+    color: rgb(95, 95, 95);
+  }
+  &:hover {
+    color: rgb(165, 165, 165);
+  }
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  margin: 30px;
+  .githubIcon {
+    width: 13px;
+    height: 13px;
+  }
+  .contribute {
+    text-align: center;
+  }
+}
+
+#fixedRules {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 5px;
+  background: white;
+  z-index: 2;
   cursor: pointer;
-}
-.hexagon .die:hover {
-  opacity: 0.8;
-}
-
-/* HEX GRID */
-#grid {
-  position: relative;
-  width: 100%;
-  margin: 0 -10px;
-  padding: 0; /* Clears unordered list default of 40px */
+  &:hover {
+    box-shadow: 3px 3px rgba(168, 168, 168, 0.9);
+  }
 }
 
-.clear:after {
-  content: "";
-  display: block;
-  clear: both;
-}
-
-#grid li {
-  list-style-type: none;
-  position: relative;
-  float: left;
-  width: 27.85714285714286%;
-  padding: 0 0 32.16760145166612% 0;
-  -o-transform: rotate(-60deg) skewY(30deg);
-  -moz-transform: rotate(-60deg) skewY(30deg);
-  -webkit-transform: rotate(-60deg) skewY(30deg);
-  -ms-transform: rotate(-60deg) skewY(30deg);
-  transform: rotate(-60deg) skewY(30deg);
-  overflow: hidden;
-  visibility: hidden;
-}
-
-#grid li .hexagon {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #dddddd;
-  filter: black;
-  -o-transform: skewY(-30deg) rotate(60deg);
-  -moz-transform: skewY(-30deg) rotate(60deg);
-  -webkit-transform: skewY(-30deg) rotate(60deg);
-  -ms-transform: skewY(-30deg) rotate(60deg);
-  transform: skewY(-30deg) rotate(60deg);
-  overflow: hidden;
-}
-
-#grid li * {
-  visibility: visible;
-}
-
-#grid li:nth-child(2) {
-  margin: 0 1%;
-}
-
-#grid li:nth-child(3n+2) {
-  margin: 0 1%;
-}
-
-#grid li:nth-child(6n+4), #grid li:nth-child(6n+5), #grid li:nth-child(6n+6) {
-  margin-top: -6.9285714285%;
-  margin-bottom: -6.9285714285%;
-  -o-transform: translateX(50%) rotate(-60deg) skewY(30deg);
-  -moz-transform: translateX(50%) rotate(-60deg) skewY(30deg);
-  -webkit-transform: translateX(50%) rotate(-60deg) skewY(30deg);
-  -ms-transform: translateX(50%) rotate(-60deg) skewY(30deg);
-  transform: translateX(50%) rotate(-60deg) skewY(30deg);
-}
-
-#grid li:nth-child(6n+4) {
-  margin-left: 0.5%;
-}
-
-#grid li:nth-child(1) .hexagon {
-  visibility: hidden;
-}
-#grid li:nth-child(7) .hexagon {
-  visibility: hidden;
+.printIcon {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  background: white;
+  z-index: 2;
+  width: 25px;
+  height: 25px;
+  border: 2px solid black;
+  border-radius: 100%;
+  padding: 8px;
+  cursor: pointer;
+  &.printIcon:hover {
+    box-shadow: 3px 3px rgba(168, 168, 168, 0.9);
+  }
 }

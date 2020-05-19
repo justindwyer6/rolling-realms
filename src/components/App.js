@@ -63,11 +63,11 @@ class App extends React.Component {
             Select 3 realms per round for all players. On each of 9 turns, roll 2d6 for simultaneous use by all players. Use each die once, each in a different realm--you can’t use the same realm twice on the same turn. Most stars wins.
             <br></br><span>Warning: Your progress will be lost if you refresh the page or change the order of the rounds.</span>
           </p>
-          <div className="roundTotal">
+          <div className="gameTotal">
             <p>
               TOTAL :
             </p>
-            <input type="number" name="roundTotal" />
+            <input type="number" name="total" />
             <img src="/assets/Links/star_victory.png" alt="star"/>
           </div>
         </div>
@@ -81,15 +81,14 @@ class App extends React.Component {
             );
           })}
         </div>
-        <footer className={this.state.footerClasses} onClick={this.showRules}>
+        <div id="fixedRules" className={this.state.footerClasses} onClick={this.showRules}>
           {/* <div className="rounds">
             {times(3, (i) => <Round key={i} round={i} />)}
             <div className="total"></div>
           </div> */}
           Rules
           <div className="rules">
-            <p>
-              • Pay 2<img className="inline-image" src="/assets/Links/pumpkin.png" alt="pumpkin"/> to adjust a die +/- 1
+            <p>• Pay 2<img className="inline-image" src="/assets/Links/pumpkin.png" alt="pumpkin"/> to adjust a die +/- 1
             </p>
             <p>
               • Pay 3<img className="inline-image" src="/assets/Links/pumpkin.png" alt="pumpkin"/> to adjust a die +/-1; you may use it in a realm you’ve already used this turn
@@ -122,11 +121,19 @@ class App extends React.Component {
               • <a href="https://stonemaiergames.com/games/rolling-realms/" target="_blank" rel="noopener noreferrer">Details, Print, and FAQs</a>
             </p>
           </div>
-        </footer>
-        {/* <div className="footer">
-          <a href="https://github.com/justin-dwyer/rolling-realms"><img src="/assets/github-icon.png" alt="Github"/> Contribute</a>
-          <a href="https://github.com/justin-dwyer/rolling-realms">Report a Bug</a>
-        </div> */}
+        </div>
+        <img class="printIcon" src="/assets/print.png" alt="print" onClick={() => window.print()} />
+        <div className="footer">
+          <div class="contribute">
+            <p>This is a fan-made, open-source project.</p>
+            <p>
+              <a href="https://github.com/justin-dwyer/rolling-realms">Contribute on <img className="githubIcon" src="/assets/github-icon.png" alt="Github"/> Github</a>
+            </p>
+            <p>
+              <a href="https://github.com/justin-dwyer/rolling-realms">Report a Bug</a>
+            </p>
+          </div>
+        </div>
       </>
     );
   }
