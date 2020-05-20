@@ -2,26 +2,29 @@
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(2, 1fr) 2fr;
-  width: 85%;
+  width: 95%;
   margin: 0 auto;
   img {
     justify-self: center;
     width: 25px;
     height: 25px;
     &.die {
-      padding: 3px;
-      margin: 3px;
-      border: 3px dotted rgb(98, 37, 98);
-      border-radius: 100%;
+      padding: 10px;
       cursor: pointer;
       &:hover {
-        background: #eeeeee;
+        transform: scale(1.1);
       }
       &.gainedGrape {
-        border: 3px solid rgb(98, 37, 98);
+        background-image: url("/assets/grape.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
       }
       &.usedGrape {
-        background: rgb(148, 60, 148);
+        background-image: url("/assets/crushed-grape.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
       }
     }
     &.reward {

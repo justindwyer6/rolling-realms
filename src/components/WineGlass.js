@@ -9,12 +9,7 @@ class WineGlass extends React.Component {
     wineGlassFill === "/assets/empty-wine-glass.png"
       ? wineGlassFill = "/assets/full-wine-glass.png"
       : wineGlassFill = "/assets/empty-wine-glass.png";
-    this.setState({ wineGlassFill })
-    // let wineGlassClasses = this.state.wineGlassClasses;
-    // wineGlassClasses.includes("filled")
-    //   ? wineGlassClasses = this.props.wineGlassClasses
-    //   : wineGlassClasses += " filled";
-    // this.setState({ wineGlassClasses })
+    this.setState({ wineGlassFill });
   }
 
   render() {
