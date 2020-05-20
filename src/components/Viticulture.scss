@@ -36,25 +36,34 @@
     align-items: center;
     border: 1px solid black;
     border-radius: 8px;
-    background-color: rgba(0, 128, 0, 0.7);
+    background-color: rgb(197, 170, 148);
     width: 70px;
     margin: 0 auto;
-    .wineGlass {
-      border: 1px solid black;
-      border-top-left-radius: 2px;
-      border-top-right-radius: 2px;
-      border-bottom-left-radius: 8px;
-      border-bottom-right-radius: 8px;
-      width: 25px;
-      height: 35px;
-      margin: auto;
-      background-color: white;
-      cursor: pointer;
+    .wineGlassC {
+      position: relative;
       &:hover {
-        background: #eeeeee;
+        transform: scale(1.05);;
       }
-      &.filled {
-        background: #943065;
+
+      .wineGlass {
+        width: 50px;
+        height: 50px;
+        margin: auto;
+        cursor: pointer;
+        &.filled {
+          background: #943065;
+        }
+      }
+
+      .wineGlassText {
+        position: absolute;
+        margin: auto;
+        top: 29%;
+        left: 29%;
+        text-align: center;
+        font-size: 20px;
+        font-weight: 600;
+        cursor: pointer;
       }
     }
   }

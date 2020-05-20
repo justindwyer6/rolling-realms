@@ -1,23 +1,31 @@
 import React from 'react';
 
 class WineGlass extends React.Component {
-  state = { wineGlassClasses : this.props.wineGlassClasses }
+  state = { wineGlassFill : this.props.wineGlassFill }
+  // state = { wineGlassClasses : this.props.wineGlassClasses }
 
   updateGlass = () => {
-    let wineGlassClasses = this.state.wineGlassClasses;
-    wineGlassClasses.includes("filled")
-      ? wineGlassClasses = this.props.wineGlassClasses
-      : wineGlassClasses += " filled";
-    this.setState({ wineGlassClasses })
+    let wineGlassFill = this.state.wineGlassFill;
+    wineGlassFill === "/assets/empty-wine-glass.png"
+      ? wineGlassFill = "/assets/full-wine-glass.png"
+      : wineGlassFill = "/assets/empty-wine-glass.png";
+    this.setState({ wineGlassFill })
+    // let wineGlassClasses = this.state.wineGlassClasses;
+    // wineGlassClasses.includes("filled")
+    //   ? wineGlassClasses = this.props.wineGlassClasses
+    //   : wineGlassClasses += " filled";
+    // this.setState({ wineGlassClasses })
   }
 
   render() {
     return (
-      <div
-        className={this.state.wineGlassClasses}
-        onClick={this.updateGlass}
-      >
-        {10+this.props.i}
+      <div className="wineGlassC" onClick={this.updateGlass}>
+        <img
+          className="wineGlass"
+          src={this.state.wineGlassFill}
+          alt="Wine Glass"
+        />
+        <p className="wineGlassText">{10+this.props.i}</p>
       </div>
     );
   }

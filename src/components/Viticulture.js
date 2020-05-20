@@ -26,7 +26,7 @@ class Viticulture extends React.Component {
   renderWineOrders(i) {
     return(
       <div className="wineOrder" key={i}>
-        <WineGlass wineGlassClasses="wineGlass" i={i} />
+        <WineGlass wineGlassFill="/assets/empty-wine-glass.png" i={i} />
         <div className="stars">
           <img src="/assets/Links/star_victory.png" alt="star"/>
           <img src="/assets/Links/star_victory.png" alt="star"/>
