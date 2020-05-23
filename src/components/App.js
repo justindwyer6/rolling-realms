@@ -43,7 +43,7 @@ class App extends React.Component {
   renderRoundTracker = (i) => {
     if ( !((i+1) % 3) ) {
       return (
-        <Round key={i+1} round={((i+1)/3)-1} />
+        <Round key={(i+1)/3} round={((i+1)/3)-1} />
       );
     }
     else {
@@ -62,7 +62,7 @@ class App extends React.Component {
           </div>
           <p>
             Select 3 realms per round for all players. On each of 9 turns, roll 2d6 for simultaneous use by all players. Use each die once, each in a different realm--you can’t use the same realm twice on the same turn. Most stars wins.
-            <br></br><span class="warning">Warning: Your progress will be lost if you refresh the page or change the order of the rounds.</span>
+            <br></br><span className="warning">Warning: Your progress will be lost if you refresh the page or change the order of the rounds.</span>
           </p>
           <div className="gameTotal">
             <p>
@@ -71,7 +71,7 @@ class App extends React.Component {
             <input type="number" name="total" />
             <img src="/assets/Links/star_victory.png" alt="star"/>
           </div>
-        <Rules />
+          <Rules key="headerRules" />
         </div>
         <div className="MinigamesC">
           {Object.keys(this.state.minigames).map((key, i) => {
@@ -91,11 +91,11 @@ class App extends React.Component {
           <h4>
           	Rules
           </h4>
-          <Rules />
+          <Rules key="floatRules" />
         </div>
-        <img class="printIcon" src="/assets/print.png" alt="print" onClick={() => window.print()} />
+        <img className="printIcon" src="/assets/print.png" alt="print" onClick={() => window.print()} />
         <footer>
-          <div class="contribute">
+          <div className="contribute">
             <p>
               <a href="https://stonemaiergames.com/games/rolling-realms/" target="_blank" rel="noopener noreferrer">Print-and-play other versions and find FAQs</a>
             </p>

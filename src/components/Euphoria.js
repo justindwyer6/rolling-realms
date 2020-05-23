@@ -5,9 +5,9 @@ import { times } from "lodash";
 
 class Euphoria extends React.Component {
 
-  renderDie(i) {
+  renderDie(i, alignment) {
     return (
-      <Die key={`${i+1}die`} i={i+1} dieClasses="die" />
+      <Die key={`${i+1}die${alignment}`} i={i+1} dieClasses="die" />
     );
   }
 
@@ -17,7 +17,7 @@ class Euphoria extends React.Component {
         <p>Either <span>mark 1 #</span> OR (if a pair is rolled) you may <span>mark both #s</span>. Then bonus is based on the sum of that area.</p>
         <div className="euphoriaC">
           <div className="table">
-            {times(6, (i) => this.renderDie(i))}
+            {times(6, (i) => this.renderDie(i, "left"))}
           </div>
           <div className="euphoria-mid">
             <div>
@@ -36,7 +36,7 @@ class Euphoria extends React.Component {
             </div>
           </div>
           <div className="table">
-          {times(6, (i) => this.renderDie(i))}
+          {times(6, (i) => this.renderDie(i, "right"))}
           </div>
         </div>
       </>

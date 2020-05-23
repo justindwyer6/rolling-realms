@@ -36,9 +36,7 @@ class Scythe extends React.Component {
 
   renderStars(i) {
     return (
-      // <div className="star">
-        <Star />
-      // </div>
+      <Star key={i} />
     );
   }
 

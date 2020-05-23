@@ -25,7 +25,7 @@ class Round extends React.Component {
   }
 
   renderRewards = (i, reward) => {
-    return <Reward key={i} i={i} reward={reward} rewardClasses="reward" />
+    return <Reward key={i+reward} i={i} reward={reward} rewardClasses="reward" />
   }
 
   render() {

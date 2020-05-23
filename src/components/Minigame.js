@@ -27,7 +27,7 @@ class Minigame extends React.Component {
               </select>
             </div>
             <h2 className="title">{this.props.minigame.name}</h2>
-            <Board index={this.props.index} board={this.props.minigame.board} name={this.props.minigame.name} />
+            <Board index={this.props.index} name={this.props.minigame.name} />
             {this.props.index === "Scythe"
               ? null
               : (

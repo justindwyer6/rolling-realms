@@ -15,13 +15,13 @@ class MyLittleScythe extends React.Component {
                 <div className="hexagon"></div>
               </li>
               <li>
-                <Hexagon hexagonClasses="hexagon" dieFace="6" />
+                <Hexagon hexagonClasses="hexagon" dieFace="6" key="6left" />
               </li>
               <li>
-                <Hexagon hexagonClasses="hexagon" dieFace="1" />
+                <Hexagon hexagonClasses="hexagon" dieFace="1" key="1left" />
               </li>
               <li>
-                <Hexagon hexagonClasses="hexagon" dieFace="5" />
+                <Hexagon hexagonClasses="hexagon" dieFace="5" key="5left" />
               </li>
               <li>
                 <div className="hexagon">
@@ -29,16 +29,16 @@ class MyLittleScythe extends React.Component {
                 </div>
               </li>
               <li>
-                <Hexagon hexagonClasses="hexagon" dieFace="2" />
+                <Hexagon hexagonClasses="hexagon" dieFace="2" key="2left" />
               </li>
               <li>
                 <div className="hexagon"></div>
               </li>
               <li>
-                <Hexagon hexagonClasses="hexagon" dieFace="4" />
+                <Hexagon hexagonClasses="hexagon" dieFace="4" key="4left" />
               </li>
               <li>
-                <Hexagon hexagonClasses="hexagon" dieFace="3" />
+                <Hexagon hexagonClasses="hexagon" dieFace="3" key="3left" />
               </li>
             </ul>
           </div>
@@ -48,13 +48,13 @@ class MyLittleScythe extends React.Component {
                 <div className="hexagon"></div>
               </li>
               <li>
-                <Hexagon hexagonClasses="hexagon" dieFace="6" />
+                <Hexagon hexagonClasses="hexagon" dieFace="6" key="6right" />
               </li>
               <li>
-                <Hexagon hexagonClasses="hexagon" dieFace="1" />
+                <Hexagon hexagonClasses="hexagon" dieFace="1" key="1right" />
               </li>
               <li>
-                <Hexagon hexagonClasses="hexagon" dieFace="5" />
+                <Hexagon hexagonClasses="hexagon" dieFace="5" key="5right" />
               </li>
               <li>
                 <div className="hexagon">
@@ -62,16 +62,16 @@ class MyLittleScythe extends React.Component {
                 </div>
               </li>
               <li>
-                <Hexagon hexagonClasses="hexagon" dieFace="2" />
+                <Hexagon hexagonClasses="hexagon" dieFace="2" key="2right" />
               </li>
               <li>
                 <div className="hexagon"></div>
               </li>
               <li>
-                <Hexagon hexagonClasses="hexagon" dieFace="4" />
+                <Hexagon hexagonClasses="hexagon" dieFace="4" key="4right" />
               </li>
               <li>
-                <Hexagon hexagonClasses="hexagon" dieFace="3" />
+                <Hexagon hexagonClasses="hexagon" dieFace="3" key="3right" />
               </li>
             </ul>
           </div>
