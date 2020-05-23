@@ -4,6 +4,7 @@ import Minigame from './Minigame';
 import Round from './Round';
 import Rules from './Rules';
 import minigames from '../minigames';
+// import randomizeRounds from '../helpers';
 // import { times } from "lodash";
 
 class App extends React.Component {
@@ -34,6 +35,18 @@ class App extends React.Component {
     this.setState({ minigames: roundOrder });
   }
 
+  randomizeRounds = () => {
+    const minigames = { ...this.state.minigames };
+    let roundsToAssign = [1, 1, 1, 2, 2, 2, 3, 3, 3];
+    Object.keys(minigames).forEach((key) => {
+      const minigame = minigames[key];
+      const arrayRoundAssigned = Math.floor(Math.random()*roundsToAssign.length);
+      const roundNumberAssigned = roundsToAssign[arrayRoundAssigned];
+      roundsToAssign.splice(arrayRoundAssigned, 1);
+      this.reorderGames(roundNumberAssigned, minigame);
+    });
+  }
+
   showRules = () => {
     let footerClasses = this.state.footerClasses;
     footerClasses.includes("show") ? footerClasses = "" : footerClasses += " show";
@@ -54,6 +67,7 @@ class App extends React.Component {
   render() {
     return (
       <>
+        <button onClick={this.randomizeRounds} >Randomize</button>
         <div className="header">
           <img className="sm-logo" src="/assets/Links/stonemaier-logo.png" alt="Stonemaier Games Logo"/>
           <div className="titleC">
