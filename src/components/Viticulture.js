@@ -39,7 +39,7 @@ class Viticulture extends React.Component {
     return (
       <>
         <p>
-          Either gain a grape (circle it) OR use the sum of 1 die and at least 1 gained grape (cross it off) to fill a wine order.
+          Either gain a grape (circle it) OR use the sum of 1 roleld die and at least 1 gained grape (cross it off) to fill a wine order.
         </p>
         <div className="viticultureC">
           {times(6, (i) => this.renderDie(i))}

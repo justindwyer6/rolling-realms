@@ -110,15 +110,17 @@ aside {
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  padding: 25px;
   border: 2px solid black;
-  border-radius: 5px;
+  border-radius: 100%;
   background: white;
+  box-shadow: 3px 3px rgba(168, 168, 168, 0.9);
   z-index: 2;
   text-align: left;
   &:hover {
     cursor: pointer;
-    box-shadow: 3px 3px rgba(168, 168, 168, 0.9);
+    box-shadow: 6px 3px rgba(168, 168, 168, 0.9);
+    transform: scale(1.01);
   }
   & > div {
     display: none;
