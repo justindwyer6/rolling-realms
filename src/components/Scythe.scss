@@ -3,59 +3,56 @@
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(4, 1fr);
   width: 90%;
-  margin: 0 auto;
+  height: 50px;
+  margin: auto;
   position: relative;
-  top: 20px;
+  top: 10px;
+
   img {
+    position: relative;
     justify-self: center;
     width: 25px;
     height: 25px;
+    padding: 5px;
+    border: 2px solid black;
+
     &.topDie {
-      position: relative;
-      padding: 5px;
-      border: 2px solid black;
       border-bottom: none;
       cursor: pointer;
       &:hover {
         background: #eeeeee;
       }
     }
+
     &.topReward {
-      position: relative;
-      padding: 5px;
-      border: 2px solid black;
       border-top: none;
       background-color: rgba(0, 128, 0, 0.3);
     }
+
     &.bottomDie {
-      position: relative;
-      padding: 5px;
-      border: 2px solid black;
       border-bottom: none;
-      top: -2px;
       cursor: pointer;
       &:hover {
         background: #eeeeee;
       }
     }
+
     &.bottomReward {
-      position: relative;
-      padding: 5px;
       border: 2px solid black;
       border-top: none;
       border-bottom: none;
-      top: -5px;
       background-color: rgba(255, 0, 0, 0.3);
     }
-  }
-  .star {
-    position: relative;
-    width: 35px;
-    height: 35px;
-    border: 2px solid black;
-    border-top: none;
-    top: -7px;
-    left: 3px;
-    background-color: rgba(0, 128, 0, 0.3);
+
+    &.star {
+      border-top: none;
+      background-color: rgba(0, 128, 0, 0.3);
+      cursor: pointer;
+      &:hover {
+        width: 29px;
+        height: 29px;
+        padding: 3px;
+      }
+    }
   }
 }

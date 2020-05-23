@@ -1,5 +1,6 @@
 import React from 'react';
 import Die from './Die';
+import Star from './Star';
 import "./Scythe.scss";
 import { times } from "lodash";
 
@@ -35,7 +36,9 @@ class Scythe extends React.Component {
 
   renderStars(i) {
     return (
-      <div key={i} className="star"></div>
+      // <div className="star">
+        <Star />
+      // </div>
     );
   }
 

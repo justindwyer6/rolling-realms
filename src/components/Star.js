@@ -13,7 +13,7 @@ class Star extends React.Component {
 
   render() {
     return (
-      <img src={this.state.src} alt="star" onClick={this.updateStar} />
+      <img className="star" src={this.state.src} alt="star" onClick={this.updateStar} />
     );
   }
 }

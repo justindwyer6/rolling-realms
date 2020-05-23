@@ -28,12 +28,19 @@ class Minigame extends React.Component {
             </div>
             <h2 className="title">{this.props.minigame.name}</h2>
             <Board index={this.props.index} board={this.props.minigame.board} name={this.props.minigame.name} />
-            <div className="stars-row">
-              {stars.map(star => <Star
-                key={star}
-                index={this.props.index}
-              />)}
-            </div>
+            {this.props.index === "Scythe"
+              ? null
+              : (
+                <div className="stars-row">
+                  {stars.map(star =>
+                    <Star
+                      key={star}
+                      index={this.props.index}
+                    />
+                  )}
+                </div>
+              )
+            }
           </div>
         </div>
       </>

@@ -2,6 +2,7 @@ import React from 'react';
 import './App.scss';
 import Minigame from './Minigame';
 import Round from './Round';
+import Rules from './Rules';
 import minigames from '../minigames';
 // import { times } from "lodash";
 
@@ -55,7 +56,7 @@ class App extends React.Component {
       <>
         <div className="header">
           <img className="sm-logo" src="/assets/Links/stonemaier-logo.png" alt="Stonemaier Games Logo"/>
-          <div>
+          <div className="titleC">
             <h2 className="title">Rolling Realms <span>v</span>10</h2>
             <h3>by Jamey Stegmaier</h3>
           </div>
@@ -70,6 +71,7 @@ class App extends React.Component {
             <input type="number" name="total" />
             <img src="/assets/Links/star_victory.png" alt="star"/>
           </div>
+        <Rules />
         </div>
         <div className="MinigamesC">
           {Object.keys(this.state.minigames).map((key, i) => {
@@ -89,43 +91,7 @@ class App extends React.Component {
           <h4>
           	Rules
           </h4>
-          <div className="rules">
-            <p>Pay:</p>
-            <p>
-              • 2<img className="inline-image" src="/assets/Links/pumpkin.png" alt="pumpkin"/>: adjust a die +/- 1
-            </p>
-            <p>
-              • 3<img className="inline-image" src="/assets/Links/pumpkin.png" alt="pumpkin"/>: adjust a die +/-1; you may use it in a realm you’ve already used this turn
-            </p>
-            <p>
-              • 2<img className="inline-image" src="/assets/Links/heart.png" alt="heart"/>: reuse a die if the non-adjusted dice show a pair
-            </p>
-            <p>
-              • 3<img className="inline-image" src="/assets/Links/heart.png" alt="heart"/>: reuse a die
-            </p>
-            <p>
-              • 2<img className="inline-image" src="/assets/Links/coin.png" alt="coin"/>: reuse a die if the non-adjusted dice sum is 7
-            </p>
-            <p>
-              • X<img className="inline-image" src="/assets/Links/coin.png" alt="coin"/>: gain a die of value X (1-6)
-            </p>
-            <hr/>
-            <p>
-              • Reused dice and extra #s can’t be used in the same realm(s) as other dice in the same turn
-            </p>
-            <p>
-              • Reuse dice as they were originally rolled
-            </p>
-            <p>
-              • Earned-but-unused resources are worth 0.1 stars each
-            </p>
-            <p>
-              • Resources do not carry over to the next round
-            </p>
-            <p>
-              • <a href="https://stonemaiergames.com/games/rolling-realms/" target="_blank" rel="noopener noreferrer">Details, Print, and FAQs</a>
-            </p>
-          </div>
+          <Rules />
         </div>
         <img class="printIcon" src="/assets/print.png" alt="print" onClick={() => window.print()} />
         <footer>
