@@ -4,14 +4,21 @@ import Minigame from './Minigame';
 import Round from './Round';
 import Rules from './Rules';
 import minigames from '../minigames';
-// import randomizeRounds from '../helpers';
 // import { times } from "lodash";
 
 class App extends React.Component {
   state = {
     minigames: minigames,
-    footerClasses: ""
+    footerClasses: "",
+    die1: 1,
+    die2: 6
   };
+
+  rollDice = () => {
+    let die1 = Math.ceil(Math.random()*6);
+    let die2 = Math.ceil(Math.random()*6);
+    this.setState({ die1, die2 })
+  }
 
   reorderGames = (roundNumber, minigame) => {
     const unordered = { ...this.state.minigames };
@@ -75,7 +82,7 @@ class App extends React.Component {
           </div>
           <p>
             Select 3 realms per round for all players. On each of 9 turns, roll 2d6 for simultaneous use by all players. Use each die once, each in a different realm--you can’t use the same realm twice on the same turn. Most stars wins.
-            <br></br><span className="warning">Warning: Your progress will be lost if you refresh the page or change the order of the rounds.</span>
+            <br></br><span className="warning">Warning: Your progress may be lost if you refresh the page or change the order of the rounds.</span>
           </p>
           <div className="gameTotal">
             <p>
@@ -87,7 +94,19 @@ class App extends React.Component {
           <Rules key="headerRules" />
         </div>
         <div className="subheader">
-          <button className="randomizeButton" onClick={this.randomizeRounds} >Randomize</button>
+          <button className="standardButton" onClick={this.randomizeRounds} >Randomize</button>
+          <button className="standardButton" onClick={this.rollDice} >
+            <img
+              className="rolledDie"
+              src={`/assets/Links/dice-six-faces-${this.state.die1}.png`}
+              alt={`Rolled Die`}
+            />
+            <img
+              className="rolledDie"
+              src={`/assets/Links/dice-six-faces-${this.state.die2}.png`}
+              alt={`Rolled Die`}
+            />
+          </button>
         </div>
         <div className="MinigamesC">
           {Object.keys(this.state.minigames).map((key, i) => {

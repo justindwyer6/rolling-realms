@@ -111,8 +111,8 @@ body {
   align-items: center;
   justify-content: space-around;
 
-  .randomizeButton {
-    font-size: 14px;
+  .standardButton {
+    font-size: 16px;
     border: 2px solid black;
     background: white;
     box-shadow: 3px 3px rgba(168, 168, 168, 0.9);
@@ -123,6 +123,12 @@ body {
     &:hover {
       box-shadow: 6px 3px rgba(168, 168, 168, 0.9);
       transform: scale(1.01);
+    }
+
+    .rolledDie {
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
     }
   }
 }
@@ -145,6 +151,7 @@ body {
   position: relative;
   border: 2px solid black;
   border-radius: 5px;
+  margin: auto;
   &:after {
     content: "";
     display: block;

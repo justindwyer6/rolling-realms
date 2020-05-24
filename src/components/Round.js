@@ -6,8 +6,16 @@ import { times } from "lodash";
 
 class Round extends React.Component {
   state = {
-    asideClasses: ""
+    asideClasses: "",
+    die1: 1,
+    die2: 6
   };
+
+  rollDice = () => {
+    let die1 = Math.ceil(Math.random()*6);
+    let die2 = Math.ceil(Math.random()*6);
+    this.setState({ die1, die2 })
+  }
 
   showRules = () => {
     let asideClasses = this.state.asideClasses;
@@ -37,12 +45,18 @@ class Round extends React.Component {
             {times(9, (i) => this.renderInputs(i))}
           </div>
         </div>
-        <aside className={this.state.asideClasses} onClick={this.showRules}>
-          <h4>
-            Show Rules
-          </h4>
-          <Rules />
-        </aside>
+        <button className="standardButton" onClick={this.rollDice} >
+          <img
+            className="rolledDie"
+            src={`/assets/Links/dice-six-faces-${this.state.die1}.png`}
+            alt={`Rolled Die`}
+          />
+          <img
+            className="rolledDie"
+            src={`/assets/Links/dice-six-faces-${this.state.die2}.png`}
+            alt={`Rolled Die`}
+          />
+        </button>
         <div className="roundTotal">
           <p>
             ROUND {this.props.round + 1}:
@@ -50,6 +64,12 @@ class Round extends React.Component {
           <input type="number" name="roundTotal" />
           <img src="/assets/Links/star_victory.png" alt="star"/>
         </div>
+        <aside className={this.state.asideClasses} onClick={this.showRules}>
+          <h4>
+            Show Rules
+          </h4>
+          <Rules />
+        </aside>
         <div className="rewards">
           {times(12, (i) => this.renderRewards(i, "pumpkin"))}
         </div>
