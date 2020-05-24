@@ -67,7 +67,6 @@ class App extends React.Component {
   render() {
     return (
       <>
-        <button onClick={this.randomizeRounds} >Randomize</button>
         <div className="header">
           <img className="sm-logo" src="/assets/Links/stonemaier-logo.png" alt="Stonemaier Games Logo"/>
           <div className="titleC">
@@ -86,6 +85,9 @@ class App extends React.Component {
             <img src="/assets/Links/star_victory.png" alt="star"/>
           </div>
           <Rules key="headerRules" />
+        </div>
+        <div className="subheader">
+          <button className="randomizeButton" onClick={this.randomizeRounds} >Randomize</button>
         </div>
         <div className="MinigamesC">
           {Object.keys(this.state.minigames).map((key, i) => {

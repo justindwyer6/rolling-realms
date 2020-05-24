@@ -7,43 +7,6 @@ body {
   align-items: center;
 }
 
-@media (max-width: 930px) {
-  body {
-    transform: scale(0.4);
-  }
-}
-
-@media only print {
-  body {
-    transform: scale(0.63);
-    position: fixed;
-    top: -275px;
-    left: -100px;
-
-    .warning {
-      display: none;
-    }
-
-    footer {
-      display: none;
-    }
-
-    .printIcon {
-      display: none;
-    }
-
-    #fixedRules {
-      display: none;
-    }
-
-    .header {
-      .rules {
-        display: grid;
-      }
-    }
-  }
-}
-
 .header {
   font-family: 'Pathway Gothic One', sans-serif;
   font-weight: 500;
@@ -141,6 +104,29 @@ body {
   }
 }
 
+.subheader {
+  display: flex;
+  width: 900px;
+  margin-top: 0px;
+  align-items: center;
+  justify-content: space-around;
+
+  .randomizeButton {
+    font-size: 14px;
+    border: 2px solid black;
+    background: white;
+    box-shadow: 3px 3px rgba(168, 168, 168, 0.9);
+    border-radius: 5px;
+    padding: 7px;
+    outline: none;
+    cursor: pointer;
+    &:hover {
+      box-shadow: 6px 3px rgba(168, 168, 168, 0.9);
+      transform: scale(1.01);
+    }
+  }
+}
+
 .MinigamesC {
   display: grid;
   grid-template-columns: 310px 310px 310px;
@@ -159,12 +145,11 @@ body {
   position: relative;
   border: 2px solid black;
   border-radius: 5px;
-}
-
-.Minigame:after {
-  content: "";
-  display: block;
-  padding-bottom: 100%;
+  &:after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+  }
 }
 
 .content {
@@ -198,29 +183,29 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-}
 
-.roundNumber select {
-  border: none;
-  border-radius: 50%;
-  background: transparent;
-  outline: none;
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  font-size: 16px;
-  text-align: center;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  text-indent: 1px;
-  text-overflow: '';
-  position: relative;
-  left: 30%;
-  cursor: pointer;
-}
-.roundNumber select:hover {
-  opacity: 0.5;
+  select {
+    border: none;
+    border-radius: 50%;
+    background: transparent;
+    outline: none;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    font-size: 16px;
+    text-align: center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+    position: relative;
+    left: 30%;
+    cursor: pointer;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
 }
 
 @-moz-document url-prefix() {
@@ -267,17 +252,16 @@ input[type=number] {
   justify-content: center;
   bottom: 5px;
   left: 15px;
-}
 
-.stars-row .star {
-  max-height: 25px;
-  max-width: 25px;
-  margin: 0 auto;
-  cursor: pointer;
-}
-
-.stars-row .star:hover {
-  transform: scale(1.1);
+  .star {
+    max-height: 25px;
+    max-width: 25px;
+    margin: 0 auto;
+    cursor: pointer;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
 }
 
 .myLittleScytheC {
@@ -285,18 +269,18 @@ input[type=number] {
   align-items: center;
   justify-content: center;
   width: 100%;
-}
 
-.myLittleScythe {
-  width: 70%;
-  height: 100%;
-}
+  .myLittleScythe {
+    width: 70%;
+    height: 100%;
 
-.myLittleScythe img {
-  width: 30px;
-  height: 30px;
-  position: relative;
-  top: 9px;
+    img {
+      width: 30px;
+      height: 30px;
+      position: relative;
+      top: 9px;
+    }
+  }
 }
 
 .usedDie, .usedHexagon {
@@ -398,13 +382,15 @@ footer {
   display: flex;
   flex-direction: column;
   padding: 10px;
-  border: 2px solid black;
   border-radius: 5px;
+  border: 2px solid black;
   background: white;
+  box-shadow: 3px 3px rgba(168, 168, 168, 0.9);
   z-index: 2;
   cursor: pointer;
   &:hover {
-    box-shadow: 3px 3px rgba(168, 168, 168, 0.9);
+    box-shadow: 6px 3px rgba(168, 168, 168, 0.9);
+    transform: scale(1.05);
   }
 }
 
@@ -412,15 +398,42 @@ footer {
   position: fixed;
   bottom: 10px;
   right: 10px;
-  background: white;
   z-index: 2;
   width: 25px;
   height: 25px;
   border: 2px solid black;
+  background: white;
+  box-shadow: 3px 3px rgba(168, 168, 168, 0.9);
   border-radius: 100%;
   padding: 8px;
   cursor: pointer;
-  &.printIcon:hover {
-    box-shadow: 3px 3px rgba(168, 168, 168, 0.9);
+  &:hover {
+    box-shadow: 6px 3px rgba(168, 168, 168, 0.9);
+    transform: scale(1.05);
+  }
+}
+
+@media (max-width: 930px) {
+  body {
+    transform: scale(0.4);
+  }
+}
+
+@media only print {
+  body {
+    transform: scale(0.63);
+    position: fixed;
+    top: -275px;
+    left: -100px;
+
+    .warning, .subheader, footer, .printIcon, #fixedRules {
+      display: none;
+    }
+
+    .header {
+      .rules {
+        display: grid;
+      }
+    }
   }
 }
