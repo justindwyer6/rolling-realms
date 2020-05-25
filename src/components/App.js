@@ -93,21 +93,12 @@ class App extends React.Component {
           </div>
           <Rules key="headerRules" />
         </div>
+
         <div className="subheader">
           <button className="standardButton" onClick={this.randomizeRounds} >Randomize</button>
-          <button className="standardButton" onClick={this.rollDice} >
-            <img
-              className="rolledDie"
-              src={`/assets/Links/dice-six-faces-${this.state.die1}.png`}
-              alt={`Rolled Die`}
-            />
-            <img
-              className="rolledDie"
-              src={`/assets/Links/dice-six-faces-${this.state.die2}.png`}
-              alt={`Rolled Die`}
-            />
-          </button>
+          <img className="printIcon" src="/assets/print.png" alt="print" onClick={() => window.print()} />
         </div>
+
         <div className="MinigamesC">
           {Object.keys(this.state.minigames).map((key, i) => {
             return (
@@ -118,17 +109,27 @@ class App extends React.Component {
             );
           })}
         </div>
+
         <div id="fixedRules" className={this.state.footerClasses} onClick={this.showRules}>
-          {/* <div className="rounds">
-            {times(3, (i) => <Round key={i} round={i} />)}
-            <div className="total"></div>
-          </div> */}
           <h4>
           	Rules
           </h4>
           <Rules key="floatRules" />
         </div>
-        <img className="printIcon" src="/assets/print.png" alt="print" onClick={() => window.print()} />
+
+        <button className="standardButton diceRoller" onClick={this.rollDice} >
+          <img
+            className="rolledDie"
+            src={`/assets/Links/dice-six-faces-${this.state.die1}.png`}
+            alt={`Rolled Die`}
+          />
+          <img
+            className="rolledDie"
+            src={`/assets/Links/dice-six-faces-${this.state.die2}.png`}
+            alt={`Rolled Die`}
+          />
+        </button>
+
         <footer>
           <div className="contribute">
             <p>

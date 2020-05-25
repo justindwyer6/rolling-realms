@@ -110,26 +110,35 @@ body {
   margin-top: 0px;
   align-items: center;
   justify-content: space-around;
-
   .standardButton {
-    font-size: 16px;
-    border: 2px solid black;
-    background: white;
-    box-shadow: 3px 3px rgba(168, 168, 168, 0.9);
-    border-radius: 5px;
-    padding: 7px;
-    outline: none;
-    cursor: pointer;
-    &:hover {
-      box-shadow: 6px 3px rgba(168, 168, 168, 0.9);
-      transform: scale(1.01);
-    }
+    position: static;
+  }
+}
 
-    .rolledDie {
-      width: 30px;
-      height: 30px;
-      cursor: pointer;
-    }
+.standardButton {
+  font-size: 16px;
+  border: 2px solid black;
+  background: white;
+  box-shadow: 3px 3px rgba(168, 168, 168, 0.9);
+  border-radius: 5px;
+  padding: 7px;
+  outline: none;
+  cursor: pointer;
+  &:hover {
+    box-shadow: 6px 3px rgba(168, 168, 168, 0.9);
+    transform: scale(1.01);
+  }
+
+  &.diceRoller {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .rolledDie {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
   }
 }
 
@@ -402,10 +411,10 @@ footer {
 }
 
 .printIcon {
-  position: fixed;
-  bottom: 10px;
-  right: 10px;
-  z-index: 2;
+  // position: fixed;
+  // bottom: 10px;
+  // right: 10px;
+  // z-index: 2;
   width: 25px;
   height: 25px;
   border: 2px solid black;
@@ -433,7 +442,7 @@ footer {
     top: -275px;
     left: -100px;
 
-    .warning, .subheader, footer, .printIcon, #fixedRules {
+    .warning, .subheader, footer, .printIcon, #fixedRules, .diceRoller {
       display: none;
     }
 
