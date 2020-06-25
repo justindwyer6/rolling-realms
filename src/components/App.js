@@ -14,6 +14,11 @@ class App extends React.Component {
     die2: 6
   };
 
+  componentDidMount() {
+    const img = new Image();
+    img.src = "/assets/grape.png";
+  }
+
   rollDice = () => {
     let die1 = Math.ceil(Math.random()*6);
     let die2 = Math.ceil(Math.random()*6);
