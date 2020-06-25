@@ -15,8 +15,11 @@ class App extends React.Component {
   };
 
   componentDidMount() {
-    const img = new Image();
-    img.src = "/assets/grape.png";
+    const images = ["grape", "crushed-grape", "full-wine-glass", "empty-wine-glass"];
+    images.forEach(image => {
+      const img = new Image();
+      img.src = `/assets/${image}.png`;
+    })
   }
 
   rollDice = () => {
