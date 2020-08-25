@@ -12,9 +12,14 @@ class Round extends React.Component {
   };
 
   rollDice = () => {
+    times(6, (i) => {
+      let die1 = i;
+      let die2 = ( 7 - i );
+      setTimeout(() => { this.setState({ die1, die2 }) }, (50 + i*15));
+    })
     let die1 = Math.ceil(Math.random()*6);
     let die2 = Math.ceil(Math.random()*6);
-    this.setState({ die1, die2 })
+    setTimeout(() => { this.setState({ die1, die2 }) }, 350);
   }
 
   showRules = () => {
