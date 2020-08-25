@@ -4,7 +4,6 @@ import Minigame from './Minigame';
 import Round from './Round';
 import Rules from './Rules';
 import minigames from '../minigames';
-// import { times } from "lodash";
 
 class App extends React.Component {
   state = {
@@ -25,7 +24,10 @@ class App extends React.Component {
   rollDice = () => {
     let die1 = Math.ceil(Math.random()*6);
     let die2 = Math.ceil(Math.random()*6);
-    this.setState({ die1, die2 })
+    window.setTimeout(() => {
+      console.log("hi")
+      this.setState({ die1, die2 })
+    }, 5000);
   }
 
   reorderGames = (roundNumber, minigame) => {

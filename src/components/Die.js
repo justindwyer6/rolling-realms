@@ -1,45 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-class Die extends React.Component {
-  state = {
-    dieClasses: this.props.dieClasses
-  };
+const Die = (props) => {
+  const [dieClasses, setDieClasses] = useState(props.dieClasses);
 
-  updateDefaultDie() {
-    let dieClasses = this.state.dieClasses;
+  const updateDefaultDie = () => {
     dieClasses.includes("usedDie")
-      ? dieClasses = this.props.dieClasses
-      : dieClasses += " usedDie";
-    this.setState({ dieClasses });
+      ? setDieClasses(props.dieClasses)
+      : setDieClasses(dieClasses + " usedDie");
   }
 
-  updateGrapeDie() {
-    let dieClasses = this.state.dieClasses;
+  const updateGrapeDie = () => {
     dieClasses.includes("usedGrape")
-      ? dieClasses = this.props.dieClasses
+      ? setDieClasses(props.dieClasses)
       : dieClasses.includes("gainedGrape")
-        ? dieClasses += " usedGrape"
-        : dieClasses += " gainedGrape";
-    this.setState({ dieClasses });
+        ? setDieClasses(dieClasses + " usedGrape")
+        : setDieClasses(dieClasses + " gainedGrape");
   }
 
-  updateDie = () => {
-    this.state.dieClasses.includes("grapeDie")
-      ? this.updateGrapeDie()
-      : this.updateDefaultDie();
+  const updateDie = () => {
+    dieClasses.includes("grapeDie")
+      ? updateGrapeDie()
+      : updateDefaultDie();
   }
 
-  render() {
-    return (
-      <img
-        className={this.state.dieClasses}
-        key={`${this.props.i}die`}
-        src={`/assets/Links/dice-six-faces-${this.props.i}.png`}
-        alt={`${this.props.i}die`}
-        onClick={this.updateDie}
-      />
-    );
-  }
+  return (
+    <img
+      className={ dieClasses }
+      key={ `${props.i}die` }
+      src={ `/assets/Links/dice-six-faces-${props.i}.png` }
+      alt={ `${props.i}die` }
+      onClick={ updateDie }
+    />
+  );
 }
 
 export default Die;
