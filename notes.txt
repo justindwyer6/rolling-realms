@@ -1,34 +1,11 @@
-{-Tapestry
-  -Styled
-  -Functional}
-{-Between Two Cities
-  -Styled
-  -Functional}
-{-Euphoria
-  -Styled
-  -Functional}
-{-Scythe
-  -Styled
-  -Functional}
-{-Between Two Castles
-  -Styled !(border width)
-  -Functional}
-{-Charterstone
-  -Styled
-  -Functional}
-{-Wingspan
-  -Styled
-  -Functional}
-{-Viticulture
-  -Styled
-  -Functional}
-{-My Little Scythe
-  -Styled
-  -Functional}
+Need before shipping:
 
--Header instructions
--Scorekeeping
--Reward Tracker
--Footer instructions
 
--Hide other rounds
+Next up:
+- querystringparam sync
+- hooks
+
+To do:
+- fix safari minigame title alignment styling
+- add a "missing" category to minigame dropdown
+- make round number clicking work again

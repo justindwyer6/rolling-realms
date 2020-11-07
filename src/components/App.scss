@@ -174,22 +174,39 @@ body {
   height: 100%;
 }
 
-.title {
+.minigameHeader {
+  &:hover {
+    select.title {
+      font-weight: 600;
+      text-decoration: underline;
+    }
+  }
+}
+
+select.title {
   font-family: 'Pathway Gothic One', sans-serif;
   text-transform: uppercase;
   font-size: 22px;
   position: relative;
   margin: auto;
+  appearance: none;
+  text-align-last:center;
+  text-align: center;
+  text-align:-webkit-center;
+  text-align:-moz-center;
+  border: none;
+  outline: none;
+  cursor: pointer;
   &> span {
     text-transform: none;
   }
 }
 
 .roundNumber {
-  color: gray;
+  color: black;
   width: 30px;
   height: 30px;
-  background-color: rgba(168, 168, 168, 0.705);
+  background-color: rgba(168, 168, 168, 0.5);
   border-radius: 50%;
   border: 1px solid black;
   position: absolute;

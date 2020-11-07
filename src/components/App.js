@@ -3,12 +3,14 @@ import './App.scss';
 import Minigame from './Minigame';
 import Round from './Round';
 import Rules from './Rules';
-import minigames from '../minigames';
+// import minigames from '../minigames';
+import rounds from '../rounds';
 import { times } from "lodash";
 
 class App extends React.Component {
   state = {
-    minigames: minigames,
+    rounds: rounds,
+    missingMinigames: [],
     footerClasses: "",
     die1: 1,
     die2: 6
@@ -19,8 +21,28 @@ class App extends React.Component {
     images.forEach(image => {
       const img = new Image();
       img.src = `/assets/${image}.png`;
-    })
+    });
   }
+
+  // componentDidUpdate() {
+  //   Object.keys(this.state.rounds).forEach((key, i) => {
+  //     const allMinigames = [
+  //       "Scythe",
+  //       "Between Two Cities",
+  //       "Charterstone",
+  //       "Between Two Castles",
+  //       "Viticulture",
+  //       "Euphoria",
+  //       "My Little Scythe",
+  //       "Tapestry",
+  //       "Wingspan"
+  //     ];
+  //     const missingMinigames = allMinigames.filter(
+  //       function(value, index, array) {this.state.rounds[key].minigame === value}
+  //     );
+  //     this.setState([ ...missingMinigames ]);
+  //   }
+  // }
 
   rollDice = () => {
     times(6, (i) => {
@@ -33,39 +55,90 @@ class App extends React.Component {
     setTimeout(() => { this.setState({ die1, die2 }) }, 350);
   }
 
-  reorderGames = (roundNumber, minigame) => {
-    const unordered = { ...this.state.minigames };
-    const roundOrder = {};
+  // reorderGames = (roundNumber, minigame) => {
+  //   const unordered = { ...this.state.minigames };
+  //   const rounds = {};
 
-    unordered[minigame.name.replace(/\s+/g, '')].roundNumber = roundNumber;
+  //   unordered[minigame.name.replace(/\s+/g, '')].roundNumber = roundNumber;
 
-    function sortByRoundNumber(a, b) {
-      for (const item in unordered) {
-        if (item.name === minigame.name) {
-          item.roundNumber = roundNumber;
-        }
+  //   function sortByRoundNumber(a, b) {
+  //     for (const item in unordered) {
+  //       if (item.name === minigame.name) {
+  //         item.roundNumber = roundNumber;
+  //       }
+  //     }
+  //     const result = unordered[a].roundNumber > unordered[b].roundNumber ? 1 : -1;
+  //     return result;
+  //   }
+
+  //   Object.keys(unordered).sort(sortByRoundNumber).forEach(key => {
+  //     rounds[key] = unordered[key];
+  //   });
+  //   this.setState({ minigames: rounds });
+  // }
+
+  // reorderRounds = (roundNumber, minigame) => {
+  //   // const currentRoundOrder =  { ...this.state.rounds };
+  //   const newRoundOrder = {};
+
+  //   if (minigame)
+
+  //   this.setState({ rounds: newRoundOrder })
+  // }
+
+  updateMinigame = (minigame, round) => {
+    const updatingRoundOrder = { ...this.state.rounds };
+    updatingRoundOrder[round].minigame = minigame;
+    this.setState({ rounds: updatingRoundOrder });
+  }
+
+  randomizeMinigames = () => {
+    const allMinigames = [
+      "Scythe",
+      "Between Two Cities",
+      "Charterstone",
+      "Between Two Castles",
+      "Viticulture",
+      "Euphoria",
+      "My Little Scythe",
+      "Tapestry",
+      "Wingspan"
+    ];
+
+    function shuffle(array) {
+      var currentIndex = array.length, temporaryValue, randomIndex;
+      // While there remain elements to shuffle...
+      while (0 !== currentIndex) {
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+        // And swap it with the current element.
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
       }
-      const result = unordered[a].roundNumber > unordered[b].roundNumber ? 1 : -1;
-      return result;
+      return array;
     }
 
-    Object.keys(unordered).sort(sortByRoundNumber).forEach(key => {
-      roundOrder[key] = unordered[key];
+    const shuffledMinigames = shuffle(allMinigames);
+    const roundsCopy = { ...this.state.rounds };
+    Object.entries(roundsCopy).forEach(([key, value], i) => {
+      value.minigame = shuffledMinigames[i];
     });
-    this.setState({ minigames: roundOrder });
+    this.setState({ rounds: roundsCopy});
   }
 
-  randomizeRounds = () => {
-    const minigames = { ...this.state.minigames };
-    let roundsToAssign = [1, 1, 1, 2, 2, 2, 3, 3, 3];
-    Object.keys(minigames).forEach((key) => {
-      const minigame = minigames[key];
-      const arrayRoundAssigned = Math.floor(Math.random()*roundsToAssign.length);
-      const roundNumberAssigned = roundsToAssign[arrayRoundAssigned];
-      roundsToAssign.splice(arrayRoundAssigned, 1);
-      this.reorderGames(roundNumberAssigned, minigame);
-    });
-  }
+  // randomizeRounds = () => {
+  //   const minigames = { ...this.state.minigames };
+  //   let roundsToAssign = [1, 1, 1, 2, 2, 2, 3, 3, 3];
+  //   Object.keys(minigames).forEach((key) => {
+  //     const minigame = minigames[key];
+  //     const arrayRoundAssigned = Math.floor(Math.random()*roundsToAssign.length);
+  //     const roundNumberAssigned = roundsToAssign[arrayRoundAssigned];
+  //     roundsToAssign.splice(arrayRoundAssigned, 1);
+  //     this.reorderGames(roundNumberAssigned, minigame);
+  //   });
+  // }
 
   showRules = () => {
     let footerClasses = this.state.footerClasses;
@@ -73,14 +146,9 @@ class App extends React.Component {
     this.setState({ footerClasses });
   }
 
-  renderRoundTracker = (i) => {
-    if ( !((i+1) % 3) ) {
-      return (
-        <Round key={(i+1)/3} round={((i+1)/3)-1} />
-      );
-    }
-    else {
-      return null;
+  renderRoundTracker = (key, i) => {
+    if (key === "1c" || key === "2c" || key === "3c") {
+      return <Round key={i} round={i-1} />
     }
   }
 
@@ -108,16 +176,25 @@ class App extends React.Component {
         </div>
 
         <div className="subheader">
-          <button className="standardButton" onClick={this.randomizeRounds} >Randomize</button>
+          <button className="standardButton" onClick={this.randomizeMinigames} >Randomize</button>
           <img className="printIcon" src="/assets/print.png" alt="print" onClick={() => window.print()} />
         </div>
 
         <div className="MinigamesC">
-          {Object.keys(this.state.minigames).map((key, i) => {
+          {Object.keys(this.state.rounds).map((key, i) => {
             return (
               <>
-                <Minigame key={key} index={key} i={i} minigame={this.state.minigames[key]} reorderGames={this.reorderGames} />
-                {this.renderRoundTracker(i)}
+                <Minigame
+                  key={this.state.rounds[key].minigame}
+                  index={key}
+                  i={i}
+                  minigame={this.state.rounds[key].minigame}
+                  roundNumber={this.state.rounds[key].roundNumber}
+                  // reorderRounds={this.reorderRounds}
+                  updateMinigame={this.updateMinigame}
+                  missingMinigames={this.state.missingMinigames}
+                />
+                {this.renderRoundTracker(key, this.state.rounds[key].roundNumber)}
               </>
             );
           })}
