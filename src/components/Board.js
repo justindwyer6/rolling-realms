@@ -9,27 +9,25 @@ import Tapestry from './Tapestry';
 import Viticulture from './Viticulture';
 import Wingspan from './Wingspan';
 
-class Board extends React.Component {
-  render() {
-      if (this.props.name === "Between Two Castles") {
-        return <BetweenTwoCastles />
-      } else if (this.props.name === "Between Two Cities") {
-        return <BetweenTwoCities />
-      } else if (this.props.name === "Charterstone") {
-        return <Charterstone />
-      } else if (this.props.name === "Euphoria") {
-        return <Euphoria />
-      } else if (this.props.name === "My Little Scythe") {
-        return <MyLittleScythe />
-      } else if (this.props.name === "Scythe") {
-        return <Scythe />
-      } else if (this.props.name === "Tapestry") {
-        return <Tapestry />
-      } else if (this.props.name === "Viticulture") {
-        return <Viticulture />
-      } else if (this.props.name === "Wingspan") {
-        return <Wingspan />
-      }
+const Board = (props) => {
+  if (props.name === "Between Two Castles") {
+    return <BetweenTwoCastles />
+  } else if (props.name === "Between Two Cities") {
+    return <BetweenTwoCities />
+  } else if (props.name === "Charterstone") {
+    return <Charterstone />
+  } else if (props.name === "Euphoria") {
+    return <Euphoria />
+  } else if (props.name === "My Little Scythe") {
+    return <MyLittleScythe />
+  } else if (props.name === "Scythe") {
+    return <Scythe />
+  } else if (props.name === "Tapestry") {
+    return <Tapestry />
+  } else if (props.name === "Viticulture") {
+    return <Viticulture />
+  } else if (props.name === "Wingspan") {
+    return <Wingspan />
   }
 }
 
