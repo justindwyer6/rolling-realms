@@ -427,22 +427,27 @@ footer {
   }
 }
 
-.printIcon {
-  // position: fixed;
-  // bottom: 10px;
-  // right: 10px;
-  // z-index: 2;
-  width: 25px;
-  height: 25px;
-  border: 2px solid black;
-  background: white;
-  box-shadow: 3px 3px rgba(168, 168, 168, 0.9);
-  border-radius: 100%;
-  padding: 8px;
-  cursor: pointer;
-  &:hover {
-    box-shadow: 6px 3px rgba(168, 168, 168, 0.9);
-    transform: scale(1.05);
+.printButton {
+  background: none;
+  border: none;
+  outline: none;
+  .printIcon {
+    // position: fixed;
+    // bottom: 10px;
+    // right: 10px;
+    // z-index: 2;
+    width: 25px;
+    height: 25px;
+    border: 2px solid black;
+    background: white;
+    box-shadow: 3px 3px rgba(168, 168, 168, 0.9);
+    border-radius: 100%;
+    padding: 8px;
+    cursor: pointer;
+    &:hover {
+      box-shadow: 6px 3px rgba(168, 168, 168, 0.9);
+      transform: scale(1.05);
+    }
   }
 }
 

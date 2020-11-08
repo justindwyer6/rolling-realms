@@ -177,7 +177,9 @@ class App extends React.Component {
 
         <div className="subheader">
           <button className="standardButton" onClick={this.randomizeMinigames} >Randomize</button>
-          <img className="printIcon" src="/assets/print.png" alt="print" onClick={() => window.print()} />
+          <button className="printButton" onClick={() => window.print()}>
+            <img className="printIcon" src="/assets/print.png" alt="print" />
+          </button>
         </div>
 
         <div className="MinigamesC">
