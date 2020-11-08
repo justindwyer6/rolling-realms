@@ -15,13 +15,13 @@
         transform: scale(1.1);
       }
       &.gainedGrape {
-        background-image: url("/assets/grape.png");
+        background-image: url("../assets/grape.png");
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain;
       }
       &.usedGrape {
-        background-image: url("/assets/crushed-grape.png");
+        background-image: url("../assets/crushed-grape.png");
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain;
