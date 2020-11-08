@@ -1,3 +1,34 @@
+
+.myLittleScytheC {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  .myLittleScythe {
+    width: 70%;
+    height: 100%;
+
+    img {
+      width: 30px;
+      height: 30px;
+      position: relative;
+      top: 10px;
+      &.die {
+        top: 1px;
+      }
+    }
+  }
+}
+
+button.hexagon {
+  background: none;
+  border: none;
+  padding: 0px;
+  margin: 0px;
+  outline: none;
+}
+
 .hexagon .die {
   cursor: pointer;
 }

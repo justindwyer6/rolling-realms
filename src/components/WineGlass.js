@@ -14,14 +14,14 @@ class WineGlass extends React.Component {
 
   render() {
     return (
-      <div className="wineGlassC" onClick={this.updateGlass}>
+      <button className="wineGlassC" onClick={this.updateGlass}>
         <img
           className="wineGlass"
           src={this.state.wineGlassFill}
           alt="Wine Glass"
         />
         <p className="wineGlassText">{10+this.props.i}</p>
-      </div>
+      </button>
     );
   }
 }

@@ -24,13 +24,14 @@ const Die = (props) => {
   }
 
   return (
-    <img
-      className={ dieClasses }
-      key={ `${props.i}die` }
-      src={ `/assets/Links/dice-six-faces-${props.i}.png` }
-      alt={ `${props.i}die` }
-      onClick={ updateDie }
-    />
+    <button className="dieButton" onClick={ updateDie }>
+      <img
+        className={ dieClasses }
+        key={ `${props.i}die` }
+        src={ `/assets/Links/dice-six-faces-${props.i}.png` }
+        alt={ `${props.i}die` }
+      />
+    </button>
   );
 }
 

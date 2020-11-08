@@ -69,12 +69,14 @@ class Round extends React.Component {
           <input type="number" name="roundTotal" />
           <img src="/assets/Links/star_victory.png" alt="star"/>
         </div>
-        <aside className={this.state.asideClasses} onClick={this.showRules}>
+        <button className="ruleButton" onClick={this.showRules}>
           <h4>
             Show Rules
           </h4>
-          <Rules />
-        </aside>
+          <aside className={this.state.asideClasses}>
+            <Rules />
+          </aside>
+        </button>
         <div className="rewards">
           {times(12, (i) => this.renderRewards(i, "pumpkin"))}
         </div>

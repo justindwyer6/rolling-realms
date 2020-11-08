@@ -286,32 +286,20 @@ input[type=number] {
   bottom: 5px;
   left: 15px;
 
-  .star {
-    max-height: 25px;
-    max-width: 25px;
-    margin: 0 auto;
-    cursor: pointer;
-    &:hover {
-      transform: scale(1.1);
-    }
-  }
-}
-
-.myLittleScytheC {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-
-  .myLittleScythe {
-    width: 70%;
-    height: 100%;
-
-    img {
-      width: 30px;
-      height: 30px;
-      position: relative;
-      top: 9px;
+  .starButton {
+    background: none;
+    border: none;
+    padding: 0px;
+    margin: 0px;
+    outline: none;
+    .star {
+      max-height: 25px;
+      max-width: 25px;
+      margin: 0 auto;
+      cursor: pointer;
+      &:hover {
+        transform: scale(1.1);
+      }
     }
   }
 }
@@ -335,6 +323,7 @@ p > span {
   border-radius: 5px;
   background: white;
   z-index: 2;
+  outline: none;
   cursor: pointer;
   &:hover {
     box-shadow: 3px 3px rgba(168, 168, 168, 0.9);

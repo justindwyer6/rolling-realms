@@ -122,6 +122,7 @@ class App extends React.Component {
 
     const shuffledMinigames = shuffle(allMinigames);
     const roundsCopy = { ...this.state.rounds };
+    // eslint-disable-next-line no-unused-vars
     Object.entries(roundsCopy).forEach(([key, value], i) => {
       value.minigame = shuffledMinigames[i];
     });
@@ -202,12 +203,12 @@ class App extends React.Component {
           })}
         </div>
 
-        <div id="fixedRules" className={this.state.footerClasses} onClick={this.showRules}>
+        <button id="fixedRules" className={this.state.footerClasses} onClick={this.showRules}>
           <h4>
           	Rules
           </h4>
           <Rules key="floatRules" />
-        </div>
+        </button>
 
         <button className="standardButton diceRoller" onClick={this.rollDice} >
           <img

@@ -103,11 +103,10 @@
     }
   }
 
-  aside {
+  .ruleButton {
     position: relative;
     display: flex;
     flex-direction: column;
-    padding: 20%;
     border: 2px solid black;
     border-radius: 100%;
     background: white;
@@ -115,19 +114,26 @@
     z-index: 2;
     text-align: center;
     margin: auto;
-    width: 50%;
+    outline: none;
     &:hover {
       cursor: pointer;
       box-shadow: 5px 3px rgba(168, 168, 168, 0.9);
       transform: scale(1.01);
     }
+    h4 {
+      font-weight: 400;
+      font-size:18px
+    }
+  }
+
+  aside {
+    position: absolute;
     & > .rules {
       display: none;
     }
     &.show > .rules {
       display: block;
-      position: absolute;
-      left: -123px;
+      position: relative;
       top: 0px;
       width: 175px;
       height: 250px;
@@ -138,10 +144,11 @@
       z-index: 3;
       text-align: left;
       overflow: scroll;
-    }
-    h4 {
-      font-weight: 400;
-      margin: auto;
+      &:hover {
+        cursor: pointer;
+        box-shadow: 5px 3px rgba(168, 168, 168, 0.9);
+        transform: scale(1.01);
+      }
     }
   }
 
@@ -150,22 +157,29 @@
     grid-template-columns: repeat(4, 1fr);
     align-items: center;
     justify-content: center;
-    img.reward {
-      width: 20px;
-      height: 20px;
-      border: 2px dotted black;
-      border-radius: 100%;
-      padding: 2px;
-      margin: auto;
-      cursor: pointer;
-      &:hover {
-        transform: scale(1.1);
-      }
-      &.gainedReward {
-        border: 2px solid black;
-      }
-      &.usedReward {
-        background: black;
+    button {
+      background: none;
+      border: none;
+      padding: 0px;
+      margin: 0px;
+      outline: none;
+      img.reward {
+        width: 20px;
+        height: 20px;
+        border: 2px dotted black;
+        border-radius: 100%;
+        padding: 2px;
+        margin: auto;
+        cursor: pointer;
+        &:hover {
+          transform: scale(1.1);
+        }
+        &.gainedReward {
+          border: 2px solid black;
+        }
+        &.usedReward {
+          background: black;
+        }
       }
     }
   }

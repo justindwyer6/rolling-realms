@@ -17,13 +17,14 @@ class Reward extends React.Component {
 
   render() {
     return (
-      <img
-        className={this.state.rewardClasses}
-        key={`${this.props.i}${this.props.reward}`}
-        src={`/assets/Links/${this.props.reward}.png`}
-        alt={`${this.props.reward}`}
-        onClick={this.updateReward}
-      />
+      <button onClick={this.updateReward}>
+        <img
+          className={this.state.rewardClasses}
+          key={`${this.props.i}${this.props.reward}`}
+          src={`/assets/Links/${this.props.reward}.png`}
+          alt={`${this.props.reward}`}
+        />
+      </button>
     );
   }
 }

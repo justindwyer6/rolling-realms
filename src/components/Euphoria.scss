@@ -7,13 +7,22 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    .die {
-      width: 30px;
-      padding: 5px;
-      border: 1px solid black;
-      cursor: pointer;
-      &:hover {
-        background: #eeeeee;
+    .dieButton {
+      background: none;
+      border: none;
+      padding: 0px;
+      margin: 0px;
+      outline: none;
+      height: 42px;
+      .die {
+        width: 30px;
+        padding: 5px;
+        border: 1px solid black;
+        font-family: inherit;
+        cursor: pointer;
+        &:hover {
+          background: #eeeeee;
+        }
       }
     }
   }
