@@ -1,6 +1,3 @@
-Need before shipping:
-
-
 Next up:
 - querystringparam sync
 - hooks
