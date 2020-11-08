@@ -16,7 +16,7 @@ class Minigame extends React.Component {
     const stars = [1,2,3,4,5,6];
     return (
       <>
-        <div className="Minigame">
+        <div className="Minigame" >
           <div className="content">
             <div className="minigameHeader">
               <div className="roundNumber">
@@ -39,6 +39,7 @@ class Minigame extends React.Component {
                   id={this.props.minigame+this.props.key}
                   defaultValue={this.props.minigame}
                   onChange={(event) => this.handleMinigameChange(event, this.props.index)}
+                  onBlur={(event) => this.handleMinigameChange(event, this.props.index)}
                 >
                   {/* <optgroup label="Missing:">
                   </optgroup>
