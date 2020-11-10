@@ -6,11 +6,17 @@ import Rules from './Rules';
 // import minigames from '../minigames';
 import defaultRounds from '../rounds';
 import { times } from "lodash";
-// const queryString = require('query-string');
+const queryString = require('query-string');
 
-// console.log(window.location.search);
-// const parsed = queryString.parse(window.location.search);
-// console.log(parsed);
+console.log(window.location.search);
+const parsed = queryString.parse(window.location.search);
+console.log(parsed);
+const queryStringSyncObject = {};
+Object.keys(parsed).map((key, i) => {
+  console.log(key + " : " + parsed[key]);
+  queryStringSyncObject[key] = {minigame: parsed[key], roundNumber: Math.ceil((i+1)/3)};
+});
+console.log(queryStringSyncObject)
 const App = () => {
   // state = {
   //   rounds: rounds,
