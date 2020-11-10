@@ -6,11 +6,11 @@ import Rules from './Rules';
 // import minigames from '../minigames';
 import defaultRounds from '../rounds';
 import { times } from "lodash";
-const queryString = require('query-string');
+// const queryString = require('query-string');
 
-console.log(window.location.search);
-const parsed = queryString.parse(window.location.search);
-console.log(parsed);
+// console.log(window.location.search);
+// const parsed = queryString.parse(window.location.search);
+// console.log(parsed);
 const App = () => {
   // state = {
   //   rounds: rounds,
