@@ -24,11 +24,7 @@ const App = () => {
   const [die2, setDie2] = useState(6);
 
   useEffect(() => {
-    const images = ["grape", "crushed-grape", "full-wine-glass", "empty-wine-glass"];
-    images.forEach(image => {
-      const img = new Image();
-      img.src = `/assets/${image}.png`;
-    });
+
   });
 
   const rollDice = () => {
