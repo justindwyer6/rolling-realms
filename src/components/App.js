@@ -1,63 +1,35 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.scss';
 import Minigame from './Minigame';
 import Round from './Round';
 import Rules from './Rules';
-// import minigames from '../minigames';
 import defaultRounds from '../rounds';
 import { times } from "lodash";
-const queryString = require('query-string');
+// const queryString = require('query-string');
 
-console.log(window.location.search);
-const parsed = queryString.parse(window.location.search);
-console.log(parsed);
-const queryStringSyncObject = {};
-Object.keys(parsed).map((key, i) => {
-  console.log(key + " : " + parsed[key]);
-  queryStringSyncObject[key] = {minigame: parsed[key], roundNumber: Math.ceil((i+1)/3)};
-});
-console.log(queryStringSyncObject)
+// console.log(window.location.search);
+// const parsed = queryString.parse(window.location.search);
+// console.log(parsed);
+// const queryStringSyncObject = {};
+// // Consider for...in loop
+// Object.keys(parsed).map((key, i) => {
+//   console.log(key + " : " + parsed[key]);
+//   queryStringSyncObject[key] = {minigame: parsed[key], roundNumber: Math.ceil((i+1)/3)};
+// });
+// console.log(queryStringSyncObject)
 const App = () => {
-  // state = {
-  //   rounds: rounds,
-  //   missingMinigames: [],
-  //   footerClasses: "",
-  //   die1: 1,
-  //   die2: 6
-  // };
   const [rounds, setRounds] = useState({ ...defaultRounds });
-  // const [missingMinigames, setMissingMinigames] = useState([]);
   const [footerClasses, setFooterClasses] = useState("");
   const [die1, setDie1] = useState(1);
   const [die2, setDie2] = useState(6);
 
-  // componentDidMount() {
-  //   const images = ["grape", "crushed-grape", "full-wine-glass", "empty-wine-glass"];
-  //   images.forEach(image => {
-  //     const img = new Image();
-  //     img.src = `/assets/${image}.png`;
-  //   });
-  // }
-
-  // componentDidUpdate() {
-  //   Object.keys(this.state.rounds).forEach((key, i) => {
-  //     const allMinigames = [
-  //       "Scythe",
-  //       "Between Two Cities",
-  //       "Charterstone",
-  //       "Between Two Castles",
-  //       "Viticulture",
-  //       "Euphoria",
-  //       "My Little Scythe",
-  //       "Tapestry",
-  //       "Wingspan"
-  //     ];
-  //     const missingMinigames = allMinigames.filter(
-  //       function(value, index, array) {this.state.rounds[key].minigame === value}
-  //     );
-  //     this.setState([ ...missingMinigames ]);
-  //   }
-  // }
+  useEffect(() => {
+    const images = ["grape", "crushed-grape", "full-wine-glass", "empty-wine-glass"];
+    images.forEach(image => {
+      const img = new Image();
+      img.src = `/assets/${image}.png`;
+    });
+  });
 
   const rollDice = () => {
     times(6, (i) => {
@@ -75,37 +47,6 @@ const App = () => {
       setDie2(die2);
     }, 350);
   }
-
-  // reorderGames = (roundNumber, minigame) => {
-  //   const unordered = { ...this.state.minigames };
-  //   const rounds = {};
-
-  //   unordered[minigame.name.replace(/\s+/g, '')].roundNumber = roundNumber;
-
-  //   function sortByRoundNumber(a, b) {
-  //     for (const item in unordered) {
-  //       if (item.name === minigame.name) {
-  //         item.roundNumber = roundNumber;
-  //       }
-  //     }
-  //     const result = unordered[a].roundNumber > unordered[b].roundNumber ? 1 : -1;
-  //     return result;
-  //   }
-
-  //   Object.keys(unordered).sort(sortByRoundNumber).forEach(key => {
-  //     rounds[key] = unordered[key];
-  //   });
-  //   this.setState({ minigames: rounds });
-  // }
-
-  // reorderRounds = (roundNumber, minigame) => {
-  //   // const currentRoundOrder =  { ...this.state.rounds };
-  //   const newRoundOrder = {};
-
-  //   if (minigame)
-
-  //   this.setState({ rounds: newRoundOrder })
-  // }
 
   const updateMinigame = (minigame, round) => {
     const updatingRoundOrder = { ...rounds };
