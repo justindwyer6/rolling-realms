@@ -50,7 +50,7 @@ const App = () => {
 
   const updateMinigame = (minigame, round) => {
     const updatingRoundOrder = { ...rounds };
-    updatingRoundOrder[round].minigame = minigame;
+    updatingRoundOrder[round] = minigame;
     setRounds({ ...updatingRoundOrder });
   }
 
@@ -86,22 +86,10 @@ const App = () => {
     const roundsCopy = { ...rounds };
     // eslint-disable-next-line no-unused-vars
     Object.entries(roundsCopy).forEach(([key, value], i) => {
-      value.minigame = shuffledMinigames[i];
+      value = shuffledMinigames[i];
     });
     setRounds({ ...roundsCopy});
   }
-
-  // randomizeRounds = () => {
-  //   const minigames = { ...this.state.minigames };
-  //   let roundsToAssign = [1, 1, 1, 2, 2, 2, 3, 3, 3];
-  //   Object.keys(minigames).forEach((key) => {
-  //     const minigame = minigames[key];
-  //     const arrayRoundAssigned = Math.floor(Math.random()*roundsToAssign.length);
-  //     const roundNumberAssigned = roundsToAssign[arrayRoundAssigned];
-  //     roundsToAssign.splice(arrayRoundAssigned, 1);
-  //     this.reorderGames(roundNumberAssigned, minigame);
-  //   });
-  // }
 
   const showRules = () => {
     footerClasses.includes("show") ? setFooterClasses("") : setFooterClasses(" show");
@@ -147,14 +135,12 @@ const App = () => {
           return (
             <>
               <Minigame
-                key={rounds[key].minigame}
+                key={rounds[key]}
                 index={key}
                 i={i}
-                minigame={rounds[key].minigame}
-                roundNumber={rounds[key].roundNumber}
-                // reorderRounds={this.reorderRounds}
+                minigame={rounds[key]}
+                roundNumber={key[0]}
                 updateMinigame={updateMinigame}
-                // missingMinigames={missingMinigames}
               />
               {renderRoundTracker(key, rounds[key].roundNumber)}
             </>

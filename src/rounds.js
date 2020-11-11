@@ -1,40 +1,13 @@
 const rounds = {
-  "1a": {
-    minigame: "Scythe",
-    roundNumber: 1
-  },
-  "1b": {
-    minigame: "Between Two Cities",
-    roundNumber: 1
-  },
-  "1c": {
-    minigame: "Charterstone",
-    roundNumber: 1
-  },
-  "2a": {
-    minigame: "Between Two Castles",
-    roundNumber: 2
-  },
-  "2b": {
-    minigame: "Viticulture",
-    roundNumber: 2
-  },
-  "2c": {
-    minigame: "Euphoria",
-    roundNumber: 2
-  },
-  "3a": {
-    minigame: "My Little Scythe",
-    roundNumber: 3
-  },
-  "3b": {
-    minigame: "Tapestry",
-    roundNumber: 3
-  },
-  "3c": {
-    minigame: "Wingspan",
-    roundNumber: 3
-  }
+  "1a": "Scythe",
+  "1b": "Between Two Cities",
+  "1c": "Charterstone",
+  "2a": "Between Two Castles",
+  "2b": "Viticulture",
+  "2c": "Euphoria",
+  "3a": "My Little Scythe",
+  "3b": "Tapestry",
+  "3c": "Wingspan",
 }
 
 export default rounds

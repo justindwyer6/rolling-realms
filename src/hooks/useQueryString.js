@@ -1,17 +1,15 @@
-import { useState, useCallback } from "react";
+import { useState, useEffect } from "react";
 import { getQueryStringValue, setQueryStringValue } from "../functions/queryString";
 
 function useQueryString(key, initialValue) {
   const [value, setValue] = useState(getQueryStringValue(key) || initialValue);
-  const onSetValue = useCallback(
-    (newValue) => {
-      setValue(newValue);
+  useEffect((newValue) => {
       setQueryStringValue(key, newValue);
     },
-    [key]
+    [value]
   );
 
-  return [value, onSetValue];
+  return setValue;
 }
 
 export default useQueryString;
