@@ -5,26 +5,23 @@ import Round from './Round';
 import Rules from './Rules';
 import defaultRounds from '../rounds';
 import { times } from "lodash";
-// const queryString = require('query-string');
+const qs = require('query-string');
 
-// console.log(window.location.search);
-// const parsed = queryString.parse(window.location.search);
-// console.log(parsed);
-// const queryStringSyncObject = {};
-// // Consider for...in loop
-// Object.keys(parsed).map((key, i) => {
-//   console.log(key + " : " + parsed[key]);
-//   queryStringSyncObject[key] = {minigame: parsed[key], roundNumber: Math.ceil((i+1)/3)};
-// });
-// console.log(queryStringSyncObject)
 const App = () => {
-  const [rounds, setRounds] = useState({ ...defaultRounds });
+  const [rounds, setRounds] = useState(defaultRounds);
   const [footerClasses, setFooterClasses] = useState("");
   const [die1, setDie1] = useState(1);
   const [die2, setDie2] = useState(6);
 
   useEffect(() => {
-
+    // const parsedQueryString = qs.parse(window.location.search);
+    // const queryStringSyncObject = {};
+    // for (const round in parsedQueryString) {
+    //   queryStringSyncObject[round] = parsedQueryString[round];
+    // }
+    // setRounds({ ...queryStringSyncObject })
+    // window.location.search = qs.stringify({...rounds});
+    console.log(rounds)
   });
 
   const rollDice = () => {
@@ -91,9 +88,9 @@ const App = () => {
     footerClasses.includes("show") ? setFooterClasses("") : setFooterClasses(" show");
   }
 
-  const renderRoundTracker = (key, i) => {
+  const renderRoundTracker = (key) => {
     if (key === "1c" || key === "2c" || key === "3c") {
-      return <Round key={i} round={i-1} />
+      return <Round key={key[0]} round={key[0]-1} />
     }
   }
 
@@ -138,7 +135,7 @@ const App = () => {
                 roundNumber={key[0]}
                 updateMinigame={updateMinigame}
               />
-              {renderRoundTracker(key, rounds[key].roundNumber)}
+              {renderRoundTracker(key)}
             </>
           );
         })}
