@@ -18,10 +18,12 @@ const App = () => {
   useEffect(() => {
     const parsedQueryString = qs.parse(window.location.search);
     Object.keys(parsedQueryString).forEach((key) => {
+      if (Object.keys(parsedQueryString).length !== 9 || !["1a", "1b", "1c", "2a", "2b", "2c", "3a", "3b", "3c"].includes(key)) {
+        return;
+      }
       if (parsedQueryString[key] !== rounds[key]) {
         console.log("setROUNDSSTATE");
         setRounds({ ...parsedQueryString });
-        return;
       }
     });
   }, []);
