@@ -5,17 +5,11 @@ export const setQueryStringWithoutPageReload = (queryStringValue) => {
                  window.location.host +
                  window.location.pathname +
                  queryStringValue;
-
-  window.history.pushState({ path: newurl }, "", newurl);
+  window.history.replaceState(newurl, "", newurl);
 };
 
-export const setQueryStringValue = (
-  key,
-  value,
-  initialQueryStringValue = window.location.search
-) => {
-   const values = qs.parse(initialQueryStringValue);
-   const newQueryStringValue = qs.stringify({ ...values, [key]: value });
+export const setQueryStringValue = (key) => {
+   const newQueryStringValue = qs.stringify(key);
    setQueryStringWithoutPageReload(`?${newQueryStringValue}`);
 };
 

@@ -5,6 +5,7 @@ import Round from './Round';
 import Rules from './Rules';
 import defaultRounds from '../rounds';
 import { times } from "lodash";
+import {setQueryStringValue} from "../functions/queryString"
 const qs = require('query-string');
 
 const App = () => {
@@ -13,16 +14,23 @@ const App = () => {
   const [die1, setDie1] = useState(1);
   const [die2, setDie2] = useState(6);
 
+  // Update rounds state to match query string
   useEffect(() => {
-    // const parsedQueryString = qs.parse(window.location.search);
-    // const queryStringSyncObject = {};
-    // for (const round in parsedQueryString) {
-    //   queryStringSyncObject[round] = parsedQueryString[round];
-    // }
-    // setRounds({ ...queryStringSyncObject })
-    // window.location.search = qs.stringify({...rounds});
-    console.log(rounds)
-  });
+    const parsedQueryString = qs.parse(window.location.search);
+    Object.keys(parsedQueryString).forEach((key) => {
+      if (parsedQueryString[key] !== rounds[key]) {
+        console.log("setROUNDSSTATE");
+        setRounds({ ...parsedQueryString });
+        return;
+      }
+    });
+  }, []);
+
+  // Updare query string to match rounds state
+  useEffect(() => {
+    console.log("setQUERYSTRING");
+    setQueryStringValue(rounds);
+  }, [rounds]);
 
   const rollDice = () => {
     times(6, (i) => {
@@ -77,11 +85,13 @@ const App = () => {
 
     const shuffledMinigames = shuffle(allMinigames);
     const roundsCopy = { ...rounds };
+    console.log(roundsCopy)
     // eslint-disable-next-line no-unused-vars
     Object.entries(roundsCopy).forEach(([key, value], i) => {
-      value = shuffledMinigames[i];
+      console.log(key, value, i, shuffledMinigames[i]);
+      roundsCopy[key] = shuffledMinigames[i];
     });
-    setRounds({ ...roundsCopy});
+    setRounds({ ...roundsCopy });
   }
 
   const showRules = () => {
