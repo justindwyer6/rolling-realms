@@ -1,6 +1,5 @@
 Next up:
-- querystringparam sync
-- hooks
+- clean up assets folders
 
 To do:
 - fix safari minigame title alignment styling
