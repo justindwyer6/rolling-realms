@@ -18,7 +18,11 @@ const App = () => {
   useEffect(() => {
     const parsedQueryString = qs.parse(window.location.search);
     Object.keys(parsedQueryString).forEach((key) => {
-      if (Object.keys(parsedQueryString).length !== 9 || !["1a", "1b", "1c", "2a", "2b", "2c", "3a", "3b", "3c"].includes(key)) {
+      if (
+        Object.keys(parsedQueryString).length !== 9
+        || !["1a", "1b", "1c", "2a", "2b", "2c", "3a", "3b", "3c"].includes(key)
+        || !["Scythe", "Between Two Cities", "Charterstone", "Between Two Castles", "Viticulture", "Euphoria", "My Little Scythe", "Tapestry", "Wingspan"].includes(parsedQueryString[key])
+      ) {
         return;
       }
       if (parsedQueryString[key] !== rounds[key]) {
