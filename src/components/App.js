@@ -26,7 +26,6 @@ const App = () => {
         return;
       }
       if (parsedQueryString[key] !== rounds[key]) {
-        console.log("setROUNDSSTATE");
         setRounds({ ...parsedQueryString });
       }
     });
@@ -34,7 +33,6 @@ const App = () => {
 
   // Updare query string to match rounds state
   useEffect(() => {
-    console.log("setQUERYSTRING");
     setQueryStringValue(rounds);
   }, [rounds]);
 
@@ -91,10 +89,8 @@ const App = () => {
 
     const shuffledMinigames = shuffle(allMinigames);
     const roundsCopy = { ...rounds };
-    console.log(roundsCopy)
     // eslint-disable-next-line no-unused-vars
     Object.entries(roundsCopy).forEach(([key, value], i) => {
-      console.log(key, value, i, shuffledMinigames[i]);
       roundsCopy[key] = shuffledMinigames[i];
     });
     setRounds({ ...roundsCopy });
