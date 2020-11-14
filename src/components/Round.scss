@@ -59,6 +59,9 @@
       box-shadow: 6px 3px rgba(168, 168, 168, 0.9);
       transform: scale(1.01);
     }
+    &:active {
+      transform: scale(0.95);
+    }
 
     .rolledDie {
       width: 30px;

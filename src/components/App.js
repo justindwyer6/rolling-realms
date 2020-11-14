@@ -11,6 +11,7 @@ const qs = require('query-string');
 const App = () => {
   const [rounds, setRounds] = useState(defaultRounds);
   const [footerClasses, setFooterClasses] = useState("");
+  const [copyLinkButtonClasses, setCopyLinkButtonClasses] = useState("circleButton shareIcon");
   const [die1, setDie1] = useState(1);
   const [die2, setDie2] = useState(6);
 
@@ -106,6 +107,17 @@ const App = () => {
     }
   }
 
+  const copyLink = () => {
+    navigator.clipboard.writeText(window.location)
+      .then(() => {
+        setCopyLinkButtonClasses("circleButton checkIcon");
+        setTimeout(() => {setCopyLinkButtonClasses("circleButton shareIcon")}, 3000);
+      }, () => {
+        setCopyLinkButtonClasses("circleButton exIcon");
+        setTimeout(() => {setCopyLinkButtonClasses("circleButton shareIcon")}, 6000);
+      })
+  }
+
   return (
     <>
       <div className="header">
@@ -129,10 +141,11 @@ const App = () => {
       </div>
 
       <div className="subheader">
-        <button className="standardButton" onClick={randomizeMinigames}>Randomize</button>
-        <button className="printButton" onClick={() => window.print()}>
-          <img className="printIcon" src="/assets/print.png" alt="print" />
-        </button>
+        <div className="roundSelectionButtons">
+          <button className="standardButton" onClick={randomizeMinigames}>Randomize</button>
+          <button className={copyLinkButtonClasses} onClick={copyLink}></button>
+        </div>
+        <button className="circleButton printIcon" onClick={() => window.print()}></button>
       </div>
 
       <div className="MinigamesC">

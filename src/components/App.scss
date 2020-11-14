@@ -115,6 +115,12 @@ body {
   }
 }
 
+.roundSelectionButtons {
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 1vw;
+}
+
 .standardButton {
   font-size: 16px;
   border: 2px solid black;
@@ -127,6 +133,9 @@ body {
   &:hover {
     box-shadow: 6px 3px rgba(168, 168, 168, 0.9);
     transform: scale(1.01);
+  }
+  &:active {
+    transform: scale(0.95);
   }
 
   &.diceRoller {
@@ -322,9 +331,18 @@ p > span {
   border: 2px solid black;
   border-radius: 5px;
   background: white;
-  z-index: 2;
   outline: none;
+  box-shadow: 3px 3px rgba(168, 168, 168, 0.9);
+  z-index: 2;
   cursor: pointer;
+  &:hover {
+    box-shadow: 6px 3px rgba(168, 168, 168, 0.9);
+    transform: scale(1.05);
+  }
+  &:active {
+    transform: scale(0.95);
+  }
+
   &:hover {
     box-shadow: 3px 3px rgba(168, 168, 168, 0.9);
   }
@@ -397,46 +415,57 @@ footer {
   }
 }
 
-#fixedRules {
-  position: fixed;
-  bottom: 10px;
-  left: 10px;
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
-  border-radius: 5px;
+.circleButton {
+  border: none;
+  outline: none;
   border: 2px solid black;
-  background: white;
   box-shadow: 3px 3px rgba(168, 168, 168, 0.9);
-  z-index: 2;
+  border-radius: 100%;
+  width: 38px;
+  height: 38px;
+  padding: 8px;
   cursor: pointer;
+  background: white;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 70%;
+  text-rendering: none;
+  &.shareIcon {
+    background-image: url("../assets/share.png");
+  }
+  &.checkIcon {
+    background-image: url("../assets/check.png");
+    border-color: rgb(90, 170, 80);
+    &:after {
+      content: "Link to share copied!";
+      position: relative;
+      left: 36px;
+      white-space: nowrap;
+      color: rgb(90, 170, 80);
+      font-size: 16px;
+    }
+  }
+  &.exIcon {
+    background-image: url("../assets/ex.png");
+    border-color: rgb(220, 70, 95);
+    &:after {
+      content: "Copy the link in the URL bar to share.";
+      position: relative;
+      left: 36px;
+      white-space: nowrap;
+      color: rgb(220, 70, 95);
+      font-size: 16px;
+    }
+  }
+  &.printIcon {
+    background-image: url("../assets/print.png");
+  }
   &:hover {
     box-shadow: 6px 3px rgba(168, 168, 168, 0.9);
     transform: scale(1.05);
   }
-}
-
-.printButton {
-  background: none;
-  border: none;
-  outline: none;
-  .printIcon {
-    // position: fixed;
-    // bottom: 10px;
-    // right: 10px;
-    // z-index: 2;
-    width: 25px;
-    height: 25px;
-    border: 2px solid black;
-    background: white;
-    box-shadow: 3px 3px rgba(168, 168, 168, 0.9);
-    border-radius: 100%;
-    padding: 8px;
-    cursor: pointer;
-    &:hover {
-      box-shadow: 6px 3px rgba(168, 168, 168, 0.9);
-      transform: scale(1.05);
-    }
+  &:active {
+    transform: scale(0.95);
   }
 }
 
