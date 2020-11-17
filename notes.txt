@@ -1,7 +1,7 @@
 Next up:
-- clean up assets folders
+- fix safari minigame title alignment styling
+- Build CSS framework from the ground up
 
 To do:
-- fix safari minigame title alignment styling
 - add a "missing" category to minigame dropdown
-- make round number clicking work again
+- make round number clicking do something
