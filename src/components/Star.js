@@ -2,13 +2,13 @@ import React from 'react';
 
 class Star extends React.Component {
   state = {
-    src: "/assets/Links/outline_star.png"
+    src: "/images/star-outline.png"
   };
 
   updateStar = () => {
-    this.state.src === "/assets/Links/outline_star.png"
-      ? this.setState({src: "/assets/Links/star_victory.png"})
-      : this.setState({src: "/assets/Links/outline_star.png"});
+    this.state.src === "/images/star-outline.png"
+      ? this.setState({src: "/images/star.png"})
+      : this.setState({src: "/images/star-outline.png"});
   }
 
   render() {

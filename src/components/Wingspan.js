@@ -4,7 +4,7 @@ import { times } from "lodash";
 
 class Wingspan extends React.Component {
 
-  rewards = ["pumpkin", "coin", "star_victory", "coin", "heart", "star_victory", "heart", "pumpkin", "star_victory"];
+  rewards = ["pumpkin", "coin", "star", "coin", "heart", "star", "heart", "pumpkin", "star"];
 
   renderBirds(i) {
     return (
@@ -18,7 +18,7 @@ class Wingspan extends React.Component {
               <input type="number" className="cell" />
             </div>
           ))}
-          {times(3, (j) => <img key={j} src={`/assets/Links/${this.rewards[j+i+(2*i)]}.png`} alt={this.rewards[j+i]} className="reward" /> )}
+          {times(3, (j) => <img key={j} src={`/images/${this.rewards[j+i+(2*i)]}.png`} alt={this.rewards[j+i]} className="reward" /> )}
         </div>
       </div>
     );

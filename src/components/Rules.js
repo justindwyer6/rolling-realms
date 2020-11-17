@@ -7,22 +7,22 @@ class Rules extends React.Component {
       <div className="rules">
         <p>Pay:</p>
         <p>
-          • 2<img className="inline-image" src="/assets/Links/pumpkin.png" alt="pumpkin"/>: adjust a die +/- 1
+          • 2<img className="inline-image" src="/images/pumpkin.png" alt="pumpkin"/>: adjust a die +/- 1
         </p>
         <p>
-          • 3<img className="inline-image" src="/assets/Links/pumpkin.png" alt="pumpkin"/>: adjust a die +/-1; you may use it in a realm you’ve already used this turn
+          • 3<img className="inline-image" src="/images/pumpkin.png" alt="pumpkin"/>: adjust a die +/-1; you may use it in a realm you’ve already used this turn
         </p>
         <p>
-          • 2<img className="inline-image" src="/assets/Links/heart.png" alt="heart"/>: reuse a die if the non-adjusted dice show a pair
+          • 2<img className="inline-image" src="/images/heart.png" alt="heart"/>: reuse a die if the non-adjusted dice show a pair
         </p>
         <p>
-          • 3<img className="inline-image" src="/assets/Links/heart.png" alt="heart"/>: reuse a die
+          • 3<img className="inline-image" src="/images/heart.png" alt="heart"/>: reuse a die
         </p>
         <p>
-          • 2<img className="inline-image" src="/assets/Links/coin.png" alt="coin"/>: reuse a die if the non-adjusted dice sum is 7
+          • 2<img className="inline-image" src="/images/coin.png" alt="coin"/>: reuse a die if the non-adjusted dice sum is 7
         </p>
         <p>
-          • X<img className="inline-image" src="/assets/Links/coin.png" alt="coin"/>: gain a die of value X (1-6)
+          • X<img className="inline-image" src="/images/coin.png" alt="coin"/>: gain a die of value X (1-6)
         </p>
         <hr/>
         <p>

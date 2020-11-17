@@ -18,36 +18,36 @@ const BetweenTwoCastles = () => {
         <div className="castle castle1">
           <div className="no-border"></div>
           <div className="rewards no-border">
-            <img src="/assets/Links/pumpkin.png" alt="pumpkin" className="reward"/>
-            <img src="/assets/Links/pumpkin.png" alt="pumpkin" className="reward overlay"/>
+            <img src="/images/pumpkin.png" alt="pumpkin" className="reward"/>
+            <img src="/images/pumpkin.png" alt="pumpkin" className="reward overlay"/>
           </div>
           <div className="no-border"></div>
           <div className="no-border"></div>
           {renderInput()}
           <div className="rewards no-border">
-            <img src="/assets/Links/heart.png" alt="reward" className="reward"/>
-            <img src="/assets/Links/heart.png" alt="reward" className="reward overlay"/>
+            <img src="/images/heart.png" alt="reward" className="reward"/>
+            <img src="/images/heart.png" alt="reward" className="reward overlay"/>
           </div>
           <div className="rewards no-border">
-            <img src="/assets/Links/pumpkin.png" alt="reward" className="reward"/>
+            <img src="/images/pumpkin.png" alt="reward" className="reward"/>
           </div>
           {renderInput()}
           {renderInput()}
           {renderInput()}
           <div className="door">
-            <img src="/assets/Links/wooden-door.png" alt="door"/>
+            <img src="/images/wooden-door.png" alt="door"/>
           </div>
           {renderInput()}
         </div>
 
         <div className="castle castle2">
           <div className="rewards no-border">
-            <img src="/assets/Links/coin.png" alt="reward" className="reward"/>
-            <img src="/assets/Links/heart.png" alt="reward" className="reward overlay"/>
+            <img src="/images/coin.png" alt="reward" className="reward"/>
+            <img src="/images/heart.png" alt="reward" className="reward overlay"/>
           </div>
           <div className="rewards no-border">
-            <img src="/assets/Links/coin.png" alt="reward" className="reward"/>
-            <img src="/assets/Links/coin.png" alt="reward" className="reward overlay"/>
+            <img src="/images/coin.png" alt="reward" className="reward"/>
+            <img src="/images/coin.png" alt="reward" className="reward overlay"/>
           </div>
           {renderInput()}
           {renderInput()}
@@ -55,7 +55,7 @@ const BetweenTwoCastles = () => {
           {renderInput()}
           {renderInput()}
           <div className="door">
-            <img src="/assets/Links/doorway.png" alt="door"/>
+            <img src="/images/stone-door.png" alt="door"/>
           </div>
         </div>
       </div>

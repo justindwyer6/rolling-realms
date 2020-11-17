@@ -43,16 +43,16 @@ class Tapestry extends React.Component {
               ? this.renderSubgrid(i)
               : [
                 this.renderSubgrid(i),
-                <img key={"star"+i} className="star" src="/assets/Links/star_victory.png" alt="star"/>
+                <img key={"star"+i} className="star" src="/images/star.png" alt="star"/>
               ]
             )}
             {times(3, i =>
-              <img key={"star"+i} className="star" src="/assets/Links/star_victory.png" alt="star"/>
+              <img key={"star"+i} className="star" src="/images/star.png" alt="star"/>
             )}
           </div>
-          <img className="guide" src="/assets/Links/tapestry-shapes.jpg" alt="guide"/>
+          <img className="guide" src="/images/tapestry-shapes.jpg" alt="guide"/>
         </div>
-        <p>Score 1<img className="inline-image" src="/assets/Links/star_victory.png" alt="star"/> per completed BIG (2x6) row/column (6 total).</p>
+        <p>Score 1<img className="inline-image" src="/images/star.png" alt="star"/> per completed BIG (2x6) row/column (6 total).</p>
       </>
     );
   }

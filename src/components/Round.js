@@ -53,12 +53,12 @@ class Round extends React.Component {
         <button className="standardButton" onClick={this.rollDice} >
           <img
             className="rolledDie"
-            src={`/assets/Links/dice-six-faces-${this.state.die1}.png`}
+            src={`/images/d6-${this.state.die1}.png`}
             alt={`Rolled Die`}
           />
           <img
             className="rolledDie"
-            src={`/assets/Links/dice-six-faces-${this.state.die2}.png`}
+            src={`/images/d6-${this.state.die2}.png`}
             alt={`Rolled Die`}
           />
         </button>
@@ -67,7 +67,7 @@ class Round extends React.Component {
             ROUND {this.props.round + 1}:
           </p>
           <input type="number" name="roundTotal" />
-          <img src="/assets/Links/star_victory.png" alt="star"/>
+          <img src="/images/star.png" alt="star"/>
         </div>
         <button className="ruleButton" onClick={this.showRules}>
           <h4>

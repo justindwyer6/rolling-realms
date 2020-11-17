@@ -6,9 +6,9 @@ class WineGlass extends React.Component {
 
   updateGlass = () => {
     let wineGlassFill = this.state.wineGlassFill;
-    wineGlassFill === "/assets/empty-wine-glass.png"
-      ? wineGlassFill = "/assets/full-wine-glass.png"
-      : wineGlassFill = "/assets/empty-wine-glass.png";
+    wineGlassFill === "/images/empty-wine-glass.png"
+      ? wineGlassFill = "/images/full-wine-glass.png"
+      : wineGlassFill = "/images/empty-wine-glass.png";
     this.setState({ wineGlassFill });
   }
 

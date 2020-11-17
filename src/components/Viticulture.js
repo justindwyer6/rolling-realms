@@ -19,17 +19,17 @@ class Viticulture extends React.Component {
 
   renderRewards(i) {
     return (
-      <img className="reward" key={this.rewards[i]+i} src={`/assets/Links/${this.rewards[i]}.png`} alt={this.rewards[i]}/>
+      <img className="reward" key={this.rewards[i]+i} src={`/images/${this.rewards[i]}.png`} alt={this.rewards[i]}/>
     );
   }
 
   renderWineOrders(i) {
     return(
       <div className="wineOrder" key={i}>
-        <WineGlass key={i} wineGlassFill="/assets/empty-wine-glass.png" i={i} />
+        <WineGlass key={i} wineGlassFill="/images/empty-wine-glass.png" i={i} />
         <div className="stars">
-          <img src="/assets/Links/star_victory.png" alt="star"/>
-          <img src="/assets/Links/star_victory.png" alt="star"/>
+          <img src="/images/star.png" alt="star"/>
+          <img src="/images/star.png" alt="star"/>
         </div>
       </div>
     );

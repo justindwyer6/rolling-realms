@@ -25,7 +25,7 @@ class MyLittleScythe extends React.Component {
               </li>
               <li>
                 <div className="hexagon">
-                  <img src="/assets/Links/pumpkin.png" alt="pumpkin" className="reward"/>
+                  <img src="/images/pumpkin.png" alt="pumpkin" className="reward"/>
                 </div>
               </li>
               <li>
@@ -58,7 +58,7 @@ class MyLittleScythe extends React.Component {
               </li>
               <li>
                 <div className="hexagon">
-                  <img src="/assets/Links/heart.png" alt="heart" className="reward"/>
+                  <img src="/images/heart.png" alt="heart" className="reward"/>
                 </div>
               </li>
               <li>
@@ -77,7 +77,7 @@ class MyLittleScythe extends React.Component {
           </div>
         </div>
         <p>
-          Gain 1<img className="inline-image" src="/assets/Links/star_victory.png" alt="star"/> (a) if you’ve earned total of 7<img className="inline-image" src="/assets/Links/pumpkin.png" alt="pumpkin"/>, (b) if you’ve earned a total of 7<img className="inline-image" src="/assets/Links/heart.png" alt="heart"/>, and (c) per pair of matching #s between the areas.
+          Gain 1<img className="inline-image" src="/images/star.png" alt="star"/> (a) if you’ve earned total of 7<img className="inline-image" src="/images/pumpkin.png" alt="pumpkin"/>, (b) if you’ve earned a total of 7<img className="inline-image" src="/images/heart.png" alt="heart"/>, and (c) per pair of matching #s between the areas.
         </p>
       </>
     );

@@ -19,7 +19,7 @@ const Charterstone = () => {
 
   const renderRewards = (i, rewards) => {
     return (
-      <img className="topReward" key={rewards[i]+i} src={`/assets/Links/${rewards[i]}.png`} alt={rewards[i]} />
+      <img className="topReward" key={rewards[i]+i} src={`/images/${rewards[i]}.png`} alt={rewards[i]} />
     );
   }
 
@@ -29,14 +29,14 @@ const Charterstone = () => {
       <div className="charterstoneC">
         {times(6, (i) => renderDie(i))}
         {times(6, (i) => renderRewards(i, rewards))}
-        {times(6, (i) => <img src='/assets/Links/Left_Arrow_Red.png' alt="arrow" key={i} />)}
+        {times(6, (i) => <img src="/images/red-arrow.png" alt="arrow" key={i} />)}
         {times(6, (i) => (
           <div key={i}>
             <input type="number" min="1" max="6" />
-            <img src='/assets/Links/Charterstone_Icon_CrateOpen.png' alt="crate" />
+            <img src="/images/open-crate.png" alt="crate" />
           </div>
         ))}
-        {times(6, (i) => <img src='/assets/Links/Left_Arrow_Red.png' alt="arrow" key={i} />)}
+        {times(6, (i) => <img src="/images/red-arrow.png" alt="arrow" key={i} />)}
       </div>
     </>
   );

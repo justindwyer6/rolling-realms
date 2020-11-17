@@ -18,7 +18,7 @@
   $hexMargin:   0.5em;      // (px,pt,r/em,vw/h)
   $hexShape:    hexagon;    // 'hexagon','circle'
   $hexColor:    #48a999;    // hexcode,rgb/a,named
-  $images:      './dice-six-faces-1.png';
+  $images:      './d6-1.png';
 //--- MIXINS ---------------------------------//
   @include hexWrapper($gridWidth,$gridHeight,
     $gridOrient,$rowCount,$columnCount);

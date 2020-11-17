@@ -431,10 +431,10 @@ footer {
   background-size: 70%;
   text-rendering: none;
   &.shareIcon {
-    background-image: url("../assets/share.png");
+    background-image: url("../images/share.png");
   }
   &.checkIcon {
-    background-image: url("../assets/check.png");
+    background-image: url("../images/checkmark.png");
     border-color: rgb(90, 170, 80);
     &:after {
       content: "Link to share copied!";
@@ -446,7 +446,7 @@ footer {
     }
   }
   &.exIcon {
-    background-image: url("../assets/ex.png");
+    background-image: url("../images/x-mark.png");
     border-color: rgb(220, 70, 95);
     &:after {
       content: "Copy the link in the URL bar to share.";
@@ -458,7 +458,7 @@ footer {
     }
   }
   &.printIcon {
-    background-image: url("../assets/print.png");
+    background-image: url("../images/print.png");
   }
   &:hover {
     box-shadow: 6px 3px rgba(168, 168, 168, 0.9);

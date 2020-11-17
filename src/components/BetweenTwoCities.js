@@ -32,15 +32,15 @@ const BetweenTwoCities = () => {
             : [
               renderCell(i),
               <div key={"rewards"+i} className="rewards">
-                <img key={"rewardA"+i} className="reward" src={`/assets/Links/${rowRewards["a"+i]}.png`} alt={rowRewards[i-4]}/>
-                <img key={"rewardB"+i} className="reward overlay" src={`/assets/Links/${rowRewards["b"+i]}.png`} alt={rowRewards[i-3]}/>
+                <img key={"rewardA"+i} className="reward" src={`/images/${rowRewards["a"+i]}.png`} alt={rowRewards[i-4]}/>
+                <img key={"rewardB"+i} className="reward overlay" src={`/images/${rowRewards["b"+i]}.png`} alt={rowRewards[i-3]}/>
               </div>
             ]
           )}
           {times(3, i =>
             <div key={"rewards"+i} className="rewards">
-              <img key={"rewardA"+i} className="reward" src={`/assets/Links/${columnRewards[i]}.png`} alt="reward"/>
-              <img key={"rewardB"+i} className="reward overlay" src={`/assets/Links/${columnRewards[i]}.png`} alt="reward"/>
+              <img key={"rewardA"+i} className="reward" src={`/images/${columnRewards[i]}.png`} alt="reward"/>
+              <img key={"rewardB"+i} className="reward overlay" src={`/images/${columnRewards[i]}.png`} alt="reward"/>
             </div>
           )}
         </div>

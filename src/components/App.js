@@ -121,7 +121,7 @@ const App = () => {
   return (
     <>
       <div className="header">
-        <img className="sm-logo" src="/assets/Links/stonemaier-logo.png" alt="Stonemaier Games Logo"/>
+        <img className="sm-logo" src="/images/stonemaier-logo.png" alt="Stonemaier Games Logo"/>
         <div className="titleC">
           <h2 className="title">Rolling Realms <span>v</span>10</h2>
           <h3>by Jamey Stegmaier</h3>
@@ -135,7 +135,7 @@ const App = () => {
             TOTAL :
           </p>
           <input type="number" name="total" />
-          <img src="/assets/Links/star_victory.png" alt="star"/>
+          <img src="/images/star.png" alt="star"/>
         </div>
         <Rules key="headerRules" />
       </div>
@@ -176,12 +176,12 @@ const App = () => {
       <button className="standardButton diceRoller" onClick={rollDice} >
         <img
           className="rolledDie"
-          src={`/assets/Links/dice-six-faces-${die1}.png`}
+          src={`/images/d6-${die1}.png`}
           alt={`Rolled Die`}
         />
         <img
           className="rolledDie"
-          src={`/assets/Links/dice-six-faces-${die2}.png`}
+          src={`/images/d6-${die2}.png`}
           alt={`Rolled Die`}
         />
       </button>
@@ -194,7 +194,7 @@ const App = () => {
           <hr></hr>
           <p>This is a fan-made, open-source project.</p>
           <p>
-            <a href="https://github.com/justin-dwyer/rolling-realms" target="_blank" rel="noopener noreferrer">Contribute on <img className="githubIcon" src="/assets/github-icon.png" alt="Github"/> Github</a>
+            <a href="https://github.com/justin-dwyer/rolling-realms" target="_blank" rel="noopener noreferrer">Contribute on <img className="githubIcon" src="/images/github-icon.png" alt="Github"/> Github</a>
           </p>
           <p>
             <a href="https://github.com/justin-dwyer/rolling-realms" target="_blank" rel="noopener noreferrer">Report a Bug</a>

@@ -14,7 +14,7 @@ class Hexagon extends React.Component {
   render() {
     return (
       <button className={this.state.hexagonClasses} onClick={this.updateHexagon}>
-        <img src={`/assets/Links/dice-six-faces-${this.props.dieFace}.png`} alt={`${this.props.dieFace}die`} className="die"/>
+        <img src={`/images/d6-${this.props.dieFace}.png`} alt={`${this.props.dieFace}die`} className="die"/>
       </button>
     );
   }

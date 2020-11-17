@@ -21,7 +21,7 @@ class Reward extends React.Component {
         <img
           className={this.state.rewardClasses}
           key={`${this.props.i}${this.props.reward}`}
-          src={`/assets/Links/${this.props.reward}.png`}
+          src={`/images/${this.props.reward}.png`}
           alt={`${this.props.reward}`}
         />
       </button>

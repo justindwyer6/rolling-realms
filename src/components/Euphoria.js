@@ -22,17 +22,17 @@ class Euphoria extends React.Component {
           <div className="euphoria-mid">
             <div>
               <span>1-3: </span>
-              <span><img src="/assets/Links/coin.png" alt="coin" className="reward"/></span>
+              <span><img src="/images/coin.png" alt="coin" className="reward"/></span>
             </div>
             <div>
               <span>4-10: </span>
-              <span><img src="/assets/Links/star_victory.png" alt="star" className="reward"/></span>
+              <span><img src="/images/star.png" alt="star" className="reward"/></span>
             </div>
             <div>
               <span>11+: </span>
-              <span><img src="/assets/Links/heart.png" alt="heart" className="reward"/></span>
+              <span><img src="/images/heart.png" alt="heart" className="reward"/></span>
               <span>/</span>
-              <span><img src="/assets/Links/pumpkin.png" alt="pumpkin" className="reward"/></span>
+              <span><img src="/images/pumpkin.png" alt="pumpkin" className="reward"/></span>
             </div>
           </div>
           <div className="table">

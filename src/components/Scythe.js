@@ -18,7 +18,7 @@ class Scythe extends React.Component {
 
   renderTopRewards(i, rewards) {
     return (
-      <img className="topReward" key={rewards[i]+i} src={`/assets/Links/${rewards[i]}.png`} alt={rewards[i]}/>
+      <img className="topReward" key={rewards[i]+i} src={`/images/${rewards[i]}.png`} alt={rewards[i]}/>
     );
   }
 
@@ -30,7 +30,7 @@ class Scythe extends React.Component {
 
   renderBottomRewards(i, rewards) {
     return (
-      <img className="bottomReward" key={rewards[i]+i} src={`/assets/Links/${rewards[i]}.png`} alt={rewards[i]}/>
+      <img className="bottomReward" key={rewards[i]+i} src={`/images/${rewards[i]}.png`} alt={rewards[i]}/>
     );
   }
 

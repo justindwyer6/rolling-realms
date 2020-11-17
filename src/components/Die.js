@@ -28,7 +28,7 @@ const Die = (props) => {
       <img
         className={ dieClasses }
         key={ `${props.i}die` }
-        src={ `/assets/Links/dice-six-faces-${props.i}.png` }
+        src={ `/images/d6-${props.i}.png` }
         alt={ `${props.i}die` }
       />
     </button>
