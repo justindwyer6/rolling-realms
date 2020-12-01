@@ -1,6 +1,6 @@
 import React from 'react';
-import Die from './Die';
-import Star from './Star';
+import Die from '../Die';
+import Star from '../Star';
 import "./Scythe.scss";
 import { times } from "lodash";
 

@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import './App.scss';
-import Minigame from './Minigame';
-import Round from './Round';
-import Rules from './Rules';
-import defaultRounds from '../rounds';
+import Minigame from '../Minigame';
+import Round from '../Round/Round';
+import Rules from '../Rules';
+import defaultRounds from '../../rounds';
 import { times } from "lodash";
-import {setQueryStringValue} from "../functions/queryString"
+import {setQueryStringValue} from "../../functions/queryString"
 const qs = require('query-string');
 
 const App = () => {

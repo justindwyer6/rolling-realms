@@ -1,6 +1,6 @@
 import React from 'react';
-import Reward from './Reward';
-import Rules from './Rules';
+import Reward from '../Reward';
+import Rules from '../Rules';
 import './Round.scss';
 import { times } from "lodash";
 

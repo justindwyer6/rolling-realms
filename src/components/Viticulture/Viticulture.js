@@ -1,6 +1,6 @@
 import React from "react";
-import Die from "./Die";
-import WineGlass from "./WineGlass";
+import Die from "../Die";
+import WineGlass from "../WineGlass";
 import "./Viticulture.scss";
 import { times } from "lodash";
 
