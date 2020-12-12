@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Die = (props) => {
+const Die = ({...props}) => {
   const [dieClasses, setDieClasses] = useState(props.dieClasses);
 
   const updateDefaultDie = () => {
@@ -27,9 +27,9 @@ const Die = (props) => {
     <button className="dieButton" onClick={ updateDie }>
       <img
         className={ dieClasses }
-        key={ `${props.i}die` }
-        src={ `/images/d6-${props.i}.png` }
-        alt={ `${props.i}die` }
+        key={ `${props.dieFace}die` }
+        src={ `./images/d6-${props.dieFace}.png` }
+        alt={ `${props.dieFace}die` }
       />
     </button>
   );
