@@ -25,7 +25,7 @@ const Die = (props) => {
   };
 
   return (
-    <button className="dieButton" onClick={updateDie}>
+    <button className="dieButton" onClick={updateDie} type="button">
       <img
         className={`${props.dieType} ${dieState}`}
         key={`${props.dieFace}die`}

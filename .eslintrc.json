@@ -6,7 +6,7 @@
     "plugin:jsx-a11y/recommended",
     "airbnb",
     "prettier",
-    "prettier/react",
+    "prettier/react"
   ],
   "rules": {
     "react/prop-types": 0,
@@ -15,7 +15,8 @@
     "eqeqeq": "warn",
     "curly": "warn",
     "quotes": ["warn", "double"],
-    "prettier/prettier": ["error"],
+    "prettier/prettier": "error",
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
   },
   "parser": "babel-eslint",
   "plugins": ["react", "import", "jsx-a11y", "react-hooks", "prettier"],
