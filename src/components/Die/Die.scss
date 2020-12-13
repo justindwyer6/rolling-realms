@@ -1,0 +1,20 @@
+.standard {
+  border-radius: 5px;
+  &.marked {
+    background-color: black;
+  }
+}
+
+.grape {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  overflow: visible;
+  padding: 10px;
+  &.gained {
+    background-image: url("../../images/grape.png");
+  }
+  &.marked {
+    background-image: url("../../images/crushed-grape.png");
+  }
+}

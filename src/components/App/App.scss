@@ -1,11 +1,17 @@
+button {
+  background: none;
+  outline: none;
+  border: none;
+}
+
 img {
-  width: 30px;
-  height: 30px;
+  // width: 30px;
+  // height: 30px;
 }
 
 @media (max-width: 480px) {
   img {
-    width: 15px;
-    height: 15px;
+    // width: 15px;
+    // height: 15px;
   }
 }
