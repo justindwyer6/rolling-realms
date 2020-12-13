@@ -10,16 +10,17 @@ class Viticulture extends React.Component {
   renderDie(i) {
     return (
       <Die
-        key={`${i+1}die`}
-        i={i+1}
-        dieClasses="die grapeDie"
+        key={`viticulture-d6-${i+1}`}
+        dieFace={i+1}
+        dieType="grape"
+        dieState="unmarked"
       />
     );
   }
 
   renderRewards(i) {
     return (
-      <img className="reward" key={this.rewards[i]+i} src={`/images/${this.rewards[i]}.png`} alt={this.rewards[i]}/>
+      <img className="reward" key={`viticulture-rewards-${this.rewards[i]}-${i}`} src={`/images/${this.rewards[i]}.png`} alt={this.rewards[i]}/>
     );
   }
 

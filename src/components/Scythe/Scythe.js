@@ -12,25 +12,45 @@ class Scythe extends React.Component {
 
   renderTopDie(i) {
     return (
-      <Die key={`${i+1}die`} i={i+1} dieClasses="topDie" />
+      <Die
+        key={`scythe-top-d6-${i+1}`}
+        dieFace={i+1}
+        dieType="standard"
+        dieState="unmarked"
+      />
     );
   }
 
   renderTopRewards(i, rewards) {
     return (
-      <img className="topReward" key={rewards[i]+i} src={`/images/${rewards[i]}.png`} alt={rewards[i]}/>
+      <img
+        className="topReward"
+        key={`scythe-top-reward-${rewards[i]}+${i}`}
+        src={`/images/${rewards[i]}.png`}
+        alt={rewards[i]}
+      />
     );
   }
 
   renderBottomDie(i, dice) {
     return (
-      <Die key={`${dice[i]}die`} i={dice[i]} dieClasses="bottomDie" />
+      <Die
+        key={`scythe-bottom-d6-${i+1}`}
+        dieFace={dice[i]}
+        dieType="standard"
+        dieState="unmarked"
+      />
     );
   }
 
   renderBottomRewards(i, rewards) {
     return (
-      <img className="bottomReward" key={rewards[i]+i} src={`/images/${rewards[i]}.png`} alt={rewards[i]}/>
+      <img
+        className="bottomReward"
+        key={`scythe-bottom-reward-${rewards[i]}+${i}`}
+        src={`/images/${rewards[i]}.png`}
+        alt={rewards[i]}
+      />
     );
   }
 

@@ -7,7 +7,11 @@ class Euphoria extends React.Component {
 
   renderDie(i, alignment) {
     return (
-      <Die key={`${i+1}die${alignment}`} i={i+1} dieClasses="die" />
+      <Die key={`euphoria-${alignment}-d6-${i+1}`}
+        dieFace={i+1}
+        dieType="standard"
+        dieState="unmarked"
+      />
     );
   }
 

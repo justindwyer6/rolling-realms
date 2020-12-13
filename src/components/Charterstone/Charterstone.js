@@ -10,16 +10,17 @@ const Charterstone = () => {
   const renderDie = (i) => {
     return (
       <Die
-        key={`${i+1}die`}
-        i={i+1}
-        dieClasses="die"
+        key={`charterstone-d6-${i+1}`}
+        dieFace={i+1}
+        dieType="standard"
+        dieState="unmarked"
       />
     );
   }
 
   const renderRewards = (i, rewards) => {
     return (
-      <img className="topReward" key={rewards[i]+i} src={`/images/${rewards[i]}.png`} alt={rewards[i]} />
+      <img className="topReward" key={`charterstone-rewards-${rewards[i]}-${i}`} src={`/images/${rewards[i]}.png`} alt={rewards[i]} />
     );
   }
 
