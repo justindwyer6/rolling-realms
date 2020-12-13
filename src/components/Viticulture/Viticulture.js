@@ -10,8 +10,8 @@ class Viticulture extends React.Component {
   renderDie(i) {
     return (
       <Die
-        key={`viticulture-d6-${i+1}`}
-        dieFace={i+1}
+        key={`viticulture-d6-${i + 1}`}
+        dieFace={i + 1}
         dieType="grape"
         dieState="unmarked"
       />
@@ -20,17 +20,26 @@ class Viticulture extends React.Component {
 
   renderRewards(i) {
     return (
-      <img className="reward" key={`viticulture-rewards-${this.rewards[i]}-${i}`} src={`/images/${this.rewards[i]}.png`} alt={this.rewards[i]}/>
+      <img
+        className="reward"
+        key={`viticulture-rewards-${this.rewards[i]}-${i}`}
+        src={`/images/${this.rewards[i]}.png`}
+        alt={this.rewards[i]}
+      />
     );
   }
 
   renderWineOrders(i) {
-    return(
+    return (
       <div className="wineOrder" key={i}>
-        <WineGlass key={i} wineGlassFill="/images/empty-wine-glass.png" i={i} />
+        <WineGlass
+          key={i}
+          wineGlassFill="/images/empty-wine-glass.png"
+          i={i}
+        />
         <div className="stars">
-          <img src="/images/star.png" alt="star"/>
-          <img src="/images/star.png" alt="star"/>
+          <img src="/images/star.png" alt="star" />
+          <img src="/images/star.png" alt="star" />
         </div>
       </div>
     );
@@ -40,7 +49,9 @@ class Viticulture extends React.Component {
     return (
       <>
         <p>
-          Either gain a grape (circle it) OR use the sum of 1 rolled die and at least 1 gained grape (cross it off) to fill a wine order.
+          Either gain a grape (circle it) OR use the sum of 1 rolled
+          die and at least 1 gained grape (cross it off) to fill a
+          wine order.
         </p>
         <div className="viticultureC">
           {times(6, (i) => this.renderDie(i))}
@@ -52,4 +63,4 @@ class Viticulture extends React.Component {
   }
 }
 
-export default Viticulture
+export default Viticulture;

@@ -1,19 +1,19 @@
-import React from 'react';
+import React from "react";
 
 class Reward extends React.Component {
   state = {
-    rewardClasses: this.props.rewardClasses
+    rewardClasses: this.props.rewardClasses,
   };
 
   updateReward = () => {
     let rewardClasses = this.state.rewardClasses;
     rewardClasses.includes("usedReward")
-      ? rewardClasses = this.props.rewardClasses
+      ? (rewardClasses = this.props.rewardClasses)
       : rewardClasses.includes("gainedReward")
-        ? rewardClasses += " usedReward"
-        : rewardClasses += " gainedReward";
+      ? (rewardClasses += " usedReward")
+      : (rewardClasses += " gainedReward");
     this.setState({ rewardClasses });
-  }
+  };
 
   render() {
     return (

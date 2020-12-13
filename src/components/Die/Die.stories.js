@@ -1,8 +1,8 @@
-import React from 'react';
-import Die from './Die';
+import React from "react";
+import Die from "./Die";
 
 export default {
-  title: 'Example/Die',
+  title: "Example/Die",
   component: Die,
   argTypes: {},
 };

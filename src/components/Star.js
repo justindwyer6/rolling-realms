@@ -1,15 +1,15 @@
-import React from 'react';
+import React from "react";
 
 class Star extends React.Component {
   state = {
-    src: "/images/star-outline.png"
+    src: "/images/star-outline.png",
   };
 
   updateStar = () => {
     this.state.src === "/images/star-outline.png"
-      ? this.setState({src: "/images/star.png"})
-      : this.setState({src: "/images/star-outline.png"});
-  }
+      ? this.setState({ src: "/images/star.png" })
+      : this.setState({ src: "/images/star-outline.png" });
+  };
 
   render() {
     return (

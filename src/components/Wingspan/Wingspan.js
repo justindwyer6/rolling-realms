@@ -3,22 +3,36 @@ import "./Wingspan.scss";
 import { times } from "lodash";
 
 class Wingspan extends React.Component {
-
-  rewards = ["pumpkin", "coin", "star", "coin", "heart", "star", "heart", "pumpkin", "star"];
+  rewards = [
+    "pumpkin",
+    "coin",
+    "star",
+    "coin",
+    "heart",
+    "star",
+    "heart",
+    "pumpkin",
+    "star",
+  ];
 
   renderBirds(i) {
     return (
-      <div key={"bird"+i} className="bird">
-        <p>
-          {7+(i*4)+(i?1:0)}
-        </p>
+      <div key={"bird" + i} className="bird">
+        <p>{7 + i * 4 + (i ? 1 : 0)}</p>
         <div className="birdCells">
           {times(3, (j) => (
-            <div  key={j}>
+            <div key={j}>
               <input type="number" className="cell" />
             </div>
           ))}
-          {times(3, (j) => <img key={j} src={`/images/${this.rewards[j+i+(2*i)]}.png`} alt={this.rewards[j+i]} className="reward" /> )}
+          {times(3, (j) => (
+            <img
+              key={j}
+              src={`/images/${this.rewards[j + i + 2 * i]}.png`}
+              alt={this.rewards[j + i]}
+              className="reward"
+            />
+          ))}
         </div>
       </div>
     );
@@ -26,14 +40,19 @@ class Wingspan extends React.Component {
   render() {
     return (
       <>
-        <p>Fill a square on any bird (left to right), then gain the bonus below that square</p>
+        <p>
+          Fill a square on any bird (left to right), then gain the
+          bonus below that square
+        </p>
         <div className="birds">
           {times(3, (i) => this.renderBirds(i))}
         </div>
-        <p className="margin20">Score 1 star per complete bird whose sum = wingspan.</p>
+        <p className="margin20">
+          Score 1 star per complete bird whose sum = wingspan.
+        </p>
       </>
     );
   }
 }
 
-export default Wingspan
+export default Wingspan;
