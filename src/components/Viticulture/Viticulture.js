@@ -13,7 +13,7 @@ class Viticulture extends React.Component {
         key={`viticulture-d6-${i + 1}`}
         dieFace={i + 1}
         dieType="grape"
-        dieState="unmarked"
+        initialDieState="unmarked"
       />
     );
   }

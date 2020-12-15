@@ -13,6 +13,7 @@ class Scythe extends React.Component {
     "heart",
     "pumpkin",
   ];
+
   bottomRewards = [
     "heart",
     "pumpkin",
@@ -21,6 +22,7 @@ class Scythe extends React.Component {
     "coin",
     "heart",
   ];
+
   scrambledDice = [5, 6, 2, 1, 4, 3];
 
   renderTopDie(i) {
@@ -29,7 +31,7 @@ class Scythe extends React.Component {
         key={`scythe-top-d6-${i + 1}`}
         dieFace={i + 1}
         dieType="standard"
-        dieState="unmarked"
+        initialDieState="unmarked"
       />
     );
   }
@@ -51,7 +53,7 @@ class Scythe extends React.Component {
         key={`scythe-bottom-d6-${i + 1}`}
         dieFace={dice[i]}
         dieType="standard"
-        dieState="unmarked"
+        initialDieState="unmarked"
       />
     );
   }

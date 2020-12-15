@@ -10,7 +10,7 @@ class Euphoria extends React.Component {
         key={`euphoria-${alignment}-d6-${i + 1}`}
         dieFace={i + 1}
         dieType="standard"
-        dieState="unmarked"
+        initialDieState="unmarked"
       />
     );
   }

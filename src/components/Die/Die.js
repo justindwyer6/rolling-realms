@@ -1,36 +1,44 @@
 import React, { useState } from "react";
 import "./Die.scss";
 
-const Die = (props) => {
-  const [dieState, setDieState] = useState(props.dieState);
+const Die = ([dieType, initialDieState, dieFace]) => {
+  const [dieState, setDieState] = useState(initialDieState);
 
   const updateStandardDie = () => {
-    dieState === "marked"
-      ? setDieState("unmarked")
-      : setDieState("marked");
+    if (dieState === "unmarked") {
+      setDieState("marked");
+    } else {
+      setDieState("unmarked");
+    }
   };
 
   const updateGrapeDie = () => {
-    dieState === "marked"
-      ? setDieState("unmarked")
-      : dieState === "gained"
-      ? setDieState("marked")
-      : setDieState("gained");
+    if (dieState === "unmarked") {
+      setDieState("marked");
+    } else if (dieState === "marked") {
+      setDieState("gained");
+    } else {
+      setDieState("unmarked");
+    }
   };
 
   const updateDie = () => {
-    props.dieType === "grape"
-      ? updateGrapeDie()
-      : updateStandardDie();
+    if (dieType === "standard") {
+      updateStandardDie();
+    } else if (dieType === "grape") {
+      updateGrapeDie();
+    } else {
+      throw Error(`Error: ${dieType} is not a valid die type.`);
+    }
   };
 
   return (
     <button className="dieButton" onClick={updateDie} type="button">
       <img
-        className={`${props.dieType} ${dieState}`}
-        key={`${props.dieFace}die`}
-        src={`./images/d6-${props.dieFace}.png`}
-        alt={`${props.dieFace}die`}
+        className={`${dieType} ${dieState}`}
+        key={`${dieFace}die`}
+        src={`./images/d6-${dieFace}.png`}
+        alt={`${dieFace}die`}
       />
     </button>
   );
