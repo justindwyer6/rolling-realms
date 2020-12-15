@@ -7,7 +7,7 @@ export default {
   argTypes: {},
 };
 
-const Template = (args) => <Die {...args} />;
+const Template = (args) => <Die {...args} />; // eslint-disable-line react/jsx-props-no-spreading
 
 export const Standard = Template.bind({});
 Standard.args = {

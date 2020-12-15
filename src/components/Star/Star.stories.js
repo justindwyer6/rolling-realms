@@ -1,5 +1,7 @@
 import React from "react";
 import Star from "./Star";
+import unearnedStar from "../../images/star-outline.png";
+import earnedStar from "../../images/star.png";
 
 export default {
   title: "Example/Star",
@@ -7,14 +9,14 @@ export default {
   argTypes: {},
 };
 
-const Template = (args) => <Star />;
+const Template = () => <Star />;
 
-export const Unmarked = Template.bind({});
-Unmarked.args = {
-  starSource: "/images/star-outline.png",
+export const Unearned = Template.bind({});
+Unearned.args = {
+  starSource: unearnedStar,
 };
 
-export const Marked = Template.bind({});
-Marked.args = {
-  starSource: "/images/star.png",
+export const Earned = Template.bind({});
+Earned.args = {
+  starSource: earnedStar,
 };
