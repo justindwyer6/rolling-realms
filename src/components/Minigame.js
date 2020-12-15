@@ -1,10 +1,16 @@
 import React from "react";
 import Board from "./Board";
-import Star from "./Star";
+import Star from "./Star/Star";
 
-const Minigame = (props) => {
-  const handleMinigameChange = (event, minigame) => {
-    this.props.updateMinigame(event.target.value, minigame);
+const Minigame = ([
+  updateMinigame,
+  roundNumber,
+  minigame,
+  key,
+  index,
+]) => {
+  const handleMinigameChange = (event, thisMinigame) => {
+    updateMinigame(event.target.value, thisMinigame);
   };
 
   const stars = [1, 2, 3, 4, 5, 6];
@@ -14,19 +20,17 @@ const Minigame = (props) => {
       <div className="Minigame">
         <div className="content">
           <div className="minigameHeader">
-            <div className="roundNumber">{props.roundNumber}</div>
+            <div className="roundNumber">{roundNumber}</div>
             <div>
               <select
                 className="title"
                 name="minigameName"
-                id={props.minigame + props.key}
-                defaultValue={props.minigame}
+                id={minigame + key}
+                defaultValue={minigame}
                 onChange={(event) =>
-                  handleMinigameChange(event, props.index)
+                  handleMinigameChange(event, index)
                 }
-                onBlur={(event) =>
-                  handleMinigameChange(event, props.index)
-                }
+                onBlur={(event) => handleMinigameChange(event, index)}
               >
                 <option value="Between Two Castles">
                   Between Two Castles
@@ -46,14 +50,11 @@ const Minigame = (props) => {
               </select>
             </div>
           </div>
-          <Board index={props.index} name={props.minigame} />
-          {props.minigame === "Scythe" ? null : (
+          <Board index={index} name={minigame} />
+          {minigame === "Scythe" ? null : (
             <div className="stars-row">
               {stars.map((star) => (
-                <Star
-                  key={star}
-                  index={props.index + "-star-" + star}
-                />
+                <Star key={star} index={`${index}-star-${star}`} />
               ))}
             </div>
           )}
