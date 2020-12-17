@@ -8,6 +8,6 @@ const rounds = {
   "3a": "My Little Scythe",
   "3b": "Tapestry",
   "3c": "Wingspan",
-}
+};
 
-export default rounds
+export default rounds;

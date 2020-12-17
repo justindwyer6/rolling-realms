@@ -32,16 +32,12 @@ class Tapestry extends React.Component {
             <input
               type="checkbox"
               name="check"
-              id={i + "checkbox" + j}
+              id={`${i}checkbox${j}`}
               defaultChecked={
-                this.prechecked.includes(i + "checkbox" + j)
-                  ? true
-                  : false
+                !!this.prechecked.includes(`${i}checkbox${j}`)
               }
               disabled={
-                this.prechecked.includes(i + "checkbox" + j)
-                  ? true
-                  : false
+                !!this.prechecked.includes(`${i}checkbox${j}`)
               }
             />
           </div>
@@ -65,7 +61,7 @@ class Tapestry extends React.Component {
                 : [
                     this.renderSubgrid(i),
                     <img
-                      key={"star" + i}
+                      key={`star${i}`}
                       className="star"
                       src="/images/star.png"
                       alt="star"
@@ -74,7 +70,7 @@ class Tapestry extends React.Component {
             )}
             {times(3, (i) => (
               <img
-                key={"star" + i}
+                key={`star${i}`}
                 className="star"
                 src="/images/star.png"
                 alt="star"

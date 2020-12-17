@@ -17,7 +17,7 @@ class Wingspan extends React.Component {
 
   renderBirds(i) {
     return (
-      <div key={"bird" + i} className="bird">
+      <div key={`bird${i}`} className="bird">
         <p>{7 + i * 4 + (i ? 1 : 0)}</p>
         <div className="birdCells">
           {times(3, (j) => (
@@ -37,6 +37,7 @@ class Wingspan extends React.Component {
       </div>
     );
   }
+
   render() {
     return (
       <>

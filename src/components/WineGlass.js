@@ -1,29 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
+import emptyWineGlass from "../images/empty-wine-glass.png";
+import fullWineGlass from "../images/full-wine-glass.png";
 
-class WineGlass extends React.Component {
-  state = { wineGlassFill: this.props.wineGlassFill };
-  // state = { wineGlassClasses : this.props.wineGlassClasses }
+const WineGlass = ([i]) => {
+  const [wineGlassState, setWineGlassState] = useState(
+    emptyWineGlass,
+  );
 
-  updateGlass = () => {
-    let wineGlassFill = this.state.wineGlassFill;
-    wineGlassFill === "/images/empty-wine-glass.png"
-      ? (wineGlassFill = "/images/full-wine-glass.png")
-      : (wineGlassFill = "/images/empty-wine-glass.png");
-    this.setState({ wineGlassFill });
+  const updateGlass = () => {
+    if (wineGlassState === emptyWineGlass) {
+      setWineGlassState(fullWineGlass);
+    } else {
+      setWineGlassState(emptyWineGlass);
+    }
   };
 
-  render() {
-    return (
-      <button className="wineGlassC" onClick={this.updateGlass}>
-        <img
-          className="wineGlass"
-          src={this.state.wineGlassFill}
-          alt="Wine Glass"
-        />
-        <p className="wineGlassText">{10 + this.props.i}</p>
-      </button>
-    );
-  }
-}
+  return (
+    <button
+      type="button"
+      aria-label="Wine Glass"
+      title="Wine Glass"
+      className="wineGlassC"
+      onClick={updateGlass}
+    >
+      <img
+        className="wineGlass"
+        src={wineGlassState}
+        alt="Wine Glass"
+      />
+      <p className="wineGlassText">{10 + i}</p>
+    </button>
+  );
+};
 
 export default WineGlass;
