@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./App.scss";
+import { times } from "lodash";
 import Minigame from "../Minigame";
 import Round from "../Round/Round";
 import Rules from "../Rules";
 import defaultRounds from "../../rounds";
-import { times } from "lodash";
 import { setQueryStringValue } from "../../functions/queryString";
+
 const qs = require("query-string");
 
 const App = () => {
@@ -61,15 +62,15 @@ const App = () => {
 
   const rollDice = () => {
     times(6, (i) => {
-      let die1 = i;
-      let die2 = 7 - i;
+      const die1 = i;
+      const die2 = 7 - i;
       setTimeout(() => {
         setDie1(die1);
         setDie2(die2);
       }, 50 + i * 15);
     });
-    let die1 = Math.ceil(Math.random() * 6);
-    let die2 = Math.ceil(Math.random() * 6);
+    const die1 = Math.ceil(Math.random() * 6);
+    const die2 = Math.ceil(Math.random() * 6);
     setTimeout(() => {
       setDie1(die1);
       setDie2(die2);
@@ -96,11 +97,11 @@ const App = () => {
     ];
 
     function shuffle(array) {
-      var currentIndex = array.length,
-        temporaryValue,
-        randomIndex;
+      let currentIndex = array.length;
+      let temporaryValue;
+      let randomIndex;
       // While there remain elements to shuffle...
-      while (0 !== currentIndex) {
+      while (currentIndex !== 0) {
         // Pick a remaining element...
         randomIndex = Math.floor(Math.random() * currentIndex);
         currentIndex -= 1;
@@ -122,9 +123,11 @@ const App = () => {
   };
 
   const showRules = () => {
-    footerClasses.includes("show")
-      ? setFooterClasses("")
-      : setFooterClasses(" show");
+    if (footerClasses.includes("show")) {
+      setFooterClasses("");
+    } else {
+      setFooterClasses(" show");
+    }
   };
 
   const renderRoundTracker = (key) => {
@@ -169,7 +172,7 @@ const App = () => {
           turns, roll 2d6 for simultaneous use by all players. Use
           each die once, each in a different realm--you can’t use the
           same realm twice on the same turn. Most stars wins.
-          <br></br>
+          <br />
           <span className="warning">
             Warning: Your progress may be lost if you refresh the page
             or change the order of the rounds.
@@ -186,20 +189,27 @@ const App = () => {
       <div className="subheader">
         <div className="roundSelectionButtons">
           <button
+            type="button"
             className="standardButton"
             onClick={randomizeMinigames}
           >
             Randomize
           </button>
           <button
+            type="button"
+            aria-label="Copy Link"
+            title="Copy Link"
             className={copyLinkButtonClasses}
             onClick={copyLink}
-          ></button>
+          />
         </div>
         <button
+          type="button"
+          aria-label="Print Page"
+          title="Print Page"
           className="circleButton printIcon"
           onClick={() => window.print()}
-        ></button>
+        />
       </div>
 
       <div className="MinigamesC">
@@ -221,6 +231,9 @@ const App = () => {
       </div>
 
       <button
+        type="button"
+        aria-label="Show Rules"
+        title="Show Rules"
         id="fixedRules"
         className={footerClasses}
         onClick={showRules}
@@ -230,18 +243,21 @@ const App = () => {
       </button>
 
       <button
+        type="button"
+        aria-label="Roll Dice"
+        title="Roll Dice"
         className="standardButton diceRoller"
         onClick={rollDice}
       >
         <img
           className="rolledDie"
           src={`/images/d6-${die1}.png`}
-          alt={`Rolled Die`}
+          alt={die1}
         />
         <img
           className="rolledDie"
           src={`/images/d6-${die2}.png`}
-          alt={`Rolled Die`}
+          alt={die2}
         />
       </button>
 
@@ -256,7 +272,7 @@ const App = () => {
               Print-and-play other versions and find FAQs
             </a>
           </p>
-          <hr></hr>
+          <hr />
           <p>This is a fan-made, open-source project.</p>
           <p>
             <a
