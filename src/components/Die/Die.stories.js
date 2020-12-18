@@ -37,9 +37,9 @@ GrapeGained.args = {
   dieFace: 1,
 };
 
-export const GrapeMarked = Template.bind({});
-GrapeMarked.args = {
+export const GrapeUsed = Template.bind({});
+GrapeUsed.args = {
   dieType: "grape",
-  initialDieState: "marked",
+  initialDieState: "used",
   dieFace: 1,
 };
