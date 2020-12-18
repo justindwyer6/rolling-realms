@@ -101,11 +101,19 @@ const App = () => {
     setRounds({ ...roundsCopy });
   };
 
+  const renderMinigame = (key, i) => {
+    <Minigame
+      key={rounds[key]}
+      index={key}
+      i={i}
+      minigame={rounds[key]}
+      roundNumber={key[0]}
+      updateMinigame={updateMinigame}
+    />;
+  };
+
   const renderRoundTracker = (key) => {
-    if (key === "1c" || key === "2c" || key === "3c") {
-      return <Round key={key[0]} round={key[0] - 1} />;
-    }
-    throw Error("Hmmm... That's not a valid round number.");
+    <Round key={key[0]} round={key[0] - 1} />;
   };
 
   const copyLink = () => {
@@ -185,20 +193,11 @@ const App = () => {
       </div>
 
       <div className="MinigamesC">
-        {Object.keys(rounds).map((key, i) => {
-          return (
-            <>
-              <Minigame
-                key={rounds[key]}
-                index={key}
-                i={i}
-                minigame={rounds[key]}
-                roundNumber={key[0]}
-                updateMinigame={updateMinigame}
-              />
-              {renderRoundTracker(key)}
-            </>
-          );
+        {Object.keys(rounds).forEach((key, i) => {
+          renderMinigame(key, i);
+          if (key[-1] === "c") {
+            renderRoundTracker(key);
+          }
         })}
       </div>
 
