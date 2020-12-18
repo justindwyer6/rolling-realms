@@ -18,7 +18,7 @@ const BetweenTwoCastles = () => {
       </p>
       <div className="betweenTwoCastlesC">
         <div className="castle castle1">
-          <div className="no-border"></div>
+          <div className="no-border" />
           <div className="rewards no-border">
             <img
               src="/images/pumpkin.png"
@@ -31,8 +31,8 @@ const BetweenTwoCastles = () => {
               className="reward overlay"
             />
           </div>
-          <div className="no-border"></div>
-          <div className="no-border"></div>
+          <div className="no-border" />
+          <div className="no-border" />
           {renderInput()}
           <div className="rewards no-border">
             <img
