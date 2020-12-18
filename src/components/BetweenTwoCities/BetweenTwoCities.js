@@ -34,32 +34,32 @@ const BetweenTwoCities = () => {
               ? renderCell(i)
               : [
                   renderCell(i),
-                  <div key={"rewards" + i} className="rewards">
+                  <div key={`rewards${i}`} className="rewards">
                     <img
-                      key={"rewardA" + i}
+                      key={`rewardA${i}`}
                       className="reward"
-                      src={`/images/${rowRewards["a" + i]}.png`}
+                      src={`/images/${rowRewards[`a${i}`]}.png`}
                       alt={rowRewards[i - 4]}
                     />
                     <img
-                      key={"rewardB" + i}
+                      key={`rewardB${i}`}
                       className="reward overlay"
-                      src={`/images/${rowRewards["b" + i]}.png`}
+                      src={`/images/${rowRewards[`b${i}`]}.png`}
                       alt={rowRewards[i - 3]}
                     />
                   </div>,
                 ],
           )}
           {times(3, (i) => (
-            <div key={"rewards" + i} className="rewards">
+            <div key={`rewards${i}`} className="rewards">
               <img
-                key={"rewardA" + i}
+                key={`rewardA${i}`}
                 className="reward"
                 src={`/images/${columnRewards[i]}.png`}
                 alt="reward"
               />
               <img
-                key={"rewardB" + i}
+                key={`rewardB${i}`}
                 className="reward overlay"
                 src={`/images/${columnRewards[i]}.png`}
                 alt="reward"

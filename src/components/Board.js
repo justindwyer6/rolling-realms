@@ -9,30 +9,35 @@ import Tapestry from "./Tapestry/Tapestry";
 import Viticulture from "./Viticulture/Viticulture";
 import Wingspan from "./Wingspan/Wingspan";
 
-class Board extends React.Component {
-  render() {
-    let game;
-    if (this.props.name === "Between Two Castles") {
-      game = <BetweenTwoCastles />;
-    } else if (this.props.name === "Between Two Cities") {
-      game = <BetweenTwoCities />;
-    } else if (this.props.name === "Charterstone") {
-      game = <Charterstone />;
-    } else if (this.props.name === "Euphoria") {
-      game = <Euphoria />;
-    } else if (this.props.name === "My Little Scythe") {
-      game = <Scythe />;
-    } else if (this.props.name === "Scythe") {
-      game = <Scythe />;
-    } else if (this.props.name === "Tapestry") {
-      game = <Tapestry />;
-    } else if (this.props.name === "Viticulture") {
-      game = <Viticulture />;
-    } else if (this.props.name === "Wingspan") {
-      game = <Wingspan />;
-    }
-    return game;
+const Board = ([name]) => {
+  if (name === "Between Two Castles") {
+    return <BetweenTwoCastles />;
   }
-}
+  if (name === "Between Two Cities") {
+    return <BetweenTwoCities />;
+  }
+  if (name === "Charterstone") {
+    return <Charterstone />;
+  }
+  if (name === "Euphoria") {
+    return <Euphoria />;
+  }
+  if (name === "My Little Scythe") {
+    return <Scythe />;
+  }
+  if (name === "Scythe") {
+    return <Scythe />;
+  }
+  if (name === "Tapestry") {
+    return <Tapestry />;
+  }
+  if (name === "Viticulture") {
+    return <Viticulture />;
+  }
+  if (name === "Wingspan") {
+    return <Wingspan />;
+  }
+  throw Error("Hmmm... That's not a valid minigame.");
+};
 
 export default Board;
