@@ -19,7 +19,7 @@ const Charterstone = () => {
         key={`charterstone-d6-${i + 1}`}
         dieFace={i + 1}
         dieType="standard"
-        initialDieState="unmarked"
+        initialDieState="available"
       />
     );
   };

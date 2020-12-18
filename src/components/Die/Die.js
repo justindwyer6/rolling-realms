@@ -11,20 +11,20 @@ const Die = ([dieType, initialDieState, dieFace]) => {
   const [dieState, setDieState] = useState(initialDieState);
 
   const updateStandardDie = () => {
-    if (dieState === "unmarked") {
+    if (dieState === "available") {
       setDieState("marked");
     } else {
-      setDieState("unmarked");
+      setDieState("available");
     }
   };
 
   const updateGrapeDie = () => {
-    if (dieState === "unmarked") {
+    if (dieState === "available") {
       setDieState("marked");
     } else if (dieState === "marked") {
       setDieState("gained");
     } else {
-      setDieState("unmarked");
+      setDieState("available");
     }
   };
 

@@ -9,10 +9,10 @@ export default {
 
 const Template = (args) => <Die {...args} />; // eslint-disable-line react/jsx-props-no-spreading
 
-export const Standard = Template.bind({});
-Standard.args = {
+export const StandardAvailable = Template.bind({});
+StandardAvailable.args = {
   dieType: "standard",
-  initialDieState: "unmarked",
+  initialDieState: "available",
   dieFace: 1,
 };
 
@@ -23,10 +23,10 @@ StandardMarked.args = {
   dieFace: 1,
 };
 
-export const Grape = Template.bind({});
-Grape.args = {
+export const GrapeAvailable = Template.bind({});
+GrapeAvailable.args = {
   dieType: "grape",
-  initialDieState: "unmarked",
+  initialDieState: "available",
   dieFace: 1,
 };
 

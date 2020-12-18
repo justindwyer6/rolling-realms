@@ -31,7 +31,7 @@ const Scythe = () => {
         key={`scythe-top-d6-${i + 1}`}
         dieFace={i + 1}
         dieType="standard"
-        initialDieState="unmarked"
+        initialDieState="available"
       />
     );
   };
@@ -53,7 +53,7 @@ const Scythe = () => {
         key={`scythe-bottom-d6-${i + 1}`}
         dieFace={dice[i]}
         dieType="standard"
-        initialDieState="unmarked"
+        initialDieState="available"
       />
     );
   };
