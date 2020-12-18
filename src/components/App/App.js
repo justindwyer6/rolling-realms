@@ -60,23 +60,6 @@ const App = () => {
     setQueryStringValue(rounds);
   }, [rounds]);
 
-  const rollDice = () => {
-    times(6, (i) => {
-      const die1 = i;
-      const die2 = 7 - i;
-      setTimeout(() => {
-        setDie1(die1);
-        setDie2(die2);
-      }, 50 + i * 15);
-    });
-    const die1 = Math.ceil(Math.random() * 6);
-    const die2 = Math.ceil(Math.random() * 6);
-    setTimeout(() => {
-      setDie1(die1);
-      setDie2(die2);
-    }, 350);
-  };
-
   const updateMinigame = (minigame, round) => {
     const updatingRoundOrder = { ...rounds };
     updatingRoundOrder[round] = minigame;
