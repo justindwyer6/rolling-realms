@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./App.scss";
-import { times } from "lodash";
 import Minigame from "../Minigame";
 import Round from "../Round/Round";
 import Rules from "../Rules";
@@ -11,12 +10,9 @@ const qs = require("query-string");
 
 const App = () => {
   const [rounds, setRounds] = useState(defaultRounds);
-  const [footerClasses, setFooterClasses] = useState("");
   const [copyLinkButtonClasses, setCopyLinkButtonClasses] = useState(
     "circleButton shareIcon",
   );
-  const [die1, setDie1] = useState(1);
-  const [die2, setDie2] = useState(6);
 
   // Update rounds state to match query string
   useEffect(() => {
@@ -79,7 +75,7 @@ const App = () => {
       "Wingspan",
     ];
 
-    function shuffle(array) {
+    const shuffle = (array) => {
       let currentIndex = array.length;
       let temporaryValue;
       let randomIndex;
@@ -90,11 +86,11 @@ const App = () => {
         currentIndex -= 1;
         // And swap it with the current element.
         temporaryValue = array[currentIndex];
-        array[currentIndex] = array[randomIndex];
-        array[randomIndex] = temporaryValue;
+        array[currentIndex] = array[randomIndex]; // eslint-disable-line no-param-reassign
+        array[randomIndex] = temporaryValue; // eslint-disable-line no-param-reassign
       }
       return array;
-    }
+    };
 
     const shuffledMinigames = shuffle(allMinigames);
     const roundsCopy = { ...rounds };
@@ -105,18 +101,11 @@ const App = () => {
     setRounds({ ...roundsCopy });
   };
 
-  const showRules = () => {
-    if (footerClasses.includes("show")) {
-      setFooterClasses("");
-    } else {
-      setFooterClasses(" show");
-    }
-  };
-
   const renderRoundTracker = (key) => {
     if (key === "1c" || key === "2c" || key === "3c") {
       return <Round key={key[0]} round={key[0] - 1} />;
     }
+    throw Error("Hmmm... That's not a valid round number.");
   };
 
   const copyLink = () => {
@@ -213,36 +202,9 @@ const App = () => {
         })}
       </div>
 
-      <button
-        type="button"
-        aria-label="Show Rules"
-        title="Show Rules"
-        id="fixedRules"
-        className={footerClasses}
-        onClick={showRules}
-      >
-        <h4>Rules</h4>
-        <Rules key="floatRules" />
-      </button>
+      {/* <Rules />> */}
 
-      <button
-        type="button"
-        aria-label="Roll Dice"
-        title="Roll Dice"
-        className="standardButton diceRoller"
-        onClick={rollDice}
-      >
-        <img
-          className="rolledDie"
-          src={`/images/d6-${die1}.png`}
-          alt={die1}
-        />
-        <img
-          className="rolledDie"
-          src={`/images/d6-${die2}.png`}
-          alt={die2}
-        />
-      </button>
+      {/* <DiceRoller />> */}
 
       <footer>
         <div className="contribute">
