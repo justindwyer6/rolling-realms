@@ -1,13 +1,20 @@
 import React from "react";
+import { times } from "lodash";
 import Die from "../Die/Die";
 import WineGlass from "../WineGlass";
 import "./Viticulture.scss";
-import { times } from "lodash";
 
-class Viticulture extends React.Component {
-  rewards = ["heart", "heart", "coin", "coin", "pumpkin", "pumpkin"];
+const Viticulture = () => {
+  const rewards = [
+    "heart",
+    "heart",
+    "coin",
+    "coin",
+    "pumpkin",
+    "pumpkin",
+  ];
 
-  renderDie(i) {
+  const renderDie = (i) => {
     return (
       <Die
         key={`viticulture-d6-${i + 1}`}
@@ -16,20 +23,20 @@ class Viticulture extends React.Component {
         initialDieState="unmarked"
       />
     );
-  }
+  };
 
-  renderRewards(i) {
+  const renderRewards = (i) => {
     return (
       <img
         className="reward"
-        key={`viticulture-rewards-${this.rewards[i]}-${i}`}
-        src={`/images/${this.rewards[i]}.png`}
-        alt={this.rewards[i]}
+        key={`viticulture-rewards-${rewards[i]}-${i}`}
+        src={`/images/${rewards[i]}.png`}
+        alt={rewards[i]}
       />
     );
-  }
+  };
 
-  renderWineOrders(i) {
+  const renderWineOrders = (i) => {
     return (
       <div className="wineOrder" key={i}>
         <WineGlass
@@ -43,24 +50,22 @@ class Viticulture extends React.Component {
         </div>
       </div>
     );
-  }
+  };
 
-  render() {
-    return (
-      <>
-        <p>
-          Either gain a grape (circle it) OR use the sum of 1 rolled
-          die and at least 1 gained grape (cross it off) to fill a
-          wine order.
-        </p>
-        <div className="viticultureC">
-          {times(6, (i) => this.renderDie(i))}
-          {times(6, (i) => this.renderRewards(i))}
-          {times(3, (i) => this.renderWineOrders(i))}
-        </div>
-      </>
-    );
-  }
-}
+  return (
+    <>
+      <p>
+        Either gain a grape (circle it) OR use the sum of 1 rolled die
+        and at least 1 gained grape (cross it off) to fill a wine
+        order.
+      </p>
+      <div className="viticultureC">
+        {times(6, (i) => renderDie(i))}
+        {times(6, (i) => renderRewards(i))}
+        {times(3, (i) => renderWineOrders(i))}
+      </div>
+    </>
+  );
+};
 
 export default Viticulture;
