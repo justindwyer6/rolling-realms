@@ -36,6 +36,7 @@ const Round = ([round]) => {
         key={`round-${thisRound}-${reward}-${i}`}
         i={i}
         reward={reward}
+        round={thisRound}
         rewardClasses="reward"
       />
     );

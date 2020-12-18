@@ -1,32 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 
-class Reward extends React.Component {
-  state = {
-    rewardClasses: this.props.rewardClasses,
+const Reward = ([round, reward, i]) => {
+  const [rewardState, setRewardState] = useState("available");
+
+  const updateReward = () => {
+    if (rewardState === "available") {
+      setRewardState("gained");
+    } else if (rewardState === "gained") {
+      setRewardState("used");
+    } else {
+      setRewardState("available");
+    }
   };
 
-  updateReward = () => {
-    let rewardClasses = this.state.rewardClasses;
-    rewardClasses.includes("usedReward")
-      ? (rewardClasses = this.props.rewardClasses)
-      : rewardClasses.includes("gainedReward")
-      ? (rewardClasses += " usedReward")
-      : (rewardClasses += " gainedReward");
-    this.setState({ rewardClasses });
-  };
-
-  render() {
-    return (
-      <button onClick={this.updateReward}>
-        <img
-          className={this.state.rewardClasses}
-          key={`${this.props.i}${this.props.reward}`}
-          src={`/images/${this.props.reward}.png`}
-          alt={`${this.props.reward}`}
-        />
-      </button>
-    );
-  }
-}
+  return (
+    <button
+      type="button"
+      aria-label={`Round ${round}: ${reward} ${i}`}
+      title={`Round ${round}: ${reward} ${i}`}
+      onClick={updateReward}
+    >
+      <img
+        className={rewardState}
+        src={`/images/${reward}.png`}
+        alt={reward}
+      />
+    </button>
+  );
+};
 
 export default Reward;
