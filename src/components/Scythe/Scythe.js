@@ -1,11 +1,11 @@
 import React from "react";
+import { times } from "lodash";
 import Die from "../Die/Die";
 import Star from "../Star/Star";
 import "./Scythe.scss";
-import { times } from "lodash";
 
-class Scythe extends React.Component {
-  topRewards = [
+const Scythe = () => {
+  const topRewards = [
     "coin",
     "heart",
     "pumpkin",
@@ -14,7 +14,7 @@ class Scythe extends React.Component {
     "pumpkin",
   ];
 
-  bottomRewards = [
+  const bottomRewards = [
     "heart",
     "pumpkin",
     "coin",
@@ -23,9 +23,9 @@ class Scythe extends React.Component {
     "heart",
   ];
 
-  scrambledDice = [5, 6, 2, 1, 4, 3];
+  const scrambledDice = [5, 6, 2, 1, 4, 3];
 
-  renderTopDie(i) {
+  const renderTopDie = (i) => {
     return (
       <Die
         key={`scythe-top-d6-${i + 1}`}
@@ -34,9 +34,9 @@ class Scythe extends React.Component {
         initialDieState="unmarked"
       />
     );
-  }
+  };
 
-  renderTopRewards(i, rewards) {
+  const renderTopRewards = (i, rewards) => {
     return (
       <img
         className="topReward"
@@ -45,9 +45,9 @@ class Scythe extends React.Component {
         alt={rewards[i]}
       />
     );
-  }
+  };
 
-  renderBottomDie(i, dice) {
+  const renderBottomDie = (i, dice) => {
     return (
       <Die
         key={`scythe-bottom-d6-${i + 1}`}
@@ -56,9 +56,9 @@ class Scythe extends React.Component {
         initialDieState="unmarked"
       />
     );
-  }
+  };
 
-  renderBottomRewards(i, rewards) {
+  const renderBottomRewards = (i, rewards) => {
     return (
       <img
         className="bottomReward"
@@ -67,35 +67,29 @@ class Scythe extends React.Component {
         alt={rewards[i]}
       />
     );
-  }
+  };
 
-  renderStars(i) {
+  const renderStars = (i) => {
     return <Star key={i} />;
-  }
+  };
 
-  render() {
-    return (
-      <>
-        <p>
-          Mark a #: The top row provides resource bonuses; the bottom
-          row costs resources to gain stars. When you mark a top-row
-          number, you may pay the bottom-row cost in the same column
-          to mark it and gain its star.
-        </p>
-        <div className="scytheC">
-          {times(6, (i) => this.renderTopDie(i))}
-          {times(6, (i) => this.renderTopRewards(i, this.topRewards))}
-          {times(6, (i) =>
-            this.renderBottomDie(i, this.scrambledDice),
-          )}
-          {times(6, (i) =>
-            this.renderBottomRewards(i, this.bottomRewards),
-          )}
-          {times(6, (i) => this.renderStars(i))}
-        </div>
-      </>
-    );
-  }
-}
+  return (
+    <>
+      <p>
+        Mark a #: The top row provides resource bonuses; the bottom
+        row costs resources to gain stars. When you mark a top-row
+        number, you may pay the bottom-row cost in the same column to
+        mark it and gain its star.
+      </p>
+      <div className="scytheC">
+        {times(6, (i) => renderTopDie(i))}
+        {times(6, (i) => renderTopRewards(i, topRewards))}
+        {times(6, (i) => renderBottomDie(i, scrambledDice))}
+        {times(6, (i) => renderBottomRewards(i, bottomRewards))}
+        {times(6, (i) => renderStars(i))}
+      </div>
+    </>
+  );
+};
 
 export default Scythe;
