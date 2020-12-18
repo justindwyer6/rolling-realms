@@ -30,10 +30,10 @@ const Round = ([round]) => {
     );
   };
 
-  const renderRewards = (i, reward, round) => {
+  const renderRewards = (i, reward, thisRound) => {
     return (
       <Reward
-        key={`round-${round}-${reward}-${i}`}
+        key={`round-${thisRound}-${reward}-${i}`}
         i={i}
         reward={reward}
         rewardClasses="reward"
@@ -73,13 +73,13 @@ const Round = ([round]) => {
         <img src="/images/star.png" alt="star" />
       </div>
       <div className="rewards">
-        {times(12, (i) => renderRewards(i, "pumpkin"))}
+        {times(12, (i) => renderRewards(i, "pumpkin", round))}
       </div>
       <div className="rewards">
-        {times(12, (i) => renderRewards(i, "heart"))}
+        {times(12, (i) => renderRewards(i, "heart", round))}
       </div>
       <div className="rewards">
-        {times(12, (i) => renderRewards(i, "coin"))}
+        {times(12, (i) => renderRewards(i, "coin", round))}
       </div>
     </div>
   );
