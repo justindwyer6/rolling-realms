@@ -1,7 +1,7 @@
 import React from "react";
+import { times } from "lodash";
 import Die from "../Die/Die";
 import "./Charterstone.scss";
-import { times } from "lodash";
 
 const Charterstone = () => {
   const rewards = [
@@ -24,13 +24,13 @@ const Charterstone = () => {
     );
   };
 
-  const renderRewards = (i, rewards) => {
+  const renderRewards = (i, theseRewards) => {
     return (
       <img
         className="topReward"
-        key={`charterstone-rewards-${rewards[i]}-${i}`}
-        src={`/images/${rewards[i]}.png`}
-        alt={rewards[i]}
+        key={`charterstone-rewards-${theseRewards[i]}-${i}`}
+        src={`/images/${theseRewards[i]}.png`}
+        alt={theseRewards[i]}
       />
     );
   };
