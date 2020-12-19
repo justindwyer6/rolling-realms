@@ -14,7 +14,7 @@ const Minigame = ([
   };
 
   const stars = [1, 2, 3, 4, 5, 6];
-
+  console.log("sup");
   return (
     <>
       <div className="Minigame">
@@ -50,7 +50,7 @@ const Minigame = ([
               </select>
             </div>
           </div>
-          <Board index={index} name={minigame} />
+          <Board name={minigame} />
           {minigame === "Scythe" ? null : (
             <div className="stars-row">
               {stars.map((star) => (

@@ -102,18 +102,30 @@ const App = () => {
   };
 
   const renderMinigame = (key, i) => {
-    <Minigame
-      key={rounds[key]}
-      index={key}
-      i={i}
-      minigame={rounds[key]}
-      roundNumber={key[0]}
-      updateMinigame={updateMinigame}
-    />;
+    console.log(
+      <Minigame
+        key={rounds[key]}
+        index={key}
+        i={i}
+        minigame={rounds[key]}
+        roundNumber={key[0]}
+        updateMinigame={updateMinigame}
+      />,
+    );
+    return (
+      <Minigame
+        key={rounds[key]}
+        index={key}
+        i={i}
+        minigame={rounds[key]}
+        roundNumber={key[0]}
+        updateMinigame={updateMinigame}
+      />
+    );
   };
 
   const renderRoundTracker = (key) => {
-    <Round key={key[0]} round={key[0] - 1} />;
+    return <Round key={key[0]} round={key[0] - 1} />;
   };
 
   const copyLink = () => {
@@ -135,6 +147,8 @@ const App = () => {
 
   return (
     <>
+      {renderRoundTracker("1c")}
+      {renderMinigame("1a", 0)}
       <div className="header">
         <img
           className="sm-logo"
@@ -165,7 +179,6 @@ const App = () => {
         </div>
         <Rules key="headerRules" />
       </div>
-
       <div className="subheader">
         <div className="roundSelectionButtons">
           <button
@@ -191,20 +204,17 @@ const App = () => {
           onClick={() => window.print()}
         />
       </div>
-
       <div className="MinigamesC">
         {Object.keys(rounds).forEach((key, i) => {
+          console.log(rounds[key], key, i);
           renderMinigame(key, i);
           if (key[-1] === "c") {
             renderRoundTracker(key);
           }
         })}
       </div>
-
       {/* <Rules />> */}
-
       {/* <DiceRoller />> */}
-
       <footer>
         <div className="contribute">
           <p>
