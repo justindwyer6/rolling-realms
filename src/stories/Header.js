@@ -1,15 +1,11 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from "react";
 import PropTypes from "prop-types";
 
-import { Button } from "./Button";
+import Button from "./Button";
 import "./header.css";
 
-export const Header = ({
-  user,
-  onLogin,
-  onLogout,
-  onCreateAccount,
-}) => (
+const Header = ({ user, onLogin, onLogout, onCreateAccount }) => (
   <header>
     <div className="wrapper">
       <div>
@@ -65,3 +61,5 @@ Header.propTypes = {
 Header.defaultProps = {
   user: null,
 };
+
+export default Header;

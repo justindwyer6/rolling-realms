@@ -9,12 +9,7 @@ const Minigame = ([
   key,
   index,
 ]) => {
-  const handleMinigameChange = (event, thisMinigame) => {
-    updateMinigame(event.target.value, thisMinigame);
-  };
-
   const stars = [1, 2, 3, 4, 5, 6];
-  console.log("sup");
   return (
     <>
       <div className="Minigame">
@@ -28,9 +23,11 @@ const Minigame = ([
                 id={minigame + key}
                 defaultValue={minigame}
                 onChange={(event) =>
-                  handleMinigameChange(event, index)
+                  updateMinigame(event.target.value, index)
                 }
-                onBlur={(event) => handleMinigameChange(event, index)}
+                onBlur={(event) =>
+                  updateMinigame(event.target.value, index)
+                }
               >
                 <option value="Between Two Castles">
                   Between Two Castles

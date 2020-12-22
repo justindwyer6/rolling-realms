@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { times } from "lodash";
-import Reward from "../Reward";
+import Reward from "../Reward/Reward";
 // import Rules from "../Rules";
 import "./Round.scss";
 

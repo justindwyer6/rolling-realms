@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.scss";
 import Minigame from "../Minigame";
-import Round from "../Round/Round";
+// import Round from "../Round/Round";
 import Rules from "../Rules";
 import defaultRounds from "../../rounds";
 import { setQueryStringValue } from "../../functions/queryString";
@@ -51,7 +51,7 @@ const App = () => {
     });
   }, []);
 
-  // Updare query string to match rounds state
+  // Update query string to match rounds state
   useEffect(() => {
     setQueryStringValue(rounds);
   }, [rounds]);
@@ -101,32 +101,25 @@ const App = () => {
     setRounds({ ...roundsCopy });
   };
 
-  const renderMinigame = (key, i) => {
-    console.log(
-      <Minigame
-        key={rounds[key]}
-        index={key}
-        i={i}
-        minigame={rounds[key]}
-        roundNumber={key[0]}
-        updateMinigame={updateMinigame}
-      />,
-    );
-    return (
-      <Minigame
-        key={rounds[key]}
-        index={key}
-        i={i}
-        minigame={rounds[key]}
-        roundNumber={key[0]}
-        updateMinigame={updateMinigame}
-      />
-    );
-  };
+  // const renderMinigame = (key, i) => {
+  //   console.log(
+  //     "just before returning Minigame component in renderMinigame inApp.js",
+  //   );
+  //   return (
+  //     <Minigame
+  //       key={rounds[key]}
+  //       index={key}
+  //       i={i}
+  //       minigame={rounds[key]}
+  //       roundNumber={key[0]}
+  //       updateMinigame={updateMinigame}
+  //     />
+  //   );
+  // };
 
-  const renderRoundTracker = (key) => {
-    return <Round key={key[0]} round={key[0] - 1} />;
-  };
+  // const renderRoundTracker = (key) => {
+  //   return <Round key={key[0]} round={key[0] - 1} />;
+  // };
 
   const copyLink = () => {
     navigator.clipboard.writeText(window.location).then(
@@ -147,8 +140,6 @@ const App = () => {
 
   return (
     <>
-      {renderRoundTracker("1c")}
-      {renderMinigame("1a", 0)}
       <div className="header">
         <img
           className="sm-logo"
@@ -205,12 +196,17 @@ const App = () => {
         />
       </div>
       <div className="MinigamesC">
-        {Object.keys(rounds).forEach((key, i) => {
-          console.log(rounds[key], key, i);
-          renderMinigame(key, i);
-          if (key[-1] === "c") {
-            renderRoundTracker(key);
-          }
+        {Object.keys(rounds).map((key, i) => {
+          return (
+            <Minigame
+              key={rounds[key]}
+              index={key}
+              i={i}
+              minigame={rounds[key]}
+              roundNumber={key[0]}
+              updateMinigame={updateMinigame}
+            />
+          );
         })}
       </div>
       {/* <Rules />> */}

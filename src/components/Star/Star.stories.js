@@ -1,6 +1,6 @@
 import React from "react";
 import Star from "./Star";
-import unearnedStar from "../../images/star-outline.png";
+import availableStar from "../../images/star-outline.png";
 import earnedStar from "../../images/star.png";
 
 export default {
@@ -11,9 +11,9 @@ export default {
 
 const Template = () => <Star />;
 
-export const Unearned = Template.bind({});
-Unearned.args = {
-  starSource: unearnedStar,
+export const Available = Template.bind({});
+Available.args = {
+  starSource: availableStar,
 };
 
 export const Earned = Template.bind({});

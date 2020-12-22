@@ -9,6 +9,7 @@
     "eslint": "^7.15.0",
     "lodash": "^4.17.20",
     "normalize.css": "^8.0.1",
+    "prop-types": "^15.7.2",
     "query-string": "^6.13.7",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
