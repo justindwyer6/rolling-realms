@@ -10,12 +10,14 @@ const Minigame = (
   index,
 ) => {
   const stars = [1, 2, 3, 4, 5, 6];
+  console.log("minigame");
+  console.log(minigame);
   return (
     <>
       <div className="Minigame">
         <div className="content">
           <div className="minigameHeader">
-            <div className="roundNumber">{roundNumber}</div>
+            <div className="roundNumber">roundNumber</div>
             <div>
               <select
                 className="title"

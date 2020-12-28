@@ -183,7 +183,7 @@ const App = () => {
               index={key}
               i={i}
               minigame={rounds[key]}
-              roundNumber={key[0]}
+              roundNumber={key.charAt(0)}
               updateMinigame={updateMinigame}
             />
           );

@@ -10,6 +10,8 @@ import Viticulture from "./Viticulture/Viticulture";
 import Wingspan from "./Wingspan/Wingspan";
 
 const Board = (name) => {
+  console.log("name");
+  console.log(name);
   if (name === "Between Two Castles") {
     return <BetweenTwoCastles />;
   }
@@ -37,7 +39,7 @@ const Board = (name) => {
   if (name === "Wingspan") {
     return <Wingspan />;
   }
-  throw Error("Hmmm... That's not a valid minigame.");
+  throw Error(`Hmmm... ${name} is not a valid minigame.`);
 };
 
 export default Board;
