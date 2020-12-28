@@ -9,7 +9,7 @@ import Tapestry from "./Tapestry/Tapestry";
 import Viticulture from "./Viticulture/Viticulture";
 import Wingspan from "./Wingspan/Wingspan";
 
-const Board = ([name]) => {
+const Board = (name) => {
   if (name === "Between Two Castles") {
     return <BetweenTwoCastles />;
   }

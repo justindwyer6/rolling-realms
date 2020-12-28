@@ -4,7 +4,7 @@ import Reward from "../Reward/Reward";
 // import Rules from "../Rules";
 import "./Round.scss";
 
-const Round = ([round]) => {
+const Round = (round) => {
   const [rolledDice, setRolledDice] = useState([1, 6]);
 
   const rollDice = () => {

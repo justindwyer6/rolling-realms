@@ -3,7 +3,7 @@ import pumpkin from "../../images/pumpkin.png";
 import heart from "../../images/heart.png";
 import coin from "../../images/coin.png";
 
-const Reward = ([round, reward, i]) => {
+const Reward = (round, reward, i) => {
   const [rewardState, setRewardState] = useState("available");
 
   const updateReward = () => {

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import emptyWineGlass from "../images/empty-wine-glass.png";
 import fullWineGlass from "../images/full-wine-glass.png";
 
-const WineGlass = ([i]) => {
+const WineGlass = (i) => {
   const [wineGlassState, setWineGlassState] = useState(
     emptyWineGlass,
   );

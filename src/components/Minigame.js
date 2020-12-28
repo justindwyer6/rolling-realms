@@ -2,13 +2,13 @@ import React from "react";
 import Board from "./Board";
 import Star from "./Star/Star";
 
-const Minigame = ([
+const Minigame = (
   updateMinigame,
   roundNumber,
   minigame,
   key,
   index,
-]) => {
+) => {
   const stars = [1, 2, 3, 4, 5, 6];
   return (
     <>
