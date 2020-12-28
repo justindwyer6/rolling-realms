@@ -5,7 +5,7 @@ const rounds = {
   "2a": "Between Two Castles",
   "2b": "Viticulture",
   "2c": "Euphoria",
-  "3a": "My Little Scythe",
+  "3a": "Scythe",
   "3b": "Tapestry",
   "3c": "Wingspan",
 };

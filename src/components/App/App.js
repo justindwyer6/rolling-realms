@@ -38,7 +38,7 @@ const App = () => {
           "Between Two Castles",
           "Viticulture",
           "Euphoria",
-          "My Little Scythe",
+          "Scythe",
           "Tapestry",
           "Wingspan",
         ].includes(parsedQueryString[key])
@@ -70,7 +70,7 @@ const App = () => {
       "Between Two Castles",
       "Viticulture",
       "Euphoria",
-      "My Little Scythe",
+      "Scythe",
       "Tapestry",
       "Wingspan",
     ];
@@ -100,26 +100,6 @@ const App = () => {
     });
     setRounds({ ...roundsCopy });
   };
-
-  // const renderMinigame = (key, i) => {
-  //   console.log(
-  //     "just before returning Minigame component in renderMinigame inApp.js",
-  //   );
-  //   return (
-  //     <Minigame
-  //       key={rounds[key]}
-  //       index={key}
-  //       i={i}
-  //       minigame={rounds[key]}
-  //       roundNumber={key[0]}
-  //       updateMinigame={updateMinigame}
-  //     />
-  //   );
-  // };
-
-  // const renderRoundTracker = (key) => {
-  //   return <Round key={key[0]} round={key[0] - 1} />;
-  // };
 
   const copyLink = () => {
     navigator.clipboard.writeText(window.location).then(
