@@ -9,37 +9,38 @@ import Tapestry from "./Tapestry/Tapestry";
 import Viticulture from "./Viticulture/Viticulture";
 import Wingspan from "./Wingspan/Wingspan";
 
-const Board = (name) => {
+const Board = ({ minigameName }) => {
   console.log("name");
-  console.log(name);
-  if (name === "Between Two Castles") {
+  console.log(minigameName);
+  console.log(JSON.stringify(minigameName));
+  if (minigameName === "Between Two Castles") {
     return <BetweenTwoCastles />;
   }
-  if (name === "Between Two Cities") {
+  if (minigameName === "Between Two Cities") {
     return <BetweenTwoCities />;
   }
-  if (name === "Charterstone") {
+  if (minigameName === "Charterstone") {
     return <Charterstone />;
   }
-  if (name === "Euphoria") {
+  if (minigameName === "Euphoria") {
     return <Euphoria />;
   }
-  if (name === "My Little Scythe") {
+  if (minigameName === "My Little Scythe") {
     return <Scythe />;
   }
-  if (name === "Scythe") {
+  if (minigameName === "Scythe") {
     return <Scythe />;
   }
-  if (name === "Tapestry") {
+  if (minigameName === "Tapestry") {
     return <Tapestry />;
   }
-  if (name === "Viticulture") {
+  if (minigameName === "Viticulture") {
     return <Viticulture />;
   }
-  if (name === "Wingspan") {
+  if (minigameName === "Wingspan") {
     return <Wingspan />;
   }
-  throw Error(`Hmmm... ${name} is not a valid minigame.`);
+  throw Error(`Hmmm... ${minigameName} is not a valid minigame.`);
 };
 
 export default Board;
