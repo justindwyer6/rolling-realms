@@ -3,25 +3,22 @@ import Board from "./Board";
 import Star from "./Star/Star";
 
 const Minigame = ({
-  key,
   index,
   minigameName,
   roundNumber,
   updateMinigame,
 }) => {
   const stars = [1, 2, 3, 4, 5, 6];
-  console.log("minigame");
-  console.log(minigameName);
   return (
     <div className="Minigame">
       <div className="content">
         <div className="minigameHeader">
-          <div className="roundNumber">{`${roundNumber}`}</div>
+          <div className="roundNumber">{roundNumber}</div>
           <div>
             <select
               className="title"
               name="minigameName"
-              id={minigameName + key}
+              id={minigameName + minigameName}
               defaultValue={minigameName}
               onChange={(event) =>
                 updateMinigame(event.target.value, index)
@@ -48,8 +45,6 @@ const Minigame = ({
             </select>
           </div>
         </div>
-        {console.log("JUST BEFORE BOARD IS RENDERED")}
-        {console.log(minigameName)}
         <Board minigameName={minigameName} />
         {minigameName === "Scythe" ? null : (
           <div className="stars-row">

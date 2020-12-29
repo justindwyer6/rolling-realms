@@ -10,9 +10,6 @@ import Viticulture from "./Viticulture/Viticulture";
 import Wingspan from "./Wingspan/Wingspan";
 
 const Board = ({ minigameName }) => {
-  console.log("name");
-  console.log(minigameName);
-  console.log(JSON.stringify(minigameName));
   if (minigameName === "Between Two Castles") {
     return <BetweenTwoCastles />;
   }

@@ -177,18 +177,14 @@ const App = () => {
       </div>
       <div className="MinigamesC">
         {Object.keys(rounds).map((key) => {
-          console.log("ROUNDS[KEY]");
-          console.log(typeof rounds[key]);
           return (
-            <>
-              <Minigame
-                key={rounds[key]}
-                index={key}
-                minigameName={rounds[key]}
-                roundNumber={key.charAt(0)}
-                updateMinigame={updateMinigame}
-              />
-            </>
+            <Minigame
+              key={rounds[key]}
+              index={key}
+              minigameName={rounds[key]}
+              roundNumber={key.charAt(0)}
+              updateMinigame={updateMinigame}
+            />
           );
         })}
       </div>
