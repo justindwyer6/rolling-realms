@@ -2,6 +2,14 @@
 // Two other sizes can be found there if these three aren't best
 // Extra small devices (portrait phones, less than 576px)
 // No media query for `xs` since this is the default
+
+.appContainer {
+  display: grid;
+  gap: 10p;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+}
+
 button {
   background: none;
   outline: none;
