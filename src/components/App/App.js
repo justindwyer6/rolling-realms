@@ -175,19 +175,17 @@ const App = () => {
           onClick={() => window.print()}
         />
       </div>
-      <div className="MinigamesC">
-        {Object.keys(rounds).map((key) => {
-          return (
-            <Minigame
-              key={rounds[key]}
-              index={key}
-              minigameName={rounds[key]}
-              roundNumber={key.charAt(0)}
-              updateMinigame={updateMinigame}
-            />
-          );
-        })}
-      </div>
+      {Object.keys(rounds).map((key) => {
+        return (
+          <Minigame
+            key={rounds[key]}
+            index={key}
+            minigameName={rounds[key]}
+            roundNumber={key.charAt(0)}
+            updateMinigame={updateMinigame}
+          />
+        );
+      })}
       {/* <Rules />> */}
       {/* <DiceRoller />> */}
       <footer>
