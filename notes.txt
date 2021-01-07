@@ -5,3 +5,4 @@ Next up:
 To do:
 - add a "missing" category to minigame dropdown
 - make round number clicking do something
+- Incorporate html picture element for responsiveness
