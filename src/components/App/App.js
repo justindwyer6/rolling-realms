@@ -119,7 +119,7 @@ const App = () => {
   };
 
   return (
-    <>
+    <div className="appContainer">
       <div className="header">
         <img
           className="sm-logo"
@@ -229,7 +229,7 @@ const App = () => {
           </p>
         </div>
       </footer>
-    </>
+    </div>
   );
 };
 

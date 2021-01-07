@@ -1,3 +1,7 @@
+// Breakpoint choices taken from Bootstrap site: https://getbootstrap.com/docs/4.1/layout/overview/#responsive-breakpoints
+// Two other sizes can be found there if these three aren't best
+// Extra small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default
 button {
   background: none;
   outline: none;
@@ -5,13 +9,14 @@ button {
 }
 
 img {
-  // width: 30px;
-  // height: 30px;
+  width: 30px;
+  height: 30px;
 }
 
-@media (max-width: 480px) {
-  img {
-    // width: 15px;
-    // height: 15px;
-  }
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
 }
