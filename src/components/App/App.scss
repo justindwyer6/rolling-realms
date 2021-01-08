@@ -3,7 +3,13 @@
 // Extra small devices (portrait phones, less than 576px)
 // No media query for `xs` since this is the default
 
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+
 .appContainer {
+  padding: 5px;
   display: grid;
   gap: 10px;
   grid-template-columns: auto;
@@ -18,6 +24,13 @@
 
   .Minigame {
     grid-column: 1/2;
+    border: 1px black solid;
+    border-radius: 5px;
+
+    // Grid
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
   }
 
   .footer {
@@ -32,8 +45,8 @@ button {
 }
 
 img {
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
 }
 
 // Medium devices (tablets, 768px and up)
