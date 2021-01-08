@@ -1,0 +1,20 @@
+.Minigame {
+  grid-column: 1/2;
+  border: 1px black solid;
+  border-radius: 5px;
+  height: 100px;
+  overflow-y: scroll;
+
+  // Grid
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+
+  p {
+    display: none;
+  }
+}
+
+.minigameHeader {
+  grid-column: 1/7;
+}

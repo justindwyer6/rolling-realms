@@ -22,17 +22,6 @@ html {
     grid-column: 1/2;
   }
 
-  .Minigame {
-    grid-column: 1/2;
-    border: 1px black solid;
-    border-radius: 5px;
-
-    // Grid
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(6, 1fr);
-  }
-
   .footer {
     grid-column: 1/2;
   }
