@@ -2,13 +2,15 @@
   grid-column: 1/2;
   border: 1px black solid;
   border-radius: 5px;
-  height: 100px;
+  height: calc(100vw - 10px);
   overflow-y: scroll;
 
   // Grid
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(6, 1fr);
+  justify-items: center;
+  align-items: center;
 
   p {
     display: none;
