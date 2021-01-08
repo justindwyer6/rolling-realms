@@ -37,11 +37,11 @@ const Minigame = ({ index, minigameName, updateMinigame }) => {
       </div>
       <Board minigameName={minigameName} />
       {minigameName === "Scythe" ? null : (
-        <div className="stars-row">
+        <>
           {stars.map((star) => (
             <Star key={star} index={`${index}-star-${star}`} />
           ))}
-        </div>
+        </>
       )}
     </div>
   );
