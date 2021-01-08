@@ -15,9 +15,13 @@ const BetweenTwoCities = () => {
 
   const renderCell = (i) => {
     return (
-      <div key={i} className="input">
-        <input type="number" className="" min="1" max="6" />
-      </div>
+      <input
+        key={`city-cell-${i}`}
+        type="number"
+        className=""
+        min="1"
+        max="6"
+      />
     );
   };
 
@@ -29,12 +33,8 @@ const BetweenTwoCities = () => {
       </p>
       {/* Render a 3x3 grid of inputs with two overlayed rewards appended to the end of each row */}
       {times(9, (i) => {
-        console.log("index:");
-        console.log(i + 1);
-        console.log("Modulo:");
-        console.log((i + 1) % 3);
         if ((i + 1) % 3 === 1) {
-          return [<b />, renderCell(i)];
+          return [<b key={`blank-${i}`} />, renderCell(i)];
         }
         if ((i + 1) % 3 === 2) {
           return renderCell(i);
@@ -56,12 +56,12 @@ const BetweenTwoCities = () => {
                 alt={rowRewards[i - 3]}
               />
             </div>,
-            <b />,
+            <b key={`blank-${i}`} />,
           ];
         }
         return null;
       })}
-      <b />
+      <b key="blank-bottom-start" />
       {times(3, (i) => (
         <div key={`rewards-${i}`} className="rewards">
           <img
@@ -78,8 +78,8 @@ const BetweenTwoCities = () => {
           />
         </div>
       ))}
-      <b />
-      <b />
+      <b key="blank-bottom-end-1" />
+      <b key="blank-bottom-end-2" />
       <p>
         Score stars equal to the lowest of the other 2 realms this
         round. This # cannot be higher than filled squares here.
