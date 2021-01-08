@@ -8,22 +8,21 @@
   gap: 10px;
   grid-template-columns: auto;
   grid-template-rows: auto;
-}
+  .header {
+    grid-column: 1/2;
+  }
 
-.header {
-  grid-column: 1/2;
-}
+  .subheader {
+    grid-column: 1/2;
+  }
 
-.subheader {
-  grid-column: 1/2;
-}
+  .Minigame {
+    grid-column: 1/2;
+  }
 
-.Minigame {
-  grid-column: 1/2;
-}
-
-.footer {
-  grid-column: 1/2;
+  .footer {
+    grid-column: 1/2;
+  }
 }
 
 button {
@@ -41,22 +40,21 @@ img {
 @media (min-width: 768px) {
   .appContainer {
     grid-template-columns: repeat(2, 1fr);
-  }
+    .header {
+      grid-column: 1/2;
+    }
 
-  .header {
-    grid-column: 1/2;
-  }
+    .subheader {
+      grid-column: 1/2;
+    }
 
-  .subheader {
-    grid-column: 1/2;
-  }
+    .Minigame {
+      grid-column: span 1;
+    }
 
-  .Minigame {
-    grid-column: span 1;
-  }
-
-  .footer {
-    grid-column: 1/2;
+    .footer {
+      grid-column: 1/2;
+    }
   }
 }
 
