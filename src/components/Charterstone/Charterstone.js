@@ -41,22 +41,20 @@ const Charterstone = () => {
         Mark either <span>a bonus</span> (note the other rolled die on
         the crate) or <span>all crates matching the die</span>.
       </p>
-      <div className="charterstoneC">
-        {times(6, (i) => renderDie(i))}
-        {times(6, (i) => renderRewards(i, rewards))}
-        {times(6, (i) => (
-          <img src="/images/red-arrow.png" alt="arrow" key={i} />
-        ))}
-        {times(6, (i) => (
-          <div key={i}>
-            <input type="number" min="1" max="6" />
-            <img src="/images/open-crate.png" alt="crate" />
-          </div>
-        ))}
-        {times(6, (i) => (
-          <img src="/images/red-arrow.png" alt="arrow" key={i} />
-        ))}
-      </div>
+      {times(6, (i) => renderDie(i))}
+      {times(6, (i) => renderRewards(i, rewards))}
+      {times(6, (i) => (
+        <img src="/images/red-arrow.png" alt="arrow" key={i} />
+      ))}
+      {times(6, (i) => (
+        <div key={i}>
+          <input type="number" min="1" max="6" />
+          <img src="/images/open-crate.png" alt="crate" />
+        </div>
+      ))}
+      {times(6, (i) => (
+        <img src="/images/red-arrow.png" alt="arrow" key={i} />
+      ))}
     </>
   );
 };
