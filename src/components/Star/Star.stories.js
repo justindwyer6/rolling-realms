@@ -1,7 +1,7 @@
 import React from "react";
 import Star from "./Star";
 import availableStar from "../../images/star-outline.png";
-import earnedStar from "../../images/star.png";
+import earnedStar from "../../images/star-filled.png";
 
 export default {
   title: "Example/Star",
