@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.scss";
 import Minigame from "../Minigame/Minigame";
-import Round from "../Round/Round";
+import RoundTracker from "../RoundTracker/RoundTracker";
 import Rules from "../Rules";
 import defaultRounds from "../../rounds";
 import { setQueryStringValue } from "../../functions/queryString";
@@ -176,14 +176,7 @@ const App = () => {
         />
       </div>
       {Object.keys(rounds).map((key, i) => {
-        console.log("key");
-        console.log(key);
-        console.log("Index:");
-        console.log(i);
-        console.log("Key:");
-        console.log(parseInt(key.charAt(0), 10));
-        console.log("Modulo:");
-        console.log(parseInt(key.charAt(0), 10) % 3);
+        // Generate RoundTracker after every third Minigame
         if ((i + 1) % 3 === 0) {
           return [
             <Minigame
@@ -193,7 +186,7 @@ const App = () => {
               roundNumber={key.charAt(0)}
               updateMinigame={updateMinigame}
             />,
-            <Round round={key.charAt(0)} />,
+            <RoundTracker round={key.charAt(0)} />,
           ];
         }
         return (
