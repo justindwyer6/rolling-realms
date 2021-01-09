@@ -175,14 +175,17 @@ const App = () => {
           onClick={() => window.print()}
         />
       </div>
-      {Object.keys(rounds).map((key) => {
+      {Object.keys(rounds).map((key, i) => {
+        console.log("key");
+        console.log(key);
+        console.log("Index:");
+        console.log(i);
         console.log("Key:");
         console.log(parseInt(key.charAt(0), 10));
         console.log("Modulo:");
         console.log(parseInt(key.charAt(0), 10) % 3);
-        if (parseInt(key.charAt(0), 10) % 3 === 0) {
+        if ((i + 1) % 3 === 0) {
           return [
-            <Round />,
             <Minigame
               key={rounds[key]}
               index={key}
@@ -190,6 +193,7 @@ const App = () => {
               roundNumber={key.charAt(0)}
               updateMinigame={updateMinigame}
             />,
+            <Round round={key.charAt(0)} />,
           ];
         }
         return (
