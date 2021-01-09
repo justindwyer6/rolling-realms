@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import pumpkin from "../../images/pumpkin.png";
 import heart from "../../images/heart.png";
 import coin from "../../images/coin.png";
+import "./Reward.scss";
 
 const Reward = ({ round, reward, i }) => {
   const [rewardState, setRewardState] = useState("available");
@@ -37,7 +38,7 @@ const Reward = ({ round, reward, i }) => {
       onClick={updateReward}
     >
       <img
-        className={rewardState}
+        className={`reward ${rewardState}`}
         src={getRewardAsset(reward)}
         alt={reward}
       />

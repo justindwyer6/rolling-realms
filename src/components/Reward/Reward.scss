@@ -1,0 +1,17 @@
+.reward {
+  border-radius: 100%;
+  padding: 1px;
+
+  &.available {
+    border: 2px dotted black;
+  }
+
+  &.gained {
+    border: 2px solid black;
+  }
+
+  &.used {
+    border: 2px solid black;
+    background: black;
+  }
+}
