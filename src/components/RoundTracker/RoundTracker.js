@@ -43,7 +43,7 @@ const RoundTracker = ({ round }) => {
   };
 
   return (
-    <>
+    <div className="RoundTracker">
       <div className="turnsC">
         <p className="sideways">TURNS</p>
         <div className="turns">
@@ -82,7 +82,7 @@ const RoundTracker = ({ round }) => {
       <div className="rewards">
         {times(12, (i) => renderRewards(i, "coin", round))}
       </div>
-    </>
+    </div>
   );
 };
 

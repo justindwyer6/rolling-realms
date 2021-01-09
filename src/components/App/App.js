@@ -180,13 +180,16 @@ const App = () => {
         if ((i + 1) % 3 === 0) {
           return [
             <Minigame
-              key={rounds[key]}
+              key={`minigame-${rounds[key]}`}
               index={key}
               minigameName={rounds[key]}
               roundNumber={key.charAt(0)}
               updateMinigame={updateMinigame}
             />,
-            <RoundTracker round={key.charAt(0)} />,
+            <RoundTracker
+              key={`round-${key.charAt(0)}-tracker`}
+              round={key.charAt(0)}
+            />,
           ];
         }
         return (
