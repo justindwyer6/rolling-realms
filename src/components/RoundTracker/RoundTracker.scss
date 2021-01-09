@@ -12,9 +12,19 @@
   justify-items: center;
   align-items: center;
 
-  .roundTotal {
-    grid-column: span 6;
+  .roundNumber {
+    grid-column: span 2;
   }
+
+  .roundTotal {
+    grid-column: span 2;
+    width: 15px;
+  }
+
+  .starIcon {
+    grid-column: span 2;
+  }
+
   .turn {
     grid-column: span 2;
     p {
