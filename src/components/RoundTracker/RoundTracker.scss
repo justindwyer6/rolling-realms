@@ -1,0 +1,25 @@
+.RoundTracker {
+  grid-column: 1/2;
+  border: 1px black solid;
+  border-radius: 5px;
+  height: calc(100vw - 10px);
+  overflow-y: scroll;
+
+  // Grid
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  justify-items: center;
+  align-items: center;
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .RoundTracker {
+    grid-column: span 6;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+}
