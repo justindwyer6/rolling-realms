@@ -1,19 +1,19 @@
 {
-  "short_name": "Rolling Realms",
-  "name": "Rolling Realms",
+  "short_name": "React App",
+  "name": "Create React App Sample",
   "icons": [
     {
-      "src": "../images/stonemaier-logo.png",
+      "src": "favicon.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "../images/stonemaier-logo.png",
+      "src": "logo192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "l../images/stonemaier-logo.png",
+      "src": "logo512.png",
       "type": "image/png",
       "sizes": "512x512"
     }

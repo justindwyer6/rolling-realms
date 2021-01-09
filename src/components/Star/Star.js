@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import availableStar from "../../images/star-outline.png";
-import earnedStar from "../../images/star-filled.png";
+import earnedStar from "../../images/star.png";
 
 const Star = () => {
   const [starSource, setStarSource] = useState(availableStar);
 
   const updateStar = () => {
     if (starSource === availableStar) {
-      setStarSource(earnedStar);
+      setStarSource({ src: earnedStar });
     } else {
-      setStarSource(availableStar);
+      setStarSource({ src: availableStar });
     }
   };
 
