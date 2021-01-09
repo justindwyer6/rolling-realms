@@ -57,9 +57,7 @@ const Die = ({ dieType, initialDieState, dieFace }) => {
     if (thisDieFace === 6) {
       return d6Face6;
     }
-    throw Error(
-      `Sorry, die can only be 1-6. ${thisDieFace} is not valid.`,
-    );
+    throw Error("Sorry, die can only be 1-6.");
   };
 
   return (

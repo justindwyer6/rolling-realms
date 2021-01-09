@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.scss";
-import Minigame from "../Minigame/Minigame";
-import RoundTracker from "../RoundTracker/RoundTracker";
+import Minigame from "../Minigame";
+// import Round from "../Round/Round";
 import Rules from "../Rules";
 import defaultRounds from "../../rounds";
 import { setQueryStringValue } from "../../functions/queryString";
@@ -119,7 +119,7 @@ const App = () => {
   };
 
   return (
-    <div className="appContainer">
+    <>
       <div className="header">
         <img
           className="sm-logo"
@@ -175,33 +175,19 @@ const App = () => {
           onClick={() => window.print()}
         />
       </div>
-      {Object.keys(rounds).map((key, i) => {
-        // Generate RoundTracker after every third Minigame
-        if ((i + 1) % 3 === 0) {
-          return [
+      <div className="MinigamesC">
+        {Object.keys(rounds).map((key) => {
+          return (
             <Minigame
-              key={`minigame-${rounds[key]}`}
+              key={rounds[key]}
               index={key}
               minigameName={rounds[key]}
               roundNumber={key.charAt(0)}
               updateMinigame={updateMinigame}
-            />,
-            <RoundTracker
-              key={`round-${key.charAt(0)}-tracker`}
-              round={key.charAt(0)}
-            />,
-          ];
-        }
-        return (
-          <Minigame
-            key={rounds[key]}
-            index={key}
-            minigameName={rounds[key]}
-            roundNumber={key.charAt(0)}
-            updateMinigame={updateMinigame}
-          />
-        );
-      })}
+            />
+          );
+        })}
+      </div>
       {/* <Rules />> */}
       {/* <DiceRoller />> */}
       <footer>
@@ -243,7 +229,7 @@ const App = () => {
           </p>
         </div>
       </footer>
-    </div>
+    </>
   );
 };
 
