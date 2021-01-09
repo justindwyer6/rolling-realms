@@ -9,23 +9,23 @@ export default {
 
 const Template = (args) => <Reward {...args} />; // eslint-disable-line react/jsx-props-no-spreading
 
-export const Available = Template.bind({});
-Available.args = {
+export const Pumpkin = Template.bind({});
+Pumpkin.args = {
   round: 1,
   reward: "pumpkin",
   i: 1,
 };
 
-export const Gained = Template.bind({});
-Gained.args = {
+export const Heart = Template.bind({});
+Heart.args = {
   round: 1,
-  reward: "pumpkin",
+  reward: "heart",
   i: 1,
 };
 
-export const Used = Template.bind({});
-Used.args = {
+export const Coin = Template.bind({});
+Coin.args = {
   round: 1,
-  reward: "pumpkin",
+  reward: "coin",
   i: 1,
 };
