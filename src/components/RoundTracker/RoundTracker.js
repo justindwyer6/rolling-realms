@@ -29,7 +29,7 @@ const RoundTracker = ({ round }) => {
 
   return (
     <div className="RoundTracker">
-      <h3 className="roundNumber">ROUND {round + 1}:</h3>
+      <h3 className="roundNumber">ROUND {round}:</h3>
       <input className="roundTotal" type="number" name="roundTotal" />
       <img className="starIcon" src={starIcon} alt="star" />
       {times(9, (i) => renderInputs(i))}
