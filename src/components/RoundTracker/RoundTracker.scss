@@ -7,10 +7,18 @@
 
   // Grid
   display: grid;
-  grid-template-columns: auto;
+  grid-template-columns: repeat(6, 1fr);
   grid-template-rows: auto;
   justify-items: center;
   align-items: center;
+
+  .roundTotal {
+    grid-column: span 6;
+  }
+  .turn {
+    grid-column: span 2;
+    width: 5px;
+  }
 }
 
 // Medium devices (tablets, 768px and up)

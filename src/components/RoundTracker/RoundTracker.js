@@ -6,9 +6,9 @@ import "./RoundTracker.scss";
 const RoundTracker = ({ round }) => {
   const renderInputs = (i) => {
     return (
-      <div key={i}>
-        <input className="input1" type="number" name="die1" />
-        <input className="input2" type="number" name="die2" />
+      <div className="turn" key={`turn-${i}`}>
+        <input className="roll-1" type="number" name="roll-1" />
+        <input className="roll-2" type="number" name="roll=2" />
       </div>
     );
   };
@@ -27,12 +27,12 @@ const RoundTracker = ({ round }) => {
 
   return (
     <div className="RoundTracker">
-      <div className="turns">{times(9, (i) => renderInputs(i))}</div>
       <div className="roundTotal">
         <p>ROUND {round + 1}:</p>
         <input type="number" name="roundTotal" />
         <img src="/images/star.png" alt="star" />
       </div>
+      {times(9, (i) => renderInputs(i))}
       <div className="rewards">
         {times(12, (i) => renderRewards(i, "pumpkin", round))}
       </div>
