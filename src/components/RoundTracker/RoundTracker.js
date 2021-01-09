@@ -1,26 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { times } from "lodash";
 import Reward from "../Reward/Reward";
-// import Rules from "../Rules";
 import "./RoundTracker.scss";
 
 const RoundTracker = ({ round }) => {
-  const [rolledDice, setRolledDice] = useState([1, 6]);
-
-  const rollDice = () => {
-    times(6, (i) => {
-      setTimeout(() => {
-        setRolledDice([i, 7 - i]);
-      }, 50 + i * 15);
-    });
-    setTimeout(() => {
-      setRolledDice([
-        Math.ceil(Math.random() * 6),
-        Math.ceil(Math.random() * 6),
-      ]);
-    }, 350);
-  };
-
   const renderInputs = (i) => {
     return (
       <div key={i}>
@@ -44,30 +27,7 @@ const RoundTracker = ({ round }) => {
 
   return (
     <div className="RoundTracker">
-      <div className="turnsC">
-        <p className="sideways">TURNS</p>
-        <div className="turns">
-          {times(9, (i) => renderInputs(i))}
-        </div>
-      </div>
-      <button
-        type="button"
-        aria-label="Roll Dice"
-        title="Roll Dice"
-        className="standardButton"
-        onClick={rollDice}
-      >
-        <img
-          className="rolledDie"
-          src={`/images/d6-${rolledDice[0]}.png`}
-          alt={`Die 1: ${rolledDice[0]}`}
-        />
-        <img
-          className="rolledDie"
-          src={`/images/d6-${rolledDice[1]}.png`}
-          alt={`Die 2: ${rolledDice[1]}`}
-        />
-      </button>
+      <div className="turns">{times(9, (i) => renderInputs(i))}</div>
       <div className="roundTotal">
         <p>ROUND {round + 1}:</p>
         <input type="number" name="roundTotal" />
