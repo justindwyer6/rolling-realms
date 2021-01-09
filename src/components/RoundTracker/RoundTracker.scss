@@ -17,7 +17,12 @@
   }
   .turn {
     grid-column: span 2;
-    width: 5px;
+    p {
+      display: inline;
+    }
+    input {
+      width: 15px;
+    }
   }
 }
 
