@@ -16,10 +16,12 @@ html {
   grid-template-rows: auto;
   .header {
     grid-column: 1/2;
+    display: none;
   }
 
   .subheader {
     grid-column: 1/2;
+    display: none;
   }
 
   .footer {
