@@ -9,7 +9,7 @@ export default {
   argTypes: {},
 };
 
-const Template = () => <Star />;
+const Template = (args) => <Star {...args} />; // eslint-disable-line react/jsx-props-no-spreading
 
 export const Available = Template.bind({});
 Available.args = {
