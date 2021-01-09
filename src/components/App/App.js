@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.scss";
 import Minigame from "../Minigame/Minigame";
-// import Round from "../Round/Round";
+import Round from "../Round/Round";
 import Rules from "../Rules";
 import defaultRounds from "../../rounds";
 import { setQueryStringValue } from "../../functions/queryString";
@@ -176,6 +176,22 @@ const App = () => {
         />
       </div>
       {Object.keys(rounds).map((key) => {
+        console.log("Key:");
+        console.log(parseInt(key.charAt(0), 10));
+        console.log("Modulo:");
+        console.log(parseInt(key.charAt(0), 10) % 3);
+        if (parseInt(key.charAt(0), 10) % 3 === 0) {
+          return [
+            <Round />,
+            <Minigame
+              key={rounds[key]}
+              index={key}
+              minigameName={rounds[key]}
+              roundNumber={key.charAt(0)}
+              updateMinigame={updateMinigame}
+            />,
+          ];
+        }
         return (
           <Minigame
             key={rounds[key]}
