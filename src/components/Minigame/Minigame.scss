@@ -1,7 +1,9 @@
+@import "../../variables";
+
 .Minigame {
   grid-column: 1/2;
   border: 1px black solid;
-  border-radius: 5px;
+  border-radius: $border-radius-standard;
   height: 300px;
   overflow-y: scroll;
 

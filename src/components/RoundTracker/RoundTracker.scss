@@ -1,7 +1,9 @@
+@import "../../variables";
+
 .RoundTracker {
   grid-column: 1/2;
   border: 1px black solid;
-  border-radius: 5px;
+  border-radius: $border-radius-standard;
   height: calc(100vw - 10px);
   overflow-y: scroll;
 
