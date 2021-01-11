@@ -1,6 +1,7 @@
 import React from "react";
 import { times } from "lodash";
-import Reward from "../Reward/Reward";
+// import Reward from "../Reward/Reward";
+import RewardTracker from "../RewardTracker/RewardTracker";
 import "./RoundTracker.scss";
 import starIcon from "../../images/star-filled.png";
 
@@ -15,17 +16,17 @@ const RoundTracker = ({ round }) => {
     );
   };
 
-  const renderRewards = (i, reward, thisRound) => {
-    return (
-      <Reward
-        key={`round-${thisRound}-${reward}-${i}`}
-        i={i}
-        reward={reward}
-        round={thisRound}
-        rewardClasses="reward"
-      />
-    );
-  };
+  // const renderRewards = (i, reward, thisRound) => {
+  //   return (
+  //     <Reward
+  //       key={`round-${thisRound}-${reward}-${i}`}
+  //       i={i}
+  //       reward={reward}
+  //       round={thisRound}
+  //       rewardClasses="reward"
+  //     />
+  //   );
+  // };
 
   return (
     <div className="RoundTracker">
@@ -33,9 +34,12 @@ const RoundTracker = ({ round }) => {
       <input className="roundTotal" type="number" name="roundTotal" />
       <img className="starIcon" src={starIcon} alt="star" />
       {times(9, (i) => renderInputs(i))}
-      {times(12, (i) => renderRewards(i, "pumpkin", round))}
+      <RewardTracker rewardType="pumpkin" />
+      <RewardTracker rewardType="heart" />
+      <RewardTracker rewardType="coin" />
+      {/* {times(12, (i) => renderRewards(i, "pumpkin", round))}
       {times(12, (i) => renderRewards(i, "heart", round))}
-      {times(12, (i) => renderRewards(i, "coin", round))}
+      {times(12, (i) => renderRewards(i, "coin", round))} */}
     </div>
   );
 };
