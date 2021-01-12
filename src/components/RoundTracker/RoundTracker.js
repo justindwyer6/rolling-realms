@@ -9,7 +9,6 @@ const RoundTracker = ({ round }) => {
   const renderInputs = (i) => {
     return (
       <div className="turn" key={`turn-${i + 1}`}>
-        <p>{i + 1}</p>
         <input className="roll-1" type="number" name="roll-1" />
         <input className="roll-2" type="number" name="roll=2" />
       </div>
@@ -30,10 +29,18 @@ const RoundTracker = ({ round }) => {
 
   return (
     <div className="RoundTracker">
-      <h3 className="roundNumber">ROUND {round}:</h3>
-      <input className="roundTotal" type="number" name="roundTotal" />
-      <img className="starIcon" src={starIcon} alt="star" />
-      {times(9, (i) => renderInputs(i))}
+      <div className="roundScore">
+        <h3 className="roundNumber">ROUND {round}</h3>
+        <input
+          className="roundTotal"
+          type="number"
+          name="roundTotal"
+        />
+        <img className="starIcon" src={starIcon} alt="star" />
+      </div>
+      <div className="turnTracker">
+        {times(9, (i) => renderInputs(i))}
+      </div>
       <RewardTracker rewardType="pumpkin" />
       <RewardTracker rewardType="heart" />
       <RewardTracker rewardType="coin" />

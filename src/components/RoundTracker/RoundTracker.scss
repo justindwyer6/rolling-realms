@@ -2,38 +2,54 @@
 
 .RoundTracker {
   grid-column: 1/2;
-  border: 1px black solid;
-  border-radius: $border-radius-standard;
-  height: calc(100vw - 10px);
+  // border: $border-standard;
+  // border-radius: $border-radius-standard;
+  height: fit-content;
   overflow-y: scroll;
+  position: sticky;
+  top: 0;
+  background: white;
 
   // Grid
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: auto;
+  gap: 5px;
   justify-items: center;
   align-items: center;
 
-  .roundNumber {
+  .roundScore {
     grid-column: span 2;
-  }
-
-  .roundTotal {
-    grid-column: span 2;
-    width: 15px;
-  }
-
-  .starIcon {
-    grid-column: span 2;
-  }
-
-  .turn {
-    grid-column: span 2;
-    p {
-      display: inline;
+    border: $border-thick;
+    border-radius: $border-radius-standard;
+    padding: 0px 5px 5px 5px;
+    h3 {
+      margin: 5px 0px;
     }
-    input {
+    .roundNumber {
+      // grid-column: span 2;
+    }
+
+    .roundTotal {
+      // grid-column: span 2;
       width: 15px;
+    }
+
+    .starIcon {
+      // grid-column: span 2;
+    }
+  }
+
+  .turnTracker {
+    grid-column: span 4;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    .turn {
+      margin: 2px 5px;
+      input {
+        width: 15px;
+      }
     }
   }
 }
