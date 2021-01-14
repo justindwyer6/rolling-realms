@@ -8,8 +8,22 @@ const RoundTracker = ({ round }) => {
   const renderInputs = (i) => {
     return (
       <div className="turn" key={`turn-${i + 1}`}>
-        <input className="roll-1" type="number" name="roll-1" />
-        <input className="roll-2" type="number" name="roll=2" />
+        <input
+          className="roll-1"
+          type="number"
+          name="roll-1"
+          max="6"
+          min="1"
+          maxLength="1"
+        />
+        <input
+          className="roll-2"
+          type="number"
+          name="roll=2"
+          max="6"
+          min="1"
+          maxLength="1"
+        />
       </div>
     );
   };
