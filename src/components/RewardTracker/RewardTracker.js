@@ -19,10 +19,10 @@ const RewardTracker = ({ rewardType }) => {
 
   return (
     <div className="RewardTracker">
-      <div>12</div>
-      <button type="button">+</button>
-      <img src={rewardSrc} alt={rewardType} />
       <button type="button">-</button>
+      <div>12</div>
+      <img src={rewardSrc} alt={rewardType} />
+      <button type="button">+</button>
     </div>
   );
 };

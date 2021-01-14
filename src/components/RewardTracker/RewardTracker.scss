@@ -8,6 +8,11 @@
   border: $border-thick;
   border-radius: $border-radius-standard;
 
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  button {
+    font-weight: 600;
+  }
 }

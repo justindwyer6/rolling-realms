@@ -33,6 +33,7 @@
     h3 {
       grid-column: span 2;
       margin: 5px 0px;
+      white-space: nowrap;
     }
 
     input.roundTotal {
@@ -63,7 +64,6 @@
       display: flex;
       padding: 2px;
       input {
-        width: 3ch;
         padding: 2px;
         &:nth-of-type(1) {
           border-top-left-radius: 5px;
