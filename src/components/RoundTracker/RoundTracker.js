@@ -36,6 +36,7 @@ const RoundTracker = ({ round }) => {
           className="roundTotal"
           type="number"
           name="roundTotal"
+          maxLength="4"
         />
         <img className="starIcon" src={starIcon} alt="star" />
       </div>
