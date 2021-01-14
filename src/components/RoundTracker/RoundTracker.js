@@ -1,6 +1,5 @@
 import React from "react";
 import { times } from "lodash";
-// import Reward from "../Reward/Reward";
 import RewardTracker from "../RewardTracker/RewardTracker";
 import "./RoundTracker.scss";
 import starIcon from "../../images/star-filled.png";
@@ -14,18 +13,6 @@ const RoundTracker = ({ round }) => {
       </div>
     );
   };
-
-  // const renderRewards = (i, reward, thisRound) => {
-  //   return (
-  //     <Reward
-  //       key={`round-${thisRound}-${reward}-${i}`}
-  //       i={i}
-  //       reward={reward}
-  //       round={thisRound}
-  //       rewardClasses="reward"
-  //     />
-  //   );
-  // };
 
   return (
     <div className="RoundTracker">
@@ -44,9 +31,6 @@ const RoundTracker = ({ round }) => {
       <RewardTracker rewardType="pumpkin" />
       <RewardTracker rewardType="heart" />
       <RewardTracker rewardType="coin" />
-      {/* {times(12, (i) => renderRewards(i, "pumpkin", round))}
-      {times(12, (i) => renderRewards(i, "heart", round))}
-      {times(12, (i) => renderRewards(i, "coin", round))} */}
     </div>
   );
 };
