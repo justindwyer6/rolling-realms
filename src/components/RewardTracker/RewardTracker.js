@@ -39,7 +39,7 @@ const RewardTracker = ({ rewardType }) => {
       <button type="button" onClick={useReward}>
         -
       </button>
-      <div>{rewardsEarned - rewardsUsed}</div>
+      <div className="rewardCount">{rewardsEarned - rewardsUsed}</div>
       <img src={rewardSrc} alt={rewardType} />
       <button type="button" onClick={earnReward}>
         +
