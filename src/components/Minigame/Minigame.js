@@ -3,12 +3,12 @@ import Board from "../Board";
 import Star from "../Star/Star";
 import "./Minigame.scss";
 
-const Minigame = ({ index, minigameName, updateMinigame }) => {
+const Minigame = ({ index, minigameName }) => {
   const stars = [1, 2, 3, 4, 5, 6];
   return (
     <div className="Minigame">
       <div className="minigameHeader">
-        <select
+        {/* <select
           className="title"
           name="minigameName"
           id={minigameName + minigameName}
@@ -33,7 +33,7 @@ const Minigame = ({ index, minigameName, updateMinigame }) => {
           <option value="Tapestry">Tapestry</option>
           <option value="Viticulture">Viticulture</option>
           <option value="Wingspan">Wingspan</option>
-        </select>
+        </select> */}
       </div>
       <Board minigameName={minigameName} />
       {minigameName === "Scythe" ? null : (
