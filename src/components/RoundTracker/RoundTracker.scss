@@ -1,37 +1,79 @@
+@import "../../variables";
+
 .RoundTracker {
   grid-column: 1/2;
-  border: 1px black solid;
-  border-radius: 5px;
-  height: calc(100vw - 10px);
+  border-bottom-left-radius: $border-radius-standard;
+  border-bottom-right-radius: $border-radius-standard;
+  height: fit-content;
   overflow-y: scroll;
+  position: sticky;
+  top: 0;
+  background: white;
+  padding: 3px;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
 
   // Grid
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: auto;
+  gap: 5px;
   justify-items: center;
   align-items: center;
 
-  .roundNumber {
+  .roundScore {
     grid-column: span 2;
-  }
+    border: $border-thick;
+    border-radius: $border-radius-standard;
+    padding: 0px 5px 5px 5px;
 
-  .roundTotal {
-    grid-column: span 2;
-    width: 15px;
-  }
-
-  .starIcon {
-    grid-column: span 2;
-  }
-
-  .turn {
-    grid-column: span 2;
-    p {
-      display: inline;
+    // Grid
+    display: grid;
+    grid-template-columns: 1fr, 1fr;
+    align-items: center;
+    h3 {
+      grid-column: span 2;
+      margin: 5px 0px;
+      white-space: nowrap;
     }
-    input {
-      width: 15px;
+
+    input.roundTotal {
+      border: none;
+      border-bottom: $border-thick;
+      width: 5ch;
+      height: 1.2em;
+      grid-column: span 1;
+      justify-self: right;
+    }
+
+    .starIcon {
+      width: 30px;
+      height: 30px;
+      grid-column: span 1;
+    }
+  }
+
+  .turnTracker {
+    grid-column: span 4;
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-content: center;
+    .turn {
+      display: flex;
+      padding: 2px;
+      input {
+        padding: 2px;
+        &:nth-of-type(1) {
+          border-top-left-radius: $border-radius-standard;
+          border-bottom-left-radius: $border-radius-standard;
+        }
+        &:nth-of-type(2) {
+          border-top-right-radius: $border-radius-standard;
+          border-bottom-right-radius: $border-radius-standard;
+        }
+      }
     }
   }
 }

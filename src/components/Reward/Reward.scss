@@ -1,19 +1,21 @@
+@import "../../variables";
+
 .reward {
-  border-radius: 100%;
+  border-radius: $border-radius-circle;
   padding: 1px;
   width: 15px;
   height: 15px;
 
   &.available {
-    border: 2px dotted black;
+    border: $border-thick-dotted;
   }
 
   &.gained {
-    border: 2px solid black;
+    border: $border-thick;
   }
 
   &.used {
-    border: 2px solid black;
+    border: $border-thick;
     background: black;
   }
 }

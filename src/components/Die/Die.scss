@@ -1,5 +1,7 @@
+@import "../../variables";
+
 .standard {
-  border-radius: 5px;
+  border-radius: $border-radius-standard;
   &.marked {
     background-color: black;
   }

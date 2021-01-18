@@ -1,0 +1,23 @@
+@import "../../variables";
+
+.RewardTracker {
+  grid-column: span 2;
+  grid-row: span 2;
+
+  padding: 5px;
+  border: $border-thick;
+  border-radius: $border-radius-standard;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  button {
+    font-weight: 600;
+  }
+
+  .rewardCount {
+    width: 2.3ch;
+    text-align: center;
+  }
+}
