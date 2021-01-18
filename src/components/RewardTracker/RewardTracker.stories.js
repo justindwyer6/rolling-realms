@@ -1,5 +1,6 @@
 import React from "react";
 import RewardTracker from "./RewardTracker";
+import "../../index.css";
 
 export default {
   title: "Example/RewardTracker",
