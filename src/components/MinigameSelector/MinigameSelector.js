@@ -30,9 +30,9 @@ const MinigameSelector = ({ minigameName, updateMinigame }) => {
             return (
               <button
                 type="button"
-                onClick={() => {
-                  updateMinigame();
-                }}
+                onClick={() =>
+                  updateMinigame(rounds[key], key.charAt(0))
+                }
               >
                 {rounds[key]}
               </button>
