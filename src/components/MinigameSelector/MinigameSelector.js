@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import rounds from "../../rounds";
 
 const MinigameSelector = ({ minigameName }) => {
   const [
@@ -25,8 +26,9 @@ const MinigameSelector = ({ minigameName }) => {
           {minigameName}
         </button>
         <div>
-          <button type="button">Scythe</button>
-          <button type="button">My Little Scythe</button>
+          {Object.keys(rounds).map((key) => {
+            return <button type="button">{rounds[key]}</button>;
+          })}
         </div>
       </>
     );
