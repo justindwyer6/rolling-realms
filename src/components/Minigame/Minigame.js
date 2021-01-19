@@ -3,7 +3,7 @@ import Board from "../Board";
 import Star from "../Star/Star";
 import "./Minigame.scss";
 
-const Minigame = ({ index, minigameName }) => {
+const Minigame = ({ index, minigameName, updateMinigame }) => {
   const stars = [1, 2, 3, 4, 5, 6];
   return (
     <div className="Minigame">
@@ -35,7 +35,7 @@ const Minigame = ({ index, minigameName }) => {
           <option value="Wingspan">Wingspan</option>
         </select> */}
       </div>
-      <Board minigameName={minigameName} />
+      <Board minigameName={(minigameName, updateMinigame)} />
       {minigameName === "Scythe" ? null : (
         <>
           {stars.map((star) => (

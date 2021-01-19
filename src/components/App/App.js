@@ -56,11 +56,11 @@ const App = () => {
     setQueryStringValue(rounds);
   }, [rounds]);
 
-  // const updateMinigame = (minigame, round) => {
-  //   const updatingRoundOrder = { ...rounds };
-  //   updatingRoundOrder[round] = minigame;
-  //   setRounds({ ...updatingRoundOrder });
-  // };
+  const updateMinigame = (minigame, round) => {
+    const updatingRoundOrder = { ...rounds };
+    updatingRoundOrder[round] = minigame;
+    setRounds({ ...updatingRoundOrder });
+  };
 
   const randomizeMinigames = () => {
     const allMinigames = [
@@ -188,7 +188,7 @@ const App = () => {
               index={key}
               minigameName={rounds[key]}
               roundNumber={key.charAt(0)}
-              // updateMinigame={updateMinigame}
+              updateMinigame={updateMinigame}
             />,
           ];
         }

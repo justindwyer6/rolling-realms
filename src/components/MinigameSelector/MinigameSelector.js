@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import rounds from "../../rounds";
 
-const MinigameSelector = ({ minigameName }) => {
+const MinigameSelector = ({ minigameName, updateMinigame }) => {
   const [
     isMinigameSelectorOpen,
     setIsMinigameSelectorOpen,
@@ -27,7 +27,16 @@ const MinigameSelector = ({ minigameName }) => {
         </button>
         <div>
           {Object.keys(rounds).map((key) => {
-            return <button type="button">{rounds[key]}</button>;
+            return (
+              <button
+                type="button"
+                onClick={() => {
+                  updateMinigame();
+                }}
+              >
+                {rounds[key]}
+              </button>
+            );
           })}
         </div>
       </>

@@ -9,33 +9,33 @@ import Tapestry from "./Tapestry/Tapestry";
 import Viticulture from "./Viticulture/Viticulture";
 import Wingspan from "./Wingspan/Wingspan";
 
-const Board = ({ minigameName }) => {
+const Board = ({ minigameName, updateMinigame }) => {
   if (minigameName === "Between Two Castles") {
-    return <BetweenTwoCastles />;
+    return <BetweenTwoCastles updateMinigame={updateMinigame} />;
   }
   if (minigameName === "Between Two Cities") {
-    return <BetweenTwoCities />;
+    return <BetweenTwoCities updateMinigame={updateMinigame} />;
   }
   if (minigameName === "Charterstone") {
-    return <Charterstone />;
+    return <Charterstone updateMinigame={updateMinigame} />;
   }
   if (minigameName === "Euphoria") {
-    return <Euphoria />;
+    return <Euphoria updateMinigame={updateMinigame} />;
   }
   if (minigameName === "My Little Scythe") {
-    return <Scythe />;
+    return <Scythe updateMinigame={updateMinigame} />;
   }
   if (minigameName === "Scythe") {
-    return <Scythe />;
+    return <Scythe updateMinigame={updateMinigame} />;
   }
   if (minigameName === "Tapestry") {
-    return <Tapestry />;
+    return <Tapestry updateMinigame={updateMinigame} />;
   }
   if (minigameName === "Viticulture") {
-    return <Viticulture />;
+    return <Viticulture updateMinigame={updateMinigame} />;
   }
   if (minigameName === "Wingspan") {
-    return <Wingspan />;
+    return <Wingspan updateMinigame={updateMinigame} />;
   }
   throw Error(`Hmmm... ${minigameName} is not a valid minigame.`);
 };
