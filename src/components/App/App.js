@@ -198,7 +198,7 @@ const App = () => {
             index={key}
             minigameName={rounds[key]}
             roundNumber={key.charAt(0)}
-            // updateMinigame={updateMinigame}
+            updateMinigame={updateMinigame}
           />
         );
       })}

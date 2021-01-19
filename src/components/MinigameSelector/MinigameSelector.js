@@ -10,7 +10,6 @@ const MinigameSelector = ({ minigameName, updateMinigame }) => {
   const openMinigameSelector = () => {
     setIsMinigameSelectorOpen(true);
   };
-
   const closeMinigameSelector = () => {
     setIsMinigameSelectorOpen(false);
   };
@@ -30,9 +29,7 @@ const MinigameSelector = ({ minigameName, updateMinigame }) => {
             return (
               <button
                 type="button"
-                onClick={() =>
-                  updateMinigame(rounds[key], key.charAt(0))
-                }
+                onClick={() => updateMinigame(rounds[key], key)}
               >
                 {rounds[key]}
               </button>

@@ -1,5 +1,6 @@
 import React from "react";
 import Board from "../Board";
+import MinigameSelector from "../MinigameSelector/MinigameSelector";
 import Star from "../Star/Star";
 import "./Minigame.scss";
 
@@ -8,6 +9,10 @@ const Minigame = ({ index, minigameName, updateMinigame }) => {
   return (
     <div className="Minigame">
       <div className="minigameHeader">
+        <MinigameSelector
+          minigameName={minigameName}
+          updateMinigame={updateMinigame}
+        />
         {/* <select
           className="title"
           name="minigameName"
@@ -35,7 +40,7 @@ const Minigame = ({ index, minigameName, updateMinigame }) => {
           <option value="Wingspan">Wingspan</option>
         </select> */}
       </div>
-      <Board minigameName={(minigameName, updateMinigame)} />
+      <Board minigameName={minigameName} />
       {minigameName === "Scythe" ? null : (
         <>
           {stars.map((star) => (
