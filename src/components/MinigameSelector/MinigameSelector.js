@@ -28,6 +28,7 @@ const MinigameSelector = ({ minigameName, updateMinigame }) => {
           {Object.keys(rounds).map((key) => {
             return (
               <button
+                key={`${rounds[key]}-selector`}
                 type="button"
                 onClick={() => updateMinigame(rounds[key], key)}
               >

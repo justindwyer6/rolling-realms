@@ -57,6 +57,7 @@ const App = () => {
   }, [rounds]);
 
   const updateMinigame = (minigame, round) => {
+    console.log("hi");
     const updatingRoundOrder = { ...rounds };
     updatingRoundOrder[round] = minigame;
     setRounds({ ...updatingRoundOrder });
