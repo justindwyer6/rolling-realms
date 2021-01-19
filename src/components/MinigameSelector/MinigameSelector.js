@@ -1,7 +1,7 @@
 import React from "react";
 
-const MinigameSelector = () => {
-  return <div>hi</div>;
+const MinigameSelector = ({ minigameName }) => {
+  return <h3>{minigameName}</h3>;
 };
 
 export default MinigameSelector;
