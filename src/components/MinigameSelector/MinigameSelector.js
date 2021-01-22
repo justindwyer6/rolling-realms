@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import rounds from "../../rounds";
+import "./MinigameSelector.scss";
 
 const MinigameSelector = ({
   index,
@@ -21,7 +22,7 @@ const MinigameSelector = ({
 
   const renderMinigameSelector = () => (
     <button
-      className="MinigameSelector"
+      className="MinigameHeader"
       type="button"
       onClick={() => toggleMinigameSelector()}
     >
@@ -34,7 +35,7 @@ const MinigameSelector = ({
   }
   return [
     renderMinigameSelector(),
-    <div>
+    <div className="MinigameSelector">
       {Object.keys(rounds).map((key) => {
         return (
           <button
