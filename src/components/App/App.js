@@ -176,7 +176,7 @@ const App = () => {
         />
       </div>
       {Object.keys(rounds).map((key, i) => {
-        // Generate RoundTracker before every third Minigame
+        // Generate RoundTracker after every third Minigame
         if ((i + 1) % 3 === 1) {
           return [
             <RoundTracker
@@ -194,7 +194,7 @@ const App = () => {
         }
         return (
           <Minigame
-            key={`minigame-${rounds[key]}`}
+            key={rounds[key]}
             index={key}
             minigameName={rounds[key]}
             roundNumber={key.charAt(0)}
