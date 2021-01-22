@@ -194,7 +194,7 @@ const App = () => {
         }
         return (
           <Minigame
-            key={rounds[key]}
+            key={`minigame-${rounds[key]}`}
             index={key}
             minigameName={rounds[key]}
             roundNumber={key.charAt(0)}
