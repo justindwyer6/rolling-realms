@@ -19,34 +19,7 @@ const MinigameSelector = ({
     }
   };
 
-  if (isMinigameSelectorOpen) {
-    return (
-      <>
-        <button
-          className="MinigameSelector"
-          type="button"
-          onClick={() => toggleMinigameSelector()}
-        >
-          {minigameName}
-        </button>
-        <div>
-          {Object.keys(rounds).map((key) => {
-            return (
-              <button
-                key={`${rounds[key]}-selector`}
-                type="button"
-                onClick={() => updateMinigame(rounds[key], index)}
-              >
-                {rounds[key]}
-              </button>
-            );
-          })}
-        </div>
-      </>
-    );
-  }
-
-  return (
+  const renderMinigameSelector = () => (
     <button
       className="MinigameSelector"
       type="button"
@@ -55,6 +28,26 @@ const MinigameSelector = ({
       {minigameName}
     </button>
   );
+
+  if (!isMinigameSelectorOpen) {
+    return renderMinigameSelector();
+  }
+  return [
+    renderMinigameSelector(),
+    <div>
+      {Object.keys(rounds).map((key) => {
+        return (
+          <button
+            key={`${rounds[key]}-selector`}
+            type="button"
+            onClick={() => updateMinigame(rounds[key], index)}
+          >
+            {rounds[key]}
+          </button>
+        );
+      })}
+    </div>,
+  ];
 };
 
 export default MinigameSelector;
