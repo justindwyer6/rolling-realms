@@ -10,6 +10,7 @@ const Minigame = ({ index, minigameName, updateMinigame }) => {
     <div className="Minigame">
       <div className="minigameHeader">
         <MinigameSelector
+          index={index}
           minigameName={minigameName}
           updateMinigame={updateMinigame}
         />
