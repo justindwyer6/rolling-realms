@@ -14,32 +14,6 @@ const Minigame = ({ index, minigameName, updateMinigame }) => {
           minigameName={minigameName}
           updateMinigame={updateMinigame}
         />
-        {/* <select
-          className="title"
-          name="minigameName"
-          id={minigameName + minigameName}
-          defaultValue={minigameName}
-          onChange={(event) =>
-            updateMinigame(event.target.value, index)
-          }
-          onBlur={(event) =>
-            updateMinigame(event.target.value, index)
-          }
-        >
-          <option value="Between Two Castles">
-            Between Two Castles
-          </option>
-          <option value="Between Two Cities">
-            Between Two Cities
-          </option>
-          <option value="Charterstone">Charterstone</option>
-          <option value="Euphoria">Euphoria</option>
-          <option value="My Little Scythe">My Little Scythe</option>
-          <option value="Scythe">Scythe</option>
-          <option value="Tapestry">Tapestry</option>
-          <option value="Viticulture">Viticulture</option>
-          <option value="Wingspan">Wingspan</option>
-        </select> */}
       </div>
       <Board minigameName={minigameName} />
       {minigameName === "Scythe" ? null : (
