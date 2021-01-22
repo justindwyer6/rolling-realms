@@ -11,11 +11,12 @@ const MinigameSelector = ({
     setIsMinigameSelectorOpen,
   ] = useState(false);
 
-  const openMinigameSelector = () => {
-    setIsMinigameSelectorOpen(true);
-  };
-  const closeMinigameSelector = () => {
-    setIsMinigameSelectorOpen(false);
+  const toggleMinigameSelector = () => {
+    if (!isMinigameSelectorOpen) {
+      setIsMinigameSelectorOpen(true);
+    } else {
+      setIsMinigameSelectorOpen(false);
+    }
   };
 
   if (isMinigameSelectorOpen) {
@@ -24,7 +25,7 @@ const MinigameSelector = ({
         <button
           className="MinigameSelector"
           type="button"
-          onClick={() => closeMinigameSelector()}
+          onClick={() => toggleMinigameSelector()}
         >
           {minigameName}
         </button>
@@ -49,7 +50,7 @@ const MinigameSelector = ({
     <button
       className="MinigameSelector"
       type="button"
-      onClick={() => openMinigameSelector()}
+      onClick={() => toggleMinigameSelector()}
     >
       {minigameName}
     </button>
