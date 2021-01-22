@@ -1,6 +1,18 @@
-.MinigameHeader {
+.minigameHeader {
   grid-column: span 6;
 }
 
-.MinigameSelector {
+.minigameSelector {
+  position: absolute;
+  top: 2em;
+  background: white;
+  width: 95%;
+  // Parent Grid Styles
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.minigameOption {
+  grid-column: span 1;
+  font-size: 16px;
 }

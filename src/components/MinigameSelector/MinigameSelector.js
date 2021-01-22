@@ -22,7 +22,7 @@ const MinigameSelector = ({
 
   const renderMinigameSelector = () => (
     <button
-      className="MinigameHeader"
+      className="minigameHeader"
       type="button"
       onClick={() => toggleMinigameSelector()}
     >
@@ -35,10 +35,11 @@ const MinigameSelector = ({
   }
   return [
     renderMinigameSelector(),
-    <div className="MinigameSelector">
+    <div className="minigameSelector">
       {Object.keys(rounds).map((key) => {
         return (
           <button
+            className="minigameOption"
             key={`${rounds[key]}-selector`}
             type="button"
             onClick={() => updateMinigame(rounds[key], index)}
