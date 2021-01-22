@@ -1,12 +1,16 @@
+@import "../../variables";
+
 .minigameHeader {
   grid-column: span 6;
 }
 
 .minigameSelector {
   position: absolute;
-  top: 2em;
+  top: 20%;
   background: white;
   width: 95%;
+  border: $border-standard;
+  border-radius: $border-standard;
   // Parent Grid Styles
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -15,4 +19,5 @@
 .minigameOption {
   grid-column: span 1;
   font-size: 16px;
+  border: $border-standard;
 }
