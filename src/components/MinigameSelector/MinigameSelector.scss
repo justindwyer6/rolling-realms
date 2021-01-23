@@ -1,8 +1,10 @@
 @import "../../variables";
 
 .minigameHeader {
-  font-weight: 600;
   grid-column: span 6;
+  position: relative;
+  z-index: 1;
+  font-weight: 600;
 }
 
 .minigameSelector {
