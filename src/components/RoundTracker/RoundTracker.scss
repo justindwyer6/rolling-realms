@@ -11,7 +11,7 @@
   top: 0;
   background: white;
   padding: 3px;
-  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: $shadow-standard;
 
   // Grid
   display: grid;
