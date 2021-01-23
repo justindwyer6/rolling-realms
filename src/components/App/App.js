@@ -118,16 +118,6 @@ const App = () => {
     );
   };
 
-  const renderMinigame = (key) => (
-    <Minigame
-      key={`minigame-${rounds[key]}`}
-      index={key}
-      minigameName={rounds[key]}
-      roundNumber={key.charAt(0)}
-      updateMinigame={updateMinigame}
-    />
-  );
-
   return (
     <div className="appContainer">
       <div className="header">
@@ -187,16 +177,21 @@ const App = () => {
       </div>
       {Object.keys(rounds).map((key, i) => {
         // Generate RoundTracker before every third Minigame
-        if ((i + 1) % 3 === 1) {
-          return [
+        return [
+          (i + 1) % 3 === 1 ? (
             <RoundTracker
               key={`round-${key.charAt(0)}-tracker`}
               round={key.charAt(0)}
-            />,
-            renderMinigame(key),
-          ];
-        }
-        return renderMinigame(key);
+            />
+          ) : null,
+          <Minigame
+            key={`minigame-${rounds[key]}`}
+            index={key}
+            minigameName={rounds[key]}
+            roundNumber={key.charAt(0)}
+            updateMinigame={updateMinigame}
+          />,
+        ];
       })}
       {/* <Rules />> */}
       {/* <DiceRoller />> */}
