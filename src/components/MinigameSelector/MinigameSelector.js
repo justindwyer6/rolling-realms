@@ -20,7 +20,7 @@ const MinigameSelector = ({
     }
   };
 
-  const renderMinigameSelector = () => (
+  const renderMinigameHeader = () => (
     <button
       className="minigameHeader"
       type="button"
@@ -31,10 +31,10 @@ const MinigameSelector = ({
   );
 
   if (!isMinigameSelectorOpen) {
-    return renderMinigameSelector();
+    return renderMinigameHeader();
   }
   return [
-    renderMinigameSelector(),
+    renderMinigameHeader(),
     <div className="minigameSelector">
       {Object.keys(rounds).map((key) => {
         return (
