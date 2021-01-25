@@ -1,17 +1,33 @@
+@import "../../variables";
+
 .bird {
   grid-column: span 2;
-  background-image: url("../../images/feather.png");
-  background-repeat: no-repeat;
+  grid-row: span 3;
+  border: $border-standard;
+  border-radius: $border-radius-standard;
+  height: 80%;
+  margin: 5px;
 
   // Parent Grid Properties
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
 
   span {
     grid-column: span 3;
+    font-size: 3em;
+    text-align: center;
+
+    background-image: url("../../images/feather.png");
+    background-repeat: no-repeat;
+    background-position: center;
   }
 
   .inputRewardContainer {
-    width: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 1fr;
+    height: 2em;
   }
 }
