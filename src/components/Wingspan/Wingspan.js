@@ -2,8 +2,8 @@ import React from "react";
 import "./Wingspan.scss";
 import { times } from "lodash";
 
-class Wingspan extends React.Component {
-  rewards = [
+const Wingspan = () => {
+  const rewards = [
     "pumpkin",
     "coin",
     "star",
@@ -15,7 +15,7 @@ class Wingspan extends React.Component {
     "star",
   ];
 
-  renderBirds(i) {
+  const renderBirds = (i) => {
     return (
       <div key={`bird${i}`} className="bird">
         <p>{7 + i * 4 + (i ? 1 : 0)}</p>
@@ -28,32 +28,28 @@ class Wingspan extends React.Component {
           {times(3, (j) => (
             <img
               key={j}
-              src={`/images/${this.rewards[j + i + 2 * i]}.png`}
-              alt={this.rewards[j + i]}
+              src={`/images/${rewards[j + i + 2 * i]}.png`}
+              alt={rewards[j + i]}
               className="reward"
             />
           ))}
         </div>
       </div>
     );
-  }
+  };
 
-  render() {
-    return (
-      <>
-        <p>
-          Fill a square on any bird (left to right), then gain the
-          bonus below that square
-        </p>
-        <div className="birds">
-          {times(3, (i) => this.renderBirds(i))}
-        </div>
-        <p className="margin20">
-          Score 1 star per complete bird whose sum = wingspan.
-        </p>
-      </>
-    );
-  }
-}
+  return (
+    <>
+      <p>
+        Fill a square on any bird (left to right), then gain the bonus
+        below that square
+      </p>
+      <div className="birds">{times(3, (i) => renderBirds(i))}</div>
+      <p className="margin20">
+        Score 1 star per complete bird whose sum = wingspan.
+      </p>
+    </>
+  );
+};
 
 export default Wingspan;
