@@ -1,0 +1,17 @@
+.bird {
+  grid-column: span 2;
+  background-image: url("../../images/feather.png");
+  background-repeat: no-repeat;
+
+  // Parent Grid Properties
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  span {
+    grid-column: span 3;
+  }
+
+  .inputRewardContainer {
+    width: 30px;
+  }
+}

@@ -32,8 +32,11 @@ const Wingspan = () => {
       <div key={`bird-${i}`} className="bird">
         <span>{wingspanOfBird}</span>
         {times(3, (j) => (
-          <div key={`bird-${i}-input-${j}`}>
-            <input type="number" className="cell" />
+          <div
+            key={`bird-${i}-input-${j}`}
+            className="inputRewardContainer"
+          >
+            <input type="number" />
             <img
               src={rewardList[j].src}
               alt={rewardList[j].name}
