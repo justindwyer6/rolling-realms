@@ -44,7 +44,7 @@ const Wingspan = () => {
         Fill a square on any bird (left to right), then gain the bonus
         below that square
       </p>
-      <div className="birds">{times(3, (i) => renderBirds(i))}</div>
+      {times(3, (i) => renderBirds(i))}
       <p className="margin20">
         Score 1 star per complete bird whose sum = wingspan.
       </p>
