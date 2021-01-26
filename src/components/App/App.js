@@ -176,31 +176,22 @@ const App = () => {
         />
       </div>
       {Object.keys(rounds).map((key, i) => {
-        // Generate RoundTracker after every third Minigame
-        if ((i + 1) % 3 === 1) {
-          return [
+        // Generate RoundTracker before every third Minigame
+        return [
+          (i + 1) % 3 === 1 ? (
             <RoundTracker
               key={`round-${key.charAt(0)}-tracker`}
               round={key.charAt(0)}
-            />,
-            <Minigame
-              key={`minigame-${rounds[key]}`}
-              index={key}
-              minigameName={rounds[key]}
-              roundNumber={key.charAt(0)}
-              updateMinigame={updateMinigame}
-            />,
-          ];
-        }
-        return (
+            />
+          ) : null,
           <Minigame
-            key={rounds[key]}
+            key={`minigame-${rounds[key]}`}
             index={key}
             minigameName={rounds[key]}
             roundNumber={key.charAt(0)}
             updateMinigame={updateMinigame}
-          />
-        );
+          />,
+        ];
       })}
       {/* <Rules />> */}
       {/* <DiceRoller />> */}
