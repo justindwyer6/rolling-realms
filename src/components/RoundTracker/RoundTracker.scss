@@ -2,8 +2,8 @@
 
 .RoundTracker {
   grid-column: span 1;
-  border-bottom-left-radius: $border-radius-standard;
-  border-bottom-right-radius: $border-radius-standard;
+  border-radius: $border-radius-standard;
+  border: $border-standard;
   width: $minigame-width;
   height: fit-content;
   overflow-y: scroll;
@@ -84,7 +84,10 @@
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
   .RoundTracker {
-    grid-column: span 1;
+    width: $minigame-width;
+    height: $minigame-width;
+    position: static;
+    box-shadow: none;
   }
 }
 
