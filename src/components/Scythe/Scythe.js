@@ -32,6 +32,7 @@ const Scythe = () => {
         dieFace={i + 1}
         dieType="standard"
         initialDieState="available"
+        extraClasses="topDie"
       />
     );
   };
@@ -54,6 +55,7 @@ const Scythe = () => {
         dieFace={dice[i]}
         dieType="standard"
         initialDieState="available"
+        extraClasses="bottomDie"
       />
     );
   };
