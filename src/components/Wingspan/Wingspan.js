@@ -57,6 +57,12 @@ const Wingspan = () => {
       {renderBird(0, 7, [pumpkin, coin, star])}
       {renderBird(1, 12, [coin, heart, star])}
       {renderBird(2, 16, [heart, pumpkin, star])}
+      <div />
+      <div />
+      <div />
+      <div />
+      <div />
+      <div />
       <p>Score 1 star per complete bird whose sum = wingspan.</p>
     </>
   );
