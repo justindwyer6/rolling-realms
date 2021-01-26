@@ -81,8 +81,8 @@ const Scythe = () => {
         number, you may pay the bottom-row cost in the same column to
         mark it and gain its star.
       </p>
-      {times(6, (i) => renderTopDie(i))}
       {times(6, (i) => renderTopRewards(i, topRewards))}
+      {times(6, (i) => renderTopDie(i))}
       {times(6, (i) => renderBottomDie(i, scrambledDice))}
       {times(6, (i) => renderBottomRewards(i, bottomRewards))}
       {times(6, (i) => renderStars(i))}
