@@ -4,9 +4,10 @@
   grid-column: span 2;
   grid-row: span 2;
 
-  padding: 5px;
+  padding: 3px;
   border: $border-thick;
   border-radius: $border-radius-standard;
+  width: 100%;
 
   display: flex;
   align-items: center;
@@ -14,6 +15,7 @@
 
   button {
     font-weight: 600;
+    padding: 0 5px;
   }
 
   .rewardCount {
