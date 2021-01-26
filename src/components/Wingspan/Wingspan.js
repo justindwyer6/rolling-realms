@@ -1,59 +1,65 @@
 import React from "react";
 import "./Wingspan.scss";
 import { times } from "lodash";
+import heartSrc from "../../images/heart.png";
+import pumpkinSrc from "../../images/pumpkin.png";
+import coinSrc from "../../images/coin.png";
+import starSrc from "../../images/star-filled.png";
 
-class Wingspan extends React.Component {
-  rewards = [
-    "pumpkin",
-    "coin",
-    "star",
-    "coin",
-    "heart",
-    "star",
-    "heart",
-    "pumpkin",
-    "star",
-  ];
+const heart = {
+  src: heartSrc,
+  name: "heart",
+};
 
-  renderBirds(i) {
+const pumpkin = {
+  src: pumpkinSrc,
+  name: "pumpkin",
+};
+
+const coin = {
+  src: coinSrc,
+  name: "coin",
+};
+
+const star = {
+  src: starSrc,
+  name: "star",
+};
+
+const Wingspan = () => {
+  const renderBird = (i, wingspanOfBird, rewardList) => {
     return (
-      <div key={`bird${i}`} className="bird">
-        <p>{7 + i * 4 + (i ? 1 : 0)}</p>
-        <div className="birdCells">
-          {times(3, (j) => (
-            <div key={j}>
-              <input type="number" className="cell" />
-            </div>
-          ))}
-          {times(3, (j) => (
+      <div key={`bird-${i}`} className="bird">
+        <span>{wingspanOfBird}</span>
+        {times(3, (j) => (
+          <div
+            key={`bird-${i}-input-${j}`}
+            className="inputRewardContainer"
+          >
+            <input type="number" />
             <img
-              key={j}
-              src={`/images/${this.rewards[j + i + 2 * i]}.png`}
-              alt={this.rewards[j + i]}
+              src={rewardList[j].src}
+              alt={rewardList[j].name}
               className="reward"
             />
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     );
-  }
+  };
 
-  render() {
-    return (
-      <>
-        <p>
-          Fill a square on any bird (left to right), then gain the
-          bonus below that square
-        </p>
-        <div className="birds">
-          {times(3, (i) => this.renderBirds(i))}
-        </div>
-        <p className="margin20">
-          Score 1 star per complete bird whose sum = wingspan.
-        </p>
-      </>
-    );
-  }
-}
+  return (
+    <>
+      <p>
+        Fill a square on any bird (left to right), then gain the bonus
+        below that square
+      </p>
+      {renderBird(0, 7, [pumpkin, coin, star])}
+      {renderBird(1, 12, [coin, heart, star])}
+      {renderBird(2, 16, [heart, pumpkin, star])}
+      <p>Score 1 star per complete bird whose sum = wingspan.</p>
+    </>
+  );
+};
 
 export default Wingspan;
