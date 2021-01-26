@@ -4,6 +4,7 @@
   grid-column: 1/2;
   border-bottom-left-radius: $border-radius-standard;
   border-bottom-right-radius: $border-radius-standard;
+  width: $minigame-width;
   height: fit-content;
   overflow-y: scroll;
   position: sticky;
