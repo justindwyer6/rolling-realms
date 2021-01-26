@@ -8,13 +8,11 @@ const Minigame = ({ index, minigameName, updateMinigame }) => {
   const stars = [1, 2, 3, 4, 5, 6];
   return (
     <div className="Minigame">
-      <div className="minigameHeader">
-        <MinigameSelector
-          index={index}
-          minigameName={minigameName}
-          updateMinigame={updateMinigame}
-        />
-      </div>
+      <MinigameSelector
+        index={index}
+        minigameName={minigameName}
+        updateMinigame={updateMinigame}
+      />
       <Board minigameName={minigameName} />
       {minigameName === "Scythe" ? null : (
         <>
