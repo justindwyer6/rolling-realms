@@ -10,6 +10,7 @@
   position: relative;
   z-index: 1;
   // overflow-y: scroll;
+  box-sizing: border-box;
 
   // Parent Grid Styles
   display: grid;
