@@ -1,7 +1,7 @@
 @import "../../variables";
 
 .RoundTracker {
-  grid-column: 1/2;
+  grid-column: span 1;
   border-bottom-left-radius: $border-radius-standard;
   border-bottom-right-radius: $border-radius-standard;
   width: $minigame-width;
@@ -84,7 +84,7 @@
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
   .RoundTracker {
-    grid-column: span 6;
+    grid-column: span 1;
   }
 }
 

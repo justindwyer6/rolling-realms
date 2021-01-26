@@ -1,7 +1,7 @@
 @import "../../variables";
 
 .Minigame {
-  grid-column: 1/2;
+  grid-column: span 1;
   border: $border-standard;
   border-radius: $border-radius-standard;
   width: $minigame-width;
@@ -27,7 +27,6 @@
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
   .Minigame {
-    grid-column: span 2;
   }
 }
 
