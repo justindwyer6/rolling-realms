@@ -6,16 +6,15 @@
   border-radius: $border-radius-standard;
   width: $minigame-width;
   height: $minigame-width;
-  padding: 5px;
+  padding: 5px 0 0 0;
   position: relative;
   z-index: 1;
-  // overflow-y: scroll;
   box-sizing: border-box;
 
   // Parent Grid Styles
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(6, 1fr);
+  grid-template-rows: 1fr repeat(5, 2fr);
   justify-items: center;
   align-items: center;
 
