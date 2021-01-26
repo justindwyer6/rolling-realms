@@ -10,6 +10,7 @@
   grid-template-rows: auto;
   justify-content: center;
   align-items: center;
+  box-sizing: border-box;
 
   .header {
     grid-column: 1/2;
