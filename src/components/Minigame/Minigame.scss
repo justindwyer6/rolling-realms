@@ -4,7 +4,9 @@
   grid-column: 1/2;
   border: $border-standard;
   border-radius: $border-radius-standard;
+  width: 310px;
   height: 300px;
+  padding: 5px;
   overflow-y: scroll;
   position: relative;
   z-index: 1;
