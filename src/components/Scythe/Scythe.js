@@ -62,12 +62,14 @@ const Scythe = () => {
 
   const renderBottomRewards = (i, rewards) => {
     return (
-      <img
-        className="bottomReward"
-        key={`scythe-bottom-reward-${rewards[i]}+${i}`}
-        src={`/images/${rewards[i]}.png`}
-        alt={rewards[i]}
-      />
+      <div className="bottomReward">
+        <span>-</span>
+        <img
+          key={`scythe-bottom-reward-${rewards[i]}+${i}`}
+          src={`/images/${rewards[i]}.png`}
+          alt={rewards[i]}
+        />
+      </div>
     );
   };
 

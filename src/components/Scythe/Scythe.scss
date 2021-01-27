@@ -1,19 +1,24 @@
 @import "../../variables";
 
-.topReward {
-  background: rgba(0, 128, 0, 0.3);
-  border-radius: $border-radius-circle;
-  align-self: end;
-}
-.bottomReward {
-  background: rgba(255, 0, 0, 0.3);
-  border-radius: $border-radius-circle;
-  align-self: end;
-}
+.Scythe {
+  .topReward {
+    align-self: end;
+  }
+  .topDie {
+    align-self: start;
+  }
 
-.topDie {
-  align-self: start;
-}
-.bottomDie {
-  align-self: end;
+  .bottomDie {
+    align-self: end;
+  }
+  .bottomReward {
+    display: flex;
+    span {
+      font-weight: 600;
+      text-shadow: black;
+      position: relative;
+      left: 0.5ch;
+      color: rgb(200, 25, 25);
+    }
+  }
 }

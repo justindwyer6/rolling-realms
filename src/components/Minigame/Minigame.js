@@ -7,7 +7,7 @@ import "./Minigame.scss";
 const Minigame = ({ index, minigameName, updateMinigame }) => {
   const stars = [1, 2, 3, 4, 5, 6];
   return (
-    <div className="Minigame">
+    <div className={`Minigame ${minigameName.replace(/ +/g, "")}`}>
       <MinigameSelector
         index={index}
         minigameName={minigameName}
