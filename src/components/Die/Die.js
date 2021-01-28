@@ -7,8 +7,8 @@ import d6Face4 from "../../images/d6-4.png";
 import d6Face5 from "../../images/d6-5.png";
 import d6Face6 from "../../images/d6-6.png";
 
-const Die = ({ dieType, initialDieState, dieFace, extraClasses }) => {
-  const [dieState, setDieState] = useState(initialDieState);
+const Die = ({ dieType, dieFace, classes }) => {
+  const [dieState, setDieState] = useState("available");
 
   const updateStandardDie = () => {
     if (dieState === "available") {
@@ -64,7 +64,7 @@ const Die = ({ dieType, initialDieState, dieFace, extraClasses }) => {
 
   return (
     <button
-      className={`dieButton ${extraClasses}`}
+      className={`dieButton ${classes}`}
       onClick={updateDie}
       type="button"
     >
