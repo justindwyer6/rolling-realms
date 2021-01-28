@@ -1,26 +1,30 @@
 import React from "react";
-import Reward from "./Reward";
+import Resource from "./Resource";
 
 export default {
-  title: "Example/Reward",
-  component: Reward,
+  title: "Example/Resource",
+  component: Resource,
   argTypes: {},
 };
 
-const Template = (args) => <Reward {...args} />; // eslint-disable-line react/jsx-props-no-spreading
+const Template = (args) => <Resource {...args} />; // eslint-disable-line react/jsx-props-no-spreading
 
 export const Pumpkin = Template.bind({});
 Pumpkin.args = {
-  reward: "pumpkin",
-  i: 1,
+  name: "pumpkin",
 };
 
 export const Heart = Template.bind({});
 Heart.args = {
-  reward: "heart",
+  name: "heart",
 };
 
 export const Coin = Template.bind({});
 Coin.args = {
-  reward: "coin",
+  name: "coin",
+};
+
+export const Star = Template.bind({});
+Star.args = {
+  name: "star",
 };

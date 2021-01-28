@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Resource.scss";
 import heartSrc from "../../images/heart.png";
 import pumpkinSrc from "../../images/pumpkin.png";
@@ -6,44 +6,44 @@ import coinSrc from "../../images/coin.png";
 import starSrc from "../../images/star-filled.png";
 
 const heart = {
-  src: heartSrc,
   name: "heart",
+  src: heartSrc,
 };
 
 const pumpkin = {
-  src: pumpkinSrc,
   name: "pumpkin",
+  src: pumpkinSrc,
 };
 
 const coin = {
-  src: coinSrc,
   name: "coin",
+  src: coinSrc,
 };
 
 const star = {
-  src: starSrc,
   name: "star",
+  src: starSrc,
 };
 
-const Resource = ({ resource }) => {
-  const getResourceAsset = (thisResource) => {
-    if (thisResource === "pumpkin") {
-      return pumpkin;
-    }
-    if (thisResource === "heart") {
-      return heart;
-    }
-    if (thisResource === "coin") {
-      return coin;
-    }
-    throw Error(`Hmmm... ${thisResource} is not a valid resource.`);
-  };
+const Resource = ({ name }) => {
+  let resource;
+  if (name === pumpkin.name) {
+    resource = pumpkin;
+  } else if (name === heart.name) {
+    resource = heart;
+  } else if (name === coin.name) {
+    resource = coin;
+  } else if (name === star.name) {
+    resource = star;
+  } else {
+    throw Error(`Hmmm... ${name} is not a valid resource.`);
+  }
 
   return (
     <img
-      className={`resource ${resourceState}`}
-      src={getResourceAsset(resource)}
-      alt={resource}
+      className={`resource ${resource.name}`}
+      src={resource.src}
+      alt={resource.name}
     />
   );
 };
