@@ -9,7 +9,6 @@ const Euphoria = () => {
         key={`euphoria-${alignment}-d6-${i}`}
         dieFace={i}
         dieType="standard"
-        initialDieState="available"
       />
     );
   };
