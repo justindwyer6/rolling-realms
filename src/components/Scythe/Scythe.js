@@ -1,8 +1,11 @@
 import React from "react";
 import { times } from "lodash";
 import Die from "../Die/Die";
-import Star from "../Star/Star";
 import "./Scythe.scss";
+// import heartSrc from "../../images/heart.png";
+// import pumpkinSrc from "../../images/pumpkin.png";
+// import coinSrc from "../../images/coin.png";
+import starSrc from "../../images/star-filled.png";
 
 const Scythe = () => {
   const topRewards = [
@@ -74,7 +77,13 @@ const Scythe = () => {
   };
 
   const renderStars = (i) => {
-    return <Star key={i} />;
+    return (
+      <img
+        key={`scythe-star-reward-${i}`}
+        src={starSrc}
+        alt="reward-star"
+      />
+    );
   };
 
   return (
