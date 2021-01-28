@@ -1,0 +1,11 @@
+.ResourceDie {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30px;
+
+  .resource {
+    position: relative;
+    top: -11px;
+  }
+}
