@@ -1,6 +1,7 @@
 import React from "react";
 import Die from "../Die/Die";
 import Resource from "../Resource/Resource";
+import "./ResourceDie.scss";
 
 const ResourceDie = ({ dieType, dieFace, classes, resourceName }) => {
   return (

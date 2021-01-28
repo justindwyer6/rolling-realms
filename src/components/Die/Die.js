@@ -64,7 +64,7 @@ const Die = ({ dieType, dieFace, classes }) => {
 
   return (
     <button
-      className={`dieButton ${classes}`}
+      className={`dieButton ${classes || ""}`}
       onClick={updateDie}
       type="button"
     >
