@@ -27,20 +27,20 @@ const star = {
 };
 
 const Wingspan = () => {
-  const renderBird = (i, wingspanOfBird, rewardList) => {
+  const renderBird = (i, wingspanOfBird, resourceList) => {
     return (
       <div key={`bird-${i}`} className="bird">
         <span>{wingspanOfBird}</span>
         {times(3, (j) => (
           <div
             key={`bird-${i}-input-${j}`}
-            className="inputRewardContainer"
+            className="inputResourceContainer"
           >
             <input type="number" />
             <img
-              src={rewardList[j].src}
-              alt={rewardList[j].name}
-              className="reward"
+              src={resourceList[j].src}
+              alt={resourceList[j].name}
+              className="resource"
             />
           </div>
         ))}

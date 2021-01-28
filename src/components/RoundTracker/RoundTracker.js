@@ -1,6 +1,6 @@
 import React from "react";
 import { times } from "lodash";
-import RewardTracker from "../RewardTracker/RewardTracker";
+import ResourceTracker from "../ResourceTracker/ResourceTracker";
 import "./RoundTracker.scss";
 import starIcon from "../../images/star-filled.png";
 
@@ -43,9 +43,9 @@ const RoundTracker = ({ round }) => {
       <div className="turnTracker">
         {times(9, (i) => renderInputs(i))}
       </div>
-      <RewardTracker rewardType="pumpkin" />
-      <RewardTracker rewardType="heart" />
-      <RewardTracker rewardType="coin" />
+      <ResourceTracker resourceType="pumpkin" />
+      <ResourceTracker resourceType="heart" />
+      <ResourceTracker resourceType="coin" />
     </div>
   );
 };
