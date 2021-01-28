@@ -1,21 +1,4 @@
 @import "../../variables";
 
 .resource {
-  border-radius: $border-radius-circle;
-  padding: 1px;
-  width: 15px;
-  height: 15px;
-
-  &.available {
-    border: $border-thick-dotted;
-  }
-
-  &.gained {
-    border: $border-thick;
-  }
-
-  &.used {
-    border: $border-thick;
-    background: black;
-  }
 }
