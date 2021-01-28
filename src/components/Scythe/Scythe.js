@@ -1,6 +1,7 @@
 import React from "react";
 import { times } from "lodash";
 import Die from "../Die/Die";
+import ResourceDie from "../ResourceDie/ResourceDie";
 import "./Scythe.scss";
 // import heartSrc from "../../images/heart.png";
 // import pumpkinSrc from "../../images/pumpkin.png";
@@ -30,11 +31,12 @@ const Scythe = () => {
 
   const renderTopDie = (i) => {
     return (
-      <Die
+      <ResourceDie
         key={`scythe-top-d6-${i + 1}`}
         dieFace={i + 1}
         dieType="standard"
         classes="topDie"
+        resourceName="pumpkin"
       />
     );
   };
