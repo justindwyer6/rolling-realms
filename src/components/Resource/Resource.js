@@ -1,22 +1,31 @@
 import React, { useState } from "react";
-import pumpkin from "../../images/pumpkin.png";
-import heart from "../../images/heart.png";
-import coin from "../../images/coin.png";
 import "./Resource.scss";
+import heartSrc from "../../images/heart.png";
+import pumpkinSrc from "../../images/pumpkin.png";
+import coinSrc from "../../images/coin.png";
+import starSrc from "../../images/star-filled.png";
 
-const Resource = ({ round, resource, i }) => {
-  const [resourceState, setResourceState] = useState("available");
+const heart = {
+  src: heartSrc,
+  name: "heart",
+};
 
-  const updateResource = () => {
-    if (resourceState === "available") {
-      setResourceState("gained");
-    } else if (resourceState === "gained") {
-      setResourceState("used");
-    } else {
-      setResourceState("available");
-    }
-  };
+const pumpkin = {
+  src: pumpkinSrc,
+  name: "pumpkin",
+};
 
+const coin = {
+  src: coinSrc,
+  name: "coin",
+};
+
+const star = {
+  src: starSrc,
+  name: "star",
+};
+
+const Resource = ({ resource }) => {
   const getResourceAsset = (thisResource) => {
     if (thisResource === "pumpkin") {
       return pumpkin;
@@ -31,18 +40,11 @@ const Resource = ({ round, resource, i }) => {
   };
 
   return (
-    <button
-      type="button"
-      aria-label={`Round ${round}: ${resource} ${i}`}
-      title={`Round ${round}: ${resource} ${i}`}
-      onClick={updateResource}
-    >
-      <img
-        className={`resource ${resourceState}`}
-        src={getResourceAsset(resource)}
-        alt={resource}
-      />
-    </button>
+    <img
+      className={`resource ${resourceState}`}
+      src={getResourceAsset(resource)}
+      alt={resource}
+    />
   );
 };
 
