@@ -38,7 +38,7 @@ const Die = ({ dieType, dieFace, classes }) => {
     }
   };
 
-  const getDieSource = (thisDieFace) => {
+  const getDieFace = (thisDieFace) => {
     if (thisDieFace === 1) {
       return d6Face1;
     }
@@ -71,7 +71,7 @@ const Die = ({ dieType, dieFace, classes }) => {
       <img
         className={`${dieType} ${dieState}`}
         key={`${dieFace}die`}
-        src={getDieSource(dieFace)}
+        src={getDieFace(dieFace)}
         alt={`${dieFace}die`}
       />
     </button>
