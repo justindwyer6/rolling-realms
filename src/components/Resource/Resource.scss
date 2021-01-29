@@ -1,4 +1,13 @@
 @import "../../variables";
 
 .resource {
+  display: flex;
+  &.minus > span {
+    font-size: 1.2em;
+    font-weight: 600;
+    text-shadow: 0.5px 0.5px 1.5px black;
+    position: relative;
+    left: 0.5ch;
+    color: rgb(200, 25, 25);
+  }
 }

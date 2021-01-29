@@ -3,11 +3,20 @@ import Die from "../Die/Die";
 import Resource from "../Resource/Resource";
 import "./ResourceDie.scss";
 
-const ResourceDie = ({ dieType, dieFace, classes, resourceName }) => {
+const ResourceDie = ({
+  dieType,
+  dieFace,
+  classes,
+  resourceName,
+  isMinusResource,
+}) => {
   return (
     <div className="ResourceDie">
       <Die dieType={dieType} dieFace={dieFace} classes={classes} />
-      <Resource name={resourceName} />
+      <Resource
+        name={resourceName}
+        isMinusResource={isMinusResource}
+      />
     </div>
   );
 };

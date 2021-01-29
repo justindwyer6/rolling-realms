@@ -9,14 +9,14 @@ import "./Scythe.scss";
 import starSrc from "../../images/star-filled.png";
 
 const Scythe = () => {
-  const topRewards = [
-    "coin",
-    "heart",
-    "pumpkin",
-    "coin",
-    "heart",
-    "pumpkin",
-  ];
+  // const topRewards = [
+  //   "coin",
+  //   "heart",
+  //   "pumpkin",
+  //   "coin",
+  //   "heart",
+  //   "pumpkin",
+  // ];
 
   const bottomRewards = [
     "heart",
@@ -37,20 +37,21 @@ const Scythe = () => {
         dieType="standard"
         classes="topDie"
         resourceName="pumpkin"
+        isMinusResource
       />
     );
   };
 
-  const renderTopRewards = (i, rewards) => {
-    return (
-      <img
-        className="topReward"
-        key={`scythe-top-reward-${rewards[i]}+${i}`}
-        src={`/images/${rewards[i]}.png`}
-        alt={rewards[i]}
-      />
-    );
-  };
+  // const renderTopRewards = (i, rewards) => {
+  //   return (
+  //     <img
+  //       className="topReward"
+  //       key={`scythe-top-reward-${rewards[i]}+${i}`}
+  //       src={`/images/${rewards[i]}.png`}
+  //       alt={rewards[i]}
+  //     />
+  //   );
+  // };
 
   const renderBottomDie = (i, dice) => {
     return (
@@ -94,7 +95,6 @@ const Scythe = () => {
         number, you may pay the bottom-row cost in the same column to
         mark it and gain its star.
       </p>
-      {times(6, (i) => renderTopRewards(i, topRewards))}
       {times(6, (i) => renderTopDie(i))}
       {times(6, (i) => renderBottomDie(i, scrambledDice))}
       {times(6, (i) => renderBottomRewards(i, bottomRewards))}
