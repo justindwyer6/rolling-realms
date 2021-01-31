@@ -20,7 +20,6 @@ const Viticulture = () => {
         key={`viticulture-d6-${i + 1}`}
         dieFace={i + 1}
         dieType="grape"
-        initialDieState="available"
       />
     );
   };

@@ -1,0 +1,23 @@
+@import "../../variables";
+
+.Scythe {
+  p {
+    grid-row: span 2;
+  }
+  .ResourceDie {
+    border: $border-thick;
+    padding: 5px 20px 0;
+    &.topRow {
+      border-top-left-radius: $border-radius-standard;
+      border-top-right-radius: $border-radius-standard;
+      border-bottom: none;
+    }
+    &.bottomRow {
+      border-bottom-left-radius: $border-radius-standard;
+      border-bottom-right-radius: $border-radius-standard;
+    }
+    &.hasCost {
+      padding: 0 20px;
+    }
+  }
+}
