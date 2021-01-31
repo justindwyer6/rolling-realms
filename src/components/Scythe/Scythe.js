@@ -28,10 +28,10 @@ const Scythe = () => {
   return (
     <>
       <p>
-        Mark a #: The top row provides resource bonuses; the bottom
-        row costs resources to gain stars. When you mark a top-row
-        number, you may pay the bottom-row cost in the same column to
-        mark it and gain its star.
+        Mark a #: The top row provides resources; the bottom row costs
+        resources to gain stars. When you mark a top-row number, you
+        may pay the bottom-row cost in the same column to mark it and
+        gain its star.
       </p>
       {times(6, (i) =>
         renderTopRow(i, [
