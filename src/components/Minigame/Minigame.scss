@@ -1,18 +1,20 @@
 @import "../../variables";
 
 .Minigame {
-  grid-column: 1/2;
+  grid-column: span 1;
   border: $border-standard;
   border-radius: $border-radius-standard;
-  height: 300px;
-  overflow-y: scroll;
+  width: $minigame-width;
+  height: $minigame-width;
+  padding: 5px 0 0 0;
   position: relative;
   z-index: 1;
+  box-sizing: border-box;
 
   // Parent Grid Styles
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(6, 1fr);
+  grid-template-rows: 1fr repeat(5, 2fr);
   justify-items: center;
   align-items: center;
 
@@ -24,7 +26,6 @@
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
   .Minigame {
-    grid-column: span 2;
   }
 }
 
