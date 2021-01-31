@@ -19,7 +19,11 @@
   align-items: center;
 
   p {
-    display: none;
+    // display: none;
+    grid-column: span 6;
+    font-size: 0.75em;
+    text-align: center;
+    padding: 0 1px;
   }
 }
 

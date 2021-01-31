@@ -1,6 +1,9 @@
 @import "../../variables";
 
 .Scythe {
+  p {
+    display: block;
+  }
   gap: 3px;
   .ResourceDie {
     border: $border-thick;
