@@ -1,9 +1,6 @@
 @import "../../variables";
 
 .Scythe {
-  p {
-    grid-row: span 2;
-  }
   .ResourceDie {
     border: $border-thick;
     padding: 5px 20px 0;

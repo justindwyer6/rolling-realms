@@ -6,14 +6,15 @@
   border-radius: $border-radius-standard;
   width: $minigame-width;
   height: $minigame-width;
-  padding: 5px 0 0 0;
+  padding: 5px;
   position: relative;
   z-index: 1;
   box-sizing: border-box;
 
   // Parent Grid Styles
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(6, 51px);
+  grid-template-rows: 30px 70px 156px 50px;
   justify-items: center;
   align-items: center;
 
@@ -21,7 +22,16 @@
     grid-column: span 6;
     font-size: 0.75em;
     text-align: center;
-    padding: 0 3px;
+    margin: 0;
+  }
+
+  .game {
+    grid-column: span 6;
+
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    justify-content: space-between;
+    gap: 0 5px;
   }
 }
 

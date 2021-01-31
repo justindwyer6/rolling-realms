@@ -33,23 +33,25 @@ const Scythe = () => {
         may pay the bottom-row cost in the same column to mark it and
         gain its star.
       </p>
-      {times(6, (i) =>
-        renderTopRow(i, [
-          "coin",
-          "heart",
-          "pumpkin",
-          "coin",
-          "heart",
-          "pumpkin",
-        ]),
-      )}
-      {times(6, (i) =>
-        renderBottomRow(
-          i,
-          [5, 6, 2, 1, 4, 3],
-          ["heart", "pumpkin", "coin", "pumpkin", "coin", "heart"],
-        ),
-      )}
+      <div className="game">
+        {times(6, (i) =>
+          renderTopRow(i, [
+            "coin",
+            "heart",
+            "pumpkin",
+            "coin",
+            "heart",
+            "pumpkin",
+          ]),
+        )}
+        {times(6, (i) =>
+          renderBottomRow(
+            i,
+            [5, 6, 2, 1, 4, 3],
+            ["heart", "pumpkin", "coin", "pumpkin", "coin", "heart"],
+          ),
+        )}
+      </div>
     </>
   );
 };

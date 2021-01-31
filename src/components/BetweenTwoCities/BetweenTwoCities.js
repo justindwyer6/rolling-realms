@@ -24,31 +24,32 @@ const BetweenTwoCities = () => {
         lowest of the other 2 realms this round. This # cannot be
         higher than filled squares here.
       </p>
-
-      <b />
-      {renderInput(1)}
-      {renderInput(2)}
-      {renderInput(3)}
-      <Resource name="pumpkin" secondName="coin" />
-      <b />
-      <b />
-      {renderInput(4)}
-      {renderInput(5)}
-      {renderInput(6)}
-      <Resource name="coin" secondName="heart" />
-      <b />
-      <b />
-      {renderInput(7)}
-      {renderInput(8)}
-      {renderInput(9)}
-      <Resource name="heart" secondName="pumpkin" />
-      <b />
-      <b />
-      <Resource name="pumpkin" secondName="pumpkin" />
-      <Resource name="coin" secondName="coin" />
-      <Resource name="heart" secondName="heart" />
-      <b />
-      <b />
+      <div className="game">
+        <b />
+        {renderInput(1)}
+        {renderInput(2)}
+        {renderInput(3)}
+        <Resource name="pumpkin" secondName="coin" />
+        <b />
+        <b />
+        {renderInput(4)}
+        {renderInput(5)}
+        {renderInput(6)}
+        <Resource name="coin" secondName="heart" />
+        <b />
+        <b />
+        {renderInput(7)}
+        {renderInput(8)}
+        {renderInput(9)}
+        <Resource name="heart" secondName="pumpkin" />
+        <b />
+        <b />
+        <Resource name="pumpkin" secondName="pumpkin" />
+        <Resource name="coin" secondName="coin" />
+        <Resource name="heart" secondName="heart" />
+        <b />
+        <b />
+      </div>
     </>
   );
 };
