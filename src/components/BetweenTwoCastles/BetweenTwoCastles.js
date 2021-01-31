@@ -30,11 +30,19 @@ const BetweenTwoCastles = () => {
         <input type="number" min="1" max="6" />
         <input type="number" min="1" max="6" />
         <input type="number" min="1" max="6" />
-        <img src="/images/wooden-door.png" alt="door" />
+        <img
+          className="door"
+          src="/images/wooden-door.png"
+          alt="door"
+        />
         <input type="number" min="1" max="6" />
         <b />
         <input type="number" min="1" max="6" />
-        <img src="/images/stone-door.png" alt="door" />
+        <img
+          className="door"
+          src="/images/stone-door.png"
+          alt="door"
+        />
       </div>
     </>
   );
