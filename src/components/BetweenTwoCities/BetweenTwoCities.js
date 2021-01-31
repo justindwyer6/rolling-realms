@@ -4,16 +4,6 @@ import "./BetweenTwoCities.scss";
 import Resource from "../Resource/Resource";
 
 const BetweenTwoCities = () => {
-  // const rowRewards = {
-  //   a2: "pumpkin",
-  //   b2: "coin",
-  //   a5: "coin",
-  //   b5: "heart",
-  //   a8: "heart",
-  //   b8: "pumpkin",
-  // };
-  // const columnRewards = ["pumpkin", "coin", "heart"];
-
   const renderInput = (i) => {
     return (
       <input
@@ -40,56 +30,25 @@ const BetweenTwoCities = () => {
       {renderInput(2)}
       {renderInput(3)}
       <Resource name="pumpkin" secondName="coin" />
-
-      {/* Render a 3x3 grid of inputs with two overlayed rewards appended to the end of each row */}
-      {/* {times(9, (i) => {
-        if ((i + 1) % 3 === 1) {
-          return [<b key={`blank-${i}`} />, renderCell(i)];
-        }
-        if ((i + 1) % 3 === 2) {
-          return renderCell(i);
-        }
-        if ((i + 1) % 3 === 0) {
-          return [
-            renderCell(i),
-            <div key={`rewards-${i}`} className="rewards">
-              <img
-                key={`reward-a-${i}`}
-                className="reward"
-                src={`/images/${rowRewards[`a${i}`]}.png`}
-                alt={rowRewards[i - 4]}
-              />
-              <img
-                key={`reward-b-${i}`}
-                className="reward overlay"
-                src={`/images/${rowRewards[`b${i}`]}.png`}
-                alt={rowRewards[i - 3]}
-              />
-            </div>,
-            <b key={`blank-${i}`} />,
-          ];
-        }
-        return null;
-      })}
-      <b key="blank-bottom-start" />
-      {times(3, (i) => (
-        <div key={`rewards-${i}`} className="rewards">
-          <img
-            key={`reward-a-${i}`}
-            className="reward"
-            src={`/images/${columnRewards[i]}.png`}
-            alt="reward"
-          />
-          <img
-            key={`reward-b-${i}`}
-            className="reward overlay"
-            src={`/images/${columnRewards[i]}.png`}
-            alt="reward"
-          />
-        </div>
-      ))}
-      <b key="blank-bottom-end-1" />
-      <b key="blank-bottom-end-2" /> */}
+      <b />
+      <b />
+      {renderInput(4)}
+      {renderInput(5)}
+      {renderInput(6)}
+      <Resource name="coin" secondName="heart" />
+      <b />
+      <b />
+      {renderInput(7)}
+      {renderInput(8)}
+      {renderInput(9)}
+      <Resource name="heart" secondName="pumpkin" />
+      <b />
+      <b />
+      <Resource name="pumpkin" secondName="pumpkin" />
+      <Resource name="coin" secondName="coin" />
+      <Resource name="heart" secondName="heart" />
+      <b />
+      <b />
     </>
   );
 };
