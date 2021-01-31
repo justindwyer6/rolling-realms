@@ -1,69 +1,30 @@
 import React from "react";
 import { times } from "lodash";
-import Die from "../Die/Die";
 import ResourceDie from "../ResourceDie/ResourceDie";
 import "./Scythe.scss";
-// import heartSrc from "../../images/heart.png";
-// import pumpkinSrc from "../../images/pumpkin.png";
-// import coinSrc from "../../images/coin.png";
 import starSrc from "../../images/star-filled.png";
 
 const Scythe = () => {
-  // const topRewards = [
-  //   "coin",
-  //   "heart",
-  //   "pumpkin",
-  //   "coin",
-  //   "heart",
-  //   "pumpkin",
-  // ];
+  const renderTopRow = (i, resources) => (
+    <ResourceDie
+      key={`scythe-top-d6-${i + 1}`}
+      dieFace={i + 1}
+      dieType="standard"
+      classes="topDie"
+      resourceName={resources[i]}
+    />
+  );
 
-  const bottomRewards = [
-    "heart",
-    "pumpkin",
-    "coin",
-    "pumpkin",
-    "coin",
-    "heart",
-  ];
-
-  const scrambledDice = [5, 6, 2, 1, 4, 3];
-
-  const renderTopRow = (i, resources) => {
-    return (
-      <ResourceDie
-        key={`scythe-top-d6-${i + 1}`}
-        dieFace={i + 1}
-        dieType="standard"
-        classes="topDie"
-        resourceName={resources[i]}
-      />
-    );
-  };
-
-  const renderBottomDie = (i, dice) => {
-    return (
-      <Die
-        key={`scythe-bottom-d6-${i + 1}`}
-        dieFace={dice[i]}
-        dieType="standard"
-        classes="bottomDie"
-      />
-    );
-  };
-
-  const renderBottomRewards = (i, rewards) => {
-    return (
-      <div className="bottomReward">
-        <span>-</span>
-        <img
-          key={`scythe-bottom-reward-${rewards[i]}+${i}`}
-          src={`/images/${rewards[i]}.png`}
-          alt={rewards[i]}
-        />
-      </div>
-    );
-  };
+  const renderBottomRow = (i, dice, resources) => (
+    <ResourceDie
+      key={`scythe-bottom-d6-${dice[i]}`}
+      dieFace={dice[i]}
+      dieType="standard"
+      classes="bottomDie"
+      resourceName={resources[i]}
+      isMinusResource
+    />
+  );
 
   const renderStars = (i) => {
     return (
@@ -93,8 +54,13 @@ const Scythe = () => {
           "pumpkin",
         ]),
       )}
-      {times(6, (i) => renderBottomDie(i, scrambledDice))}
-      {times(6, (i) => renderBottomRewards(i, bottomRewards))}
+      {times(6, (i) =>
+        renderBottomRow(
+          i,
+          [5, 6, 2, 1, 4, 3],
+          ["heart", "pumpkin", "coin", "pumpkin", "coin", "heart"],
+        ),
+      )}
       {times(6, (i) => renderStars(i))}
     </>
   );

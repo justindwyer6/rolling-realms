@@ -10,6 +10,7 @@ const ResourceDie = ({
   resourceName,
   isMinusResource,
 }) => {
+  console.log("hi ");
   return (
     <div className="ResourceDie">
       <Die dieType={dieType} dieFace={dieFace} classes={classes} />
