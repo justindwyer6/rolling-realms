@@ -61,7 +61,11 @@ const Resource = ({ name, isCost = false, secondName = "" }) => {
       {isCost ? <span>-</span> : null}
       <img src={resource.src} alt={resource.name} />
       {secondName ? (
-        <img src={secondResource.src} alt={secondResource.name} />
+        <img
+          src={secondResource.src}
+          alt={secondResource.name}
+          className="secondResource"
+        />
       ) : null}
     </div>
   );
