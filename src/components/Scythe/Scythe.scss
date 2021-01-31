@@ -1,25 +1,13 @@
 @import "../../variables";
 
 .Scythe {
-  .topReward {
-    align-self: end;
-  }
-  .topDie {
-    align-self: start;
-  }
-
-  .bottomDie {
-    align-self: end;
-  }
-  .bottomReward {
-    display: flex;
-    span {
-      font-size: 1.2em;
-      font-weight: 600;
-      text-shadow: 0.5px 0.5px 1.5px black;
-      position: relative;
-      left: 0.5ch;
-      color: rgb(200, 25, 25);
+  gap: 3px;
+  .ResourceDie {
+    border: $border-thick;
+    border-radius: $border-radius-standard;
+    padding: 5px 20px 0;
+    &.hasCost {
+      padding: 0 20px;
     }
   }
 }

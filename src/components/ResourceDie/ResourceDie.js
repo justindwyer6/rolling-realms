@@ -11,7 +11,7 @@ const ResourceDie = ({
   resourceCost = null,
 }) => {
   return (
-    <div className="ResourceDie">
+    <div className={`ResourceDie ${resourceCost ? "hasCost" : ""}`}>
       {resourceCost ? <Resource name={resourceCost} isCost /> : null}
       <Die dieType={dieType} dieFace={dieFace} classes={classes} />
       <Resource name={resourceName} />
