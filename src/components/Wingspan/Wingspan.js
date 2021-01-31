@@ -52,18 +52,20 @@ const Wingspan = () => {
     <>
       <p>
         Fill a square on any bird (left to right), then gain the bonus
-        below that square
+        below that square. Score 1 star per complete bird whose sum =
+        wingspan.
       </p>
-      {renderBird(0, 7, [pumpkin, coin, star])}
-      {renderBird(1, 12, [coin, heart, star])}
-      {renderBird(2, 16, [heart, pumpkin, star])}
-      <div />
-      <div />
-      <div />
-      <div />
-      <div />
-      <div />
-      <p>Score 1 star per complete bird whose sum = wingspan.</p>
+      <div className="game">
+        {renderBird(0, 7, [pumpkin, coin, star])}
+        {renderBird(1, 12, [coin, heart, star])}
+        {renderBird(2, 16, [heart, pumpkin, star])}
+        <div />
+        <div />
+        <div />
+        <div />
+        <div />
+        <div />
+      </div>
     </>
   );
 };
