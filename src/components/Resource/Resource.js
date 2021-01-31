@@ -25,7 +25,7 @@ const star = {
   src: starSrc,
 };
 
-const Resource = ({ name, isCost = false }) => {
+const Resource = ({ name, isCost = false, secondName = "" }) => {
   let resource;
   if (name === pumpkin.name) {
     resource = pumpkin;
@@ -39,12 +39,30 @@ const Resource = ({ name, isCost = false }) => {
     throw Error(`Hmmm... ${name} is not a valid resource.`);
   }
 
+  let secondResource;
+  if (secondName) {
+    if (secondName === pumpkin.name) {
+      secondResource = pumpkin;
+    } else if (secondName === heart.name) {
+      secondResource = heart;
+    } else if (secondName === coin.name) {
+      secondResource = coin;
+    } else if (secondName === star.name) {
+      secondResource = star;
+    } else {
+      throw Error(`Hmmm... ${secondName} is not a valid resource.`);
+    }
+  }
+
   return (
     <div
       className={`resource ${resource.name} ${isCost ? "cost" : ""}`}
     >
       {isCost ? <span>-</span> : null}
       <img src={resource.src} alt={resource.name} />
+      {secondName ? (
+        <img src={secondResource.src} alt={secondResource.name} />
+      ) : null}
     </div>
   );
 };
