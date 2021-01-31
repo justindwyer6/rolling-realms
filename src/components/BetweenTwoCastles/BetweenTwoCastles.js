@@ -3,6 +3,16 @@ import "./BetweenTwoCastles.scss";
 import Resource from "../Resource/Resource";
 
 const BetweenTwoCastles = () => {
+  const renderInput = (location) => (
+    <input
+      key={location}
+      className={location}
+      type="number"
+      min="1"
+      max="6"
+    />
+  );
+
   return (
     <>
       <p>
@@ -18,26 +28,26 @@ const BetweenTwoCastles = () => {
         <Resource name="coin" secondName="heart" />
         <Resource name="coin" secondName="coin" />
         <b />
-        <input type="number" min="1" max="6" />
+        {renderInput("left-top-center")}
         <Resource name="heart" secondName="heart" />
         <b />
-        <input type="number" min="1" max="6" />
-        <input type="number" min="1" max="6" />
+        {renderInput("right-top-left")}
+        {renderInput("right-top-right")}
         <Resource name="pumpkin" />
-        <input type="number" min="1" max="6" />
-        <input type="number" min="1" max="6" />
+        {renderInput("left-center-center")}
+        {renderInput("left-center-right")}
         <b />
-        <input type="number" min="1" max="6" />
-        <input type="number" min="1" max="6" />
-        <input type="number" min="1" max="6" />
+        {renderInput("right-center-left")}
+        {renderInput("right-center-right")}
+        {renderInput("left-bottom-left")}
         <img
           className="door"
           src="/images/wooden-door.png"
           alt="door"
         />
-        <input type="number" min="1" max="6" />
+        {renderInput("right-bottom-right")}
         <b />
-        <input type="number" min="1" max="6" />
+        {renderInput("right-bottom-left")}
         <img
           className="door"
           src="/images/stone-door.png"

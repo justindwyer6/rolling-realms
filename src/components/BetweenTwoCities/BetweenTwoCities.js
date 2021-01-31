@@ -4,17 +4,15 @@ import "./BetweenTwoCities.scss";
 import Resource from "../Resource/Resource";
 
 const BetweenTwoCities = () => {
-  const renderInput = (i) => {
-    return (
-      <input
-        key={`city-input-${i}`}
-        type="number"
-        className=""
-        min="1"
-        max="6"
-      />
-    );
-  };
+  const renderInput = (i) => (
+    <input
+      key={`city-input-${i}`}
+      type="number"
+      className=""
+      min="1"
+      max="6"
+    />
+  );
 
   return (
     <>
