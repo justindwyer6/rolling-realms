@@ -11,10 +11,12 @@
       border-top-left-radius: $border-radius-standard;
       border-top-right-radius: $border-radius-standard;
       border-bottom: none;
+      align-self: flex-end;
     }
     &.bottomRow {
       border-bottom-left-radius: $border-radius-standard;
       border-bottom-right-radius: $border-radius-standard;
+      align-self: flex-start;
     }
     &.hasCost {
       padding: 0 20px;

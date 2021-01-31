@@ -14,7 +14,7 @@
   // Parent Grid Styles
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: 1fr repeat(5, 2fr);
+  // grid-template-rows: repeat(5, 1fr);
   justify-items: center;
   align-items: center;
 
