@@ -2,7 +2,7 @@
 
 .Minigame {
   grid-column: span 1;
-  border: $border-standard;
+  border: $border-thick;
   border-radius: $border-radius-standard;
   width: $minigame-width;
   height: $minigame-width;
@@ -19,7 +19,6 @@
   align-items: center;
 
   p {
-    // display: none;
     grid-column: span 6;
     font-size: 0.75em;
     text-align: center;
