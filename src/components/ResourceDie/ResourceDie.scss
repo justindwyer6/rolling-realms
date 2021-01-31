@@ -4,6 +4,10 @@
   align-items: center;
   width: 30px;
 
+  .dieButton {
+    z-index: 2;
+  }
+
   .resource {
     position: relative;
     top: -8px;
