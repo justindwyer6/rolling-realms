@@ -45,7 +45,7 @@ const BetweenTwoCastles = () => {
           src="/images/wooden-door.png"
           alt="door"
         />
-        {renderInput("right-bottom-right")}
+        {renderInput("left-bottom-right")}
         <b />
         {renderInput("right-bottom-left")}
         <img
