@@ -2,7 +2,6 @@ import React from "react";
 import { times } from "lodash";
 import ResourceDie from "../ResourceDie/ResourceDie";
 import "./Scythe.scss";
-import starSrc from "../../images/star-filled.png";
 
 const Scythe = () => {
   const renderTopRow = (i, resources) => (
@@ -21,20 +20,10 @@ const Scythe = () => {
       dieFace={dice[i]}
       dieType="standard"
       classes="bottomDie"
-      resourceName={resources[i]}
-      isMinusResource
+      resourceName="star"
+      resourceCost={resources[i]}
     />
   );
-
-  const renderStars = (i) => {
-    return (
-      <img
-        key={`scythe-star-reward-${i}`}
-        src={starSrc}
-        alt="reward-star"
-      />
-    );
-  };
 
   return (
     <>
@@ -61,7 +50,6 @@ const Scythe = () => {
           ["heart", "pumpkin", "coin", "pumpkin", "coin", "heart"],
         ),
       )}
-      {times(6, (i) => renderStars(i))}
     </>
   );
 };

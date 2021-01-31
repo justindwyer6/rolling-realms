@@ -8,16 +8,13 @@ const ResourceDie = ({
   dieFace,
   classes,
   resourceName,
-  isMinusResource,
+  resourceCost = null,
 }) => {
-  console.log("hi ");
   return (
     <div className="ResourceDie">
+      {resourceCost ? <Resource name={resourceCost} isCost /> : null}
       <Die dieType={dieType} dieFace={dieFace} classes={classes} />
-      <Resource
-        name={resourceName}
-        isMinusResource={isMinusResource}
-      />
+      <Resource name={resourceName} />
     </div>
   );
 };

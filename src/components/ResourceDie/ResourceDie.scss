@@ -6,6 +6,9 @@
 
   .resource {
     position: relative;
-    top: -11px;
+    top: -8px;
+    &.cost {
+      top: 7px;
+    }
   }
 }

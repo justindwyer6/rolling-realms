@@ -25,7 +25,7 @@ const star = {
   src: starSrc,
 };
 
-const Resource = ({ name, isMinusResource = false }) => {
+const Resource = ({ name, isCost = false }) => {
   let resource;
   if (name === pumpkin.name) {
     resource = pumpkin;
@@ -41,11 +41,9 @@ const Resource = ({ name, isMinusResource = false }) => {
 
   return (
     <div
-      className={`resource ${resource.name} ${
-        isMinusResource ? "minus" : ""
-      }`}
+      className={`resource ${resource.name} ${isCost ? "cost" : ""}`}
     >
-      {isMinusResource ? <span>-</span> : null}
+      {isCost ? <span>-</span> : null}
       <img src={resource.src} alt={resource.name} />
     </div>
   );
