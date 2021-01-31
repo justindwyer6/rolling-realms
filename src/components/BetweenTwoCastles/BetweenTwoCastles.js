@@ -3,14 +3,6 @@ import "./BetweenTwoCastles.scss";
 import Resource from "../Resource/Resource";
 
 const BetweenTwoCastles = () => {
-  const renderInput = () => {
-    return (
-      <div className="input">
-        <input type="number" min="1" max="6" />
-      </div>
-    );
-  };
-
   return (
     <>
       <p>
@@ -26,27 +18,23 @@ const BetweenTwoCastles = () => {
         <Resource name="coin" secondName="heart" />
         <Resource name="coin" secondName="coin" />
         <b />
-        {renderInput()}
+        <input type="number" min="1" max="6" />
         <Resource name="heart" secondName="heart" />
         <b />
-        {renderInput()}
-        {renderInput()}
+        <input type="number" min="1" max="6" />
+        <input type="number" min="1" max="6" />
         <Resource name="pumpkin" />
-        {renderInput()}
-        {renderInput()}
+        <input type="number" min="1" max="6" />
+        <input type="number" min="1" max="6" />
         <b />
-        {renderInput()}
-        {renderInput()}
-        {renderInput()}
-        <div className="door">
-          <img src="/images/wooden-door.png" alt="door" />
-        </div>
-        {renderInput()}
+        <input type="number" min="1" max="6" />
+        <input type="number" min="1" max="6" />
+        <input type="number" min="1" max="6" />
+        <img src="/images/wooden-door.png" alt="door" />
+        <input type="number" min="1" max="6" />
         <b />
-        {renderInput()}
-        <div className="door">
-          <img src="/images/stone-door.png" alt="door" />
-        </div>
+        <input type="number" min="1" max="6" />
+        <img src="/images/stone-door.png" alt="door" />
       </div>
     </>
   );
