@@ -14,83 +14,89 @@ const BetweenTwoCastles = () => {
     <>
       <p>
         Fill squares from the bottom up; #s on top must be lower than
-        those below. When you complete a column, gain a bonus.
+        those below. When you complete a column, gain a bonus. Score 1
+        star per completed row (each castle has 3 rows).
       </p>
-
-      <b />
-      <div className="rewards no-border">
-        <img
-          src="/images/pumpkin.png"
-          alt="pumpkin"
-          className="reward"
-        />
-        <img
-          src="/images/pumpkin.png"
-          alt="pumpkin"
-          className="reward overlay"
-        />
+      <div className="game">
+        <b />
+        <div className="rewards no-border">
+          <img
+            src="/images/pumpkin.png"
+            alt="pumpkin"
+            className="reward"
+          />
+          <img
+            src="/images/pumpkin.png"
+            alt="pumpkin"
+            className="reward overlay"
+          />
+        </div>
+        <b />
+        <b />
+        <div className="rewards no-border">
+          <img
+            src="/images/coin.png"
+            alt="reward"
+            className="reward"
+          />
+          <img
+            src="/images/heart.png"
+            alt="reward"
+            className="reward overlay"
+          />
+        </div>
+        <div className="rewards no-border">
+          <img
+            src="/images/coin.png"
+            alt="reward"
+            className="reward"
+          />
+          <img
+            src="/images/coin.png"
+            alt="reward"
+            className="reward overlay"
+          />
+        </div>
+        <b />
+        {renderInput()}
+        <div className="rewards no-border">
+          <img
+            src="/images/heart.png"
+            alt="reward"
+            className="reward"
+          />
+          <img
+            src="/images/heart.png"
+            alt="reward"
+            className="reward overlay"
+          />
+        </div>
+        <b />
+        {renderInput()}
+        {renderInput()}
+        <div className="rewards no-border">
+          <img
+            src="/images/pumpkin.png"
+            alt="reward"
+            className="reward"
+          />
+        </div>
+        {renderInput()}
+        {renderInput()}
+        <b />
+        {renderInput()}
+        {renderInput()}
+        {renderInput()}
+        <div className="door">
+          <img src="/images/wooden-door.png" alt="door" />
+        </div>
+        {renderInput()}
+        <b />
+        {renderInput()}
+        <div className="door">
+          <img src="/images/stone-door.png" alt="door" />
+        </div>
       </div>
-      <b />
-      <b />
-      <div className="rewards no-border">
-        <img src="/images/coin.png" alt="reward" className="reward" />
-        <img
-          src="/images/heart.png"
-          alt="reward"
-          className="reward overlay"
-        />
-      </div>
-      <div className="rewards no-border">
-        <img src="/images/coin.png" alt="reward" className="reward" />
-        <img
-          src="/images/coin.png"
-          alt="reward"
-          className="reward overlay"
-        />
-      </div>
-      <b />
-      {renderInput()}
-      <div className="rewards no-border">
-        <img
-          src="/images/heart.png"
-          alt="reward"
-          className="reward"
-        />
-        <img
-          src="/images/heart.png"
-          alt="reward"
-          className="reward overlay"
-        />
-      </div>
-      <b />
-      {renderInput()}
-      {renderInput()}
-      <div className="rewards no-border">
-        <img
-          src="/images/pumpkin.png"
-          alt="reward"
-          className="reward"
-        />
-      </div>
-      {renderInput()}
-      {renderInput()}
-      <b />
-      {renderInput()}
-      {renderInput()}
-      {renderInput()}
-      <div className="door">
-        <img src="/images/wooden-door.png" alt="door" />
-      </div>
-      {renderInput()}
-      <b />
-      {renderInput()}
-      <div className="door">
-        <img src="/images/stone-door.png" alt="door" />
-      </div>
-
-      <p className="margin20">
-        Score 1 star per completed row (each castle has 3 rows).
-      </p>
     </>
   );
 };

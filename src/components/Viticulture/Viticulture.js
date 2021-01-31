@@ -58,9 +58,11 @@ const Viticulture = () => {
         and at least 1 gained grape (cross it off) to fill a wine
         order.
       </p>
-      {times(6, (i) => renderDie(i))}
-      {times(6, (i) => renderRewards(i))}
-      {times(3, (i) => renderWineOrders(i))}
+      <div className="game">
+        {times(6, (i) => renderDie(i))}
+        {times(6, (i) => renderRewards(i))}
+        {times(3, (i) => renderWineOrders(i))}
+      </div>
     </>
   );
 };
