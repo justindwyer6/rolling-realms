@@ -1,36 +1,18 @@
 import React from "react";
 import { times } from "lodash";
-import Die from "../Die/Die";
 import "./Charterstone.scss";
 import Resource from "../Resource/Resource";
+import ResourceDie from "../ResourceDie/ResourceDie";
 
 const Charterstone = () => {
-  const rewards = [
-    "pumpkin",
-    "pumpkin",
-    "heart",
-    "heart",
-    "coin",
-    "coin",
-  ];
-
-  const renderDie = (i) => {
+  const renderDie = (i, resources) => {
     return (
-      <Die
+      <ResourceDie
         key={`charterstone-d6-${i + 1}`}
         dieFace={i + 1}
         dieType="standard"
-      />
-    );
-  };
-
-  const renderRewards = (i, theseRewards) => {
-    return (
-      <img
-        className="topReward"
-        key={`charterstone-rewards-${theseRewards[i]}-${i}`}
-        src={`/images/${theseRewards[i]}.png`}
-        alt={theseRewards[i]}
+        classes="topRow"
+        resourceName={resources[i]}
       />
     );
   };
@@ -43,8 +25,16 @@ const Charterstone = () => {
       </p>
 
       <div className="game">
-        {times(6, (i) => renderDie(i))}
-        {times(6, (i) => renderRewards(i, rewards))}
+        {times(6, (i) =>
+          renderDie(i, [
+            "pumpkin",
+            "pumpkin",
+            "heart",
+            "heart",
+            "coin",
+            "coin",
+          ]),
+        )}
         {times(6, (i) => (
           <img src="/images/red-arrow.png" alt="arrow" key={i} />
         ))}
