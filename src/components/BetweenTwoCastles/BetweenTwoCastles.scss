@@ -4,7 +4,6 @@
   .game {
     grid-template-columns: repeat(6, 40px);
     grid-template-rows: repeat(4, 40px);
-    // gap: 1px;
     input {
       border-radius: $border-radius-standard;
     }
