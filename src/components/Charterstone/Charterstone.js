@@ -2,6 +2,7 @@ import React from "react";
 import { times } from "lodash";
 import Die from "../Die/Die";
 import "./Charterstone.scss";
+import Resource from "../Resource/Resource";
 
 const Charterstone = () => {
   const rewards = [
@@ -51,10 +52,8 @@ const Charterstone = () => {
           <div key={i}>
             <input type="number" min="1" max="6" />
             <img src="/images/open-crate.png" alt="crate" />
+            <Resource name="star" />
           </div>
-        ))}
-        {times(6, (i) => (
-          <img src="/images/red-arrow.png" alt="arrow" key={i} />
         ))}
       </div>
     </>
