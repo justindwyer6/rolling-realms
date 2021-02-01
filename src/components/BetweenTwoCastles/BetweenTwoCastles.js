@@ -1,14 +1,17 @@
 import React from "react";
 import "./BetweenTwoCastles.scss";
+import Resource from "../Resource/Resource";
 
 const BetweenTwoCastles = () => {
-  const renderInput = () => {
-    return (
-      <div className="input">
-        <input type="number" min="1" max="6" />
-      </div>
-    );
-  };
+  const renderInput = (location) => (
+    <input
+      key={location}
+      className={location}
+      type="number"
+      min="1"
+      max="6"
+    />
+  );
 
   return (
     <>
@@ -19,83 +22,37 @@ const BetweenTwoCastles = () => {
       </p>
       <div className="game">
         <b />
-        <div className="rewards no-border">
-          <img
-            src="/images/pumpkin.png"
-            alt="pumpkin"
-            className="reward"
-          />
-          <img
-            src="/images/pumpkin.png"
-            alt="pumpkin"
-            className="reward overlay"
-          />
-        </div>
+        <Resource name="pumpkin" secondName="pumpkin" />
         <b />
         <b />
-        <div className="rewards no-border">
-          <img
-            src="/images/coin.png"
-            alt="reward"
-            className="reward"
-          />
-          <img
-            src="/images/heart.png"
-            alt="reward"
-            className="reward overlay"
-          />
-        </div>
-        <div className="rewards no-border">
-          <img
-            src="/images/coin.png"
-            alt="reward"
-            className="reward"
-          />
-          <img
-            src="/images/coin.png"
-            alt="reward"
-            className="reward overlay"
-          />
-        </div>
+        <Resource name="coin" secondName="heart" />
+        <Resource name="coin" secondName="coin" />
         <b />
-        {renderInput()}
-        <div className="rewards no-border">
-          <img
-            src="/images/heart.png"
-            alt="reward"
-            className="reward"
-          />
-          <img
-            src="/images/heart.png"
-            alt="reward"
-            className="reward overlay"
-          />
-        </div>
+        {renderInput("left-top-center")}
+        <Resource name="heart" secondName="heart" />
         <b />
-        {renderInput()}
-        {renderInput()}
-        <div className="rewards no-border">
-          <img
-            src="/images/pumpkin.png"
-            alt="reward"
-            className="reward"
-          />
-        </div>
-        {renderInput()}
-        {renderInput()}
+        {renderInput("right-top-left")}
+        {renderInput("right-top-right")}
+        <Resource name="pumpkin" />
+        {renderInput("left-center-center")}
+        {renderInput("left-center-right")}
         <b />
-        {renderInput()}
-        {renderInput()}
-        {renderInput()}
-        <div className="door">
-          <img src="/images/wooden-door.png" alt="door" />
-        </div>
-        {renderInput()}
+        {renderInput("right-center-left")}
+        {renderInput("right-center-right")}
+        {renderInput("left-bottom-left")}
+        <img
+          className="door"
+          src="/images/wooden-door.png"
+          alt="door"
+        />
+        {renderInput("left-bottom-right")}
         <b />
-        {renderInput()}
-        <div className="door">
-          <img src="/images/stone-door.png" alt="door" />
-        </div>
+        {renderInput("right-bottom-left")}
+        <img
+          className="door"
+          src="/images/stone-door.png"
+          alt="door"
+        />
       </div>
     </>
   );
