@@ -1,6 +1,8 @@
 import React from "react";
 import "./BetweenTwoCastles.scss";
 import Resource from "../Resource/Resource";
+import woodDoorSrc from "../../images/wooden-door.png";
+import stoneDoorSrc from "../../images/stone-door.png";
 
 const BetweenTwoCastles = () => {
   const renderInput = (location) => (
@@ -40,19 +42,11 @@ const BetweenTwoCastles = () => {
         {renderInput("right-center-left")}
         {renderInput("right-center-right")}
         {renderInput("left-bottom-left")}
-        <img
-          className="door"
-          src="/images/wooden-door.png"
-          alt="door"
-        />
+        <img className="door" src={woodDoorSrc} alt="door" />
         {renderInput("left-bottom-right")}
         <b />
         {renderInput("right-bottom-left")}
-        <img
-          className="door"
-          src="/images/stone-door.png"
-          alt="door"
-        />
+        <img className="door" src={stoneDoorSrc} alt="door" />
       </div>
     </>
   );
