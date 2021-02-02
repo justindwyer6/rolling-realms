@@ -41,7 +41,7 @@ const Charterstone = () => {
         ))}
 
         {times(6, (i) => (
-          <div key={i}>
+          <div className="crateInput" key={i}>
             <input type="number" min="1" max="6" />
             <img className="crate" src={crateSrc} alt="crate" />
             <Resource name="star" />
