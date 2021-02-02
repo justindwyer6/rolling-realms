@@ -37,7 +37,7 @@ const Charterstone = () => {
           ]),
         )}
         {times(6, (i) => (
-          <img src="/images/red-arrow.png" alt="arrow" key={i} />
+          <span key={i}>&darr;</span>
         ))}
         {times(6, (i) => (
           <div key={i}>
