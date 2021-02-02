@@ -1,35 +1,19 @@
 import React from "react";
 import { times } from "lodash";
-import Die from "../Die/Die";
 import "./Charterstone.scss";
+import Resource from "../Resource/Resource";
+import ResourceDie from "../ResourceDie/ResourceDie";
+import crateSrc from "../../images/crate.png";
 
 const Charterstone = () => {
-  const rewards = [
-    "pumpkin",
-    "pumpkin",
-    "heart",
-    "heart",
-    "coin",
-    "coin",
-  ];
-
-  const renderDie = (i) => {
+  const renderDie = (i, resources) => {
     return (
-      <Die
+      <ResourceDie
         key={`charterstone-d6-${i + 1}`}
         dieFace={i + 1}
         dieType="standard"
-      />
-    );
-  };
-
-  const renderRewards = (i, theseRewards) => {
-    return (
-      <img
-        className="topReward"
-        key={`charterstone-rewards-${theseRewards[i]}-${i}`}
-        src={`/images/${theseRewards[i]}.png`}
-        alt={theseRewards[i]}
+        classes="topRow"
+        resourceName={resources[i]}
       />
     );
   };
@@ -37,24 +21,31 @@ const Charterstone = () => {
   return (
     <>
       <p>
-        Mark either <span>a bonus</span> (note the other rolled die on
-        the crate) or <span>all crates matching the die</span>.
+        Mark either a bonus (note the other rolled die on the crate)
+        or all crates matching the die.
       </p>
 
       <div className="game">
-        {times(6, (i) => renderDie(i))}
-        {times(6, (i) => renderRewards(i, rewards))}
+        {times(6, (i) =>
+          renderDie(i, [
+            "pumpkin",
+            "pumpkin",
+            "heart",
+            "heart",
+            "coin",
+            "coin",
+          ]),
+        )}
         {times(6, (i) => (
-          <img src="/images/red-arrow.png" alt="arrow" key={i} />
+          <span key={i}>&darr;</span>
         ))}
+
         {times(6, (i) => (
-          <div key={i}>
+          <div className="crateInput" key={i}>
             <input type="number" min="1" max="6" />
-            <img src="/images/open-crate.png" alt="crate" />
+            <img className="crate" src={crateSrc} alt="crate" />
+            <Resource name="star" />
           </div>
-        ))}
-        {times(6, (i) => (
-          <img src="/images/red-arrow.png" alt="arrow" key={i} />
         ))}
       </div>
     </>
