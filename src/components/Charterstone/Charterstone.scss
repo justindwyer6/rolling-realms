@@ -1,7 +1,22 @@
 @import "../../variables";
 
 .Minigame.Charterstone {
+  span {
+    font-size: 1.75em;
+  }
   input {
     border-radius: $border-radius-standard;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    top: 15px;
+  }
+  .crate {
+    width: 40px;
+    height: 40px;
+  }
+  .star {
+    position: relative;
+    top: -15px;
   }
 }

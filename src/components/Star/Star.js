@@ -15,7 +15,7 @@ const Star = () => {
 
   return (
     <button className="starButton" onClick={updateStar} type="button">
-      <img className="star" src={starSource} alt="star" />
+      <img className="starButtonImage" src={starSource} alt="star" />
     </button>
   );
 };

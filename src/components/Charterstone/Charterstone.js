@@ -21,8 +21,8 @@ const Charterstone = () => {
   return (
     <>
       <p>
-        Mark either <span>a bonus</span> (note the other rolled die on
-        the crate) or <span>all crates matching the die</span>.
+        Mark either a bonus (note the other rolled die on the crate)
+        or all crates matching the die.
       </p>
 
       <div className="game">
@@ -39,10 +39,11 @@ const Charterstone = () => {
         {times(6, (i) => (
           <span key={i}>&darr;</span>
         ))}
+
         {times(6, (i) => (
           <div key={i}>
             <input type="number" min="1" max="6" />
-            <img src={crateSrc} alt="crate" />
+            <img className="crate" src={crateSrc} alt="crate" />
             <Resource name="star" />
           </div>
         ))}
