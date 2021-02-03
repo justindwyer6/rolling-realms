@@ -11,9 +11,8 @@ const Euphoria = () => {
   return (
     <>
       <p>
-        Either <span>mark 1 #</span> OR (if a pair is rolled) you may{" "}
-        <span>mark both #s</span>. Then bonus is based on the sum of
-        that area.
+        Either mark 1 # OR (if a pair is rolled) you may mark both #s.
+        Then bonus is based on the sum of that area.
       </p>
       <div className="game">
         {renderDie(1, "left")}
