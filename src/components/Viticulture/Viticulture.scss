@@ -1,3 +1,7 @@
-.wineOrder {
-  grid-column: span 2;
+@import "../../variables";
+
+.Minigame.Viticulture {
+  .wineOrder {
+    grid-column: span 2;
+  }
 }

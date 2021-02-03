@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import emptyWineGlass from "../images/empty-wine-glass.png";
-import fullWineGlass from "../images/full-wine-glass.png";
+import emptyWineGlass from "../../images/empty-wine-glass.png";
+import fullWineGlass from "../../images/full-wine-glass.png";
 
-const WineGlass = (i) => {
+const WineGlass = ({ sum }) => {
   const [wineGlassState, setWineGlassState] = useState(
     emptyWineGlass,
   );
@@ -28,7 +28,7 @@ const WineGlass = (i) => {
         src={wineGlassState}
         alt="Wine Glass"
       />
-      <p className="wineGlassText">{10 + i}</p>
+      <p className="wineGlassText">{sum}</p>
     </button>
   );
 };

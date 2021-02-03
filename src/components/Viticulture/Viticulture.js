@@ -1,8 +1,9 @@
 import React from "react";
 import { times } from "lodash";
-import WineGlass from "../WineGlass";
+import WineGlass from "../WineGlass/WineGlass";
 import "./Viticulture.scss";
 import ResourceDie from "../ResourceDie/ResourceDie";
+import Resource from "../Resource/Resource";
 
 const Viticulture = () => {
   const renderDie = (i, resources) => {
@@ -16,18 +17,12 @@ const Viticulture = () => {
     );
   };
 
-  const renderWineOrders = (i) => {
+  const renderWineOrders = (i, sums) => {
     return (
       <div className="wineOrder" key={i}>
-        <WineGlass
-          key={i}
-          wineGlassFill="/images/empty-wine-glass.png"
-          i={i}
-        />
-        <div className="stars">
-          <img src="/images/star.png" alt="star" />
-          <img src="/images/star.png" alt="star" />
-        </div>
+        <WineGlass key={i} sum={sums[i]} />
+        <Resource name="star" />
+        <Resource name="star" />
       </div>
     );
   };
@@ -50,7 +45,7 @@ const Viticulture = () => {
             "pumpkin",
           ]),
         )}
-        {times(3, (i) => renderWineOrders(i))}
+        {times(3, (i) => renderWineOrders(i, [10, 11, 12]))}
       </div>
     </>
   );
