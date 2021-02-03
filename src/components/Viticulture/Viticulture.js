@@ -1,36 +1,17 @@
 import React from "react";
 import { times } from "lodash";
-import Die from "../Die/Die";
 import WineGlass from "../WineGlass";
 import "./Viticulture.scss";
+import ResourceDie from "../ResourceDie/ResourceDie";
 
 const Viticulture = () => {
-  const rewards = [
-    "heart",
-    "heart",
-    "coin",
-    "coin",
-    "pumpkin",
-    "pumpkin",
-  ];
-
-  const renderDie = (i) => {
+  const renderDie = (i, resources) => {
     return (
-      <Die
+      <ResourceDie
         key={`viticulture-d6-${i + 1}`}
         dieFace={i + 1}
         dieType="grape"
-      />
-    );
-  };
-
-  const renderRewards = (i) => {
-    return (
-      <img
-        className="reward"
-        key={`viticulture-rewards-${rewards[i]}-${i}`}
-        src={`/images/${rewards[i]}.png`}
-        alt={rewards[i]}
+        resourceName={resources[i]}
       />
     );
   };
@@ -59,8 +40,16 @@ const Viticulture = () => {
         order.
       </p>
       <div className="game">
-        {times(6, (i) => renderDie(i))}
-        {times(6, (i) => renderRewards(i))}
+        {times(6, (i) =>
+          renderDie(i, [
+            "heart",
+            "heart",
+            "coin",
+            "coin",
+            "pumpkin",
+            "pumpkin",
+          ]),
+        )}
         {times(3, (i) => renderWineOrders(i))}
       </div>
     </>
