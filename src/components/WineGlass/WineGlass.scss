@@ -1,0 +1,10 @@
+.WineGlass {
+  display: grid;
+  grid-template-areas: "sumOverlayGlass";
+  .wineGlassImage {
+    grid-area: sumOverlayGlass;
+  }
+  .wineGlassText {
+    grid-area: sumOverlayGlass;
+  }
+}
