@@ -15,4 +15,14 @@
       top: 3px;
     }
   }
+
+  &.grapeDie {
+    .resource {
+      position: relative;
+      top: -10px;
+      &.cost {
+        top: 10px;
+      }
+    }
+  }
 }

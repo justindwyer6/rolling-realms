@@ -1,52 +1,28 @@
 import React from "react";
 import { times } from "lodash";
-import Die from "../Die/Die";
-import WineGlass from "../WineGlass";
+import WineGlass from "../WineGlass/WineGlass";
 import "./Viticulture.scss";
+import ResourceDie from "../ResourceDie/ResourceDie";
+import Resource from "../Resource/Resource";
 
 const Viticulture = () => {
-  const rewards = [
-    "heart",
-    "heart",
-    "coin",
-    "coin",
-    "pumpkin",
-    "pumpkin",
-  ];
-
-  const renderDie = (i) => {
+  const renderDie = (i, resources) => {
     return (
-      <Die
+      <ResourceDie
         key={`viticulture-d6-${i + 1}`}
         dieFace={i + 1}
         dieType="grape"
+        resourceName={resources[i]}
       />
     );
   };
 
-  const renderRewards = (i) => {
-    return (
-      <img
-        className="reward"
-        key={`viticulture-rewards-${rewards[i]}-${i}`}
-        src={`/images/${rewards[i]}.png`}
-        alt={rewards[i]}
-      />
-    );
-  };
-
-  const renderWineOrders = (i) => {
+  const renderWineOrders = (i, sums) => {
     return (
       <div className="wineOrder" key={i}>
-        <WineGlass
-          key={i}
-          wineGlassFill="/images/empty-wine-glass.png"
-          i={i}
-        />
-        <div className="stars">
-          <img src="/images/star.png" alt="star" />
-          <img src="/images/star.png" alt="star" />
-        </div>
+        <WineGlass key={i} sum={sums[i]} />
+        <Resource name="star" />
+        <Resource name="star" />
       </div>
     );
   };
@@ -59,9 +35,17 @@ const Viticulture = () => {
         order.
       </p>
       <div className="game">
-        {times(6, (i) => renderDie(i))}
-        {times(6, (i) => renderRewards(i))}
-        {times(3, (i) => renderWineOrders(i))}
+        {times(6, (i) =>
+          renderDie(i, [
+            "heart",
+            "heart",
+            "coin",
+            "coin",
+            "pumpkin",
+            "pumpkin",
+          ]),
+        )}
+        {times(3, (i) => renderWineOrders(i, [10, 11, 12]))}
       </div>
     </>
   );

@@ -5,23 +5,29 @@
   align-items: center;
   justify-content: center;
 
-  .standard {
+  .dieImage {
     border-radius: $border-radius-standard;
     &.marked {
       background-color: black;
     }
   }
 
-  .grape {
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100%;
-    overflow: visible;
-    &.gained {
-      background-image: url("../../images/grape.png");
+  &.grape {
+    display: grid;
+    grid-template-areas: "dieOverlayGrape";
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    .grapeImage {
+      grid-area: dieOverlayGrape;
+      width: 35px;
+      height: 35px;
     }
-    &.used {
-      background-image: url("../../images/crushed-grape.png");
+    .dieImage {
+      grid-area: dieOverlayGrape;
     }
   }
 }
