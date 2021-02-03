@@ -4,28 +4,46 @@ import Resource from "../Resource/Resource";
 
 const ResourceGrid = ({ resource }) => {
   const [topLeftState, setTopLeftState] = useState("unmarked");
-  // const [topRightState, setTopRightState] = useState("unmarked");
-  // const [bottomLeftState, setBottomLeftState] = useState("unmarked");
-  // const [bottomRightState, setBottomRightState] = useState("unmarked");
+  const [topRightState, setTopRightState] = useState("unmarked");
+  const [bottomLeftState, setBottomLeftState] = useState("unmarked");
+  const [bottomRightState, setBottomRightState] = useState(
+    "unmarked",
+  );
 
-  const renderQuadrant = () => (
+  const renderQuadrant = (
+    quadrantName,
+    quadrantState,
+    setQuadrantState,
+  ) => (
     <button
       type="button"
+      aria-label={`${quadrantState} ${resource} ${quadrantName} quadrant`}
       onClick={() =>
-        setTopLeftState(
-          topLeftState === "marked" ? "unmarked" : "marked",
+        setQuadrantState(
+          quadrantState === "marked" ? "unmarked" : "marked",
         )
       }
-      className={`resourceQuadrant ${topLeftState}`}
-    >
-      j
-    </button>
+      className={`resourceQuadrantState ${quadrantName} ${topLeftState}`}
+    />
   );
 
   return (
     <div className="ResourceGrid">
       <Resource name={resource} />
-      <div className="resourceGridOverlay">{renderQuadrant()}</div>
+      <div className="resourceGridOverlay">
+        {renderQuadrant("topLeft", topLeftState, setTopLeftState)}
+        {renderQuadrant("topRight", topRightState, setTopRightState)}
+        {renderQuadrant(
+          "bottomLeft",
+          bottomLeftState,
+          setBottomLeftState,
+        )}
+        {renderQuadrant(
+          "bottomRight",
+          bottomRightState,
+          setBottomRightState,
+        )}
+      </div>
     </div>
   );
 };
