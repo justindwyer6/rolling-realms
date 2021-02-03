@@ -22,9 +22,9 @@ const Die = ({ dieType = "standard", dieFace, classes }) => {
 
   const updateGrapeDie = () => {
     if (dieState === "available") {
-      setDieState("used");
-    } else if (dieState === "used") {
       setDieState("gained");
+    } else if (dieState === "gained") {
+      setDieState("used");
     } else {
       setDieState("available");
     }

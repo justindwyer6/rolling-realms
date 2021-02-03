@@ -15,8 +15,14 @@
   &.grape {
     display: grid;
     grid-template-areas: "dieOverlayGrape";
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
     .grapeImage {
       grid-area: dieOverlayGrape;
+      width: 35px;
+      height: 35px;
     }
     .dieImage {
       grid-area: dieOverlayGrape;
