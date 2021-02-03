@@ -1,6 +1,7 @@
 import React from "react";
 import "./Tapestry.scss";
 import ResourceGrid from "../ResourceGrid/ResourceGrid";
+import Resource from "../Resource/Resource";
 
 const Tapestry = () => {
   return (
@@ -11,7 +12,18 @@ const Tapestry = () => {
         1 star per completed BIG (2x6) row/column (6 total).
       </p>
       <div className="game">
+        <ResourceGrid resource="pumpkin" />
         <ResourceGrid resource="heart" />
+        <ResourceGrid resource="coin" />
+        <Resource name="star" />
+        <ResourceGrid resource="coin" />
+        <ResourceGrid resource="pumpkin" />
+        <ResourceGrid resource="heart" />
+        <Resource name="star" />
+        <ResourceGrid resource="heart" />
+        <ResourceGrid resource="coin" />
+        <ResourceGrid resource="pumpkin" />
+        <Resource name="star" />
       </div>
     </>
   );
