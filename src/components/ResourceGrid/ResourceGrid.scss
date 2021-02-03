@@ -16,8 +16,25 @@
     grid-template-columns: 1fr 1fr;
 
     .resourceQuadrant {
-      &.marked {
-        background-color: black;
+      &.topLeft {
+        &.marked {
+          background-color: black;
+        }
+      }
+      &.topRight {
+        &.marked {
+          background-color: black;
+        }
+      }
+      &.bottomLeft {
+        &.marked {
+          background-color: black;
+        }
+      }
+      &.bottomRight {
+        &.marked {
+          background-color: black;
+        }
       }
     }
   }

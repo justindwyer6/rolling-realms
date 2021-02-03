@@ -23,7 +23,7 @@ const ResourceGrid = ({ resource }) => {
           quadrantState === "marked" ? "unmarked" : "marked",
         )
       }
-      className={`resourceQuadrant ${quadrantName} ${topLeftState}`}
+      className={`resourceQuadrant ${quadrantName} ${quadrantState}`}
     />
   );
 
