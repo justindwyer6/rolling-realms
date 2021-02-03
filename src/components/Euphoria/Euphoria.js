@@ -5,13 +5,7 @@ import Resource from "../Resource/Resource";
 
 const Euphoria = () => {
   const renderDie = (i, alignment) => {
-    return (
-      <Die
-        key={`euphoria-${alignment}-d6-${i}`}
-        dieFace={i}
-        dieType="standard"
-      />
-    );
+    return <Die key={`euphoria-${alignment}-d6-${i}`} dieFace={i} />;
   };
 
   return (

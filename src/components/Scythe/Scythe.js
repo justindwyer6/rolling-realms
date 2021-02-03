@@ -8,7 +8,6 @@ const Scythe = () => {
     <ResourceDie
       key={`scythe-top-d6-${i + 1}`}
       dieFace={i + 1}
-      dieType="standard"
       classes="topRow"
       resourceName={resources[i]}
     />
@@ -18,7 +17,6 @@ const Scythe = () => {
     <ResourceDie
       key={`scythe-bottom-d6-${dice[i]}`}
       dieFace={dice[i]}
-      dieType="standard"
       classes="bottomRow"
       resourceName="star"
       resourceCost={resources[i]}
