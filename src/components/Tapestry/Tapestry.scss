@@ -3,8 +3,9 @@
 .Minigame.Tapestry {
   .game {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    width: 200px;
-    height: 200px;
+    grid-template-columns: repeat(3, 50px) 25px;
+    grid-template-rows: repeat(3, 50px), 25px;
+    width: 175px;
+    height: 175px;
   }
 }

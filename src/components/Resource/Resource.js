@@ -60,13 +60,15 @@ const Resource = ({ name, isCost = false, secondName = "" }) => {
       <img
         src={resource.src}
         alt={resource.name}
-        className={secondName ? "firstResource" : ""}
+        className={
+          secondName ? "resourceImage firstResource" : "resourceImage"
+        }
       />
       {secondName ? (
         <img
           src={secondResource.src}
           alt={secondResource.name}
-          className="secondResource"
+          className="resourceImage secondResource"
         />
       ) : null}
     </div>
