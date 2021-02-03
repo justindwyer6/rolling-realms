@@ -17,28 +17,32 @@ const Euphoria = () => {
       <div className="game">
         {renderDie(1, "left")}
         {renderDie(2, "left")}
-        <div>1-3: </div>
-        <Resource name="coin" />
+        <b />
+        <b />
         {renderDie(1, "right")}
         {renderDie(2, "right")}
-
         {renderDie(3, "left")}
         {renderDie(4, "left")}
-        <div>4-10: </div>
-        <Resource name="star" />
+        <b />
+        <b />
         {renderDie(3, "right")}
         {renderDie(4, "right")}
-
         {renderDie(5, "left")}
         {renderDie(6, "left")}
+        <b />
+        <b />
+        {renderDie(5, "right")}
+        {renderDie(6, "right")}
+        <div>1-3: </div>
+        <Resource name="coin" />
+        <div>4-10: </div>
+        <Resource name="star" />
         <div>11+: </div>
         <div>
           <Resource name="heart" />
           /
           <Resource name="pumpkin" />
         </div>
-        {renderDie(5, "right")}
-        {renderDie(6, "right")}
       </div>
     </>
   );

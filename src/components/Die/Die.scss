@@ -1,21 +1,27 @@
 @import "../../variables";
 
-.standard {
-  border-radius: $border-radius-standard;
-  &.marked {
-    background-color: black;
-  }
-}
+.dieButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-.grape {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100%;
-  overflow: visible;
-  &.gained {
-    background-image: url("../../images/grape.png");
+  .standard {
+    border-radius: $border-radius-standard;
+    &.marked {
+      background-color: black;
+    }
   }
-  &.used {
-    background-image: url("../../images/crushed-grape.png");
+
+  .grape {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    overflow: visible;
+    &.gained {
+      background-image: url("../../images/grape.png");
+    }
+    &.used {
+      background-image: url("../../images/crushed-grape.png");
+    }
   }
 }
