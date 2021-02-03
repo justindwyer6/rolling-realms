@@ -2,8 +2,8 @@ import React from "react";
 import "./Tapestry.scss";
 import { times } from "lodash";
 
-class Tapestry extends React.Component {
-  reward = [
+const Tapestry = () => {
+  const reward = [
     "pumpkin",
     "heart",
     "coin",
@@ -15,7 +15,7 @@ class Tapestry extends React.Component {
     "pumpkin",
   ];
 
-  prechecked = [
+  const prechecked = [
     "0checkbox3",
     "2checkbox1",
     "4checkbox0",
@@ -24,9 +24,9 @@ class Tapestry extends React.Component {
     "7checkbox3",
   ];
 
-  renderSubgrid(i) {
+  const renderSubgrid = (i) => {
     return (
-      <div key={i} className={`subgrid ${this.reward[i]}`}>
+      <div key={i} className={`subgrid ${reward[i]}`}>
         {times(4, (j) => (
           <div key={j}>
             <input
@@ -34,67 +34,63 @@ class Tapestry extends React.Component {
               name="check"
               id={`${i}checkbox${j}`}
               defaultChecked={
-                !!this.prechecked.includes(`${i}checkbox${j}`)
+                !!prechecked.includes(`${i}checkbox${j}`)
               }
-              disabled={
-                !!this.prechecked.includes(`${i}checkbox${j}`)
-              }
+              disabled={!!prechecked.includes(`${i}checkbox${j}`)}
             />
           </div>
         ))}
       </div>
     );
-  }
+  };
 
-  render() {
-    return (
-      <>
-        <p>
-          Use 1 die to fill a shape (rotating is ok; no limit to uses
-          of each #). Gain a bonus for completing BIG (2x2) squares.
-        </p>
-        <div className="gridGuideAlignTapestry">
-          <div className="tapestryC">
-            {times(9, (i) =>
-              (i + 1) % 3
-                ? this.renderSubgrid(i)
-                : [
-                    this.renderSubgrid(i),
-                    <img
-                      key={`star${i}`}
-                      className="star"
-                      src="/images/star.png"
-                      alt="star"
-                    />,
-                  ],
-            )}
-            {times(3, (i) => (
-              <img
-                key={`star${i}`}
-                className="star"
-                src="/images/star.png"
-                alt="star"
-              />
-            ))}
-          </div>
-          <img
-            className="guide"
-            src="/images/tapestry-shapes.jpg"
-            alt="guide"
-          />
+  return (
+    <>
+      <p>
+        Use 1 die to fill a shape (rotating is ok; no limit to uses of
+        each #). Gain a bonus for completing BIG (2x2) squares.
+      </p>
+      <div className="gridGuideAlignTapestry">
+        <div className="tapestryC">
+          {times(9, (i) =>
+            (i + 1) % 3
+              ? renderSubgrid(i)
+              : [
+                  renderSubgrid(i),
+                  <img
+                    key={`star${i}`}
+                    className="star"
+                    src="/images/star.png"
+                    alt="star"
+                  />,
+                ],
+          )}
+          {times(3, (i) => (
+            <img
+              key={`star${i}`}
+              className="star"
+              src="/images/star.png"
+              alt="star"
+            />
+          ))}
         </div>
-        <p>
-          Score 1
-          <img
-            className="inline-image"
-            src="/images/star.png"
-            alt="star"
-          />{" "}
-          per completed BIG (2x6) row/column (6 total).
-        </p>
-      </>
-    );
-  }
-}
+        <img
+          className="guide"
+          src="/images/tapestry-shapes.jpg"
+          alt="guide"
+        />
+      </div>
+      <p>
+        Score 1
+        <img
+          className="inline-image"
+          src="/images/star.png"
+          alt="star"
+        />{" "}
+        per completed BIG (2x6) row/column (6 total).
+      </p>
+    </>
+  );
+};
 
 export default Tapestry;
