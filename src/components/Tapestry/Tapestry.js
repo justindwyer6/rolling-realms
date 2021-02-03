@@ -16,16 +16,16 @@ const Tapestry = () => {
         <Resource name="star" />
         <Resource name="star" />
         <b />
-        <ResourceGrid resource="pumpkin" />
+        <ResourceGrid resource="pumpkin" premarked="bottomRight" />
         <ResourceGrid resource="heart" />
-        <ResourceGrid resource="coin" />
+        <ResourceGrid resource="coin" premarked="topRight" />
         <Resource name="star" />
         <ResourceGrid resource="coin" />
-        <ResourceGrid resource="pumpkin" />
-        <ResourceGrid resource="heart" />
+        <ResourceGrid resource="pumpkin" premarked="topLeft" />
+        <ResourceGrid resource="heart" premarked="bottomRight" />
         <Resource name="star" />
-        <ResourceGrid resource="heart" />
-        <ResourceGrid resource="coin" />
+        <ResourceGrid resource="heart" premarked="bottomLeft" />
+        <ResourceGrid resource="coin" premarked="bottomRight" />
         <ResourceGrid resource="pumpkin" />
         <Resource name="star" />
       </div>

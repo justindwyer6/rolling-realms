@@ -2,12 +2,18 @@ import React, { useState } from "react";
 import "./ResourceGrid.scss";
 import Resource from "../Resource/Resource";
 
-const ResourceGrid = ({ resource }) => {
-  const [topLeftState, setTopLeftState] = useState("unmarked");
-  const [topRightState, setTopRightState] = useState("unmarked");
-  const [bottomLeftState, setBottomLeftState] = useState("unmarked");
+const ResourceGrid = ({ resource, premarked = "" }) => {
+  const [topLeftState, setTopLeftState] = useState(
+    premarked === "topLeft" ? "marked" : "unmarked",
+  );
+  const [topRightState, setTopRightState] = useState(
+    premarked === "topRight" ? "marked" : "unmarked",
+  );
+  const [bottomLeftState, setBottomLeftState] = useState(
+    premarked === "bottomLeft" ? "marked" : "unmarked",
+  );
   const [bottomRightState, setBottomRightState] = useState(
-    "unmarked",
+    premarked === "bottomRight" ? "marked" : "unmarked",
   );
 
   const renderQuadrant = (
@@ -19,9 +25,11 @@ const ResourceGrid = ({ resource }) => {
       type="button"
       aria-label={`${quadrantState} ${resource} ${quadrantName} quadrant`}
       onClick={() =>
-        setQuadrantState(
-          quadrantState === "marked" ? "unmarked" : "marked",
-        )
+        premarked === quadrantName
+          ? null
+          : setQuadrantState(
+              quadrantState === "marked" ? "unmarked" : "marked",
+            )
       }
       className={`resourceQuadrant ${quadrantName} ${quadrantState}`}
     />
