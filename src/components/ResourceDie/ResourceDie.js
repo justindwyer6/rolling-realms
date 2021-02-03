@@ -12,9 +12,9 @@ const ResourceDie = ({
 }) => {
   return (
     <div
-      className={`ResourceDie ${resourceCost ? "hasCost" : ""} ${
-        classes || ""
-      }`}
+      className={`ResourceDie ${dieType}Die ${
+        resourceCost ? "hasCost" : ""
+      } ${classes || ""}`}
     >
       {resourceCost ? <Resource name={resourceCost} isCost /> : null}
       <Die dieType={dieType} dieFace={dieFace} />
