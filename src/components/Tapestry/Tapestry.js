@@ -12,6 +12,10 @@ const Tapestry = () => {
         1 star per completed BIG (2x6) row/column (6 total).
       </p>
       <div className="game">
+        <Resource name="star" />
+        <Resource name="star" />
+        <Resource name="star" />
+        <b />
         <ResourceGrid resource="pumpkin" />
         <ResourceGrid resource="heart" />
         <ResourceGrid resource="coin" />
