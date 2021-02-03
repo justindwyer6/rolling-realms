@@ -5,23 +5,21 @@
   align-items: center;
   justify-content: center;
 
-  .standard {
+  .dieImage {
     border-radius: $border-radius-standard;
     &.marked {
       background-color: black;
     }
   }
 
-  .grape {
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100%;
-    overflow: visible;
-    &.gained {
-      background-image: url("../../images/grape.png");
+  &.grape {
+    display: grid;
+    grid-template-areas: "dieOverlayGrape";
+    .grapeImage {
+      grid-area: dieOverlayGrape;
     }
-    &.used {
-      background-image: url("../../images/crushed-grape.png");
+    .dieImage {
+      grid-area: dieOverlayGrape;
     }
   }
 }
