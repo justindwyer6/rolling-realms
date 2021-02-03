@@ -1,6 +1,10 @@
+@import "../../variables";
+
 .ResourceGrid {
   display: grid;
   grid-template-areas: "ResourceGrid";
+  border: $border-standard;
+  border-radius: $border-radius-standard;
 
   .resource {
     grid-area: ResourceGrid;
@@ -16,24 +20,35 @@
     grid-template-columns: 1fr 1fr;
 
     .resourceQuadrant {
+      border: $border-dashed;
+      border-color: lightgray;
+
       &.topLeft {
+        border-top: none;
+        border-left: none;
         &.marked {
-          background-color: black;
+          background-color: rgba(0, 0, 0, 0.5);
         }
       }
       &.topRight {
+        border-top: none;
+        border-right: none;
         &.marked {
-          background-color: black;
+          background-color: rgba(0, 0, 0, 0.5);
         }
       }
       &.bottomLeft {
+        border-bottom: none;
+        border-left: none;
         &.marked {
-          background-color: black;
+          background-color: rgba(0, 0, 0, 0.5);
         }
       }
       &.bottomRight {
+        border-bottom: none;
+        border-right: none;
         &.marked {
-          background-color: black;
+          background-color: rgba(0, 0, 0, 0.5);
         }
       }
     }
