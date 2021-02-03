@@ -8,20 +8,24 @@ const ResourceGrid = ({ resource }) => {
   // const [bottomLeftState, setBottomLeftState] = useState("unmarked");
   // const [bottomRightState, setBottomRightState] = useState("unmarked");
 
+  const renderQuadrant = () => (
+    <button
+      type="button"
+      onClick={() =>
+        setTopLeftState(
+          topLeftState === "marked" ? "unmarked" : "marked",
+        )
+      }
+      className={`resourceQuadrant ${topLeftState}`}
+    >
+      j
+    </button>
+  );
+
   return (
     <div className="ResourceGrid">
       <Resource name={resource} />
-      <div>
-        <button
-          type="button"
-          onClick={setTopLeftState(
-            topLeftState === "marked" ? "unmarked" : "marked",
-          )}
-          className={topLeftState}
-        >
-          j
-        </button>
-      </div>
+      <div className="resourceGridOverlay">{renderQuadrant()}</div>
     </div>
   );
 };

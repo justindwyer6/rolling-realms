@@ -1,5 +1,6 @@
 import React from "react";
 import "./Tapestry.scss";
+import ResourceGrid from "../ResourceGrid/ResourceGrid";
 
 const Tapestry = () => {
   return (
@@ -9,7 +10,9 @@ const Tapestry = () => {
         each #). Gain a bonus for completing BIG (2x2) squares. Score
         1 star per completed BIG (2x6) row/column (6 total).
       </p>
-      <div className="game" />
+      <div className="game">
+        <ResourceGrid resource="heart" />
+      </div>
     </>
   );
 };
