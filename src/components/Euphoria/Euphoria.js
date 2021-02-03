@@ -33,15 +33,17 @@ const Euphoria = () => {
         <b />
         {renderDie(5, "right")}
         {renderDie(6, "right")}
-        <div>1-3: </div>
-        <Resource name="coin" />
-        <div>4-10: </div>
-        <Resource name="star" />
-        <div>11+: </div>
-        <div>
-          <Resource name="heart" />
-          /
-          <Resource name="pumpkin" />
+        <div className="sumReward">
+          <span>1-3</span>
+          <Resource name="coin" />
+        </div>
+        <div className="sumReward">
+          <span>4-10</span>
+          <Resource name="star" />
+        </div>
+        <div className="sumReward">
+          <span>11+</span>
+          <Resource name="pumpkin" secondName="heart" />
         </div>
       </div>
     </>
