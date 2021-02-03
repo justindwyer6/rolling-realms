@@ -4,16 +4,16 @@ import Resource from "../Resource/Resource";
 
 const ResourceGrid = ({ resource, premarked = "" }) => {
   const [topLeftState, setTopLeftState] = useState(
-    premarked === "topLeft" ? "marked" : "unmarked",
+    premarked === "topLeft" ? "premarked" : "unmarked",
   );
   const [topRightState, setTopRightState] = useState(
-    premarked === "topRight" ? "marked" : "unmarked",
+    premarked === "topRight" ? "premarked" : "unmarked",
   );
   const [bottomLeftState, setBottomLeftState] = useState(
-    premarked === "bottomLeft" ? "marked" : "unmarked",
+    premarked === "bottomLeft" ? "premarked" : "unmarked",
   );
   const [bottomRightState, setBottomRightState] = useState(
-    premarked === "bottomRight" ? "marked" : "unmarked",
+    premarked === "bottomRight" ? "premarked" : "unmarked",
   );
 
   const renderQuadrant = (
