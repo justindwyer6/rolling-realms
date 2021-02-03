@@ -11,7 +11,6 @@ const Charterstone = () => {
       <ResourceDie
         key={`charterstone-d6-${i + 1}`}
         dieFace={i + 1}
-        dieType="standard"
         classes="topRow"
         resourceName={resources[i]}
       />

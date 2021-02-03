@@ -4,7 +4,7 @@ import Resource from "../Resource/Resource";
 import "./ResourceDie.scss";
 
 const ResourceDie = ({
-  dieType,
+  dieType = "standard",
   dieFace,
   classes,
   resourceName,
