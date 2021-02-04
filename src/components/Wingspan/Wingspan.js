@@ -30,6 +30,11 @@ const Wingspan = () => {
   const renderBird = (i, wingspanOfBird, resourceList) => {
     return (
       <div key={`bird-${i}`} className="bird">
+        <img
+          src="../../images/feather.png"
+          alt="feather"
+          className="featherImage"
+        />
         <span>{wingspanOfBird}</span>
         {times(3, (j) => (
           <div
@@ -59,12 +64,6 @@ const Wingspan = () => {
         {renderBird(0, 7, [pumpkin, coin, star])}
         {renderBird(1, 12, [coin, heart, star])}
         {renderBird(2, 16, [heart, pumpkin, star])}
-        <div />
-        <div />
-        <div />
-        <div />
-        <div />
-        <div />
       </div>
     </>
   );
