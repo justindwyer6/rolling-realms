@@ -6,7 +6,6 @@
   justify-content: center;
 
   .dieImage {
-    border-radius: $border-radius-standard;
     &.marked {
       background-color: black;
     }
@@ -32,4 +31,8 @@
       z-index: 2;
     }
   }
+}
+
+.dieImage {
+  border-radius: $border-radius-standard;
 }

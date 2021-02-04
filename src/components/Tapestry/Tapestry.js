@@ -2,6 +2,7 @@ import React from "react";
 import "./Tapestry.scss";
 import ResourceGrid from "../ResourceGrid/ResourceGrid";
 import Resource from "../Resource/Resource";
+import Die from "../Die/Die";
 
 const Tapestry = () => {
   return (
@@ -16,7 +17,53 @@ const Tapestry = () => {
         <Resource name="star" />
         <Resource name="star" />
         <b />
-        <div className="shapeKey">hi</div>
+        <div className="shapeKey">
+          <div className="shape">
+            <div className="shapeCell bottomLeft">
+              <Die dieFace={1} button={false} />
+            </div>
+          </div>
+          <div className="shape">
+            <div className="shapeCell bottomLeft">
+              <Die dieFace={2} button={false} />
+            </div>
+            <div className="shapeCell bottomCenter" />
+          </div>
+          <div className="shape">
+            <div className="shapeCell bottomLeft">
+              <Die dieFace={3} button={false} />
+            </div>
+            <div className="shapeCell bottomCenter" />
+            <div className="shapeCell centerLeft" />
+          </div>
+          <div className="shape">
+            <div className="shapeCell bottomLeft">
+              <Die dieFace={4} button={false} />
+            </div>
+            <div className="shapeCell centerLeft" />
+            <div className="shapeCell centerCenter" />
+            <div className="shapeCell topLeft" />
+          </div>
+          <div className="shape">
+            <div className="shapeCell bottomLeft">
+              <Die dieFace={5} button={false} />
+            </div>
+            <div className="shapeCell bottomCenter" />
+            <div className="shapeCell centerLeft" />
+            <div className="shapeCell topLeft" />
+            <div className="shapeCell bottomRight" />
+          </div>
+          <div className="shape">
+            <div className="shapeCell bottomLeft">
+              <Die dieFace={6} button={false} />
+            </div>
+            <div className="shapeCell bottomCenter" />
+            <div className="shapeCell centerLeft" />
+            <div className="shapeCell centerCenter" />
+            <div className="shapeCell topLeft" />
+            <div className="shapeCell bottomRight" />
+          </div>
+        </div>
         <ResourceGrid resource="pumpkin" premarked="bottomRight" />
         <ResourceGrid resource="heart" />
         <ResourceGrid resource="coin" premarked="topRight" />
