@@ -4,10 +4,9 @@ const MyLittleScythe = () => {
   return (
     <>
       <p>
-        Mark a hex and gain a pumpkin or heart. Gain 1 star (a) if
-        you’ve earned total of 7 pumpkins, (b) if you’ve earned a
-        total of 7 hearts, and (c) per pair of matching #s between the
-        areas.
+        Mark a hex and gain a pumpkin or heart. Gain 1 star if you’ve
+        earned (A) 7+ pumpkins, (B) 7+ hearts, and (C) per pair of
+        matching #s between the areas.
       </p>
     </>
   );
