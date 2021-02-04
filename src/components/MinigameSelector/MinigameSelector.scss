@@ -10,6 +10,7 @@
 .minigameSelector {
   position: absolute;
   top: 20%;
+  z-index: 3;
   background: white;
   width: 95%;
   border: $border-standard;
