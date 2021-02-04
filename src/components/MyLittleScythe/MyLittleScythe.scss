@@ -1,0 +1,60 @@
+.Minigame.MyLittleScythe {
+  .game {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 26px);
+
+    .outerRow {
+      display: grid;
+      grid-template-columns: 15px 30px 30px 45px 30px 30px 15px;
+    }
+    .innerRow {
+      display: grid;
+      grid-template-columns: 30px 30px 30px 30px 15px 30px 30px 30px 30px;
+    }
+
+    .hexagon {
+      display: grid;
+      align-content: center;
+      align-items: center;
+      justify-content: center;
+      justify-items: center;
+
+      position: relative;
+      width: 30px;
+      height: 17.32px;
+      background-color: #ffffff;
+      margin: 4.36px 0;
+      border-left: solid 1px #000000;
+      border-right: solid 1px #000000;
+      &:before,
+      &:after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        width: 21.21px;
+        height: 21.21px;
+        -webkit-transform: scaleY(0.5774) rotate(-45deg);
+        -ms-transform: scaleY(0.5774) rotate(-45deg);
+        transform: scaleY(0.5774) rotate(-45deg);
+        background-color: inherit;
+        left: 3.3934px;
+      }
+      &:before {
+        top: -10.6066px;
+        border-top: solid 1.4142px #000000;
+        border-right: solid 1.4142px #000000;
+      }
+      &:after {
+        bottom: -10.6066px;
+        border-bottom: solid 1.4142px #000000;
+        border-left: solid 1.4142px #000000;
+      }
+
+      .dieButton,
+      .resource {
+        position: relative;
+        z-index: 2;
+      }
+    }
+  }
+}
