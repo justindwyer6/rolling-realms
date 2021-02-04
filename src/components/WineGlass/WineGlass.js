@@ -29,7 +29,7 @@ const WineGlass = ({ sum }) => {
         src={wineGlassState}
         alt="Wine Glass"
       />
-      <p className="wineGlassText">{sum}</p>
+      <span className="wineGlassText">{sum}</span>
     </button>
   );
 };

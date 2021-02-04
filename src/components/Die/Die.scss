@@ -12,6 +12,7 @@
   }
 
   &.grape {
+    position: relative;
     display: grid;
     grid-template-areas: "dieOverlayGrape";
     justify-content: center;
@@ -27,6 +28,10 @@
       z-index: 1;
     }
     .dieImage {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       grid-area: dieOverlayGrape;
       z-index: 2;
     }
