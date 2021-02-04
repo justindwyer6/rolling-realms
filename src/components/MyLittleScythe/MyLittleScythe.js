@@ -1,87 +1,79 @@
-// import React from 'react';
-// // import Hexagon from './Hexagon';
+import React from "react";
+import "./MyLittleScythe.scss";
+import Die from "../Die/Die";
+import Resource from "../Resource/Resource";
 
-// class MyLittleScythe extends React.Component {
-//   render() {
-//     return (
-//       <>
-//         <p>
-//         Mark a hex and gain a pumpkin or heart.
-//         </p>
-//         <div className="myLittleScytheC">
-//           <div className="myLittleScythe">
-//             <ul id="grid" className="clear">
-//               <li>
-//                 <div className="hexagon"></div>
-//               </li>
-//               <li>
-//                 <Hexagon hexagonClasses="hexagon" dieFace="6" key="6left" />
-//               </li>
-//               <li>
-//                 <Hexagon hexagonClasses="hexagon" dieFace="1" key="1left" />
-//               </li>
-//               <li>
-//                 <Hexagon hexagonClasses="hexagon" dieFace="5" key="5left" />
-//               </li>
-//               <li>
-//                 <div className="hexagon">
-//                   <img src="/images/pumpkin.png" alt="pumpkin" className="reward"/>
-//                 </div>
-//               </li>
-//               <li>
-//                 <Hexagon hexagonClasses="hexagon" dieFace="2" key="2left" />
-//               </li>
-//               <li>
-//                 <div className="hexagon"></div>
-//               </li>
-//               <li>
-//                 <Hexagon hexagonClasses="hexagon" dieFace="4" key="4left" />
-//               </li>
-//               <li>
-//                 <Hexagon hexagonClasses="hexagon" dieFace="3" key="3left" />
-//               </li>
-//             </ul>
-//           </div>
-//           <div className="myLittleScythe">
-//             <ul id="grid" className="clear">
-//               <li>
-//                 <div className="hexagon"></div>
-//               </li>
-//               <li>
-//                 <Hexagon hexagonClasses="hexagon" dieFace="6" key="6right" />
-//               </li>
-//               <li>
-//                 <Hexagon hexagonClasses="hexagon" dieFace="1" key="1right" />
-//               </li>
-//               <li>
-//                 <Hexagon hexagonClasses="hexagon" dieFace="5" key="5right" />
-//               </li>
-//               <li>
-//                 <div className="hexagon">
-//                   <img src="/images/heart.png" alt="heart" className="reward"/>
-//                 </div>
-//               </li>
-//               <li>
-//                 <Hexagon hexagonClasses="hexagon" dieFace="2" key="2right" />
-//               </li>
-//               <li>
-//                 <div className="hexagon"></div>
-//               </li>
-//               <li>
-//                 <Hexagon hexagonClasses="hexagon" dieFace="4" key="4right" />
-//               </li>
-//               <li>
-//                 <Hexagon hexagonClasses="hexagon" dieFace="3" key="3right" />
-//               </li>
-//             </ul>
-//           </div>
-//         </div>
-//         <p>
-//           Gain 1<img className="inline-image" src="/images/star.png" alt="star"/> (a) if you’ve earned total of 7<img className="inline-image" src="/images/pumpkin.png" alt="pumpkin"/>, (b) if you’ve earned a total of 7<img className="inline-image" src="/images/heart.png" alt="heart"/>, and (c) per pair of matching #s between the areas.
-//         </p>
-//       </>
-//     );
-//   }
-// }
+const MyLittleScythe = () => {
+  return (
+    <>
+      <p>
+        Mark a hex and gain a pumpkin or heart. Gain 1 star if you’ve
+        earned (A) 7+ pumpkins, (B) 7+ hearts, and (C) per pair of
+        matching #s between the areas.
+      </p>
+      <div className="game">
+        <div className="outerRow">
+          <b />
+          <div className="hexagon">
+            <Die dieFace={6} />
+          </div>
+          <div className="hexagon">
+            <Die dieFace={1} />
+          </div>
+          <b />
+          <div className="hexagon">
+            <Die dieFace={6} />
+          </div>
+          <div className="hexagon">
+            <Die dieFace={1} />
+          </div>
+          <b />
+        </div>
 
-// export default MyLittleScythe;
+        <div className="innerRow">
+          <b />
+          <div className="hexagon">
+            <Die dieFace={5} />
+          </div>
+          <div className="hexagon">
+            <Resource name="pumpkin" />
+          </div>
+          <div className="hexagon">
+            <Die dieFace={2} />
+          </div>
+          <b />
+          <div className="hexagon">
+            <Die dieFace={5} />
+          </div>
+          <div className="hexagon">
+            <Resource name="heart" />
+          </div>
+          <div className="hexagon">
+            <Die dieFace={2} />
+          </div>
+          <b />
+        </div>
+
+        <div className="outerRow">
+          <b />
+          <div className="hexagon">
+            <Die dieFace={4} />
+          </div>
+          <div className="hexagon">
+            <Die dieFace={3} />
+          </div>
+          <b />
+          <div className="hexagon">
+            <Die dieFace={4} />
+          </div>
+          <div className="hexagon">
+            <Die dieFace={3} />
+          </div>
+          <b />
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default MyLittleScythe;
