@@ -25,9 +25,11 @@
       grid-area: dieOverlayGrape;
       width: 35px;
       height: 35px;
+      z-index: 1;
     }
     .dieImage {
       grid-area: dieOverlayGrape;
+      z-index: 2;
     }
   }
 }
