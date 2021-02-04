@@ -3,7 +3,10 @@
 .Minigame.Tapestry {
   .game {
     display: grid;
-    grid-template-columns: repeat(3, 45px) 25px;
-    grid-template-rows: repeat(3, 45px), 25px;
+    grid-template-columns: repeat(3, 45px) 25px 140px;
+    grid-template-rows: 25px repeat(3, 45px);
+    .shapeKey {
+      grid-row: span 4;
+    }
   }
 }

@@ -16,6 +16,7 @@ const Tapestry = () => {
         <Resource name="star" />
         <Resource name="star" />
         <b />
+        <div className="shapeKey">hi</div>
         <ResourceGrid resource="pumpkin" premarked="bottomRight" />
         <ResourceGrid resource="heart" />
         <ResourceGrid resource="coin" premarked="topRight" />
