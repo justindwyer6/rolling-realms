@@ -1,41 +1,45 @@
 @import "../../variables";
 
-.bird {
-  position: relative;
-  grid-column: span 2;
-  grid-row: span 3;
-  border: $border-standard;
-  border-radius: $border-radius-standard;
-  height: 80%;
-  margin: 5px;
+.Minigame.Wingspan {
+  .game {
+    .bird {
+      position: relative;
+      grid-column: span 2;
+      grid-row: span 3;
+      border: $border-standard;
+      border-radius: $border-radius-standard;
+      height: 80%;
+      margin: 5px;
 
-  // Parent Grid Properties
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  justify-content: center;
-  justify-items: center;
-  align-content: center;
-  align-items: center;
-  text-align: center;
+      // Parent Grid Properties
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      justify-content: center;
+      justify-items: center;
+      align-content: center;
+      align-items: center;
+      text-align: center;
 
-  .featherImage {
-    grid-column: span 3;
-    width: 100%;
-    height: 80%;
-  }
+      .featherImage {
+        grid-column: span 3;
+        width: 100%;
+        height: 80%;
+      }
 
-  span {
-    position: absolute;
-    grid-column: span 3;
-    font-size: 3em;
-    text-align: center;
-  }
+      span {
+        position: absolute;
+        grid-column: span 3;
+        font-size: 3em;
+        align-self: start;
+      }
 
-  .inputResourceContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 1fr;
-    height: 2em;
+      .inputResourceContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 1fr;
+        height: 2em;
+      }
+    }
   }
 }
