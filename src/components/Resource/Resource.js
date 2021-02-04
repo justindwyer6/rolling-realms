@@ -25,7 +25,12 @@ const star = {
   src: starSrc,
 };
 
-const Resource = ({ name, isCost = false, secondName = "" }) => {
+const Resource = ({
+  name,
+  isCost = false,
+  secondName = "",
+  classes = "",
+}) => {
   let resource;
   if (name === pumpkin.name) {
     resource = pumpkin;
@@ -55,18 +60,20 @@ const Resource = ({ name, isCost = false, secondName = "" }) => {
   }
 
   return (
-    <div className={`resource ${isCost ? "cost" : ""}`}>
+    <div className={`resource ${isCost ? "cost" : ""} ${classes}`}>
       {isCost ? <span>-</span> : null}
       <img
         src={resource.src}
         alt={resource.name}
-        className={secondName ? "firstResource" : ""}
+        className={
+          secondName ? "resourceImage firstResource" : "resourceImage"
+        }
       />
       {secondName ? (
         <img
           src={secondResource.src}
           alt={secondResource.name}
-          className="secondResource"
+          className="resourceImage secondResource"
         />
       ) : null}
     </div>

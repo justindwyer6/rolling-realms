@@ -9,7 +9,12 @@ import d6Face6 from "../../images/d6-6.png";
 import grapeSrc from "../../images/grape.png";
 import crushedGrapeSrc from "../../images/crushedGrape.png";
 
-const Die = ({ dieType = "standard", dieFace, classes }) => {
+const Die = ({
+  dieType = "standard",
+  dieFace,
+  button = true,
+  classes,
+}) => {
   const [dieState, setDieState] = useState("available");
 
   const updateStandardDie = () => {
@@ -74,6 +79,17 @@ const Die = ({ dieType = "standard", dieFace, classes }) => {
 
     return crushedGrapeSrc;
   };
+
+  if (button === false) {
+    return (
+      <img
+        className="dieImage"
+        key={`${dieFace}die`}
+        src={getDieFace(dieFace)}
+        alt={`${dieFace}die`}
+      />
+    );
+  }
 
   return (
     <button
