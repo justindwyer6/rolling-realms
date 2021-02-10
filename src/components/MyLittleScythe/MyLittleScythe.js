@@ -2,6 +2,7 @@ import React from "react";
 import "./MyLittleScythe.scss";
 import Die from "../Die/Die";
 import Resource from "../Resource/Resource";
+import Hexagon from "../Hexagon/Hexagon";
 
 const MyLittleScythe = () => {
   return (
@@ -14,9 +15,8 @@ const MyLittleScythe = () => {
       <div className="game">
         <div className="outerRow">
           <b />
-          <div className="hexagon">
-            <Die dieFace={6} />
-          </div>
+          <Hexagon innerComponent={<Die dieFace={6} />} />
+
           <div className="hexagon">
             <Die dieFace={1} />
           </div>

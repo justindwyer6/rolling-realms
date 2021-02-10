@@ -1,0 +1,44 @@
+.Hexagon {
+  display: grid;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+
+  position: relative;
+  width: 40px;
+  height: 23.09px;
+  background-color: #ffffff;
+  margin: 11.55px 0;
+  border-left: solid 1px #000000;
+  border-right: solid 1px #000000;
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    width: 28.28px;
+    height: 28.28px;
+    -webkit-transform: scaleY(0.5774) rotate(-45deg);
+    -ms-transform: scaleY(0.5774) rotate(-45deg);
+    transform: scaleY(0.5774) rotate(-45deg);
+    background-color: inherit;
+    left: 4.8579px;
+  }
+  &:before {
+    top: -14.1421px;
+    border-top: solid 1.4142px #000000;
+    border-right: solid 1.4142px #000000;
+  }
+  &:after {
+    bottom: -14.1421px;
+    border-bottom: solid 1.4142px #000000;
+    border-left: solid 1.4142px #000000;
+  }
+
+  .dieButton,
+  .resource {
+    position: relative;
+    z-index: 2;
+  }
+}
