@@ -34,11 +34,11 @@ const MinigameSelector = ({
           return (
             <button
               className="minigameOption"
-              key={`${rounds[key]}-selector`}
+              key={`${rounds[key].name}-selector`}
               type="button"
-              onClick={() => updateMinigame(rounds[key], index)}
+              onClick={() => updateMinigame(rounds[key].name, index)}
             >
-              {rounds[key]}
+              {rounds[key].name}
             </button>
           );
         })}

@@ -184,7 +184,6 @@ const App = () => {
               round={key.charAt(0)}
             />
           ) : null,
-          console.log(rounds[key].name),
           <Minigame
             key={`minigame-${rounds[key].name}`}
             index={key}
