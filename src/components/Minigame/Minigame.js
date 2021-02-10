@@ -9,10 +9,10 @@ const Minigame = ({ index, minigame, updateMinigame }) => {
     <div className={`Minigame ${minigame.displayName}`}>
       <MinigameSelector
         index={index}
-        minigame={minigame}
+        minigame={minigame.displayName}
         updateMinigame={updateMinigame}
       />
-      {() => minigame()}
+      {minigame}
       <>
         {stars.map((star) => (
           <Star key={star} index={`${index}-star-${star}`} />

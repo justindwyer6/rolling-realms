@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./App.scss";
 import Minigame from "../Minigame/Minigame";
 import RoundTracker from "../RoundTracker/RoundTracker";
 import Rules from "../Rules";
 import defaultRounds from "../../rounds";
-import { setQueryStringValue } from "../../functions/queryString";
+// import { setQueryStringValue } from "../../functions/queryString";
 
-const qs = require("query-string");
+// const qs = require("query-string");
 
 const App = () => {
   const [rounds, setRounds] = useState(defaultRounds);
@@ -15,46 +15,46 @@ const App = () => {
   );
 
   // Update rounds state to match query string
-  useEffect(() => {
-    const parsedQueryString = qs.parse(window.location.search);
-    Object.keys(parsedQueryString).forEach((key) => {
-      if (
-        Object.keys(parsedQueryString).length !== 9 ||
-        ![
-          "1a",
-          "1b",
-          "1c",
-          "2a",
-          "2b",
-          "2c",
-          "3a",
-          "3b",
-          "3c",
-        ].includes(key) ||
-        ![
-          "Scythe",
-          "Between Two Cities",
-          "Charterstone",
-          "Between Two Castles",
-          "Viticulture",
-          "Euphoria",
-          "Scythe",
-          "Tapestry",
-          "Wingspan",
-        ].includes(parsedQueryString[key])
-      ) {
-        return;
-      }
-      if (parsedQueryString[key] !== rounds[key]) {
-        setRounds({ ...parsedQueryString });
-      }
-    });
-  }, []);
+  // useEffect(() => {
+  //   const parsedQueryString = qs.parse(window.location.search);
+  //   Object.keys(parsedQueryString).forEach((key) => {
+  //     if (
+  //       Object.keys(parsedQueryString).length !== 9 ||
+  //       ![
+  //         "1a",
+  //         "1b",
+  //         "1c",
+  //         "2a",
+  //         "2b",
+  //         "2c",
+  //         "3a",
+  //         "3b",
+  //         "3c",
+  //       ].includes(key) ||
+  //       ![
+  //         "Scythe",
+  //         "Between Two Cities",
+  //         "Charterstone",
+  //         "Between Two Castles",
+  //         "Viticulture",
+  //         "Euphoria",
+  //         "Scythe",
+  //         "Tapestry",
+  //         "Wingspan",
+  //       ].includes(parsedQueryString[key])
+  //     ) {
+  //       return;
+  //     }
+  //     if (parsedQueryString[key] !== rounds[key]) {
+  //       setRounds({ ...parsedQueryString });
+  //     }
+  //   });
+  // }, []);
 
   // Update query string to match rounds state
-  useEffect(() => {
-    setQueryStringValue(rounds);
-  }, [rounds]);
+  // useEffect(() => {
+  //   setQueryStringValue(rounds);
+  // }, [rounds]);
 
   const updateMinigame = (minigame, round) => {
     const updatingRoundOrder = { ...rounds };
@@ -184,8 +184,9 @@ const App = () => {
               round={key.charAt(0)}
             />
           ) : null,
+          console.log(rounds[key]),
           <Minigame
-            key={`minigame-${rounds[key]}`}
+            key={`minigame-${key}`}
             index={key}
             minigame={rounds[key]}
             roundNumber={key.charAt(0)}
