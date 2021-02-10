@@ -10,15 +10,18 @@ import Viticulture from "./components/Viticulture/Viticulture";
 import Wingspan from "./components/Wingspan/Wingspan";
 
 const rounds = {
-  "1a": <Scythe />,
-  "1b": <BetweenTwoCities />,
-  "1c": <Charterstone />,
-  "2a": <BetweenTwoCastles />,
-  "2b": <Viticulture />,
-  "2c": <Euphoria />,
-  "3a": <MyLittleScythe />,
-  "3b": <Tapestry />,
-  "3c": <Wingspan />,
+  "1a": { component: <Scythe />, name: "Scythe" },
+  "1b": { component: <BetweenTwoCities />, name: "BetweenTwoCities" },
+  "1c": { component: <Charterstone />, name: "Charterstone" },
+  "2a": {
+    component: <BetweenTwoCastles />,
+    name: "BetweenTwoCastles",
+  },
+  "2b": { component: <Viticulture />, name: "Viticulture" },
+  "2c": { component: <Euphoria />, name: "Euphoria" },
+  "3a": { component: <MyLittleScythe />, name: "MyLittleScythe" },
+  "3b": { component: <Tapestry />, name: "Tapestry" },
+  "3c": { component: <Wingspan />, name: "Wingspan" },
 };
 
 export default rounds;
