@@ -187,7 +187,7 @@ const App = () => {
           <Minigame
             key={`minigame-${rounds[key]}`}
             index={key}
-            minigameName={rounds[key]}
+            minigame={rounds[key]}
             roundNumber={key.charAt(0)}
             updateMinigame={updateMinigame}
           />,
