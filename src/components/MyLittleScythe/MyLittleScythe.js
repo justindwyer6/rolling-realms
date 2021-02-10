@@ -2,6 +2,7 @@ import React from "react";
 import "./MyLittleScythe.scss";
 import Die from "../Die/Die";
 import Resource from "../Resource/Resource";
+import Hexagon from "../Hexagon/Hexagon";
 
 const MyLittleScythe = () => {
   return (
@@ -14,61 +15,34 @@ const MyLittleScythe = () => {
       <div className="game">
         <div className="outerRow">
           <b />
-          <div className="hexagon">
-            <Die dieFace={6} />
-          </div>
-          <div className="hexagon">
-            <Die dieFace={1} />
-          </div>
+          <Hexagon innerComponent={<Die dieFace={6} />} />
+
+          <Hexagon innerComponent={<Die dieFace={1} />} />
           <b />
-          <div className="hexagon">
-            <Die dieFace={6} />
-          </div>
-          <div className="hexagon">
-            <Die dieFace={1} />
-          </div>
+          <Hexagon innerComponent={<Die dieFace={6} />} />
+          <Hexagon innerComponent={<Die dieFace={1} />} />
           <b />
         </div>
 
         <div className="innerRow">
           <b />
-          <div className="hexagon">
-            <Die dieFace={5} />
-          </div>
-          <div className="hexagon">
-            <Resource name="pumpkin" />
-          </div>
-          <div className="hexagon">
-            <Die dieFace={2} />
-          </div>
+          <Hexagon innerComponent={<Die dieFace={5} />} />
+          <Hexagon innerComponent={<Resource name="pumpkin" />} />
+          <Hexagon innerComponent={<Die dieFace={2} />} />
           <b />
-          <div className="hexagon">
-            <Die dieFace={5} />
-          </div>
-          <div className="hexagon">
-            <Resource name="heart" />
-          </div>
-          <div className="hexagon">
-            <Die dieFace={2} />
-          </div>
+          <Hexagon innerComponent={<Die dieFace={5} />} />
+          <Hexagon innerComponent={<Resource name="heart" />} />
+          <Hexagon innerComponent={<Die dieFace={2} />} />
           <b />
         </div>
 
         <div className="outerRow">
           <b />
-          <div className="hexagon">
-            <Die dieFace={4} />
-          </div>
-          <div className="hexagon">
-            <Die dieFace={3} />
-          </div>
+          <Hexagon innerComponent={<Die dieFace={4} />} />
+          <Hexagon innerComponent={<Die dieFace={3} />} />
           <b />
-          <div className="hexagon">
-            <Die dieFace={4} />
-          </div>
-          <div className="hexagon">
-            <Die dieFace={3} />
-          </div>
+          <Hexagon innerComponent={<Die dieFace={4} />} />
+          <Hexagon innerComponent={<Die dieFace={3} />} />
           <b />
         </div>
       </div>
