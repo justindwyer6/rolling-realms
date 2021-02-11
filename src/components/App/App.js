@@ -8,6 +8,7 @@ import {
   setQueryStringValue,
   setRoundsUsingQueryString,
 } from "../../functions/queryString";
+import randomizeMinigames from "../../functions/randomizeMinigames";
 
 const App = () => {
   const [rounds, setRounds] = useState(defaultRounds);
@@ -29,35 +30,6 @@ const App = () => {
     const updatingRoundOrder = { ...rounds };
     updatingRoundOrder[round] = minigame;
     setRounds({ ...updatingRoundOrder });
-  };
-
-  const randomizeMinigames = () => {
-    const allMinigames = Object.values(defaultRounds);
-
-    const shuffle = (array) => {
-      let currentIndex = array.length;
-      let temporaryValue;
-      let randomIndex;
-      // While there remain elements to shuffle...
-      while (currentIndex !== 0) {
-        // Pick a remaining element...
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex -= 1;
-        // And swap it with the current element.
-        temporaryValue = array[currentIndex];
-        array[currentIndex] = array[randomIndex]; // eslint-disable-line no-param-reassign
-        array[randomIndex] = temporaryValue; // eslint-disable-line no-param-reassign
-      }
-      return array;
-    };
-
-    const shuffledMinigames = shuffle(allMinigames);
-    const roundsCopy = { ...rounds };
-    // eslint-disable-next-line no-unused-vars
-    Object.entries(roundsCopy).forEach(([key, value], i) => {
-      roundsCopy[key] = shuffledMinigames[i];
-    });
-    setRounds({ ...roundsCopy });
   };
 
   const copyLink = () => {
@@ -114,7 +86,7 @@ const App = () => {
           <button
             type="button"
             className="standardButton"
-            onClick={randomizeMinigames}
+            onClick={() => randomizeMinigames(rounds, setRounds)}
           >
             Randomize
           </button>
