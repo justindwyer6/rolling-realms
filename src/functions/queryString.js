@@ -39,6 +39,7 @@ export const setRoundsUsingQueryString = (setRounds) => {
       return;
     }
     if (parsedQueryString[key] !== rounds[key]) {
+      // This needs to be fixed because parsedQueryString does not have the correct shape with components here
       setRounds({ ...parsedQueryString });
     }
   });
