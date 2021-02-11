@@ -32,17 +32,7 @@ const App = () => {
   };
 
   const randomizeMinigames = () => {
-    const allMinigames = [
-      "Scythe",
-      "Between Two Cities",
-      "Charterstone",
-      "Between Two Castles",
-      "Viticulture",
-      "Euphoria",
-      "Scythe",
-      "Tapestry",
-      "Wingspan",
-    ];
+    const allMinigames = Object.values(defaultRounds);
 
     const shuffle = (array) => {
       let currentIndex = array.length;
