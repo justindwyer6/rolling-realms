@@ -1,15 +1,17 @@
 import qs from "query-string";
 import rounds from "../rounds";
 
-const roundKeys = Object.keys;
-
 export const setQueryStringWithoutPageReload = (queryStringValue) => {
   const newurl = `${window.location.protocol}//${window.location.host}${window.location.pathname}${queryStringValue}`;
   window.history.replaceState(newurl, "", newurl);
 };
 
-export const setQueryStringValue = (key) => {
-  const newQueryStringValue = qs.stringify(key);
+export const setQueryStringValue = (keys, minigameNames) => {
+  const roundsWithoutComponent = {};
+  keys.forEach(function (key, i) {
+    roundsWithoutComponent[key] = minigameNames[i];
+  });
+  const newQueryStringValue = qs.stringify(roundsWithoutComponent);
   setQueryStringWithoutPageReload(`?${newQueryStringValue}`);
 };
 

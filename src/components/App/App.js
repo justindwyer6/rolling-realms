@@ -22,7 +22,10 @@ const App = () => {
 
   // Update query string to match rounds state
   useEffect(() => {
-    setQueryStringValue(rounds);
+    setQueryStringValue(
+      Object.keys(rounds),
+      Object.values(rounds).map((value) => value.name),
+    );
   }, [rounds]);
 
   const updateMinigame = (minigame, round) => {
