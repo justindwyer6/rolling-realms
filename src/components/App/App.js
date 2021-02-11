@@ -4,9 +4,10 @@ import Minigame from "../Minigame/Minigame";
 import RoundTracker from "../RoundTracker/RoundTracker";
 import Rules from "../Rules";
 import defaultRounds from "../../rounds";
-import { setQueryStringValue } from "../../functions/queryString";
-
-const qs = require("query-string");
+import {
+  setQueryStringValue,
+  setRoundsUsingQueryString,
+} from "../../functions/queryString";
 
 const App = () => {
   const [rounds, setRounds] = useState(defaultRounds);
@@ -16,39 +17,7 @@ const App = () => {
 
   // Update rounds state to match query string
   useEffect(() => {
-    const parsedQueryString = qs.parse(window.location.search);
-    Object.keys(parsedQueryString).forEach((key) => {
-      if (
-        Object.keys(parsedQueryString).length !== 9 ||
-        ![
-          "1a",
-          "1b",
-          "1c",
-          "2a",
-          "2b",
-          "2c",
-          "3a",
-          "3b",
-          "3c",
-        ].includes(key) ||
-        ![
-          "Scythe",
-          "Between Two Cities",
-          "Charterstone",
-          "Between Two Castles",
-          "Viticulture",
-          "Euphoria",
-          "Scythe",
-          "Tapestry",
-          "Wingspan",
-        ].includes(parsedQueryString[key])
-      ) {
-        return;
-      }
-      if (parsedQueryString[key] !== rounds[key]) {
-        setRounds({ ...parsedQueryString });
-      }
-    });
+    setRoundsUsingQueryString(rounds, setRounds);
   }, []);
 
   // Update query string to match rounds state
