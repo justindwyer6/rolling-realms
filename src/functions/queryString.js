@@ -17,3 +17,23 @@ export const getQueryStringValue = (
   const values = qs.parse(queryStringValue);
   return values[key];
 };
+
+export const setRoundsUsingQueryString = (rounds, setRounds) => {
+  const parsedQueryString = qs.parse(window.location.search);
+  Object.keys(parsedQueryString).forEach((key) => {
+    if (
+      // Stop function if the querystring doesn't have 9 entries
+      Object.keys(parsedQueryString).length !== 9 ||
+      // Stop function if an invalid key is in the querystring
+      !Object.keys(rounds).includes(key) ||
+      // Stop function if an invalid minigame is in the querystring
+      !Object.values(rounds).includes(parsedQueryString[key])
+    ) {
+      return;
+    }
+    if (parsedQueryString[key] !== rounds[key]) {
+      // This needs to be fixed because parsedQueryString does not have the correct shape with components here
+      setRounds({ ...parsedQueryString });
+    }
+  });
+};
