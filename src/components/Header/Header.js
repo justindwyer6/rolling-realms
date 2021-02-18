@@ -1,13 +1,14 @@
 import React from "react";
 import Rules from "../Rules";
 import "./Header.scss";
+import stonemaierLogoSrc from "../../images/stonemaier-logo.png";
 
 const Header = () => {
   return (
     <div className="header">
       <img
-        className="sm-logo"
-        src="/images/stonemaier-logo.png"
+        className="stonemaierLogo"
+        src={stonemaierLogoSrc}
         alt="Stonemaier Games Logo"
       />
       <div className="titleC">
