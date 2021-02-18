@@ -1,2 +1,33 @@
 .Header {
+  display: grid;
+  grid-template:
+    ". logo ."
+    "title title title" 4em
+    "attribution attribution attribution" 1em
+    "overview overview overview"
+    "score score score";
+  align-items: center;
+  justify-items: center;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+
+  .stonemaierLogo {
+    grid-area: logo;
+    width: 100%;
+    height: auto;
+  }
+  .title {
+    grid-area: title;
+    font-size: 1.75em;
+  }
+  .attribution {
+    grid-area: attribution;
+  }
+  .overview {
+    grid-area: overview;
+  }
+  .gameTotal {
+    grid-area: score;
+  }
 }
