@@ -1,0 +1,33 @@
+@import "../../variables";
+
+.StarTracker {
+  grid-column: span 2;
+  border: $border-thick;
+  border-radius: $border-radius-standard;
+  padding: 0px 5px 5px 5px;
+
+  // Grid
+  display: grid;
+  grid-template-columns: 1fr, 1fr;
+  align-items: center;
+  h3 {
+    grid-column: span 2;
+    margin: 5px 0px;
+    white-space: nowrap;
+  }
+
+  input.roundTotal {
+    border: none;
+    border-bottom: $border-thick;
+    width: 5ch;
+    height: 1.3em;
+    grid-column: span 1;
+    justify-self: right;
+  }
+
+  .starIcon {
+    width: 30px;
+    height: 30px;
+    grid-column: span 1;
+  }
+}

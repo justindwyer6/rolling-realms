@@ -2,6 +2,7 @@ import React from "react";
 // import Rules from "../Rules";
 import "./Header.scss";
 import stonemaierLogoSrc from "../../images/stonemaier-logo.png";
+import StarTracker from "../StarTracker/StarTracker";
 
 const Header = () => {
   return (
@@ -26,11 +27,7 @@ const Header = () => {
           or change the order of the rounds.
         </span>
       </p>
-      <div className="gameTotal">
-        <p>TOTAL :</p>
-        <input type="number" name="total" />
-        <img src="/images/star.png" alt="star" />
-      </div>
+      <StarTracker round={0} />
       {/* <Rules key="headerRules" /> */}
     </div>
   );
