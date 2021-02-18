@@ -10,11 +10,6 @@
   grid-template-rows: auto;
   justify-content: center;
 
-  .header {
-    grid-column: 1/2;
-    display: none;
-  }
-
   .subheader {
     grid-column: 1/2;
     display: none;
@@ -40,8 +35,8 @@ img {
 @media (min-width: 768px) {
   .appContainer {
     grid-template-columns: repeat(2, 1fr);
-    .header {
-      grid-column: 1/2;
+    .Header {
+      grid-column: span 2;
     }
 
     .subheader {
@@ -58,5 +53,9 @@ img {
 @media (min-width: 992px) {
   .appContainer {
     grid-template-columns: repeat(3, 1fr);
+
+    .Header {
+      grid-column: span 3;
+    }
   }
 }

@@ -1,11 +1,11 @@
 import React from "react";
-import Rules from "../Rules";
+// import Rules from "../Rules";
 import "./Header.scss";
 import stonemaierLogoSrc from "../../images/stonemaier-logo.png";
 
 const Header = () => {
   return (
-    <div className="header">
+    <div className="Header">
       <img
         className="stonemaierLogo"
         src={stonemaierLogoSrc}
@@ -33,7 +33,7 @@ const Header = () => {
         <input type="number" name="total" />
         <img src="/images/star.png" alt="star" />
       </div>
-      <Rules key="headerRules" />
+      {/* <Rules key="headerRules" /> */}
     </div>
   );
 };
