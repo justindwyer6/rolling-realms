@@ -5,7 +5,9 @@ import starIcon from "../../images/star-filled.png";
 const StarTracker = ({ round }) => {
   return (
     <div className="StarTracker">
-      <h3 className="roundNumber">ROUND {round}</h3>
+      <h3 className="roundNumber">
+        {round ? `ROUND ${round}` : "TOTAL"}
+      </h3>
       <input
         className="roundTotal"
         type="number"

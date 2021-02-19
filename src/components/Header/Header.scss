@@ -5,7 +5,7 @@
     "title title title" 4em
     "attribution attribution attribution" 1em
     "overview overview overview"
-    "score score score";
+    ". score ." / 1fr 1fr 1fr;
   align-items: center;
   justify-items: center;
   align-content: center;
@@ -27,7 +27,7 @@
   .overview {
     grid-area: overview;
   }
-  .gameTotal {
+  .StarTracker {
     grid-area: score;
   }
 }
