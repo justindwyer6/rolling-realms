@@ -9,6 +9,7 @@ import {
   setRoundsUsingQueryString,
 } from "../../functions/queryString";
 import randomizeMinigames from "../../functions/randomizeMinigames";
+import Footer from "../Footer/Footer";
 
 const App = () => {
   const [rounds, setRounds] = useState(defaultRounds);
@@ -97,6 +98,7 @@ const App = () => {
       })}
       {/* <Rules />> */}
       {/* <DiceRoller />> */}
+      <Footer />
     </div>
   );
 };
