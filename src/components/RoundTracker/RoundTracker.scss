@@ -85,7 +85,6 @@
 @media (min-width: $tablet-width) {
   .RoundTracker {
     width: $minigame-width;
-    height: $minigame-width;
     position: static;
     box-shadow: none;
     border: $border-thick;
@@ -93,4 +92,8 @@
 }
 
 @media (min-width: $desktop-width) {
+  .RoundTracker {
+    grid-column: span 3;
+    margin-top: 25px;
+  }
 }
