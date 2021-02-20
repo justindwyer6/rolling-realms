@@ -6,7 +6,7 @@ import StarTracker from "../StarTracker/StarTracker";
 
 const Header = () => {
   return (
-    <div className="Header">
+    <header className="Header">
       <img
         className="stonemaierLogo"
         src={stonemaierLogoSrc}
@@ -22,7 +22,7 @@ const Header = () => {
       </p>
       <StarTracker round={0} />
       {/* <Rules key="headerRules" /> */}
-    </div>
+    </header>
   );
 };
 

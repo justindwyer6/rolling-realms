@@ -7,14 +7,11 @@
   grid-template-columns: auto;
   grid-template-rows: auto;
   justify-self: baseline;
+  margin: 2em auto;
 
   .subheader {
     grid-column: 1/2;
     display: none;
-  }
-
-  .footer {
-    grid-column: 1/2;
   }
 }
 
@@ -22,13 +19,8 @@
   .appContainer {
     grid-template-columns: repeat(2, 1fr);
     width: $tablet-app-width;
-    margin: 0 auto;
 
     .subheader {
-      grid-column: 1/2;
-    }
-
-    .footer {
       grid-column: 1/2;
     }
   }
@@ -38,6 +30,5 @@
   .appContainer {
     grid-template-columns: repeat(3, 1fr);
     width: $max-app-width;
-    margin: 0 auto;
   }
 }
