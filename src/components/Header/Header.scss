@@ -1,0 +1,55 @@
+@import "../../variables";
+
+.Header {
+  display: grid;
+  grid-template:
+    ". logo ." 4em
+    "title title title" 4em
+    "attribution attribution attribution" 1em
+    "overview overview overview"
+    ". score ." / 1fr 1fr 1fr;
+  width: $minigame-width;
+
+  .stonemaierLogo {
+    grid-area: logo;
+    width: auto;
+    height: 100%;
+    max-width: 100%; // This fixes a strange Firefox bug
+  }
+  .title {
+    grid-area: title;
+    font-size: 1.75em;
+    text-transform: uppercase;
+  }
+  .attribution {
+    grid-area: attribution;
+  }
+  .overview {
+    grid-area: overview;
+  }
+  .StarTracker {
+    grid-area: score;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .Header {
+    grid-column: span 2;
+    width: $tablet-app-width;
+    grid-template:
+      "logo title attribution" 5em
+      "overview overview score" / 1fr 2fr 1fr;
+    .title {
+      font-size: 3.5em;
+    }
+    .overview {
+      font-size: 1.05em;
+    }
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .Header {
+    grid-column: span 3;
+  }
+}

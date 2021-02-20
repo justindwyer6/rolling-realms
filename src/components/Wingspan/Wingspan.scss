@@ -11,15 +11,9 @@
       border-radius: $border-radius-standard;
       padding: 1px;
 
-      // Parent Grid Properties
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1px;
-      justify-content: center;
-      justify-items: center;
-      align-content: center;
-      align-items: center;
-      text-align: center;
 
       .featherImage {
         grid-column: span 3;
@@ -37,7 +31,6 @@
       .inputResourceContainer {
         display: flex;
         flex-direction: column;
-        align-items: center;
         width: 1fr;
         input {
           border-radius: $border-radius-standard;

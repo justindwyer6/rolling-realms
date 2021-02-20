@@ -1,8 +1,8 @@
 import React from "react";
 import { times } from "lodash";
 import ResourceTracker from "../ResourceTracker/ResourceTracker";
+import StarTracker from "../StarTracker/StarTracker";
 import "./RoundTracker.scss";
-import starIcon from "../../images/star-filled.png";
 
 const RoundTracker = ({ round }) => {
   const renderInputs = (i) => {
@@ -30,16 +30,7 @@ const RoundTracker = ({ round }) => {
 
   return (
     <div className="RoundTracker">
-      <div className="roundScore">
-        <h3 className="roundNumber">ROUND {round}</h3>
-        <input
-          className="roundTotal"
-          type="number"
-          name="roundTotal"
-          maxLength="4"
-        />
-        <img className="starIcon" src={starIcon} alt="star" />
-      </div>
+      <StarTracker round={round} />
       <div className="turnTracker">
         {times(9, (i) => renderInputs(i))}
       </div>

@@ -61,7 +61,7 @@ const Resource = ({
 
   return (
     <div className={`resource ${isCost ? "cost" : ""} ${classes}`}>
-      {isCost ? <span>-</span> : null}
+      {isCost ? <span>–</span> : null}
       <img
         src={resource.src}
         alt={resource.name}

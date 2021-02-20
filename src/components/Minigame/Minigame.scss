@@ -11,16 +11,12 @@
   z-index: 1;
   box-sizing: border-box;
 
-  // Parent Grid Styles
   display: grid;
   grid-template-columns: repeat(6, 51px);
   grid-template-rows: 30px 70px 181px 25px;
-  justify-items: center;
-  align-items: center;
 
   p {
     grid-column: span 6;
-    font-size: 0.75em;
     text-align: center;
     margin: 0;
   }
@@ -32,20 +28,5 @@
 
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    align-items: center;
-    justify-items: center;
-    justify-content: center;
-    align-content: center;
-    text-align: center;
   }
-}
-
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
-  .Minigame {
-  }
-}
-
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
 }
