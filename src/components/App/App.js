@@ -44,7 +44,7 @@ const App = () => {
 
   return (
     <div className="appContainer">
-      <Rules rulesOpen={rulesOpen} />
+      <Rules rulesOpen={rulesOpen} setRulesOpen={setRulesOpen} />
       <Header />
       <div className="utilities">
         <Button

@@ -1,10 +1,16 @@
 import React from "react";
 import "./Rules.scss";
 import Resource from "../Resource/Resource";
+import toggleRules from "../../functions/toggleRules";
 
-const Rules = ({ rulesOpen }) => {
+const Rules = ({ rulesOpen, setRulesOpen }) => {
   return (
-    <div className={`Rules ${rulesOpen ? "open" : "closed"}`}>
+    <button
+      type="button"
+      className={`Rules ${rulesOpen ? "open" : "closed"}`}
+      onClick={() => toggleRules(rulesOpen, setRulesOpen)}
+    >
+      <span>Rules</span>
       <li>
         <Resource name="pumpkin" isCost classes="inline" />
         x2: adjust a die +/- 1
@@ -47,7 +53,7 @@ const Rules = ({ rulesOpen }) => {
           Details, Print, and FAQs
         </a>
       </li>
-    </div>
+    </button>
   );
 };
 
