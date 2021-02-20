@@ -82,8 +82,7 @@
   }
 }
 
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
+@media (min-width: $tablet-width) {
   .RoundTracker {
     width: $minigame-width;
     height: $minigame-width;
@@ -91,8 +90,4 @@
     box-shadow: none;
     border: $border-thick;
   }
-}
-
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
 }

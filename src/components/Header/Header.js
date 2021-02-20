@@ -18,9 +18,7 @@ const Header = () => {
         Select 3 realms per round for all players. On each of 9 turns,
         roll 2d6 for simultaneous use by all players. Use each die
         once, each in a different realm—you can’t use the same realm
-        twice on the same turn. <br />
-        <br />
-        Most stars wins.
+        twice on the same turn. Most stars wins.
       </p>
       <StarTracker round={0} />
       {/* <Rules key="headerRules" /> */}

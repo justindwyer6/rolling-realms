@@ -1,4 +1,9 @@
 $minigame-width: 320px;
+$tablet-app-width: calc(#{$minigame-width} * 2);
+$max-app-width: calc(#{$minigame-width} * 3);
+
+$tablet-width: calc(#{$tablet-app-width} + 10px);
+$desktop-width: calc(#{$max-app-width} + 10px);
 
 $border-standard: 1px black solid;
 $border-dotted: 1px black dotted;
