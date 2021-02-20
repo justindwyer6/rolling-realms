@@ -66,6 +66,11 @@ input {
   text-align: center;
 }
 
+img {
+  width: 20px;
+  height: 20px;
+}
+
 /* Hide arrow controls from number input */
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
