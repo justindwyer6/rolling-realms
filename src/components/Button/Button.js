@@ -1,13 +1,15 @@
 import React from "react";
 
-const Button = ({ name, imageSrc, onClickFunction }) => {
+const Button = ({ name, imgSrc, onClickFunction }) => {
   return (
     <button
       type="button"
-      className={`${name}-button`}
+      className={`Button ${name
+        .replace(/\s+/g, "-")
+        .toLowerCase()}-button`}
       onClick={onClickFunction}
     >
-      <img src={imageSrc} alt={name} />
+      <img src={imgSrc} alt={name} />
     </button>
   );
 };

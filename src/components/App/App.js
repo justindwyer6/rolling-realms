@@ -1,21 +1,28 @@
 import React, { useState, useEffect } from "react";
-import "./App.scss";
+// Components
 import Minigame from "../Minigame/Minigame";
 import RoundTracker from "../RoundTracker/RoundTracker";
 import Header from "../Header/Header";
+import Button from "../Button/Button";
+import randomizeMinigames from "../../functions/randomizeMinigames";
+import Footer from "../Footer/Footer";
+// Data Models
 import defaultRounds from "../../rounds";
+// Functions
 import {
   setQueryStringValue,
   setRoundsUsingQueryString,
 } from "../../functions/queryString";
-import randomizeMinigames from "../../functions/randomizeMinigames";
-import Footer from "../Footer/Footer";
+// Assets
+import "./App.scss";
+import printIconSrc from "../../images/print.png";
+import linkIconSrc from "../../images/link.png";
 
 const App = () => {
   const [rounds, setRounds] = useState(defaultRounds);
-  const [copyLinkButtonClasses, setCopyLinkButtonClasses] = useState(
-    "circleButton shareIcon",
-  );
+  // const [copyLinkButtonClasses, setCopyLinkButtonClasses] = useState(
+  //   "circleButton shareIcon",
+  // );
 
   // Update rounds state to match query string
   useEffect(() => {
@@ -34,48 +41,43 @@ const App = () => {
   };
 
   const copyLink = () => {
-    navigator.clipboard.writeText(window.location).then(
-      () => {
-        setCopyLinkButtonClasses("circleButton checkIcon");
-        setTimeout(() => {
-          setCopyLinkButtonClasses("circleButton shareIcon");
-        }, 3000);
-      },
-      () => {
-        setCopyLinkButtonClasses("circleButton exIcon");
-        setTimeout(() => {
-          setCopyLinkButtonClasses("circleButton shareIcon");
-        }, 6000);
-      },
-    );
+    console.log("I work!");
+    // navigator.clipboard.writeText(window.location).then(
+    //   () => {
+    //     setCopyLinkButtonClasses("circleButton checkIcon");
+    //     setTimeout(() => {
+    //       setCopyLinkButtonClasses("circleButton shareIcon");
+    //     }, 3000);
+    //   },
+    //   () => {
+    //     setCopyLinkButtonClasses("circleButton exIcon");
+    //     setTimeout(() => {
+    //       setCopyLinkButtonClasses("circleButton shareIcon");
+    //     }, 6000);
+    //   },
+    // );
   };
 
   return (
     <div className="appContainer">
       <Header />
       <div className="subheader">
-        <div className="roundSelectionButtons">
-          <button
-            type="button"
-            className="standardButton"
-            onClick={() => randomizeMinigames(rounds, setRounds)}
-          >
-            Randomize
-          </button>
-          <button
-            type="button"
-            aria-label="Copy Link"
-            title="Copy Link"
-            className={copyLinkButtonClasses}
-            onClick={copyLink}
-          />
-        </div>
         <button
           type="button"
-          aria-label="Print Page"
-          title="Print Page"
-          className="circleButton printIcon"
-          onClick={() => window.print()}
+          className="standardButton"
+          onClick={() => randomizeMinigames(rounds, setRounds)}
+        >
+          Randomize
+        </button>
+        <Button
+          name="Copy layout link"
+          imgSrc={linkIconSrc}
+          onClickFunction={copyLink}
+        />
+        <Button
+          name="Print your game"
+          imgSrc={printIconSrc}
+          onClickFunction={() => window.print()}
         />
       </div>
       {Object.keys(rounds).map((key, i) => {

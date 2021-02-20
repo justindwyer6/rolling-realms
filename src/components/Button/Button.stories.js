@@ -14,5 +14,5 @@ export const Print = Template.bind({});
 Print.args = {
   name: "print",
   imageSrc: printSrc,
-  onClickFunction: () => console.log("hi!"),
+  onClickFunction: () => window.print(),
 };
