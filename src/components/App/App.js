@@ -17,6 +17,7 @@ import {
 import "./App.scss";
 import printIconSrc from "../../images/print.png";
 import linkIconSrc from "../../images/link.png";
+import randomizeIconSrc from "../../images/randomize.png";
 
 const App = () => {
   const [rounds, setRounds] = useState(defaultRounds);
@@ -62,13 +63,15 @@ const App = () => {
     <div className="appContainer">
       <Header />
       <div className="subheader">
-        <button
-          type="button"
-          className="standardButton"
-          onClick={() => randomizeMinigames(rounds, setRounds)}
+        <Button
+          name="standardButton"
+          imgSrc={randomizeIconSrc}
+          onClickFunction={() =>
+            randomizeMinigames(rounds, setRounds)
+          }
         >
           Randomize
-        </button>
+        </Button>
         <Button
           name="Copy layout link"
           imgSrc={linkIconSrc}
