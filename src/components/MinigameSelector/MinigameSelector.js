@@ -26,7 +26,7 @@ const MinigameSelector = ({
       type="button"
       onClick={() => toggleMinigameSelector()}
     >
-      {minigameName}
+      <h2>{minigameName}</h2>
     </button>,
     isMinigameSelectorOpen ? (
       <div className="minigameSelector">
