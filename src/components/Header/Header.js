@@ -15,17 +15,12 @@ const Header = () => {
       <h1 className="title">Rolling Realms</h1>
       <h3 className="attribution">by Jamey Stegmaier</h3>
       <p className="overview">
-        Select 3 realms per round for all players.
+        Select 3 realms per round for all players. On each of 9 turns,
+        roll 2d6 for simultaneous use by all players. Use each die
+        once, each in a different realm—you can’t use the same realm
+        twice on the same turn. <br />
         <br />
-        <br /> On each of 9 turns, roll 2d6 for simultaneous use by
-        all players. Use each die once, each in a different realm--you
-        can’t use the same realm twice on the same turn. Most stars
-        wins.
-        <br />
-        <span className="warning">
-          Warning: Your progress may be lost if you refresh the page
-          or change the order of the rounds.
-        </span>
+        Most stars wins.
       </p>
       <StarTracker round={0} />
       {/* <Rules key="headerRules" /> */}

@@ -2,12 +2,13 @@
 
 .resource {
   display: flex;
+  align-items: center;
+  justify-content: center;
   &.cost > span {
     font-size: 1.2em;
-    font-weight: 600;
     text-shadow: 0.5px 0.5px 1.5px black;
     position: relative;
-    left: 0.5ch;
+    left: 0.25ch;
     color: rgb(200, 25, 25);
   }
   .firstResource {

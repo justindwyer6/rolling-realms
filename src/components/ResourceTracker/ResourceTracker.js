@@ -37,7 +37,7 @@ const ResourceTracker = ({ resourceType }) => {
   return (
     <div className="ResourceTracker">
       <button type="button" onClick={useResource}>
-        -
+        –
       </button>
       <div className="resourceCount">
         {resourcesEarned - resourcesUsed}
