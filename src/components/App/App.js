@@ -13,6 +13,7 @@ import {
   setQueryStringValue,
   setRoundsUsingQueryString,
 } from "../../functions/queryString";
+import copyLink from "../../functions/copyLink";
 // Assets
 import "./App.scss";
 import printIconSrc from "../../images/print.png";
@@ -41,24 +42,6 @@ const App = () => {
     const updatingRoundOrder = { ...rounds };
     updatingRoundOrder[round] = minigame;
     setRounds({ ...updatingRoundOrder });
-  };
-
-  const copyLink = () => {
-    console.log("I work!");
-    // navigator.clipboard.writeText(window.location).then(
-    //   () => {
-    //     setCopyLinkButtonClasses("circleButton checkIcon");
-    //     setTimeout(() => {
-    //       setCopyLinkButtonClasses("circleButton shareIcon");
-    //     }, 3000);
-    //   },
-    //   () => {
-    //     setCopyLinkButtonClasses("circleButton exIcon");
-    //     setTimeout(() => {
-    //       setCopyLinkButtonClasses("circleButton shareIcon");
-    //     }, 6000);
-    //   },
-    // );
   };
 
   return (
