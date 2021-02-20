@@ -64,7 +64,7 @@ const App = () => {
   return (
     <div className="appContainer">
       <Header />
-      <div className="subheader">
+      <div className="utilities">
         <Button
           name="standardButton"
           imgSrc={randomizeIconSrc}
@@ -83,6 +83,16 @@ const App = () => {
           name="Print your game"
           imgSrc={printIconSrc}
           onClickFunction={() => window.print()}
+        />
+        <Button
+          name="Open rules (needs attribution)"
+          imgSrc={rulesIconSrc}
+          onClickFunction={() => console.log("Rules work!")}
+        />
+        <Button
+          name="Roll dice"
+          imgSrc={dieSrc}
+          onClickFunction={() => console.log("Dice work!")}
         />
       </div>
       {Object.keys(rounds).map((key, i) => {
@@ -103,16 +113,6 @@ const App = () => {
           />,
         ];
       })}
-      <Button
-        name="Open rules"
-        imgSrc={rulesIconSrc}
-        onClickFunction={() => console.log("Rules work!")}
-      />
-      <Button
-        name="Roll dice"
-        imgSrc={dieSrc}
-        onClickFunction={() => console.log("Dice work!")}
-      />
       <Footer />
     </div>
   );

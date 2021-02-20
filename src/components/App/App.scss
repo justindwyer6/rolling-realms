@@ -9,7 +9,15 @@
   justify-self: baseline;
   margin: 2em auto;
 
-  .subheader {
+  .utilities {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    background: white;
+    padding: 2px;
   }
 }
 
@@ -18,8 +26,8 @@
     grid-template-columns: repeat(2, 1fr);
     width: $tablet-app-width;
 
-    .subheader {
-      grid-column: 1/2;
+    .utilities {
+      grid-column: span 2;
     }
   }
 }
@@ -28,5 +36,9 @@
   .appContainer {
     grid-template-columns: repeat(3, 1fr);
     width: $max-app-width;
+
+    .utilities {
+      grid-column: span 3;
+    }
   }
 }
