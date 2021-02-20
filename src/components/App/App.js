@@ -4,8 +4,8 @@ import Minigame from "../Minigame/Minigame";
 import RoundTracker from "../RoundTracker/RoundTracker";
 import Header from "../Header/Header";
 import Button from "../Button/Button";
-import randomizeMinigames from "../../functions/randomizeMinigames";
 import Footer from "../Footer/Footer";
+import Rules from "../Rules/Rules";
 // Data Models
 import defaultRounds from "../../rounds";
 // Functions
@@ -13,7 +13,9 @@ import {
   setQueryStringValue,
   setRoundsUsingQueryString,
 } from "../../functions/queryString";
+import randomizeMinigames from "../../functions/randomizeMinigames";
 import copyLink from "../../functions/copyLink";
+import toggleRules from "../../functions/toggleRules";
 // Assets
 import "./App.scss";
 import printIconSrc from "../../images/print.png";
@@ -24,16 +26,12 @@ import dieSrc from "../../images/d6-1.png";
 
 const App = () => {
   const [rounds, setRounds] = useState(defaultRounds);
-  // const [copyLinkButtonClasses, setCopyLinkButtonClasses] = useState(
-  //   "circleButton shareIcon",
-  // );
+  const [rulesOpen, setRulesOpen] = useState(false);
 
-  // Update rounds state to match query string
   useEffect(() => {
     setRoundsUsingQueryString(rounds, setRounds);
   }, []);
 
-  // Update query string to match rounds state
   useEffect(() => {
     setQueryStringValue(rounds);
   }, [rounds]);
@@ -46,6 +44,7 @@ const App = () => {
 
   return (
     <div className="appContainer">
+      <Rules rulesOpen={rulesOpen} />
       <Header />
       <div className="utilities">
         <Button
@@ -70,7 +69,7 @@ const App = () => {
         <Button
           name="Open rules (needs attribution)"
           imgSrc={rulesIconSrc}
-          onClickFunction={() => console.log("Rules work!")}
+          onClickFunction={() => toggleRules(rulesOpen, setRulesOpen)}
         />
         <Button
           name="Roll dice"

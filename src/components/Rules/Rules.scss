@@ -1,0 +1,28 @@
+@import "../../variables";
+
+.Rules {
+  position: fixed;
+  bottom: 2px;
+  z-index: 4;
+  width: $minigame-width;
+  height: $minigame-width;
+  margin: 0 auto;
+  border: $border-thick;
+  border-radius: $border-radius-standard;
+  box-shadow: $shadow-standard;
+  background: white;
+  padding: 5px;
+  overflow: scroll;
+  display: none;
+
+  &.closed {
+    display: none;
+  }
+  &.open {
+    display: block;
+  }
+
+  li {
+    text-align: left;
+  }
+}
