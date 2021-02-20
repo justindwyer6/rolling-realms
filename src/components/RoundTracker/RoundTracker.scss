@@ -19,8 +19,6 @@
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: auto;
   gap: 5px;
-  justify-items: center;
-  align-items: center;
 
   .roundScore {
     grid-column: span 2;
@@ -31,7 +29,7 @@
     // Grid
     display: grid;
     grid-template-columns: 1fr, 1fr;
-    align-items: center;
+
     h3 {
       grid-column: span 2;
       margin: 5px 0px;
@@ -59,15 +57,17 @@
     width: 100%;
 
     display: grid;
+    gap: 2px;
     grid-template-columns: repeat(3, 1fr);
-    align-items: center;
-    justify-content: center;
 
     .turn {
       display: flex;
-      padding: 2px;
+      width: 100%;
+
       input {
+        width: 45%;
         padding: 2px;
+
         &:nth-of-type(1) {
           border-top-left-radius: $border-radius-standard;
           border-bottom-left-radius: $border-radius-standard;
@@ -75,6 +75,7 @@
         &:nth-of-type(2) {
           border-top-right-radius: $border-radius-standard;
           border-bottom-right-radius: $border-radius-standard;
+          border-left: none;
         }
       }
     }

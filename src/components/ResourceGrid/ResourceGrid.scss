@@ -24,6 +24,11 @@
 
     display: grid;
     grid-template-columns: 1fr 1fr;
+    // This fixes an odd bug with global centering
+    justify-items: unset;
+    align-items: unset;
+    align-content: unset;
+    justify-content: unset;
 
     .resourceQuadrant {
       border: $border-dashed;

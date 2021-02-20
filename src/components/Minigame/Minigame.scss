@@ -11,12 +11,9 @@
   z-index: 1;
   box-sizing: border-box;
 
-  // Parent Grid Styles
   display: grid;
   grid-template-columns: repeat(6, 51px);
   grid-template-rows: 30px 70px 181px 25px;
-  justify-items: center;
-  align-items: center;
 
   p {
     grid-column: span 6;
@@ -31,11 +28,6 @@
 
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    align-items: center;
-    justify-items: center;
-    justify-content: center;
-    align-content: center;
-    text-align: center;
   }
 }
 

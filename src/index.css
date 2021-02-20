@@ -13,6 +13,11 @@ html {
 *::before,
 *::after {
   box-sizing: border-box;
+  align-items: center;
+  justify-items: center;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
 }
 
 body {
