@@ -1,54 +1,34 @@
 import React from "react";
 import "./Rules.scss";
-import Resources from "../Resource/Resources";
+import Resource from "../Resource/Resource";
 
 const Rules = ({ rulesOpen }) => {
   return (
     <div className={`Rules ${rulesOpen ? "open" : "closed"}`}>
       <li>
-        <Resources
-          resources={["pumpkin", "pumpkin", "pumpkin"]}
-          isCost
-          classes="inline"
-        />
-        : adjust a die +/- 1
+        <Resource name="pumpkin" isCost classes="inline" />
+        x2: adjust a die +/- 1
       </li>
       <li>
-        <Resources
-          resources={["pumpkin", "pumpkin"]}
-          isCost
-          classes="inline"
-        />
-        : adjust a die +/-1; you may use it in a realm you’ve already
-        used this turn
+        <Resource name="pumpkin" isCost classes="inline" />
+        x3: adjust a die +/-1; you may use it in a realm you’ve
+        already used this turn
       </li>
       <li>
-        <Resources
-          resources={["heart", "heart"]}
-          isCost
-          classes="inline"
-        />
-        : reuse a die if the non-adjusted dice show a pair
+        <Resource name="heart" isCost classes="inline" />
+        x2: reuse a die if the non-adjusted dice show a pair
       </li>
       <li>
-        <Resources
-          resources={["heart", "heart", "heart"]}
-          isCost
-          classes="inline"
-        />
-        : reuse a die
+        <Resource name="heart" isCost classes="inline" />
+        x3: reuse a die
       </li>
       <li>
-        <Resources
-          resources={["coin", "coin"]}
-          isCost
-          classes="inline"
-        />
-        : reuse a die if the non-adjusted dice sum is 7
+        <Resource name="coin" isCost classes="inline" />
+        x2: reuse a die if the non-adjusted dice sum is 7
       </li>
       <li>
-        <Resources resources={["coin"]} isCost classes="inline" />
-        x: gain a die of value X (1-6)
+        <Resource name="coin" isCost classes="inline" />
+        xX: gain a die of value X (1-6)
       </li>
       <hr />
       <li>
