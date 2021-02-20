@@ -18,6 +18,8 @@ import "./App.scss";
 import printIconSrc from "../../images/print.png";
 import linkIconSrc from "../../images/link.png";
 import randomizeIconSrc from "../../images/randomize.png";
+import rulesIconSrc from "../../images/rules.png";
+import dieSrc from "../../images/d6-1.png";
 
 const App = () => {
   const [rounds, setRounds] = useState(defaultRounds);
@@ -101,8 +103,16 @@ const App = () => {
           />,
         ];
       })}
-      {/* <Rules />> */}
-      {/* <DiceRoller />> */}
+      <Button
+        name="Open rules"
+        imgSrc={rulesIconSrc}
+        onClickFunction={() => console.log("Rules work!")}
+      />
+      <Button
+        name="Roll dice"
+        imgSrc={dieSrc}
+        onClickFunction={() => console.log("Dice work!")}
+      />
       <Footer />
     </div>
   );
