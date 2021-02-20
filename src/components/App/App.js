@@ -4,9 +4,11 @@ import Minigame from "../Minigame/Minigame";
 import RoundTracker from "../RoundTracker/RoundTracker";
 import Header from "../Header/Header";
 import defaultRounds from "../../rounds";
-import { setQueryStringValue } from "../../functions/queryString";
-
-const qs = require("query-string");
+import {
+  setQueryStringValue,
+  setRoundsUsingQueryString,
+} from "../../functions/queryString";
+import randomizeMinigames from "../../functions/randomizeMinigames";
 
 const App = () => {
   const [rounds, setRounds] = useState(defaultRounds);
@@ -16,39 +18,7 @@ const App = () => {
 
   // Update rounds state to match query string
   useEffect(() => {
-    const parsedQueryString = qs.parse(window.location.search);
-    Object.keys(parsedQueryString).forEach((key) => {
-      if (
-        Object.keys(parsedQueryString).length !== 9 ||
-        ![
-          "1a",
-          "1b",
-          "1c",
-          "2a",
-          "2b",
-          "2c",
-          "3a",
-          "3b",
-          "3c",
-        ].includes(key) ||
-        ![
-          "Scythe",
-          "Between Two Cities",
-          "Charterstone",
-          "Between Two Castles",
-          "Viticulture",
-          "Euphoria",
-          "Scythe",
-          "Tapestry",
-          "Wingspan",
-        ].includes(parsedQueryString[key])
-      ) {
-        return;
-      }
-      if (parsedQueryString[key] !== rounds[key]) {
-        setRounds({ ...parsedQueryString });
-      }
-    });
+    setRoundsUsingQueryString(rounds, setRounds);
   }, []);
 
   // Update query string to match rounds state
@@ -60,45 +30,6 @@ const App = () => {
     const updatingRoundOrder = { ...rounds };
     updatingRoundOrder[round] = minigame;
     setRounds({ ...updatingRoundOrder });
-  };
-
-  const randomizeMinigames = () => {
-    const allMinigames = [
-      "Scythe",
-      "Between Two Cities",
-      "Charterstone",
-      "Between Two Castles",
-      "Viticulture",
-      "Euphoria",
-      "Scythe",
-      "Tapestry",
-      "Wingspan",
-    ];
-
-    const shuffle = (array) => {
-      let currentIndex = array.length;
-      let temporaryValue;
-      let randomIndex;
-      // While there remain elements to shuffle...
-      while (currentIndex !== 0) {
-        // Pick a remaining element...
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex -= 1;
-        // And swap it with the current element.
-        temporaryValue = array[currentIndex];
-        array[currentIndex] = array[randomIndex]; // eslint-disable-line no-param-reassign
-        array[randomIndex] = temporaryValue; // eslint-disable-line no-param-reassign
-      }
-      return array;
-    };
-
-    const shuffledMinigames = shuffle(allMinigames);
-    const roundsCopy = { ...rounds };
-    // eslint-disable-next-line no-unused-vars
-    Object.entries(roundsCopy).forEach(([key, value], i) => {
-      roundsCopy[key] = shuffledMinigames[i];
-    });
-    setRounds({ ...roundsCopy });
   };
 
   const copyLink = () => {
@@ -126,7 +57,7 @@ const App = () => {
           <button
             type="button"
             className="standardButton"
-            onClick={randomizeMinigames}
+            onClick={() => randomizeMinigames(rounds, setRounds)}
           >
             Randomize
           </button>
