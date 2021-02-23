@@ -4,6 +4,7 @@ import Minigame from "../Minigame/Minigame";
 import RoundTracker from "../RoundTracker/RoundTracker";
 import Header from "../Header/Header";
 import Button from "../Button/Button";
+import DiceRoller from "../DiceRoller/DiceRoller";
 import Footer from "../Footer/Footer";
 import Rules from "../Rules/Rules";
 // Data Models
@@ -22,7 +23,6 @@ import printIconSrc from "../../images/print.png";
 import linkIconSrc from "../../images/link.png";
 import randomizeIconSrc from "../../images/randomize.png";
 import rulesIconSrc from "../../images/rules.png";
-import dieSrc from "../../images/d6-1.png";
 
 const App = () => {
   const [rounds, setRounds] = useState(defaultRounds);
@@ -71,11 +71,7 @@ const App = () => {
           imgSrc={rulesIconSrc}
           onClickFunction={() => toggleRules(rulesOpen, setRulesOpen)}
         />
-        <Button
-          name="Roll dice"
-          imgSrc={dieSrc}
-          onClickFunction={() => console.log("Dice work!")}
-        />
+        <DiceRoller />
       </div>
       {Object.keys(rounds).map((key, i) => {
         // Generate RoundTracker before every third Minigame
