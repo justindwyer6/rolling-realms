@@ -1,11 +1,11 @@
 import React from "react";
-import "./Button.scss";
+import "./IconButton.scss";
 
-const Button = ({ name, imgSrc, onClickFunction }) => {
+const IconButton = ({ name, imgSrc, onClickFunction }) => {
   return (
     <button
       type="button"
-      className={`Button ${name
+      className={`IconButton ${name
         .replace(/\s+/g, "-")
         .toLowerCase()}-button`}
       onClick={onClickFunction}
@@ -15,4 +15,4 @@ const Button = ({ name, imgSrc, onClickFunction }) => {
   );
 };
 
-export default Button;
+export default IconButton;

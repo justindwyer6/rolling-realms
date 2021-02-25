@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import Minigame from "../Minigame/Minigame";
 import RoundTracker from "../RoundTracker/RoundTracker";
 import Header from "../Header/Header";
-import Button from "../Button/Button";
+import IconButton from "../IconButton/IconButton";
 import DiceRoller from "../DiceRoller/DiceRoller";
 import Footer from "../Footer/Footer";
 import Rules from "../Rules/Rules";
@@ -47,7 +47,7 @@ const App = () => {
       <Rules rulesOpen={rulesOpen} setRulesOpen={setRulesOpen} />
       <Header />
       <div className="utilities">
-        <Button
+        <IconButton
           name="standardButton"
           imgSrc={randomizeIconSrc}
           onClickFunction={() =>
@@ -55,18 +55,18 @@ const App = () => {
           }
         >
           Randomize
-        </Button>
-        <Button
+        </IconButton>
+        <IconButton
           name="Copy layout link"
           imgSrc={linkIconSrc}
           onClickFunction={copyLink}
         />
-        <Button
+        <IconButton
           name="Print your game"
           imgSrc={printIconSrc}
           onClickFunction={() => window.print()}
         />
-        <Button
+        <IconButton
           name="Open rules (needs attribution)"
           imgSrc={rulesIconSrc}
           onClickFunction={() => toggleRules(rulesOpen, setRulesOpen)}

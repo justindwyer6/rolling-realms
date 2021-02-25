@@ -11,7 +11,11 @@ const DiceRoller = () => {
   };
 
   return (
-    <button className="DiceRoller" onClick={rollDice} type="button">
+    <button
+      className="DiceRoller Button"
+      onClick={rollDice}
+      type="button"
+    >
       {diceState.map((dieFace) => (
         <img
           className={`dieImage ${dieFace}`}

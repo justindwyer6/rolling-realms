@@ -1,16 +1,16 @@
 import React from "react";
-import Button from "./Button";
+import IconButton from "./IconButton";
 import printIconSrc from "../../images/print.png";
 import linkIconSrc from "../../images/link.png";
 import randomizeIconSrc from "../../images/randomize.png";
 
 export default {
-  title: "Example/Button",
-  component: Button,
+  title: "Example/IconButton",
+  component: IconButton,
   argTypes: {},
 };
 
-const Template = (args) => <Button {...args} />; // eslint-disable-line react/jsx-props-no-spreading
+const Template = (args) => <IconButton {...args} />; // eslint-disable-line react/jsx-props-no-spreading
 
 export const Print = Template.bind({});
 Print.args = {
