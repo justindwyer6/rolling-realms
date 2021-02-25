@@ -20,6 +20,10 @@ html {
   text-align: center;
 }
 
+button:active {
+  opacity: 0.7;
+}
+
 body {
   margin: 0;
   font-family: LeagueGothic, Arial, Helvetica, -apple-system,
