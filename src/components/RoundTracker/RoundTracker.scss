@@ -94,6 +94,6 @@
 @media (min-width: $desktop-width) {
   .RoundTracker {
     grid-column: span 3;
-    margin-top: 25px;
+    margin-top: $round-margin;
   }
 }
