@@ -48,6 +48,11 @@ const App = () => {
       <Header />
       <div className="utilities">
         <IconButton
+          name="Open rules (needs attribution)"
+          imgSrc={rulesIconSrc}
+          onClickFunction={() => toggleRules(rulesOpen, setRulesOpen)}
+        />
+        <IconButton
           name="standardButton"
           imgSrc={randomizeIconSrc}
           onClickFunction={() =>
@@ -65,11 +70,6 @@ const App = () => {
           name="Print your game"
           imgSrc={printIconSrc}
           onClickFunction={() => window.print()}
-        />
-        <IconButton
-          name="Open rules (needs attribution)"
-          imgSrc={rulesIconSrc}
-          onClickFunction={() => toggleRules(rulesOpen, setRulesOpen)}
         />
         <DiceRoller />
       </div>
