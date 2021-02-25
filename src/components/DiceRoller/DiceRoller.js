@@ -12,7 +12,7 @@ const DiceRoller = () => {
 
   return (
     <button
-      className="DiceRoller Button"
+      className="DiceRoller IconButton"
       onClick={rollDice}
       type="button"
     >
