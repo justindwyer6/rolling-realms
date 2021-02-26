@@ -53,18 +53,16 @@ const App = () => {
           onClickFunction={() => toggleRules(rulesOpen, setRulesOpen)}
         />
         <IconButton
+          name="Copy layout link"
+          imgSrc={linkIconSrc}
+          onClickFunction={copyLink}
+        />
+        <IconButton
           name="standardButton"
           imgSrc={randomizeIconSrc}
           onClickFunction={() =>
             randomizeMinigames(rounds, setRounds)
           }
-        >
-          Randomize
-        </IconButton>
-        <IconButton
-          name="Copy layout link"
-          imgSrc={linkIconSrc}
-          onClickFunction={copyLink}
         />
         <IconButton
           name="Print your game"
