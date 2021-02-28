@@ -48,7 +48,7 @@ const App = () => {
       <Header />
       <div className="utilities">
         <IconButton
-          name="Open rules (needs attribution)"
+          name="Open rules"
           imgSrc={rulesIconSrc}
           onClickFunction={() => toggleRules(rulesOpen, setRulesOpen)}
         />
