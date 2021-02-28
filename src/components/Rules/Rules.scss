@@ -7,7 +7,7 @@
   transform: translateX(-50%);
   z-index: 4;
   width: $minigame-width;
-  height: $minigame-width;
+  height: fit-content;
   border: $border-thick;
   border-radius: $border-radius-standard;
   box-shadow: $shadow-standard;

@@ -22,35 +22,6 @@
   .StarTracker {
     border: none;
   }
-
-  .turnTracker {
-    grid-column: span 4;
-    width: 100%;
-
-    display: grid;
-    gap: 2px;
-    grid-template-columns: repeat(3, 1fr);
-
-    .turn {
-      display: flex;
-      width: 100%;
-
-      input {
-        width: 45%;
-        padding: 2px;
-
-        &:nth-of-type(1) {
-          border-top-left-radius: $border-radius-standard;
-          border-bottom-left-radius: $border-radius-standard;
-        }
-        &:nth-of-type(2) {
-          border-top-right-radius: $border-radius-standard;
-          border-bottom-right-radius: $border-radius-standard;
-          border-left: none;
-        }
-      }
-    }
-  }
 }
 
 @media (min-width: $tablet-width), print {
@@ -60,10 +31,6 @@
 
     .StarTracker {
       border: none;
-      grid-column: span 6;
-    }
-
-    .turnTracker {
       grid-column: span 6;
     }
   }
@@ -82,9 +49,6 @@
     margin-top: 0;
     .StarTracker {
       grid-column: span 1;
-    }
-    .turnTracker {
-      grid-column: span 2;
     }
   }
 }

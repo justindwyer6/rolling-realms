@@ -1,0 +1,47 @@
+@import "../../variables";
+
+.TurnTracker {
+  grid-column: span 4;
+  width: 100%;
+  counter-reset: round;
+
+  display: grid;
+  gap: 1px;
+  grid-template-columns: 1fr repeat(3, 3fr);
+
+  span.sideways {
+    grid-row: span 3;
+    transform: rotate(-90deg);
+  }
+
+  .turn {
+    display: flex;
+    width: 100%;
+    &::before {
+      counter-increment: round;
+      content: counter(round);
+      margin-right: 0.5ch;
+    }
+
+    input {
+      width: 2.5ch;
+      padding: 2px;
+      border-radius: $border-radius-standard;
+    }
+  }
+}
+
+@media (min-width: $tablet-width), print {
+  .TurnTracker {
+    grid-column: span 6;
+  }
+}
+
+@media (min-width: $desktop-width), print {
+}
+
+@media print {
+  .TurnTracker {
+    grid-column: span 2;
+  }
+}
