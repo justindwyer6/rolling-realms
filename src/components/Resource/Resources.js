@@ -25,12 +25,7 @@ const star = {
   src: starSrc,
 };
 
-const Resource = ({
-  name,
-  isCost = false,
-  secondName = "",
-  classes = "",
-}) => {
+const Resource = ({ resources, isCost = false, classes = "" }) => {
   const getResource = (resourceName) => {
     if (resourceName === pumpkin.name) {
       return pumpkin;
@@ -47,26 +42,20 @@ const Resource = ({
     throw Error(`Hmmm... ${resourceName} is not a valid resource.`);
   };
 
-  const resource = getResource(name);
-  const secondResource = secondName ? getResource(secondName) : null;
+  const resourceObjects = resources.map((resource) =>
+    getResource(resource),
+  );
 
   return (
     <div className={`resource ${isCost ? "cost" : ""} ${classes}`}>
       {isCost ? <span>–</span> : null}
-      <img
-        src={resource.src}
-        alt={resource.name}
-        className={
-          secondName ? "resourceImage firstResource" : "resourceImage"
-        }
-      />
-      {secondName ? (
+      {resourceObjects.map((resource, i) => (
         <img
-          src={secondResource.src}
-          alt={secondResource.name}
-          className="resourceImage secondResource"
+          src={resource.src}
+          alt={resource.name}
+          className={`resource${i.toString()}`}
         />
-      ) : null}
+      ))}
     </div>
   );
 };

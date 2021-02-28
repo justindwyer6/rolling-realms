@@ -3,13 +3,13 @@
 .RoundTracker {
   grid-column: span 1;
   border-radius: $border-radius-standard;
-  border: $border-standard;
+  border: $border-thick;
   width: $minigame-width;
   height: fit-content;
   overflow-y: scroll;
   position: sticky;
   z-index: 2;
-  top: 0;
+  top: 42px;
   background: white;
   padding: 3px;
   box-shadow: $shadow-standard;
@@ -85,7 +85,6 @@
 @media (min-width: $tablet-width) {
   .RoundTracker {
     width: $minigame-width;
-    height: $minigame-width;
     position: static;
     box-shadow: none;
     border: $border-thick;
@@ -93,4 +92,8 @@
 }
 
 @media (min-width: $desktop-width) {
+  .RoundTracker {
+    grid-column: span 3;
+    margin-top: $round-margin;
+  }
 }

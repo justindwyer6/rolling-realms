@@ -1,28 +1,37 @@
 import React, { useState, useEffect } from "react";
-import "./App.scss";
+// Components
 import Minigame from "../Minigame/Minigame";
 import RoundTracker from "../RoundTracker/RoundTracker";
 import Header from "../Header/Header";
+import IconButton from "../IconButton/IconButton";
+import DiceRoller from "../DiceRoller/DiceRoller";
+import Footer from "../Footer/Footer";
+import Rules from "../Rules/Rules";
+// Data Models
 import defaultRounds from "../../rounds";
+// Functions
 import {
   setQueryStringValue,
   setRoundsUsingQueryString,
 } from "../../functions/queryString";
 import randomizeMinigames from "../../functions/randomizeMinigames";
-import Footer from "../Footer/Footer";
+import copyLink from "../../functions/copyLink";
+import toggleRules from "../../functions/toggleRules";
+// Assets
+import "./App.scss";
+import printIconSrc from "../../images/print.png";
+import linkIconSrc from "../../images/link.png";
+import randomizeIconSrc from "../../images/randomize.png";
+import rulesIconSrc from "../../images/rules.png";
 
 const App = () => {
   const [rounds, setRounds] = useState(defaultRounds);
-  const [copyLinkButtonClasses, setCopyLinkButtonClasses] = useState(
-    "circleButton shareIcon",
-  );
+  const [rulesOpen, setRulesOpen] = useState(false);
 
-  // Update rounds state to match query string
   useEffect(() => {
     setRoundsUsingQueryString(rounds, setRounds);
   }, []);
 
-  // Update query string to match rounds state
   useEffect(() => {
     setQueryStringValue(rounds);
   }, [rounds]);
@@ -33,50 +42,34 @@ const App = () => {
     setRounds({ ...updatingRoundOrder });
   };
 
-  const copyLink = () => {
-    navigator.clipboard.writeText(window.location).then(
-      () => {
-        setCopyLinkButtonClasses("circleButton checkIcon");
-        setTimeout(() => {
-          setCopyLinkButtonClasses("circleButton shareIcon");
-        }, 3000);
-      },
-      () => {
-        setCopyLinkButtonClasses("circleButton exIcon");
-        setTimeout(() => {
-          setCopyLinkButtonClasses("circleButton shareIcon");
-        }, 6000);
-      },
-    );
-  };
-
   return (
     <div className="appContainer">
+      <Rules rulesOpen={rulesOpen} setRulesOpen={setRulesOpen} />
       <Header />
-      <div className="subheader">
-        <div className="roundSelectionButtons">
-          <button
-            type="button"
-            className="standardButton"
-            onClick={() => randomizeMinigames(rounds, setRounds)}
-          >
-            Randomize
-          </button>
-          <button
-            type="button"
-            aria-label="Copy Link"
-            title="Copy Link"
-            className={copyLinkButtonClasses}
-            onClick={copyLink}
-          />
-        </div>
-        <button
-          type="button"
-          aria-label="Print Page"
-          title="Print Page"
-          className="circleButton printIcon"
-          onClick={() => window.print()}
+      <div className="utilities">
+        <IconButton
+          name="Open rules (needs attribution)"
+          imgSrc={rulesIconSrc}
+          onClickFunction={() => toggleRules(rulesOpen, setRulesOpen)}
         />
+        <IconButton
+          name="Copy layout link"
+          imgSrc={linkIconSrc}
+          onClickFunction={copyLink}
+        />
+        <IconButton
+          name="standardButton"
+          imgSrc={randomizeIconSrc}
+          onClickFunction={() =>
+            randomizeMinigames(rounds, setRounds)
+          }
+        />
+        <IconButton
+          name="Print your game"
+          imgSrc={printIconSrc}
+          onClickFunction={() => window.print()}
+        />
+        <DiceRoller />
       </div>
       {Object.keys(rounds).map((key, i) => {
         // Generate RoundTracker before every third Minigame
@@ -96,8 +89,6 @@ const App = () => {
           />,
         ];
       })}
-      {/* <Rules />> */}
-      {/* <DiceRoller />> */}
       <Footer />
     </div>
   );

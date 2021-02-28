@@ -1,0 +1,9 @@
+@import "../../variables";
+
+.IconButton {
+  display: inline-flex;
+  padding: 5px;
+  border: $border-thick;
+  border-radius: $border-radius-circle;
+  background: white;
+}

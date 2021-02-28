@@ -1,0 +1,45 @@
+@import "../../variables";
+
+.Rules {
+  position: fixed;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+  width: $minigame-width;
+  height: $minigame-width;
+  border: $border-thick;
+  border-radius: $border-radius-standard;
+  box-shadow: $shadow-standard;
+  background: white;
+  padding: 5px;
+  overflow: scroll;
+  display: none;
+
+  &.closed {
+    display: none;
+  }
+  &.open {
+    display: block;
+  }
+
+  span {
+    text-align: left;
+  }
+
+  li {
+    text-align: left;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .Rules {
+    left: 1px;
+    transform: none;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .Rules {
+  }
+}

@@ -2,22 +2,45 @@
 
 .resource {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative;
   &.cost > span {
     font-size: 1.2em;
     text-shadow: 0.5px 0.5px 1.5px black;
     position: relative;
-    left: 0.25ch;
+    left: 5px;
+    z-index: 1;
     color: rgb(200, 25, 25);
   }
+
+  &.inline {
+    display: inline-flex;
+  }
+
   .firstResource {
     position: relative;
     left: 5px;
+    filter: drop-shadow(0 0 1px black);
   }
+
   .secondResource {
     position: relative;
     top: 3px;
     right: 5px;
+    filter: drop-shadow(0 0 1px black);
+  }
+
+  .resource0 {
+    position: absolute;
+    filter: drop-shadow(0 0 1px black);
+  }
+  .resource1 {
+    position: absolute;
+    left: 0;
+    filter: drop-shadow(0 0 1px black);
+  }
+  .resource2 {
+    position: absolute;
+    left: 6px;
+    filter: drop-shadow(0 0 1px black);
   }
 }
