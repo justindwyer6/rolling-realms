@@ -13,6 +13,7 @@
     "query-string": "^6.13.7",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-draggable": "^4.4.3",
     "react-scripts": "^4.0.0",
     "sass": "^1.26.3"
   },
@@ -38,11 +39,11 @@
   },
   "devDependencies": {
     "@storybook/addon-actions": "^6.1.10",
-    "@storybook/addon-essentials": "^6.1.10",
+    "@storybook/addon-essentials": "^6.1.20",
     "@storybook/addon-links": "^6.1.10",
     "@storybook/node-logger": "^6.1.10",
     "@storybook/preset-create-react-app": "^3.1.5",
-    "@storybook/react": "^6.1.10",
+    "@storybook/react": "^6.1.20",
     "css-loader": "^5.0.1",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^6.15.0",
