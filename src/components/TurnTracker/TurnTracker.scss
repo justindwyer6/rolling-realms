@@ -38,9 +38,6 @@
 }
 
 @media (min-width: $desktop-width), print {
-}
-
-@media print {
   .TurnTracker {
     grid-column: span 2;
   }

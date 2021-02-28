@@ -37,9 +37,24 @@
   }
 }
 
-@media print {
+@media (min-width: $tablet-width), print {
+  .ResourceTracker {
+    button {
+      &.reset {
+        display: block;
+      }
+    }
+  }
+}
+
+@media (min-width: $desktop-width), print {
   .ResourceTracker {
     grid-column: span 1;
+  }
+}
+
+@media print {
+  .ResourceTracker {
     :not(img) {
       display: none;
     }

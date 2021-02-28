@@ -38,17 +38,17 @@
 
 @media (min-width: $desktop-width), print {
   .RoundTracker {
+    width: 100%;
     grid-column: span 3;
     margin-top: $round-margin;
+    .StarTracker {
+      grid-column: span 1;
+    }
   }
 }
 
 @media print {
   .RoundTracker {
-    width: 100%;
     margin-top: 0;
-    .StarTracker {
-      grid-column: span 1;
-    }
   }
 }
