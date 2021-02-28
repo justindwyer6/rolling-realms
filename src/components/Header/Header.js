@@ -13,7 +13,7 @@ const Header = () => {
         alt="Stonemaier Games Logo"
       />
       <h1 className="title">Rolling Realms</h1>
-      <h3 className="attribution">by Jamey Stegmaier</h3>
+      <h2 className="attribution">by Jamey Stegmaier</h2>
       <p className="overview">
         Select 3 realms per round for all players. On each of 9 turns,
         roll 2d6 for simultaneous use by all players. Use each die
