@@ -2,13 +2,14 @@ import React from "react";
 import "./Wingspan.scss";
 import { times } from "lodash";
 import Resource from "../Resource/Resource";
+import featherSrc from "../../images/feather.png";
 
 const Wingspan = () => {
   const renderBird = (i, wingspanOfBird, resourceList) => {
     return (
       <div key={`bird-${i}`} className="bird">
         <img
-          src="../../images/feather.png"
+          src={featherSrc}
           alt="feather"
           className="featherImage"
         />
