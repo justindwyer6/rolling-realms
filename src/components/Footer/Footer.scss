@@ -30,3 +30,9 @@ footer {
     gap: 0.75em;
   }
 }
+
+@media print {
+  footer {
+    display: none;
+  }
+}

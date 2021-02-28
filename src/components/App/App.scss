@@ -22,7 +22,7 @@
   }
 }
 
-@media (min-width: $tablet-width) {
+@media (min-width: $tablet-width), print {
   .appContainer {
     grid-template-columns: repeat(2, 1fr);
     width: $tablet-app-width;
@@ -33,13 +33,22 @@
   }
 }
 
-@media (min-width: $desktop-width) {
+@media (min-width: $desktop-width), print {
   .appContainer {
     grid-template-columns: repeat(3, 1fr);
     width: $max-app-width;
 
     .utilities {
       grid-column: span 3;
+    }
+  }
+}
+
+@media print {
+  .appContainer {
+    gap: 0;
+    .utilities {
+      display: none;
     }
   }
 }

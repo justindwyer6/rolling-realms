@@ -32,7 +32,7 @@
   }
 }
 
-@media (min-width: $tablet-width) {
+@media (min-width: $tablet-width), print {
   .Header {
     grid-column: span 2;
     width: $tablet-app-width;
@@ -48,8 +48,15 @@
   }
 }
 
-@media (min-width: $desktop-width) {
+@media (min-width: $desktop-width), print {
   .Header {
     grid-column: span 3;
+  }
+}
+
+@media print {
+  .Header {
+    position: fixed;
+    bottom: -200px;
   }
 }
