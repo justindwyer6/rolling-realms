@@ -3,6 +3,7 @@
 .resource {
   display: flex;
   position: relative;
+  filter: drop-shadow(0 0 1px black);
   &.cost > span {
     font-size: 1.2em;
     text-shadow: 0.5px 0.5px 1.5px black;
@@ -19,28 +20,23 @@
   .firstResource {
     position: relative;
     left: 5px;
-    filter: drop-shadow(0 0 1px black);
   }
 
   .secondResource {
     position: relative;
     top: 3px;
     right: 5px;
-    filter: drop-shadow(0 0 1px black);
   }
 
   .resource0 {
     position: absolute;
-    filter: drop-shadow(0 0 1px black);
   }
   .resource1 {
     position: absolute;
     left: 0;
-    filter: drop-shadow(0 0 1px black);
   }
   .resource2 {
     position: absolute;
     left: 6px;
-    filter: drop-shadow(0 0 1px black);
   }
 }
