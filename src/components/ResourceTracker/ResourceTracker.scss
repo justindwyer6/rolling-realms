@@ -1,0 +1,62 @@
+@import "../../variables";
+
+.ResourceTracker {
+  grid-column: span 2;
+  grid-row: span 2;
+
+  padding: 3px;
+  border: none;
+  border-radius: $border-radius-standard;
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  button {
+    padding: 0 5px;
+    border-radius: $border-radius-standard;
+
+    &.use {
+      background: $red;
+    }
+    &.earn {
+      background: $green;
+    }
+    &.reset {
+      background: $gray;
+    }
+  }
+
+  .resourceCount {
+    width: 2.3ch;
+    text-align: center;
+  }
+
+  .earned {
+    grid-column: span 4;
+  }
+}
+
+@media (min-width: $tablet-width), print {
+  .ResourceTracker {
+    button {
+      &.reset {
+        display: block;
+      }
+    }
+  }
+}
+
+@media (min-width: $desktop-width), print {
+  .ResourceTracker {
+    grid-column: span 1;
+  }
+}
+
+@media print {
+  .ResourceTracker {
+    :not(img) {
+      display: none;
+    }
+  }
+}

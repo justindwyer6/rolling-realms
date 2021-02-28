@@ -1,0 +1,41 @@
+@import "../../variables";
+
+.Minigame.Wingspan {
+  .game {
+    gap: 10px;
+    padding: 10px;
+    .bird {
+      position: relative;
+      grid-column: span 2;
+      border: $border-thick;
+      border-radius: $border-radius-standard;
+      padding: 1px;
+
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+
+      .featherImage {
+        grid-column: span 3;
+        width: 60px;
+        height: 60px;
+      }
+
+      span {
+        position: absolute;
+        grid-column: span 3;
+        font-size: 3em;
+        align-self: start;
+      }
+
+      .inputResourceContainer {
+        display: flex;
+        flex-direction: column;
+        width: 1fr;
+        input {
+          border-radius: $border-radius-standard;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+@import "../../variables";
+
+.Minigame.BetweenTwoCities {
+  .game {
+    grid-template-columns: repeat(4, 40px);
+    grid-template-rows: repeat(4, 40px);
+    input {
+      border-radius: $border-radius-standard;
+    }
+  }
+}

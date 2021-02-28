@@ -1,0 +1,15 @@
+.Minigame.MyLittleScythe {
+  .game {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 34px);
+
+    .outerRow {
+      display: grid;
+      grid-template-columns: 20px 40px 40px 60px 40px 40px 20px;
+    }
+    .innerRow {
+      display: grid;
+      grid-template-columns: 40px 40px 40px 40px 20px 40px 40px 40px 40px;
+    }
+  }
+}

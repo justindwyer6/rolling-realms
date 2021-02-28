@@ -1,0 +1,54 @@
+@import "../../variables";
+
+.RoundTracker {
+  grid-column: span 1;
+  border-radius: $border-radius-standard;
+  width: $minigame-width;
+  height: fit-content;
+  overflow-y: scroll;
+  position: sticky;
+  z-index: 2;
+  top: 45px;
+  background: white;
+  padding: 3px;
+  box-shadow: $shadow-standard;
+
+  // Grid
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: auto;
+  gap: 5px;
+
+  .StarTracker {
+    border: none;
+  }
+}
+
+@media (min-width: $tablet-width), print {
+  .RoundTracker {
+    position: static;
+    box-shadow: none;
+
+    .StarTracker {
+      border: none;
+      grid-column: span 6;
+    }
+  }
+}
+
+@media (min-width: $desktop-width), print {
+  .RoundTracker {
+    width: 100%;
+    grid-column: span 3;
+    margin-top: $round-margin;
+    .StarTracker {
+      grid-column: span 1;
+    }
+  }
+}
+
+@media print {
+  .RoundTracker {
+    margin-top: 0;
+  }
+}

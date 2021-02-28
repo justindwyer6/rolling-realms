@@ -1,0 +1,61 @@
+@import "../../variables";
+
+.Minigame.Tapestry {
+  .game {
+    display: grid;
+    grid-template-columns: repeat(3, 45px) 25px 120px;
+    grid-template-rows: 25px repeat(3, 45px);
+
+    .shapeKey {
+      grid-row: span 4;
+
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+
+      .shape {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-areas:
+          "tl tc tr"
+          "cl cc cr"
+          "bl bc br";
+
+        .shapeCell {
+          width: 16px;
+          height: 16px;
+          border: $border-standard;
+          border-radius: $border-radius-standard;
+          background-color: antiquewhite;
+
+          display: flex;
+
+          &.bottomLeft {
+            grid-area: bl;
+          }
+          &.bottomCenter {
+            grid-area: bc;
+          }
+          &.centerLeft {
+            grid-area: cl;
+          }
+          &.centerCenter {
+            grid-area: cc;
+          }
+          &.topLeft {
+            grid-area: tl;
+          }
+          &.bottomRight {
+            grid-area: br;
+          }
+
+          .dieImage {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+}

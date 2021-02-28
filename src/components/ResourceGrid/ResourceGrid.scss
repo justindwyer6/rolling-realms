@@ -1,0 +1,61 @@
+@import "../../variables";
+
+.ResourceGrid {
+  display: grid;
+  grid-template-areas: "ResourceGrid";
+  border: $border-standard;
+  border-radius: $border-radius-standard;
+
+  .resource {
+    grid-area: ResourceGrid;
+    width: 45px;
+    height: 45px;
+
+    .resourceImage {
+      width: 35px;
+      height: 35px;
+    }
+  }
+  .resourceGridOverlay {
+    grid-area: ResourceGrid;
+    width: 45px;
+    height: 45px;
+    z-index: 2;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    // This fixes an odd bug with global centering
+    justify-items: unset;
+    align-items: unset;
+    align-content: unset;
+    justify-content: unset;
+
+    .resourceQuadrant {
+      border: $border-dashed;
+      border-color: lightgray;
+
+      &.topLeft {
+        border-top: none;
+        border-left: none;
+      }
+      &.topRight {
+        border-top: none;
+        border-right: none;
+      }
+      &.bottomLeft {
+        border-bottom: none;
+        border-left: none;
+      }
+      &.bottomRight {
+        border-bottom: none;
+        border-right: none;
+      }
+      &.marked {
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+      &.premarked {
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+    }
+  }
+}

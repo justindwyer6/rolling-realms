@@ -1,0 +1,54 @@
+@import "../../variables";
+
+.appContainer {
+  padding: 5px;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  justify-self: baseline;
+  margin: 2em auto;
+
+  .utilities {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    padding: 5px;
+    background-color: white;
+    border-bottom: $border-thick;
+  }
+}
+
+@media (min-width: $tablet-width), print {
+  .appContainer {
+    grid-template-columns: repeat(2, 1fr);
+    width: $tablet-app-width;
+
+    .utilities {
+      grid-column: span 2;
+    }
+  }
+}
+
+@media (min-width: $desktop-width), print {
+  .appContainer {
+    grid-template-columns: repeat(3, 1fr);
+    width: $max-app-width;
+
+    .utilities {
+      grid-column: span 3;
+    }
+  }
+}
+
+@media print {
+  .appContainer {
+    gap: 0;
+    .utilities {
+      display: none;
+    }
+  }
+}

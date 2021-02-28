@@ -1,0 +1,42 @@
+@import "../../variables";
+
+.resource {
+  display: flex;
+  position: relative;
+  filter: drop-shadow(0 0 1px black);
+  &.cost > span {
+    font-size: 1.2em;
+    text-shadow: 0.5px 0.5px 1.5px black;
+    position: relative;
+    left: 5px;
+    z-index: 1;
+    color: rgb(200, 25, 25);
+  }
+
+  &.inline {
+    display: inline-flex;
+  }
+
+  .firstResource {
+    position: relative;
+    left: 5px;
+  }
+
+  .secondResource {
+    position: relative;
+    top: 3px;
+    right: 5px;
+  }
+
+  .resource0 {
+    position: absolute;
+  }
+  .resource1 {
+    position: absolute;
+    left: 0;
+  }
+  .resource2 {
+    position: absolute;
+    left: 6px;
+  }
+}

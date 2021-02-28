@@ -1,0 +1,40 @@
+@import "../../variables";
+
+.Minigame.Charterstone {
+  span {
+    font-size: 1.75em;
+  }
+
+  .crateInput {
+    height: 75px;
+    overflow: hidden;
+
+    input {
+      border-bottom: none;
+      border-radius: $border-radius-standard;
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
+      width: 25px;
+      height: 25px;
+      position: relative;
+      z-index: 2;
+      top: 10px;
+      background: rgb(255, 255, 255);
+      background: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(255, 255, 255, 1) 10%
+      );
+    }
+    .crate {
+      width: 40px;
+      height: 40px;
+      position: relative;
+      top: -5px;
+    }
+    .resource {
+      position: relative;
+      top: -20px;
+    }
+  }
+}
