@@ -53,7 +53,7 @@
   }
 }
 
-@media (min-width: $tablet-width) {
+@media (min-width: $tablet-width), print {
   .RoundTracker {
     position: static;
     box-shadow: none;
@@ -69,9 +69,22 @@
   }
 }
 
-@media (min-width: $desktop-width) {
+@media (min-width: $desktop-width), print {
   .RoundTracker {
     grid-column: span 3;
     margin-top: $round-margin;
+  }
+}
+
+@media print {
+  .RoundTracker {
+    width: 100%;
+    margin-top: 0;
+    .StarTracker {
+      grid-column: span 1;
+    }
+    .turnTracker {
+      grid-column: span 2;
+    }
   }
 }

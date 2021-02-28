@@ -32,7 +32,7 @@
   }
 }
 
-@media (min-width: $tablet-width) {
+@media (min-width: $tablet-width), print {
   .Rules {
     left: 1px;
     transform: none;
@@ -41,5 +41,24 @@
 
 @media (min-width: $desktop-width) {
   .Rules {
+  }
+}
+
+@media print {
+  .Rules {
+    break-before: always;
+    left: auto;
+    bottom: -500px;
+    width: 100vw;
+    height: fit-content;
+    box-shadow: none;
+    border: none;
+    text-align: left;
+    a {
+      display: none;
+    }
+    &.closed {
+      display: block;
+    }
   }
 }

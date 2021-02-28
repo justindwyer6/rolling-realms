@@ -94,3 +94,9 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
+
+/* Ensure background colors print properly */
+* {
+  color-adjust: exact;
+  -webkit-print-color-adjust: exact;
+}

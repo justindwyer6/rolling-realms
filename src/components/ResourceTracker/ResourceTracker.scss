@@ -36,3 +36,12 @@
     grid-column: span 4;
   }
 }
+
+@media print {
+  .ResourceTracker {
+    grid-column: span 1;
+    :not(img) {
+      display: none;
+    }
+  }
+}
