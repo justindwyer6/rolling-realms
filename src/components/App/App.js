@@ -63,6 +63,7 @@ const App = () => {
           onClickFunction={() =>
             randomizeMinigames(rounds, setRounds)
           }
+          confirmationRequired
         />
         <IconButton
           name="Print your game"
