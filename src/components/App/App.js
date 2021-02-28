@@ -48,7 +48,7 @@ const App = () => {
       <Header />
       <div className="utilities">
         <IconButton
-          name="Open rules (needs attribution)"
+          name="Open rules"
           imgSrc={rulesIconSrc}
           onClickFunction={() => toggleRules(rulesOpen, setRulesOpen)}
         />
@@ -63,6 +63,7 @@ const App = () => {
           onClickFunction={() =>
             randomizeMinigames(rounds, setRounds)
           }
+          confirmationRequired
         />
         <IconButton
           name="Print your game"
