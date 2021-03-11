@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./IconButton.scss";
 import questionMarkIcon from "../../images/question-mark.png";
 
@@ -11,25 +11,25 @@ const IconButton = ({
   const [confirmationRequested, setConfirmationRequested] = useState(
     false,
   );
-  const [
-    timeoutConfirmationRequested,
-    setTimeoutConfirmationRequested,
-  ] = useState(null);
 
-  function confirmAction() {
-    if (confirmationRequested) {
-      onClickFunction();
-      setConfirmationRequested(false);
-      setTimeoutConfirmationRequested(
-        clearTimeout(timeoutConfirmationRequested),
-      );
-    } else {
+  const handleClick = () => {
+    if (confirmationRequired && !confirmationRequested) {
       setConfirmationRequested(true);
-      setTimeoutConfirmationRequested(
-        setTimeout(() => setConfirmationRequested(false), 5000),
-      );
+    } else if (confirmationRequired && confirmationRequested) {
+      setConfirmationRequested(false);
+      onClickFunction();
+    } else {
+      onClickFunction();
     }
-  }
+  };
+
+  useEffect(() => {
+    const confirmationTimeout = setTimeout(
+      () => setConfirmationRequested(false),
+      5000,
+    );
+    return () => clearTimeout(confirmationTimeout);
+  }, [confirmationRequested]);
 
   return (
     <button
@@ -37,7 +37,7 @@ const IconButton = ({
       className={`IconButton ${name
         .replace(/\s+/g, "-")
         .toLowerCase()}-button`}
-      onClick={confirmationRequired ? confirmAction : onClickFunction}
+      onClick={handleClick}
     >
       <img
         src={confirmationRequested ? questionMarkIcon : imgSrc}
