@@ -16,6 +16,18 @@ const ResourceGrid = ({ resource, premarked = "" }) => {
     premarked === "bottomRight" ? "premarked" : "unmarked",
   );
 
+  function handleQuadrantUpdate(
+    quadrantName,
+    quadrantState,
+    setQuadrantState,
+  ) {
+    if (premarked !== quadrantName) {
+      setQuadrantState(
+        quadrantState === "marked" ? "unmarked" : "marked",
+      );
+    }
+  }
+
   const renderQuadrant = (
     quadrantName,
     quadrantState,
@@ -25,11 +37,18 @@ const ResourceGrid = ({ resource, premarked = "" }) => {
       type="button"
       aria-label={`${quadrantState} ${resource} ${quadrantName} quadrant`}
       onClick={() =>
-        premarked === quadrantName
-          ? null
-          : setQuadrantState(
-              quadrantState === "marked" ? "unmarked" : "marked",
-            )
+        handleQuadrantUpdate(
+          quadrantName,
+          quadrantState,
+          setQuadrantState,
+        )
+      }
+      onDragEnter={() =>
+        handleQuadrantUpdate(
+          quadrantName,
+          quadrantState,
+          setQuadrantState,
+        )
       }
       className={`resourceQuadrant ${quadrantName} ${quadrantState}`}
     />

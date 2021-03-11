@@ -1,4 +1,5 @@
 import React from "react";
+import Draggable from "react-draggable";
 import "./Tapestry.scss";
 import ResourceGrid from "../ResourceGrid/ResourceGrid";
 import Resource from "../Resource/Resource";
@@ -53,16 +54,18 @@ const Tapestry = () => {
             <div className="shapeCell topLeft" />
             <div className="shapeCell bottomRight" />
           </div>
-          <div className="shape">
-            <div className="shapeCell bottomLeft">
-              <Die dieFace={6} button={false} />
+          <Draggable>
+            <div className="shape">
+              <div className="shapeCell bottomLeft">
+                <Die dieFace={6} button={false} />
+              </div>
+              <div className="shapeCell bottomCenter" />
+              <div className="shapeCell centerLeft" />
+              <div className="shapeCell centerCenter" />
+              <div className="shapeCell topLeft" />
+              <div className="shapeCell bottomRight" />
             </div>
-            <div className="shapeCell bottomCenter" />
-            <div className="shapeCell centerLeft" />
-            <div className="shapeCell centerCenter" />
-            <div className="shapeCell topLeft" />
-            <div className="shapeCell bottomRight" />
-          </div>
+          </Draggable>
         </div>
         <ResourceGrid resource="pumpkin" premarked="bottomRight" />
         <ResourceGrid resource="heart" />
