@@ -1,6 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./IconButton.scss";
 import questionMarkIcon from "../../images/question-mark.png";
+
+const useConfirmation = () => {
+  const [confirmationRequested, setConfirmationRequested] = useState(
+    false,
+  );
+
+  useEffect(() => {
+    const confirmationTimeout = setTimeout(
+      () => setConfirmationRequested(false),
+      5000,
+    );
+    return () => clearTimeout(confirmationTimeout);
+  }, [confirmationRequested]);
+
+  return [confirmationRequested, setConfirmationRequested];
+};
 
 const IconButton = ({
   name,
@@ -8,28 +24,21 @@ const IconButton = ({
   onClickFunction,
   confirmationRequired = false,
 }) => {
-  const [confirmationRequested, setConfirmationRequested] = useState(
-    false,
-  );
   const [
-    timeoutConfirmationRequested,
-    setTimeoutConfirmationRequested,
-  ] = useState(null);
+    confirmationRequested,
+    setConfirmationRequested,
+  ] = useConfirmation();
 
-  function confirmAction() {
-    if (confirmationRequested) {
-      onClickFunction();
-      setConfirmationRequested(false);
-      setTimeoutConfirmationRequested(
-        clearTimeout(timeoutConfirmationRequested),
-      );
-    } else {
+  const handleClick = () => {
+    if (confirmationRequired && !confirmationRequested) {
       setConfirmationRequested(true);
-      setTimeoutConfirmationRequested(
-        setTimeout(() => setConfirmationRequested(false), 5000),
-      );
+    } else if (confirmationRequired && confirmationRequested) {
+      setConfirmationRequested(false);
+      onClickFunction();
+    } else {
+      onClickFunction();
     }
-  }
+  };
 
   return (
     <button
@@ -37,7 +46,7 @@ const IconButton = ({
       className={`IconButton ${name
         .replace(/\s+/g, "-")
         .toLowerCase()}-button`}
-      onClick={confirmationRequired ? confirmAction : onClickFunction}
+      onClick={handleClick}
     >
       <img
         src={confirmationRequested ? questionMarkIcon : imgSrc}

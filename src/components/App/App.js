@@ -58,7 +58,7 @@ const App = () => {
           onClickFunction={copyLink}
         />
         <IconButton
-          name="standardButton"
+          name="Randomize minigames"
           imgSrc={randomizeIconSrc}
           onClickFunction={() =>
             randomizeMinigames(rounds, setRounds)
