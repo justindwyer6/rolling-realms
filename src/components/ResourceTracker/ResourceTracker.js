@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import useConfirmation from "../../hooks/useConfirmation";
 import "./ResourceTracker.scss";
 import pumpkin from "../../images/pumpkin.png";
 import heart from "../../images/heart.png";
@@ -7,10 +8,10 @@ import coin from "../../images/coin.png";
 const ResourceTracker = ({ resourceType }) => {
   const [resourcesEarned, setResourcesEarned] = useState(0);
   const [resourcesUsed, setResourcesUsed] = useState(0);
-  const [resetRequested, setResetRequested] = useState(false);
-  const [timeoutResetRequested, setTimeoutResetRequested] = useState(
-    null,
-  );
+  const [
+    resetConfirmationRequested,
+    setResetConfirmationRequested,
+  ] = useConfirmation();
 
   let resourceSrc;
   if (resourceType === "pumpkin") {
@@ -38,24 +39,15 @@ const ResourceTracker = ({ resourceType }) => {
     setResourcesUsed(resourcesUsed + 1);
   };
 
-  function confirmResetResources() {
-    function resetResources() {
-      if (resetRequested) {
-        setResourcesEarned(0);
-        setResourcesUsed(0);
-        setResetRequested(false);
-        setTimeoutResetRequested(clearTimeout(timeoutResetRequested));
-      } else {
-        setResetRequested(true);
-        setTimeoutResetRequested(
-          setTimeout(() => setResetRequested(false), 5000),
-        );
-      }
+  const handleReset = () => {
+    if (!resetConfirmationRequested) {
+      setResetConfirmationRequested(true);
+    } else {
+      setResourcesEarned(0);
+      setResourcesUsed(0);
+      setResetConfirmationRequested(false);
     }
-    return resetResources;
-  }
-
-  const resetResourcesClosure = confirmResetResources();
+  };
 
   return (
     <div className="ResourceTracker">
@@ -71,12 +63,8 @@ const ResourceTracker = ({ resourceType }) => {
       </button>
       <div className="earned">
         Earned: {resourcesEarned}{" "}
-        <button
-          type="button"
-          className="reset"
-          onClick={resetResourcesClosure}
-        >
-          reset{resetRequested ? "?" : ""}
+        <button type="button" className="reset" onClick={handleReset}>
+          reset{resetConfirmationRequested ? "?" : ""}
         </button>
       </div>
     </div>

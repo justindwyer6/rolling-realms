@@ -1,23 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./IconButton.scss";
 import questionMarkIcon from "../../images/question-mark.png";
-
-// Move and apply to reward reset button too?
-const useConfirmation = () => {
-  const [confirmationRequested, setConfirmationRequested] = useState(
-    false,
-  );
-
-  useEffect(() => {
-    const confirmationTimeout = setTimeout(
-      () => setConfirmationRequested(false),
-      5000,
-    );
-    return () => clearTimeout(confirmationTimeout);
-  }, [confirmationRequested]);
-
-  return [confirmationRequested, setConfirmationRequested];
-};
+import useConfirmation from "../../hooks/useConfirmation";
 
 const IconButton = ({
   name,
