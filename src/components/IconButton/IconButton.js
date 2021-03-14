@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./IconButton.scss";
 import questionMarkIcon from "../../images/question-mark.png";
 
+// Move and apply to reward reset button too?
 const useConfirmation = () => {
   const [confirmationRequested, setConfirmationRequested] = useState(
     false,

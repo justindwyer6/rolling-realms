@@ -13,10 +13,10 @@ import defaultRounds from "../../rounds";
 import {
   setQueryStringValue,
   setRoundsUsingQueryString,
-} from "../../functions/queryString";
-import randomizeMinigames from "../../functions/randomizeMinigames";
-import copyLink from "../../functions/copyLink";
-import toggleRules from "../../functions/toggleRules";
+} from "../../utilities/queryString";
+import randomizeMinigames from "../../utilities/randomizeMinigames";
+import copyLink from "../../utilities/copyLink";
+import toggleRules from "../../utilities/toggleRules";
 // Assets
 import "./App.scss";
 import printIconSrc from "../../images/print.png";
