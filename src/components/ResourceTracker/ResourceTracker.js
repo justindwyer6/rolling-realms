@@ -9,8 +9,8 @@ const ResourceTracker = ({ resourceType }) => {
   const [resourcesEarned, setResourcesEarned] = useState(0);
   const [resourcesUsed, setResourcesUsed] = useState(0);
   const [
-    confirmationRequested,
-    setConfirmationRequested,
+    resetConfirmationRequested,
+    setResetConfirmationRequested,
   ] = useConfirmation();
 
   let resourceSrc;
@@ -40,12 +40,12 @@ const ResourceTracker = ({ resourceType }) => {
   };
 
   const handleReset = () => {
-    if (!confirmationRequested) {
-      setConfirmationRequested(true);
+    if (!resetConfirmationRequested) {
+      setResetConfirmationRequested(true);
     } else {
       setResourcesEarned(0);
       setResourcesUsed(0);
-      setConfirmationRequested(false);
+      setResetConfirmationRequested(false);
     }
   };
 
@@ -64,7 +64,7 @@ const ResourceTracker = ({ resourceType }) => {
       <div className="earned">
         Earned: {resourcesEarned}{" "}
         <button type="button" className="reset" onClick={handleReset}>
-          reset{confirmationRequested ? "?" : ""}
+          reset{resetConfirmationRequested ? "?" : ""}
         </button>
       </div>
     </div>
