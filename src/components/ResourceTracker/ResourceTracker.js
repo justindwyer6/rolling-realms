@@ -1,9 +1,7 @@
 import React, { useState } from "react";
+import getResource from "../../utilities/getResource";
 import useConfirmation from "../../hooks/useConfirmation";
 import "./ResourceTracker.scss";
-import pumpkin from "../../images/pumpkin.png";
-import heart from "../../images/heart.png";
-import coin from "../../images/coin.png";
 
 const ResourceTracker = ({ resourceType }) => {
   const [resourcesEarned, setResourcesEarned] = useState(0);
@@ -13,17 +11,7 @@ const ResourceTracker = ({ resourceType }) => {
     setResetConfirmationRequested,
   ] = useConfirmation();
 
-  let resourceSrc;
-  if (resourceType === "pumpkin") {
-    resourceSrc = pumpkin;
-  } else if (resourceType === "heart") {
-    resourceSrc = heart;
-  } else if (resourceType === "coin") {
-    resourceSrc = coin;
-  } else {
-    resourceSrc = null;
-    throw Error(`${resourceType} is not a valid type of resource.`);
-  }
+  const resource = getResource(resourceType);
 
   const earnResource = () => {
     setResourcesEarned(resourcesEarned + 1);
@@ -57,7 +45,7 @@ const ResourceTracker = ({ resourceType }) => {
       <div className="resourceCount">
         {resourcesEarned - resourcesUsed}
       </div>
-      <img src={resourceSrc} alt={resourceType} />
+      <img src={resource.src} alt={resource.name} />
       <button type="button" className="earn" onClick={earnResource}>
         +
       </button>
