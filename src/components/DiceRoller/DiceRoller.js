@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./DiceRoller.scss";
-import getDieFace from "../../functions/getDieFace";
-import rollDice from "../../functions/rollDice";
+import getDieFace from "../../utilities/getDieFace";
+import rollDice from "../../utilities/rollDice";
 
 const DiceRoller = () => {
   const [diceState, setDiceState] = useState([

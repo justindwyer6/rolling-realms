@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Die.scss";
 import grapeSrc from "../../images/grape.png";
 import crushedGrapeSrc from "../../images/crushedGrape.png";
-import getDieFace from "../../functions/getDieFace";
+import getDieFace from "../../utilities/getDieFace";
 
 const Die = ({
   dieType = "standard",
