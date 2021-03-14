@@ -6,11 +6,14 @@ const useConfirmation = () => {
   );
 
   useEffect(() => {
-    const confirmationTimeout = setTimeout(
-      () => setConfirmationRequested(false),
-      5000,
-    );
-    return () => clearTimeout(confirmationTimeout);
+    if (confirmationRequested) {
+      const confirmationTimeout = setTimeout(
+        () => setConfirmationRequested(false),
+        5000,
+      );
+      return () => clearTimeout(confirmationTimeout);
+    }
+    return undefined;
   }, [confirmationRequested]);
 
   return [confirmationRequested, setConfirmationRequested];
