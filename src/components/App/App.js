@@ -36,10 +36,13 @@ const App = () => {
     setQueryStringValue(rounds);
   }, [rounds]);
 
-  const updateMinigame = (minigame, round) => {
-    const updatingRoundOrder = { ...rounds };
-    updatingRoundOrder[round] = minigame;
-    setRounds({ ...updatingRoundOrder });
+  const updateMinigame = (minigame, roundId) => {
+    setRounds(
+      rounds.map((round) => {
+        if (round.id !== roundId) return round;
+        return { ...round, minigame };
+      }),
+    );
   };
 
   return (
@@ -84,7 +87,7 @@ const App = () => {
           ) : null,
           <Minigame
             key={`minigame-${round.minigame}`}
-            index={round.id}
+            roundId={round.id}
             minigameName={round.minigame}
             roundNumber={roundNumber}
             updateMinigame={updateMinigame}

@@ -3,7 +3,7 @@ import rounds from "../../models/rounds";
 import "./MinigameSelector.scss";
 
 const MinigameSelector = ({
-  index,
+  roundId,
   minigameName,
   updateMinigame,
 }) => {
@@ -36,7 +36,7 @@ const MinigameSelector = ({
               className="minigameOption"
               key={`${round.minigame}-selector`}
               type="button"
-              onClick={() => updateMinigame(round.minigame, index)}
+              onClick={() => updateMinigame(round.minigame, roundId)}
             >
               {round.minigame}
             </button>
