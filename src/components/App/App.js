@@ -79,7 +79,7 @@ const App = () => {
         const roundNumber = round.id.charAt(0);
         // Generate RoundTracker before every third Minigame
         return [
-          (roundNumber + 1) % 3 === 1 ? (
+          round.id.charAt(1) === "a" ? (
             <RoundTracker
               key={`round-${roundNumber}-tracker`}
               round={roundNumber}
