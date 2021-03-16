@@ -30,15 +30,15 @@ const MinigameSelector = ({
     </button>,
     isMinigameSelectorOpen ? (
       <div className="minigameSelector">
-        {Object.keys(rounds).map((key) => {
+        {rounds.map((round) => {
           return (
             <button
               className="minigameOption"
-              key={`${rounds[key]}-selector`}
+              key={`${round.minigame}-selector`}
               type="button"
-              onClick={() => updateMinigame(rounds[key], index)}
+              onClick={() => updateMinigame(round.minigame, index)}
             >
-              {rounds[key]}
+              {round.minigame}
             </button>
           );
         })}
