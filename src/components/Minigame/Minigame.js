@@ -4,11 +4,17 @@ import MinigameSelector from "../MinigameSelector/MinigameSelector";
 import Star from "../Star/Star";
 import "./Minigame.scss";
 
-const Minigame = ({ roundId, minigame, updateMinigame }) => {
+const Minigame = ({
+  currentRounds,
+  roundId,
+  minigame,
+  updateMinigame,
+}) => {
   const stars = [1, 2, 3, 4, 5, 6];
   return (
     <div className={`Minigame ${minigame.name.replace(/ +/g, "")}`}>
       <MinigameSelector
+        currentRounds={currentRounds}
         roundId={roundId}
         minigame={minigame}
         updateMinigame={updateMinigame}

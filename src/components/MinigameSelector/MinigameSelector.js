@@ -2,7 +2,12 @@ import React, { useState } from "react";
 import defaultRounds from "../../models/rounds";
 import "./MinigameSelector.scss";
 
-const MinigameSelector = ({ roundId, minigame, updateMinigame }) => {
+const MinigameSelector = ({
+  currentRounds,
+  roundId,
+  minigame,
+  updateMinigame,
+}) => {
   const [
     isMinigameSelectorOpen,
     setIsMinigameSelectorOpen,
@@ -16,9 +21,22 @@ const MinigameSelector = ({ roundId, minigame, updateMinigame }) => {
     }
   };
 
+  const checkForDuplicateMinigames = (minigameName) => {
+    const matches = currentRounds.reduce(
+      (accumulator, roundCompare) =>
+        minigameName === roundCompare.minigame.name
+          ? accumulator + 1
+          : accumulator,
+      0,
+    );
+    return matches > 1;
+  };
+
   return [
     <button
-      className="minigameHeader"
+      className={`minigameHeader ${
+        checkForDuplicateMinigames(minigame.name) ? "duplicate" : ""
+      }`}
       type="button"
       onClick={() => toggleMinigameSelector()}
     >
@@ -29,7 +47,11 @@ const MinigameSelector = ({ roundId, minigame, updateMinigame }) => {
         {defaultRounds.map((round) => {
           return (
             <button
-              className="minigameOption"
+              className={`minigameOption  ${
+                checkForDuplicateMinigames(round.minigame.name)
+                  ? "duplicate"
+                  : ""
+              }`}
               key={`${round.minigame.name}-selector`}
               type="button"
               onClick={() => updateMinigame(round.minigame, roundId)}
