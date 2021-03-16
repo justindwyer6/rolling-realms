@@ -29,14 +29,20 @@ const MinigameSelector = ({
           : accumulator,
       0,
     );
-    return matches > 1;
+    if (matches > 1) {
+      return "duplicate";
+    }
+    if (matches === 0) {
+      return "missing";
+    }
+    return "";
   };
 
   return [
     <button
-      className={`minigameHeader ${
-        checkForDuplicateMinigames(minigame.name) ? "duplicate" : ""
-      }`}
+      className={`minigameHeader ${checkForDuplicateMinigames(
+        minigame.name,
+      )}`}
       type="button"
       onClick={() => toggleMinigameSelector()}
     >
@@ -47,11 +53,9 @@ const MinigameSelector = ({
         {defaultRounds.map((round) => {
           return (
             <button
-              className={`minigameOption  ${
-                checkForDuplicateMinigames(round.minigame.name)
-                  ? "duplicate"
-                  : ""
-              }`}
+              className={`minigameOption  ${checkForDuplicateMinigames(
+                round.minigame.name,
+              )}`}
               key={`${round.minigame.name}-selector`}
               type="button"
               onClick={() => updateMinigame(round.minigame, roundId)}
