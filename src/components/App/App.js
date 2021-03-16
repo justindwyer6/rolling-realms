@@ -72,20 +72,21 @@ const App = () => {
         />
         <DiceRoller />
       </div>
-      {Object.keys(rounds).map((key, i) => {
+      {rounds.map((round) => {
+        const roundNumber = round.id.charAt(0);
         // Generate RoundTracker before every third Minigame
         return [
-          (i + 1) % 3 === 1 ? (
+          (round.id + 1) % 3 === 1 ? (
             <RoundTracker
-              key={`round-${key.charAt(0)}-tracker`}
-              round={key.charAt(0)}
+              key={`round-${roundNumber}-tracker`}
+              round={roundNumber}
             />
           ) : null,
           <Minigame
-            key={`minigame-${rounds[key]}`}
-            index={key}
-            minigameName={rounds[key]}
-            roundNumber={key.charAt(0)}
+            key={`minigame-${round.minigame}`}
+            index={round.id}
+            minigameName={round.minigame}
+            roundNumber={roundNumber}
             updateMinigame={updateMinigame}
           />,
         ];
