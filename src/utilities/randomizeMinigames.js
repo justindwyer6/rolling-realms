@@ -1,4 +1,4 @@
-import defaultRounds from "../rounds";
+import defaultRounds from "../models/rounds";
 
 export default function randomizeMinigames(rounds, setRounds) {
   const allMinigames = Object.values(defaultRounds);

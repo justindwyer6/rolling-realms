@@ -8,7 +8,7 @@ import DiceRoller from "../DiceRoller/DiceRoller";
 import Footer from "../Footer/Footer";
 import Rules from "../Rules/Rules";
 // Data Models
-import defaultRounds from "../../rounds";
+import defaultRounds from "../../models/rounds";
 // Functions
 import {
   setQueryStringValue,

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import rounds from "../../rounds";
+import rounds from "../../models/rounds";
 import "./MinigameSelector.scss";
 
 const MinigameSelector = ({
