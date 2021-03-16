@@ -15,7 +15,8 @@
     "react-dom": "^16.13.1",
     "react-draggable": "^4.4.3",
     "react-scripts": "^4.0.0",
-    "sass": "^1.26.3"
+    "sass": "^1.26.3",
+    "shuffle-array": "^1.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
