@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import rounds from "../../models/rounds";
+import defaultRounds from "../../models/rounds";
 import "./MinigameSelector.scss";
 
 const MinigameSelector = ({ roundId, minigame, updateMinigame }) => {
@@ -26,7 +26,7 @@ const MinigameSelector = ({ roundId, minigame, updateMinigame }) => {
     </button>,
     isMinigameSelectorOpen ? (
       <div className="minigameSelector">
-        {rounds.map((round) => {
+        {defaultRounds.map((round) => {
           return (
             <button
               className="minigameOption"
