@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useReducer } from "react";
 // Components
 import Minigame from "../Minigame/Minigame";
 import RoundTracker from "../RoundTracker/RoundTracker";
@@ -24,23 +24,32 @@ import linkIconSrc from "../../images/link.png";
 import randomizeIconSrc from "../../images/randomize.png";
 import rulesIconSrc from "../../images/rules.png";
 
+const roundsReducer = (state, action) => {
+  const updatingRoundOrder = { ...state };
+  updatingRoundOrder[action.round] = action.minigame;
+};
+
 const App = () => {
-  const [rounds, setRounds] = useState(defaultRounds);
+  const [rounds, dispatch] = useReducer(roundsReducer, defaultRounds);
   const [rulesOpen, setRulesOpen] = useState(false);
 
+  const updateMinigame = (minigame, round) => {
+    dispatch({
+      type: "update_state",
+      payload: {
+        minigame,
+        round,
+      },
+    });
+  };
+
   useEffect(() => {
-    setRoundsUsingQueryString(rounds, setRounds);
+    setRoundsUsingQueryString(rounds, updateMinigame);
   }, []);
 
   useEffect(() => {
     setQueryStringValue(rounds);
   }, [rounds]);
-
-  const updateMinigame = (minigame, round) => {
-    const updatingRoundOrder = { ...rounds };
-    updatingRoundOrder[round] = minigame;
-    setRounds({ ...updatingRoundOrder });
-  };
 
   return (
     <div className="appContainer">
@@ -61,7 +70,7 @@ const App = () => {
           name="Randomize minigames"
           imgSrc={randomizeIconSrc}
           onClickFunction={() =>
-            randomizeMinigames(rounds, setRounds)
+            randomizeMinigames(rounds, updateMinigame)
           }
           confirmationRequired
         />
