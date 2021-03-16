@@ -86,9 +86,9 @@ const App = () => {
             />
           ) : null,
           <Minigame
-            key={`minigame-${round.minigame}`}
+            key={`minigame-${round.minigame.name}`}
             roundId={round.id}
-            minigameName={round.minigame}
+            minigame={round.minigame}
             roundNumber={roundNumber}
             updateMinigame={updateMinigame}
           />,

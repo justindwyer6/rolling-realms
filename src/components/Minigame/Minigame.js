@@ -4,16 +4,16 @@ import MinigameSelector from "../MinigameSelector/MinigameSelector";
 import Star from "../Star/Star";
 import "./Minigame.scss";
 
-const Minigame = ({ roundId, minigameName, updateMinigame }) => {
+const Minigame = ({ roundId, minigame, updateMinigame }) => {
   const stars = [1, 2, 3, 4, 5, 6];
   return (
-    <div className={`Minigame ${minigameName.replace(/ +/g, "")}`}>
+    <div className={`Minigame ${minigame.name.replace(/ +/g, "")}`}>
       <MinigameSelector
         roundId={roundId}
-        minigameName={minigameName}
+        minigame={minigame}
         updateMinigame={updateMinigame}
       />
-      <Board minigameName={minigameName} />
+      <Board minigameName={minigame.name} />
       <>
         {stars.map((star) => (
           <Star key={star} index={`${roundId}-star-${star}`} />

@@ -2,11 +2,7 @@ import React, { useState } from "react";
 import rounds from "../../models/rounds";
 import "./MinigameSelector.scss";
 
-const MinigameSelector = ({
-  roundId,
-  minigameName,
-  updateMinigame,
-}) => {
+const MinigameSelector = ({ roundId, minigame, updateMinigame }) => {
   const [
     isMinigameSelectorOpen,
     setIsMinigameSelectorOpen,
@@ -26,7 +22,7 @@ const MinigameSelector = ({
       type="button"
       onClick={() => toggleMinigameSelector()}
     >
-      <h2>{minigameName}</h2>
+      <h2>{minigame.name}</h2>
     </button>,
     isMinigameSelectorOpen ? (
       <div className="minigameSelector">
@@ -34,11 +30,11 @@ const MinigameSelector = ({
           return (
             <button
               className="minigameOption"
-              key={`${round.minigame}-selector`}
+              key={`${round.minigame.name}-selector`}
               type="button"
               onClick={() => updateMinigame(round.minigame, roundId)}
             >
-              {round.minigame}
+              {round.minigame.name}
             </button>
           );
         })}
