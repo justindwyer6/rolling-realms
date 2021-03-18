@@ -18,22 +18,43 @@ export const getQueryStringValue = (
   return values[key];
 };
 
-export const setRoundsUsingQueryString = (rounds, setRounds) => {
+// NEW FUNCTION
+export const setRoundsUsingQueryString = (setRounds) => {
   const parsedQueryString = qs.parse(window.location.search);
-  Object.keys(parsedQueryString).forEach((key) => {
-    if (
-      // Stop function if the querystring doesn't have 9 entries
-      Object.keys(parsedQueryString).length !== 9 ||
-      // Stop function if an invalid key is in the querystring
-      !Object.keys(rounds).includes(key) ||
-      // Stop function if an invalid minigame is in the querystring
-      !Object.values(rounds).includes(parsedQueryString[key])
-    ) {
-      return;
-    }
-    if (parsedQueryString[key] !== rounds[key]) {
-      // This needs to be fixed because parsedQueryString does not have the correct shape with components here
-      setRounds({ ...parsedQueryString });
-    }
+
+  // Short circuit if the querystring doesn't have 9 entries
+  if (Object.keys(parsedQueryString).length !== 9) {
+    return;
+  }
+
+  const newRounds = Object.keys(parsedQueryString).map((key) => {
+    const minigameName = parsedQueryString[key];
+    const thisRound = {};
+
+    // This error logic will need some reworking
+    // if (
+    //   // Stop function if this key is invalid
+    //   !Object.keys(defaultRounds).includes(key) ||
+    //   // Stop function if this minigame is invalid
+    //   !Object.values(defaultRounds).includes(minigameName)
+    // ) {
+    //   return;
+    // }
+
+    thisRound.id = key;
+    thisRound.minigame = {};
+    thisRound.minigame.name = minigameName;
+    thisRound.minigame.state = "getMinigameState(minigameName)";
+    // {
+    //   id: key,
+    //   minigame: {
+    //     name: minigameName,
+    //     state: "getMinigameState(minigameName)",
+    //   },
+    // }
+    console.log(thisRound);
+    return thisRound;
   });
+
+  setRounds(newRounds);
 };

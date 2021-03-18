@@ -11,7 +11,7 @@ import Rules from "../Rules/Rules";
 import defaultRounds from "../../models/rounds";
 // Functions
 import {
-  setQueryStringValue,
+  // setQueryStringValue,
   setRoundsUsingQueryString,
 } from "../../utilities/queryString";
 import randomizeMinigames from "../../utilities/randomizeMinigames";
@@ -29,11 +29,13 @@ const App = () => {
   const [rulesOpen, setRulesOpen] = useState(false);
 
   useEffect(() => {
-    setRoundsUsingQueryString(rounds, setRounds);
+    setRoundsUsingQueryString(setRounds);
+    console.log("setting rounds from qsp");
   }, []);
 
   useEffect(() => {
-    setQueryStringValue(rounds);
+    // setQueryStringValue(rounds);
+    console.log("setting qsp from rounds");
   }, [rounds]);
 
   const updateMinigame = (minigame, roundId) => {
