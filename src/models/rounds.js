@@ -1,42 +1,16 @@
 import Minigame from "./Minigame";
+import Round from "./Round";
 
 const rounds = [
-  {
-    id: "1a",
-    minigame: new Minigame("Scythe"),
-  },
-  {
-    id: "1b",
-    minigame: new Minigame("Between Two Cities"),
-  },
-  {
-    id: "1c",
-    minigame: new Minigame("Charterstone"),
-  },
-  {
-    id: "2a",
-    minigame: new Minigame("Between Two Castles"),
-  },
-  {
-    id: "2b",
-    minigame: new Minigame("Viticulture"),
-  },
-  {
-    id: "2c",
-    minigame: new Minigame("Euphoria"),
-  },
-  {
-    id: "3a",
-    minigame: new Minigame("My Little Scythe"),
-  },
-  {
-    id: "3b",
-    minigame: new Minigame("Tapestry"),
-  },
-  {
-    id: "3c",
-    minigame: new Minigame("Wingspan"),
-  },
+  new Round("1a", new Minigame("Scythe")),
+  new Round("1b", new Minigame("Between Two Cities")),
+  new Round("1c", new Minigame("Charterstone")),
+  new Round("2a", new Minigame("Between Two Castles")),
+  new Round("2b", new Minigame("Viticulture")),
+  new Round("2c", new Minigame("Euphoria")),
+  new Round("3a", new Minigame("My Little Scythe")),
+  new Round("3b", new Minigame("Tapestry")),
+  new Round("3c", new Minigame("Wingspan")),
 ];
 
 export default rounds;
