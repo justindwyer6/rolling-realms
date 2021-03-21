@@ -10,11 +10,10 @@ export const setQueryStringValue = (rounds) => {
     (queryStringAccumulator, round) => {
       return `${queryStringAccumulator}&${round.id}=${round.minigame.name}`;
     },
-    "?",
+    "",
   );
   console.log(roundString);
-  const newQueryStringValue = qs.stringify(rounds);
-  setQueryStringWithoutPageReload(`?${newQueryStringValue}`);
+  setQueryStringWithoutPageReload(roundString);
 };
 
 export const getQueryStringValue = (

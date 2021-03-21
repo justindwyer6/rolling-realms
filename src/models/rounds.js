@@ -1,61 +1,41 @@
-// import scytheState from
-// import betweenTwoCitiesState from
-// import charterstoneState from
-// import betweenTwoCastlesState from
-// import viticultureState from
-// import euphoriaState from
-// import myLittleScytheState from
-// import tapestryState from
-// import wingspanState from
+import Minigame from "./Minigame";
 
 const rounds = [
   {
     id: "1a",
-    minigame: {
-      name: "Scythe",
-      state: "scytheState",
-    },
+    minigame: new Minigame("Scythe"),
   },
   {
     id: "1b",
-    minigame: {
-      name: "Between Two Cities",
-      state: "betweenTwoCitiesState",
-    },
+    minigame: new Minigame("Between Two Cities"),
   },
   {
     id: "1c",
-    minigame: { name: "Charterstone", state: "charterstoneState" },
+    minigame: new Minigame("Charterstone"),
   },
   {
     id: "2a",
-    minigame: {
-      name: "Between Two Castles",
-      state: "betweenTwoCastlesState",
-    },
+    minigame: new Minigame("Between Two Castles"),
   },
   {
     id: "2b",
-    minigame: { name: "Viticulture", state: "viticultureState" },
+    minigame: new Minigame("Viticulture"),
   },
   {
     id: "2c",
-    minigame: { name: "Euphoria", state: "euphoriaState" },
+    minigame: new Minigame("Euphoria"),
   },
   {
     id: "3a",
-    minigame: {
-      name: "My Little Scythe",
-      state: "myLittleScytheState",
-    },
+    minigame: new Minigame("My Little Scythe"),
   },
   {
     id: "3b",
-    minigame: { name: "Tapestry", state: "tapestryState" },
+    minigame: new Minigame("Tapestry"),
   },
   {
     id: "3c",
-    minigame: { name: "Wingspan", state: "wingspanState" },
+    minigame: new Minigame("Wingspan"),
   },
 ];
 
