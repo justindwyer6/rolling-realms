@@ -5,8 +5,15 @@ export const setQueryStringWithoutPageReload = (queryStringValue) => {
   window.history.replaceState(newurl, "", newurl);
 };
 
-export const setQueryStringValue = (key) => {
-  const newQueryStringValue = qs.stringify(key);
+export const setQueryStringValue = (rounds) => {
+  const roundString = rounds.reduce(
+    (queryStringAccumulator, round) => {
+      return `${queryStringAccumulator}&${round.id}=${round.minigame.name}`;
+    },
+    "?",
+  );
+  console.log(roundString);
+  const newQueryStringValue = qs.stringify(rounds);
   setQueryStringWithoutPageReload(`?${newQueryStringValue}`);
 };
 
