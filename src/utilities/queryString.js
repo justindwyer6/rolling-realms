@@ -1,30 +1,21 @@
 import qs from "query-string";
-
-export const setQueryStringWithoutPageReload = (queryStringValue) => {
-  const newurl = `${window.location.protocol}//${window.location.host}${window.location.pathname}${queryStringValue}`;
-  window.history.replaceState(newurl, "", newurl);
-};
+import Round from "../models/Round";
+import Minigame from "../models/Minigame";
 
 export const setQueryStringValue = (rounds) => {
   const roundString = rounds.reduce(
     (queryStringAccumulator, round) => {
-      return `${queryStringAccumulator}&${round.id}=${round.minigame.name}`;
+      return `${queryStringAccumulator}${round.id}=${
+        round.minigame.slug
+      }${round.id === "3c" ? "" : "&"}`;
     },
-    "",
+    "?",
   );
-  console.log(roundString);
-  setQueryStringWithoutPageReload(roundString);
+
+  const newurl = `${window.location.protocol}//${window.location.host}${window.location.pathname}${roundString}`;
+  window.history.replaceState(newurl, "", newurl);
 };
 
-export const getQueryStringValue = (
-  key,
-  queryStringValue = window.location.search,
-) => {
-  const values = qs.parse(queryStringValue);
-  return values[key];
-};
-
-// NEW FUNCTION
 export const setRoundsUsingQueryString = (setRounds) => {
   const parsedQueryString = qs.parse(window.location.search);
 
@@ -34,31 +25,11 @@ export const setRoundsUsingQueryString = (setRounds) => {
   }
 
   const newRounds = Object.keys(parsedQueryString).map((key) => {
-    const minigameName = parsedQueryString[key];
-    const thisRound = {};
-
-    // This error logic will need some reworking
-    // if (
-    //   // Stop function if this key is invalid
-    //   !Object.keys(defaultRounds).includes(key) ||
-    //   // Stop function if this minigame is invalid
-    //   !Object.values(defaultRounds).includes(minigameName)
-    // ) {
-    //   return;
-    // }
-
-    thisRound.id = key;
-    thisRound.minigame = {};
-    thisRound.minigame.name = minigameName;
-    thisRound.minigame.state = "getMinigameState(minigameName)";
-    // {
-    //   id: key,
-    //   minigame: {
-    //     name: minigameName,
-    //     state: "getMinigameState(minigameName)",
-    //   },
-    // }
-    console.log(thisRound);
+    const minigameSlug = parsedQueryString[key];
+    const thisRound = new Round(
+      key,
+      new Minigame(undefined, undefined, minigameSlug),
+    );
     return thisRound;
   });
 
