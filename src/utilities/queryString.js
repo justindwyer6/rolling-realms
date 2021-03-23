@@ -6,12 +6,14 @@ import defaultRounds, {
   roundIds,
 } from "../models/rounds";
 
-const validateQueryString = (queryString) => {
+const isQueryStringValid = (queryString) =>
   Object.keys(queryString).every(
     (key) =>
-      roundIds.includes(key) || roundSlugs.includes(queryString[key]),
+      roundIds.includes(key) &&
+      roundSlugs.includes(queryString[key]) &&
+      queryString[key] != null &&
+      queryString[key] != "",
   );
-};
 
 export const setQueryStringValue = (rounds) => {
   const roundString = rounds.reduce(
@@ -30,10 +32,10 @@ export const setQueryStringValue = (rounds) => {
 export const setRoundsUsingQueryString = (setRounds) => {
   const parsedQueryString = qs.parse(window.location.search);
 
-  // Return default if the querystring isn't invalid
+  // Return default if the querystring is invalid
   if (
     Object.keys(parsedQueryString).length !== 9 ||
-    validateQueryString(parsedQueryString)
+    !isQueryStringValid(parsedQueryString)
   ) {
     setRounds(defaultRounds);
     return;

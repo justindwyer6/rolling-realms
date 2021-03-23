@@ -29,13 +29,13 @@ const App = () => {
   const [rulesOpen, setRulesOpen] = useState(false);
 
   useEffect(() => {
-    setRoundsUsingQueryString(setRounds);
     console.log("setting rounds from qsp");
+    setRoundsUsingQueryString(setRounds);
   }, []);
 
   useEffect(() => {
-    setQueryStringValue(rounds);
     console.log("setting qsp from rounds");
+    setQueryStringValue(rounds);
   }, [rounds]);
 
   const updateMinigame = (minigame, roundId) => {
