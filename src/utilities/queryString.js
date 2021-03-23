@@ -1,6 +1,17 @@
 import qs from "query-string";
 import Round from "../models/Round";
 import Minigame from "../models/Minigame";
+import defaultRounds, {
+  roundSlugs,
+  roundIds,
+} from "../models/rounds";
+
+const validateQueryString = (queryString) => {
+  Object.keys(queryString).every(
+    (key) =>
+      roundIds.includes(key) || roundSlugs.includes(queryString[key]),
+  );
+};
 
 export const setQueryStringValue = (rounds) => {
   const roundString = rounds.reduce(
@@ -19,8 +30,12 @@ export const setQueryStringValue = (rounds) => {
 export const setRoundsUsingQueryString = (setRounds) => {
   const parsedQueryString = qs.parse(window.location.search);
 
-  // Short circuit if the querystring doesn't have 9 entries
-  if (Object.keys(parsedQueryString).length !== 9) {
+  // Return default if the querystring isn't invalid
+  if (
+    Object.keys(parsedQueryString).length !== 9 &&
+    validateQueryString(parsedQueryString)
+  ) {
+    setRounds(defaultRounds);
     return;
   }
 

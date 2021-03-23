@@ -13,4 +13,8 @@ const rounds = [
   new Round("3c", new Minigame("Wingspan")),
 ];
 
-export default rounds;
+const roundSlugs = rounds.map((round) => round.minigame.slug);
+
+const roundIds = rounds.map((round) => round.id);
+
+export { rounds as default, roundSlugs, roundIds };
