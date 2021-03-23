@@ -32,7 +32,7 @@ export const setRoundsUsingQueryString = (setRounds) => {
 
   // Return default if the querystring isn't invalid
   if (
-    Object.keys(parsedQueryString).length !== 9 &&
+    Object.keys(parsedQueryString).length !== 9 ||
     validateQueryString(parsedQueryString)
   ) {
     setRounds(defaultRounds);
