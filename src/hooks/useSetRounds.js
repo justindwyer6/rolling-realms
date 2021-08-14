@@ -1,17 +1,21 @@
-import { useState, useEffect } from "react";
-import { shuffle } from "lodash";
+import { useEffect, useState } from "react";
+import { shuffle, take } from "lodash";
 import defaultRounds from "../rounds";
-
 // Utilities
 import {
   setQueryStringValue,
   setRoundsUsingQueryString,
 } from "../utilities/queryString";
 
-const useSetRounds = () => {
-  const [rounds, setRounds] = useState(shuffle(defaultRounds));
+const REALMS = 9;
 
-  const randomizeMinigames = () => setRounds(shuffle(defaultRounds));
+const getRealms = (realms = REALMS) =>
+  take(shuffle(defaultRounds), realms);
+
+const useSetRounds = () => {
+  const [rounds, setRounds] = useState(getRealms());
+
+  const randomizeMinigames = () => setRounds(getRealms());
 
   useEffect(() => {
     setRoundsUsingQueryString(rounds, setRounds);
