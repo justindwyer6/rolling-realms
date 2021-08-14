@@ -11,6 +11,5 @@ const Template = (args) => <MinigameSelector {...args} />; // eslint-disable-lin
 
 export const Scythe = Template.bind({});
 Scythe.args = {
-  index: "1a",
   minigameName: "Scythe",
 };
