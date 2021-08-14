@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 // Components
 import Minigame from "../Minigame/Minigame";
 import RoundTracker from "../RoundTracker/RoundTracker";
@@ -7,16 +7,10 @@ import IconButton from "../IconButton/IconButton";
 import DiceRoller from "../DiceRoller/DiceRoller";
 import Footer from "../Footer/Footer";
 import Rules from "../Rules/Rules";
-// Data Models
-import defaultRounds from "../../rounds";
-// Functions
-import {
-  setQueryStringValue,
-  setRoundsUsingQueryString,
-} from "../../utilities/queryString";
-import randomizeMinigames from "../../utilities/randomizeMinigames";
+// Utilities
 import copyLink from "../../utilities/copyLink";
 import toggleRules from "../../utilities/toggleRules";
+import useSetRounds from "../../hooks/useSetRounds";
 // Assets
 import "./App.scss";
 import printIconSrc from "../../images/print.png";
@@ -25,22 +19,13 @@ import randomizeIconSrc from "../../images/randomize.png";
 import rulesIconSrc from "../../images/rules.png";
 
 const App = () => {
-  const [rounds, setRounds] = useState(defaultRounds);
+  const {
+    updateGameOrder,
+    randomizeMinigames,
+    rounds,
+    setRounds,
+  } = useSetRounds();
   const [rulesOpen, setRulesOpen] = useState(false);
-
-  useEffect(() => {
-    setRoundsUsingQueryString(rounds, setRounds);
-  }, []);
-
-  useEffect(() => {
-    setQueryStringValue(rounds);
-  }, [rounds]);
-
-  const updateMinigame = (minigame, round) => {
-    const updatingRoundOrder = { ...rounds };
-    updatingRoundOrder[round] = minigame;
-    setRounds({ ...updatingRoundOrder });
-  };
 
   return (
     <div className="appContainer">
@@ -86,7 +71,7 @@ const App = () => {
             index={key}
             minigameName={rounds[key]}
             roundNumber={key.charAt(0)}
-            updateMinigame={updateMinigame}
+            updateMinigame={updateGameOrder}
           />,
         ];
       })}
