@@ -8,6 +8,7 @@ import Scythe from "./Scythe/Scythe";
 import Tapestry from "./Tapestry/Tapestry";
 import Viticulture from "./Viticulture/Viticulture";
 import Wingspan from "./Wingspan/Wingspan";
+import Pendulum from "./Pendulum/Pendulum";
 
 const Board = ({ minigameName }) => {
   if (minigameName === "Between Two Castles") {
@@ -36,6 +37,9 @@ const Board = ({ minigameName }) => {
   }
   if (minigameName === "Wingspan") {
     return <Wingspan />;
+  }
+  if (minigameName === "Pendulum") {
+    return <Pendulum />;
   }
   throw Error(`Hmmm... ${minigameName} is not a valid minigame.`);
 };

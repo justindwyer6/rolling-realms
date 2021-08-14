@@ -8,6 +8,7 @@ const rounds = [
   "My Little Scythe",
   "Tapestry",
   "Wingspan",
+  "Pendulum",
 ];
 
 export default rounds;
