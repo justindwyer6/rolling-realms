@@ -9,8 +9,9 @@ const MyLittleScythe = () => {
     <>
       <p>
         Mark a hex and gain a pumpkin or heart. Gain a coin when you
-        complete a matching pair (ie 1 & 1). Gain 2 stars each time
-        you earn 6th resource of each type (pumpkins, hearts, stars).
+        complete a matching pair (i.e. 1 & 1). Gain 2 stars each time
+        you earn the 6th resource of each type (pumpkins, hearts,
+        stars).
       </p>
       <div className="game">
         <div className="outerRow">
