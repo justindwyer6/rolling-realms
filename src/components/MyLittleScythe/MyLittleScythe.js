@@ -8,15 +8,15 @@ const MyLittleScythe = () => {
   return (
     <>
       <p>
-        Mark a hex and gain a pumpkin or heart. Gain 1 star if you’ve
-        earned (A) 7+ pumpkins, (B) 7+ hearts, and (C) per pair of
-        matching #s between the areas.
+        Mark a hex and gain a pumpkin or heart. Gain a coin when you
+        complete a matching pair (i.e. 1 & 1). Gain 2 stars each time
+        you earn the 6th resource of each type (pumpkins, hearts,
+        stars).
       </p>
       <div className="game">
         <div className="outerRow">
           <b />
           <Hexagon innerComponent={<Die dieFace={6} />} />
-
           <Hexagon innerComponent={<Die dieFace={1} />} />
           <b />
           <Hexagon innerComponent={<Die dieFace={6} />} />
