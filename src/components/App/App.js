@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 // Components
 import Minigame from "../Minigame/Minigame";
 import RoundTracker from "../RoundTracker/RoundTracker";
@@ -9,14 +10,19 @@ import Footer from "../Footer/Footer";
 import Rules from "../Rules/Rules";
 // Utilities
 import copyLink from "../../utilities/copyLink";
-import toggleRules from "../../utilities/toggleRules";
 import useSetRounds from "../../hooks/useSetRounds";
+import { toggleRules } from "../../reducers/app";
 // Assets
 import "./App.scss";
 import printIconSrc from "../../images/print.png";
 import linkIconSrc from "../../images/link.png";
 import randomizeIconSrc from "../../images/randomize.png";
 import rulesIconSrc from "../../images/rules.png";
+
+const useToggleRules = () => {
+  const dispatch = useDispatch();
+  return () => dispatch(toggleRules());
+};
 
 const App = () => {
   const {
@@ -25,17 +31,18 @@ const App = () => {
     rounds,
     setRounds,
   } = useSetRounds();
-  const [rulesOpen, setRulesOpen] = useState(false);
+  const toggle = useToggleRules();
+  const areRulesOpen = useSelector((state) => state.app.areRulesOpen);
 
   return (
     <div className="appContainer">
-      <Rules rulesOpen={rulesOpen} setRulesOpen={setRulesOpen} />
+      <Rules rulesOpen={areRulesOpen} setRulesOpen={toggle} />
       <Header />
       <div className="utilities">
         <IconButton
           name="Open rules"
           imgSrc={rulesIconSrc}
-          onClickFunction={() => toggleRules(rulesOpen, setRulesOpen)}
+          onClickFunction={() => toggle()}
         />
         <IconButton
           name="Copy layout link"
