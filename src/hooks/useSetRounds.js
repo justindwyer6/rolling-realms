@@ -15,7 +15,7 @@ const getRealms = (realms = REALMS) =>
 const useSetRounds = () => {
   const [rounds, setRounds] = useState(getRealms());
 
-  const randomizeMinigames = () => setRounds(getRealms());
+  const randomizeRealms = () => setRounds(getRealms());
 
   useEffect(() => {
     setRoundsUsingQueryString(rounds, setRounds);
@@ -31,7 +31,7 @@ const useSetRounds = () => {
     setRounds({ ...updatingRoundOrder });
   };
 
-  return { updateGameOrder, randomizeMinigames, rounds, setRounds };
+  return { updateGameOrder, randomizeRealms, rounds, setRounds };
 };
 
 export default useSetRounds;

@@ -4,9 +4,9 @@ import "./index.css";
 import { Provider } from "react-redux";
 import App from "./components/App/App";
 import ErrorBoundary from "./components/ErrorBoundary";
-import createStore from "./reducers";
+import createStoreBlah from "./reducers";
 
-const store = createStore();
+const store = createStoreBlah();
 
 ReactDOM.render(
   <React.StrictMode>

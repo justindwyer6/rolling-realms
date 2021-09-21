@@ -1,5 +1,5 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 // Components
 import Minigame from "../Minigame/Minigame";
 import RoundTracker from "../RoundTracker/RoundTracker";
@@ -11,7 +11,8 @@ import Rules from "../Rules/Rules";
 // Utilities
 import copyLink from "../../utilities/copyLink";
 import useSetRounds from "../../hooks/useSetRounds";
-import { toggleRules } from "../../reducers/app";
+import useAreRulesOpen from "../../hooks/useAreRulesOpen";
+import { actionCreators } from "../../reducers/app";
 // Assets
 import "./App.scss";
 import printIconSrc from "../../images/print.png";
@@ -21,28 +22,32 @@ import rulesIconSrc from "../../images/rules.png";
 
 const useToggleRules = () => {
   const dispatch = useDispatch();
-  return () => dispatch(toggleRules());
+  return () => dispatch(actionCreators.toggleRules());
 };
 
 const App = () => {
   const {
     updateGameOrder,
-    randomizeMinigames,
+    randomizeRealms,
     rounds,
     setRounds,
   } = useSetRounds();
-  const toggle = useToggleRules();
-  const areRulesOpen = useSelector((state) => state.app.areRulesOpen);
+  const toggleRules = useToggleRules();
+  const areRulesOpen = useAreRulesOpen();
+  console.log(
+    "🚀 ~ file: App.js ~ line 37 ~ App ~ areRulesOpen",
+    useAreRulesOpen(),
+  );
 
   return (
     <div className="appContainer">
-      <Rules rulesOpen={areRulesOpen} setRulesOpen={toggle} />
+      <Rules rulesOpen={areRulesOpen} setRulesOpen={toggleRules} />
       <Header />
       <div className="utilities">
         <IconButton
           name="Open rules"
           imgSrc={rulesIconSrc}
-          onClickFunction={() => toggle()}
+          onClickFunction={() => toggleRules()}
         />
         <IconButton
           name="Copy layout link"
@@ -52,9 +57,7 @@ const App = () => {
         <IconButton
           name="Randomize minigames"
           imgSrc={randomizeIconSrc}
-          onClickFunction={() =>
-            randomizeMinigames(rounds, setRounds)
-          }
+          onClickFunction={() => randomizeRealms(rounds, setRounds)}
           confirmationRequired
         />
         <IconButton
