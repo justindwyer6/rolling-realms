@@ -65,18 +65,19 @@ const App = () => {
       </div>
       {Object.keys(realms).map((key, i) => {
         // Generate RoundTracker before every third Minigame
+        const roundNumber = key / 3 + 1;
         return [
           (i + 1) % 3 === 1 ? (
             <RoundTracker
-              key={`round-${key.charAt(0)}-tracker`}
-              round={key.charAt(0)}
+              key={`round-${roundNumber}-tracker`}
+              round={roundNumber}
             />
           ) : null,
           <Minigame
             key={`minigame-${realms[key]}`}
             index={key}
             minigameName={realms[key]}
-            roundNumber={key.charAt(0)}
+            roundNumber={roundNumber}
             updateMinigame={updateGameOrder}
           />,
         ];
