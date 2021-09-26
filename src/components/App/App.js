@@ -34,10 +34,6 @@ const App = () => {
   } = useSetRounds();
   const toggleRules = useToggleRules();
   const areRulesOpen = useAreRulesOpen();
-  console.log(
-    "🚀 ~ file: App.js ~ line 37 ~ App ~ areRulesOpen",
-    useAreRulesOpen(),
-  );
 
   return (
     <div className="appContainer">
