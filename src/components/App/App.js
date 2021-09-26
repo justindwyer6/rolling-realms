@@ -12,7 +12,7 @@ import Rules from "../Rules/Rules";
 import copyLink from "../../utilities/copyLink";
 import useSetRounds from "../../hooks/useSetRounds";
 import useAreRulesOpen from "../../hooks/useAreRulesOpen";
-import { actionCreators } from "../../reducers/app";
+import actionCreators from "../../reducers/actionCreators";
 // Assets
 import "./App.scss";
 import printIconSrc from "../../images/print.png";
