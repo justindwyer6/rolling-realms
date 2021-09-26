@@ -1,21 +1,21 @@
-import { useEffect, useState } from "react";
-import { shuffle, take } from "lodash";
-import defaultRounds from "../rounds";
-// Utilities
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import {
   setQueryStringValue,
   setRoundsUsingQueryString,
 } from "../utilities/queryString";
-
-const REALMS = 9;
-
-const getRealms = (realms = REALMS) =>
-  take(shuffle(defaultRounds), realms);
+// import getInitialRealms from "../utilities/getInitialRealms";
+import actionCreators from "../reducers/actionCreators";
 
 const useSetRounds = () => {
-  const [rounds, setRounds] = useState(getRealms());
+  const dispatch = useDispatch();
 
-  const randomizeRealms = () => setRounds(getRealms());
+  const rounds = useSelector((state) => state.app.rounds);
+  const setRounds = (payload) =>
+    dispatch(actionCreators.setRealms(payload));
+
+  const randomizeRealms = () =>
+    dispatch(actionCreators.randomizeRealms());
 
   useEffect(() => {
     setRoundsUsingQueryString(rounds, setRounds);

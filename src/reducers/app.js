@@ -12,6 +12,9 @@ const app = (state = initialAppState, action = {}) => {
     case actions.TOGGLE_RULES:
       return { ...state, areRulesOpen: !state.areRulesOpen };
 
+    case actions.SET_REALMS:
+      return { ...state, rounds: action.payload };
+
     case actions.RANDOMIZE_REALMS:
       return randomizeRealms(state);
 
