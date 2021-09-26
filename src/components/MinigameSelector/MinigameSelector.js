@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import rounds from "../../rounds";
+import realms from "../../realms";
 import "./MinigameSelector.scss";
 
 const MinigameSelector = ({
@@ -30,15 +30,15 @@ const MinigameSelector = ({
     </button>,
     isMinigameSelectorOpen ? (
       <div className="minigameSelector">
-        {Object.keys(rounds).map((key) => {
+        {Object.keys(realms).map((key) => {
           return (
             <button
               className="minigameOption"
-              key={`${rounds[key]}-selector`}
+              key={`${realms[key]}-selector`}
               type="button"
-              onClick={() => updateMinigame(rounds[key], index)}
+              onClick={() => updateMinigame(realms[key], index)}
             >
-              {rounds[key]}
+              {realms[key]}
             </button>
           );
         })}

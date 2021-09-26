@@ -10,7 +10,7 @@ import Footer from "../Footer/Footer";
 import Rules from "../Rules/Rules";
 // Utilities
 import copyLink from "../../utilities/copyLink";
-import useSetRounds from "../../hooks/useSetRounds";
+import useSetRealms from "../../hooks/useSetRealms";
 import useAreRulesOpen from "../../hooks/useAreRulesOpen";
 import actionCreators from "../../reducers/actionCreators";
 // Assets
@@ -29,9 +29,9 @@ const App = () => {
   const {
     updateGameOrder,
     randomizeRealms,
-    rounds,
-    setRounds,
-  } = useSetRounds();
+    realms,
+    setRealms,
+  } = useSetRealms();
   const toggleRules = useToggleRules();
   const areRulesOpen = useAreRulesOpen();
 
@@ -53,7 +53,7 @@ const App = () => {
         <IconButton
           name="Randomize minigames"
           imgSrc={randomizeIconSrc}
-          onClickFunction={() => randomizeRealms(rounds, setRounds)}
+          onClickFunction={() => randomizeRealms(realms, setRealms)}
           confirmationRequired
         />
         <IconButton
@@ -63,7 +63,7 @@ const App = () => {
         />
         <DiceRoller />
       </div>
-      {Object.keys(rounds).map((key, i) => {
+      {Object.keys(realms).map((key, i) => {
         // Generate RoundTracker before every third Minigame
         return [
           (i + 1) % 3 === 1 ? (
@@ -73,9 +73,9 @@ const App = () => {
             />
           ) : null,
           <Minigame
-            key={`minigame-${rounds[key]}`}
+            key={`minigame-${realms[key]}`}
             index={key}
-            minigameName={rounds[key]}
+            minigameName={realms[key]}
             roundNumber={key.charAt(0)}
             updateMinigame={updateGameOrder}
           />,

@@ -4,7 +4,7 @@ import actions from "./actions";
 
 const initialAppState = {
   areRulesOpen: false,
-  rounds: getInitialRealms(),
+  realms: getInitialRealms(),
 };
 
 const app = (state = initialAppState, action = {}) => {
@@ -13,7 +13,7 @@ const app = (state = initialAppState, action = {}) => {
       return { ...state, areRulesOpen: !state.areRulesOpen };
 
     case actions.SET_REALMS:
-      return { ...state, rounds: action.payload };
+      return { ...state, realms: action.payload };
 
     case actions.RANDOMIZE_REALMS:
       return randomizeRealms(state);

@@ -18,22 +18,22 @@ export const getQueryStringValue = (
   return values[key];
 };
 
-export const setRoundsUsingQueryString = (rounds, setRounds) => {
+export const setRealmsUsingQueryString = (realms, setRealms) => {
   const parsedQueryString = qs.parse(window.location.search);
   Object.keys(parsedQueryString).forEach((key) => {
     if (
       // Stop function if the querystring doesn't have 9 entries
       Object.keys(parsedQueryString).length !== 9 ||
       // Stop function if an invalid key is in the querystring
-      !Object.keys(rounds).includes(key) ||
+      !Object.keys(realms).includes(key) ||
       // Stop function if an invalid minigame is in the querystring
-      !Object.values(rounds).includes(parsedQueryString[key])
+      !Object.values(realms).includes(parsedQueryString[key])
     ) {
       return;
     }
-    if (parsedQueryString[key] !== rounds[key]) {
+    if (parsedQueryString[key] !== realms[key]) {
       // This needs to be fixed because parsedQueryString does not have the correct shape with components here
-      setRounds({ ...parsedQueryString });
+      setRealms({ ...parsedQueryString });
     }
   });
 };

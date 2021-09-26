@@ -1,4 +1,4 @@
-const rounds = [
+const realms = [
   "Scythe",
   "Between Two Cities",
   "Charterstone",
@@ -10,4 +10,4 @@ const rounds = [
   "Wingspan",
 ];
 
-export default rounds;
+export default realms;

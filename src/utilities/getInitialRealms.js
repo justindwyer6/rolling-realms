@@ -1,7 +1,7 @@
 import { take } from "lodash";
-import defaultRounds from "../rounds";
+import defaultRealms from "../realms";
 
 const NUM_OF_REALMS = 9;
 
 export default (numOfRealms = NUM_OF_REALMS) =>
-  take(defaultRounds, numOfRealms);
+  take(defaultRealms, numOfRealms);

@@ -2,36 +2,36 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   setQueryStringValue,
-  setRoundsUsingQueryString,
+  setRealmsUsingQueryString,
 } from "../utilities/queryString";
 // import getInitialRealms from "../utilities/getInitialRealms";
 import actionCreators from "../reducers/actionCreators";
 
-const useSetRounds = () => {
+const useSetRealms = () => {
   const dispatch = useDispatch();
 
-  const rounds = useSelector((state) => state.app.rounds);
-  const setRounds = (payload) =>
+  const realms = useSelector((state) => state.app.realms);
+  const setRealms = (payload) =>
     dispatch(actionCreators.setRealms(payload));
 
   const randomizeRealms = () =>
     dispatch(actionCreators.randomizeRealms());
 
   useEffect(() => {
-    setRoundsUsingQueryString(rounds, setRounds);
+    setRealmsUsingQueryString(realms, setRealms);
   }, []);
 
   useEffect(() => {
-    setQueryStringValue(rounds);
-  }, [rounds]);
+    setQueryStringValue(realms);
+  }, [realms]);
 
   const updateGameOrder = (minigame, round) => {
-    const updatingRoundOrder = { ...rounds };
+    const updatingRoundOrder = { ...realms };
     updatingRoundOrder[round] = minigame;
-    setRounds({ ...updatingRoundOrder });
+    setRealms({ ...updatingRoundOrder });
   };
 
-  return { updateGameOrder, randomizeRealms, rounds, setRounds };
+  return { updateGameOrder, randomizeRealms, realms, setRealms };
 };
 
-export default useSetRounds;
+export default useSetRealms;
