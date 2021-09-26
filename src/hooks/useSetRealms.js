@@ -4,7 +4,6 @@ import {
   setQueryStringValue,
   setRealmsUsingQueryString,
 } from "../utilities/queryString";
-// import getInitialRealms from "../utilities/getInitialRealms";
 import actionCreators from "../reducers/actionCreators";
 
 const useSetRealms = () => {

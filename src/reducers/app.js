@@ -1,5 +1,5 @@
+import shuffle from "lodash";
 import getInitialRealms from "../utilities/getInitialRealms";
-import randomizeRealms from "../utilities/randomizeRealms";
 import actions from "./actions";
 
 const initialAppState = {
@@ -16,7 +16,7 @@ const app = (state = initialAppState, action = {}) => {
       return { ...state, realms: action.payload };
 
     case actions.RANDOMIZE_REALMS:
-      return randomizeRealms(state);
+      return { ...state, realms: shuffle(getInitialRealms()) };
 
     default:
       return state;
