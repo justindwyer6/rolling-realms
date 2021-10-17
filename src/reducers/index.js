@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import { combineReducers, createStore } from "redux";
 
 import app from "./app";
@@ -7,9 +8,7 @@ export default () => {
     combineReducers({
       app,
     }),
-    // eslint-disable-next-line no-underscore-dangle
     window.__REDUX_DEVTOOLS_EXTENSION__ &&
-      // eslint-disable-next-line no-underscore-dangle
       window.__REDUX_DEVTOOLS_EXTENSION__(),
   );
 

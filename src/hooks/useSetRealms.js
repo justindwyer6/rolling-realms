@@ -4,7 +4,7 @@ import {
   setQueryStringValue,
   setRealmsUsingQueryString,
 } from "../utilities/queryString";
-import actionCreators from "../reducers/actionCreators";
+import { actionCreators } from "../reducers/app";
 
 const useSetRealms = () => {
   const dispatch = useDispatch();

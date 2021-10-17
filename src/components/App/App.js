@@ -12,7 +12,7 @@ import Rules from "../Rules/Rules";
 import copyLink from "../../utilities/copyLink";
 import useSetRealms from "../../hooks/useSetRealms";
 import useAreRulesOpen from "../../hooks/useAreRulesOpen";
-import actionCreators from "../../reducers/actionCreators";
+import { actionCreators } from "../../reducers/app";
 // Assets
 import "./App.scss";
 import printIconSrc from "../../images/print.png";
@@ -37,7 +37,7 @@ const App = () => {
 
   return (
     <div className="appContainer">
-      <Rules rulesOpen={areRulesOpen} setRulesOpen={toggleRules} />
+      <Rules rulesOpen={areRulesOpen} />
       <Header />
       <div className="utilities">
         <IconButton
