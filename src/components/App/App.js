@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { useDispatch } from "react-redux";
 // Components
 import Minigame from "../Minigame/Minigame";
 import RoundTracker from "../RoundTracker/RoundTracker";
@@ -7,16 +8,11 @@ import IconButton from "../IconButton/IconButton";
 import DiceRoller from "../DiceRoller/DiceRoller";
 import Footer from "../Footer/Footer";
 import Rules from "../Rules/Rules";
-// Data Models
-import defaultRounds from "../../rounds";
-// Functions
-import {
-  setQueryStringValue,
-  setRoundsUsingQueryString,
-} from "../../utilities/queryString";
-import randomizeMinigames from "../../utilities/randomizeMinigames";
+// Utilities
 import copyLink from "../../utilities/copyLink";
-import toggleRules from "../../utilities/toggleRules";
+import useSetRealms from "../../hooks/useSetRealms";
+import useAreRulesOpen from "../../hooks/useAreRulesOpen";
+import { actionCreators } from "../../reducers/app";
 // Assets
 import "./App.scss";
 import printIconSrc from "../../images/print.png";
@@ -24,33 +20,30 @@ import linkIconSrc from "../../images/link.png";
 import randomizeIconSrc from "../../images/randomize.png";
 import rulesIconSrc from "../../images/rules.png";
 
+const useToggleRules = () => {
+  const dispatch = useDispatch();
+  return () => dispatch(actionCreators.toggleRules());
+};
+
 const App = () => {
-  const [rounds, setRounds] = useState(defaultRounds);
-  const [rulesOpen, setRulesOpen] = useState(false);
-
-  useEffect(() => {
-    setRoundsUsingQueryString(rounds, setRounds);
-  }, []);
-
-  useEffect(() => {
-    setQueryStringValue(rounds);
-  }, [rounds]);
-
-  const updateMinigame = (minigame, round) => {
-    const updatingRoundOrder = { ...rounds };
-    updatingRoundOrder[round] = minigame;
-    setRounds({ ...updatingRoundOrder });
-  };
+  const {
+    updateGameOrder,
+    randomizeRealms,
+    realms,
+    setRealms,
+  } = useSetRealms();
+  const toggleRules = useToggleRules();
+  const areRulesOpen = useAreRulesOpen();
 
   return (
     <div className="appContainer">
-      <Rules rulesOpen={rulesOpen} setRulesOpen={setRulesOpen} />
+      <Rules rulesOpen={areRulesOpen} />
       <Header />
       <div className="utilities">
         <IconButton
           name="Open rules"
           imgSrc={rulesIconSrc}
-          onClickFunction={() => toggleRules(rulesOpen, setRulesOpen)}
+          onClickFunction={() => toggleRules()}
         />
         <IconButton
           name="Copy layout link"
@@ -60,9 +53,7 @@ const App = () => {
         <IconButton
           name="Randomize minigames"
           imgSrc={randomizeIconSrc}
-          onClickFunction={() =>
-            randomizeMinigames(rounds, setRounds)
-          }
+          onClickFunction={() => randomizeRealms(realms, setRealms)}
           confirmationRequired
         />
         <IconButton
@@ -72,21 +63,22 @@ const App = () => {
         />
         <DiceRoller />
       </div>
-      {Object.keys(rounds).map((key, i) => {
+      {Object.keys(realms).map((key, i) => {
         // Generate RoundTracker before every third Minigame
+        const roundNumber = key / 3 + 1;
         return [
           (i + 1) % 3 === 1 ? (
             <RoundTracker
-              key={`round-${key.charAt(0)}-tracker`}
-              round={key.charAt(0)}
+              key={`round-${roundNumber}-tracker`}
+              round={roundNumber}
             />
           ) : null,
           <Minigame
-            key={`minigame-${rounds[key]}`}
+            key={`minigame-${realms[key]}`}
             index={key}
-            minigameName={rounds[key]}
-            roundNumber={key.charAt(0)}
-            updateMinigame={updateMinigame}
+            minigameName={realms[key]}
+            roundNumber={roundNumber}
+            updateMinigame={updateGameOrder}
           />,
         ];
       })}
