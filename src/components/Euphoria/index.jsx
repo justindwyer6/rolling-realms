@@ -1,7 +1,7 @@
 import React from "react";
-import Die from "../Die/Die";
+import Die from "components/Die";
+import Resource from "components/Resource";
 import "./Euphoria.scss";
-import Resource from "../Resource/Resource";
 
 const Euphoria = () => {
   const renderDie = (i, alignment) => {

@@ -1,6 +1,6 @@
 import React from "react";
 import { times } from "lodash";
-import ResourceDie from "../ResourceDie/ResourceDie";
+import ResourceDie from "components/ResourceDie";
 import "./Scythe.scss";
 
 const Scythe = () => {

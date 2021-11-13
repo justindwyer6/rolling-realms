@@ -1,8 +1,8 @@
 import React from "react";
+import Die from "components/Die";
+import Resource from "components/Resource";
+import Hexagon from "components/Hexagon";
 import "./MyLittleScythe.scss";
-import Die from "../Die/Die";
-import Resource from "../Resource/Resource";
-import Hexagon from "../Hexagon/Hexagon";
 
 const MyLittleScythe = () => {
   return (

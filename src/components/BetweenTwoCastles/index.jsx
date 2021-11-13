@@ -1,8 +1,8 @@
 import React from "react";
+import Resource from "components/Resource";
 import "./BetweenTwoCastles.scss";
-import Resource from "../Resource/Resource";
-import woodDoorSrc from "../../images/wooden-door.png";
-import stoneDoorSrc from "../../images/stone-door.png";
+import woodDoorSrc from "images/wooden-door.png";
+import stoneDoorSrc from "images/stone-door.png";
 
 const BetweenTwoCastles = () => {
   const renderInput = (location) => (

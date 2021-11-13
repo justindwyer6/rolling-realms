@@ -1,8 +1,8 @@
 import React from "react";
+import ResourceGrid from "components/ResourceGrid";
+import Resource from "components/Resource";
+import Die from "components/Die";
 import "./Tapestry.scss";
-import ResourceGrid from "../ResourceGrid/ResourceGrid";
-import Resource from "../Resource/Resource";
-import Die from "../Die/Die";
 
 const Tapestry = () => {
   return (

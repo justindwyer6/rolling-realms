@@ -1,7 +1,7 @@
 /* eslint-disable no-underscore-dangle */
 import { combineReducers, createStore } from "redux";
 
-import app from "./app";
+import app from "reducers/app";
 
 export default () => {
   const store = createStore(

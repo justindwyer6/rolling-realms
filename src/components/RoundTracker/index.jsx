@@ -1,7 +1,7 @@
 import React from "react";
-import ResourceTracker from "../ResourceTracker/ResourceTracker";
-import StarTracker from "../StarTracker/StarTracker";
-import TurnTracker from "../TurnTracker/TurnTracker";
+import ResourceTracker from "components/ResourceTracker";
+import StarTracker from "components/StarTracker";
+import TurnTracker from "components/TurnTracker";
 import "./RoundTracker.scss";
 
 const RoundTracker = ({ round }) => {
