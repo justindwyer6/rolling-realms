@@ -1,6 +1,6 @@
 import React from "react";
 import "./StarTracker.scss";
-import starIcon from "../../images/star-filled.png";
+import starIcon from "images/star-filled.png";
 
 const StarTracker = ({ round }) => {
   return (

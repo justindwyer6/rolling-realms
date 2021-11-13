@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import realms from "../../realms";
+import realms from "realms";
 import "./MinigameSelector.scss";
 
 const MinigameSelector = ({

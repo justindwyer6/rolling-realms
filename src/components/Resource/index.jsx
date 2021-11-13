@@ -1,5 +1,5 @@
 import React from "react";
-import getResource from "../../utilities/getResource";
+import getResource from "utilities/getResource";
 import "./Resource.scss";
 
 const Resource = ({

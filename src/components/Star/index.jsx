@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import availableStar from "../../images/star-outline.png";
-import earnedStar from "../../images/star-filled.png";
 import "./Star.scss";
+import availableStar from "images/star-outline.png";
+import earnedStar from "images/star-filled.png";
 
 const Star = () => {
   const [starSource, setStarSource] = useState(availableStar);

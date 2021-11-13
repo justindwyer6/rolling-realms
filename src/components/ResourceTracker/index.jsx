@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import getResource from "../../utilities/getResource";
-import useConfirmation from "../../hooks/useConfirmation";
+import getResource from "utilities/getResource";
+import useConfirmation from "hooks/useConfirmation";
 import "./ResourceTracker.scss";
 
 const ResourceTracker = ({ resourceType }) => {
