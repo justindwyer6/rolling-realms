@@ -1,6 +1,6 @@
 import React from "react";
-import Die from "../Die/Die";
-import Resource from "../Resource/Resource";
+import Die from "components/Die";
+import Resource from "components/Resource";
 import "./ResourceDie.scss";
 
 const ResourceDie = ({

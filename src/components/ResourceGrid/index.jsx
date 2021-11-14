@@ -1,6 +1,6 @@
 import React, { useState } from "react";
+import Resource from "components/Resource";
 import "./ResourceGrid.scss";
-import Resource from "../Resource/Resource";
 
 const ResourceGrid = ({ resource, premarked = "" }) => {
   const [topLeftState, setTopLeftState] = useState(

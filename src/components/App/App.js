@@ -1,24 +1,24 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 // Components
-import Minigame from "../Minigame/Minigame";
-import RoundTracker from "../RoundTracker/RoundTracker";
-import Header from "../Header/Header";
-import IconButton from "../IconButton/IconButton";
-import DiceRoller from "../DiceRoller/DiceRoller";
-import Footer from "../Footer/Footer";
-import Rules from "../Rules/Rules";
+import Minigame from "components/Minigame";
+import RoundTracker from "components/RoundTracker";
+import Header from "components/Header";
+import IconButton from "components/IconButton";
+import DiceRoller from "components/DiceRoller";
+import Footer from "components/Footer";
+import Rules from "components/Rules";
 // Utilities
-import copyLink from "../../utilities/copyLink";
-import useSetRealms from "../../hooks/useSetRealms";
-import useAreRulesOpen from "../../hooks/useAreRulesOpen";
-import { actionCreators } from "../../reducers/app";
+import copyLink from "utilities/copyLink";
+import useSetRealms from "hooks/useSetRealms";
+import useAreRulesOpen from "hooks/useAreRulesOpen";
+import { actionCreators } from "reducers/app";
 // Assets
 import "./App.scss";
-import printIconSrc from "../../images/print.png";
-import linkIconSrc from "../../images/link.png";
-import randomizeIconSrc from "../../images/randomize.png";
-import rulesIconSrc from "../../images/rules.png";
+import printIconSrc from "images/print.png";
+import linkIconSrc from "images/link.png";
+import randomizeIconSrc from "images/randomize.png";
+import rulesIconSrc from "images/rules.png";
 
 const useToggleRules = () => {
   const dispatch = useDispatch();

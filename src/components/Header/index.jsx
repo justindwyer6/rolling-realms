@@ -1,8 +1,7 @@
 import React from "react";
-// import Rules from "../Rules";
+import StarTracker from "components/StarTracker";
 import "./Header.scss";
-import stonemaierLogoSrc from "../../images/stonemaier-logo.png";
-import StarTracker from "../StarTracker/StarTracker";
+import stonemaierLogoSrc from "images/stonemaier-logo.png";
 
 const Header = () => {
   return (

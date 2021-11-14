@@ -1,7 +1,7 @@
 import React from "react";
+import useConfirmation from "hooks/useConfirmation";
 import "./IconButton.scss";
-import questionMarkIcon from "../../images/question-mark.png";
-import useConfirmation from "../../hooks/useConfirmation";
+import questionMarkIcon from "images/question-mark.png";
 
 const IconButton = ({
   name,

@@ -20,7 +20,8 @@
       1,
       { "extensions": [".js", ".jsx"] }
     ],
-    "no-unused-vars": "warn"
+    "no-unused-vars": "warn",
+    "import/no-unresolved": "off"
   },
   "parser": "babel-eslint",
   "plugins": [

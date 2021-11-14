@@ -1,9 +1,9 @@
 import React from "react";
 import { times } from "lodash";
+import Resource from "components/Resource";
+import ResourceDie from "components/ResourceDie";
 import "./Charterstone.scss";
-import Resource from "../Resource/Resource";
-import ResourceDie from "../ResourceDie/ResourceDie";
-import crateSrc from "../../images/crate.png";
+import crateSrc from "images/crate.png";
 
 const Charterstone = () => {
   const renderDie = (i, resources) => {

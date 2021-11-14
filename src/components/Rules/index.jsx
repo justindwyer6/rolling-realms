@@ -1,7 +1,7 @@
 import React from "react";
 import Draggable from "react-draggable";
+import Resource from "components/Resource";
 import "./Rules.scss";
-import Resource from "../Resource/Resource";
 
 const Rules = ({ rulesOpen }) => {
   return (

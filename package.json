@@ -20,9 +20,9 @@
     "sass": "^1.26.3"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public"
@@ -55,6 +55,7 @@
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.0.0",
     "prettier": "^2.1.2",
+    "react-app-rewired": "^2.1.8",
     "sass-loader": "^10.1.0",
     "style-loader": "^2.0.0"
   }

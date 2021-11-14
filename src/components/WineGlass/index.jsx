@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import emptyWineGlass from "../../images/empty-wine-glass.png";
-import fullWineGlass from "../../images/full-wine-glass.png";
 import "./WineGlass.scss";
+import emptyWineGlass from "images/empty-wine-glass.png";
+import fullWineGlass from "images/full-wine-glass.png";
 
 const WineGlass = ({ sum }) => {
   const [wineGlassState, setWineGlassState] = useState(

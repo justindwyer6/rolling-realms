@@ -1,7 +1,6 @@
 import React from "react";
+import Resource from "components/Resource";
 import "./BetweenTwoCities.scss";
-// import { times } from "lodash";
-import Resource from "../Resource/Resource";
 
 const BetweenTwoCities = () => {
   const renderInput = (i) => (

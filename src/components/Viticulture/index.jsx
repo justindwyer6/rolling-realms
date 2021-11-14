@@ -1,9 +1,9 @@
 import React from "react";
 import { times } from "lodash";
-import WineGlass from "../WineGlass/WineGlass";
+import WineGlass from "components/WineGlass";
+import ResourceDie from "components/ResourceDie";
+import Resource from "components/Resource";
 import "./Viticulture.scss";
-import ResourceDie from "../ResourceDie/ResourceDie";
-import Resource from "../Resource/Resource";
 
 const Viticulture = () => {
   const renderDie = (i, resources) => {

@@ -1,5 +1,5 @@
 import { shuffle } from "lodash";
-import getInitialRealms from "../utilities/getInitialRealms";
+import getInitialRealms from "utilities/getInitialRealms";
 
 const generateInitialAppState = () => ({
   areRulesOpen: false,

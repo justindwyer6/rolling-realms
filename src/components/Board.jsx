@@ -1,13 +1,13 @@
 import React from "react";
-import BetweenTwoCastles from "./BetweenTwoCastles/BetweenTwoCastles";
-import BetweenTwoCities from "./BetweenTwoCities/BetweenTwoCities";
-import Charterstone from "./Charterstone/Charterstone";
-import Euphoria from "./Euphoria/Euphoria";
-import MyLittleScythe from "./MyLittleScythe/MyLittleScythe";
-import Scythe from "./Scythe/Scythe";
-import Tapestry from "./Tapestry/Tapestry";
-import Viticulture from "./Viticulture/Viticulture";
-import Wingspan from "./Wingspan/Wingspan";
+import BetweenTwoCastles from "components/BetweenTwoCastles";
+import BetweenTwoCities from "components/BetweenTwoCities";
+import Charterstone from "components/Charterstone";
+import Euphoria from "components/Euphoria";
+import MyLittleScythe from "components/MyLittleScythe";
+import Scythe from "components/Scythe";
+import Tapestry from "components/Tapestry";
+import Viticulture from "components/Viticulture";
+import Wingspan from "components/Wingspan";
 
 const Board = ({ minigameName }) => {
   if (minigameName === "Between Two Castles") {
