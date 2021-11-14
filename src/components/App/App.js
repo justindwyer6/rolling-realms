@@ -27,9 +27,9 @@ const useToggleRules = () => {
 
 const App = () => {
   const {
-    updateGameOrder,
     randomizeRealms,
     realms,
+    setRealm,
     setRealms,
   } = useSetRealms();
   const toggleRules = useToggleRules();
@@ -75,10 +75,10 @@ const App = () => {
           ) : null,
           <Minigame
             key={`minigame-${realm.name}`}
-            index={realm.id}
+            index={i}
             realm={realm}
             roundNumber={roundNumber}
-            updateMinigame={updateGameOrder}
+            updateMinigame={setRealm}
           />,
         ];
       })}
