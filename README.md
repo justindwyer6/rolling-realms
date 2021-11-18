@@ -1,3 +1,30 @@
+<img src="/public/images/rolling-realms-cover.jpg" alt="Rolling Realms Cover Art" width="200"/>
+
+# [Rolling Realms](https://rolling-realms.netlify.app/)
+
+## A fan-made, web-based version of Stonemaier Games' living roll-and-write game
+
+> In the early days of the coronavirus, a time of self-isolation for many people, Jamey decided to create an infinitely scaling roll-and-write game to teach and play with people around the world via Facebook Live.
+>
+> In Rolling Realms, players compete to earn the most stars in a series of minigames over 3 rounds. This is a roll-and-write game, meaning that players will write on the game components using dry-erase markers.
+>
+> Each turn, one player rolls 2 dice, and all players use the dice results on their realm cards to generate resources and earn stars. After 3 rounds, the player with the most stars wins!
+
+Back when coronavirus began, many of us were looking for projects to take on. I was just learning React and was inspired by Jamey Stegmaier's Rolling Realms to start my own project, so that those of us without printers (or just fresh out of ink) could join in and play Rolling Realms from the comfort of our screens. So I did! And Jamey liked it enough to share it with the world.
+
+Now Rolling Realms is a real published board game, and the Rolling Realms React app is a bit more polished (and mobile friendly) than it was at the beginning.
+
+While I'm still working on polishing the app to grow my React skills (with the help of a kind contributor), the intention is to keep it pretty much as-is besides quality-of-life improvements. If you're interested in contributing, [send me a message on Twitter](https://twitter.com/Jwzdyn) and we can talk about it!
+
+While you're at it, show some love to Stonemaier Games and buy or print-and-play the physical game here: https://stonemaiergames.com/games/rolling-realms/
+
+Stay cool,<br />
+Justin Dwyer (the guy who started this project)
+
+---
+
+# Now for the boring Create React App boilerplate!
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -42,27 +69,3 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
