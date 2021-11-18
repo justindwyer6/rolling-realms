@@ -1,4 +1,4 @@
-![Rolling Realms Cover Art](/public/images/rolling-realms-cover.jpg)
+<img src="/public/images/rolling-realms-cover.jpg" alt="Rolling Realms Cover Art" width="200"/>
 
 # [Rolling Realms](https://rolling-realms.netlify.app/)
 
@@ -18,7 +18,7 @@ While I'm still working on polishing the app to grow my React skills (with the h
 
 While you're at it, show some love to Stonemaier Games and buy or print-and-play the physical game here: https://stonemaiergames.com/games/rolling-realms/
 
-Stay cool,
+Stay cool,<br />
 Justin Dwyer (the guy who started this project)
 
 ---
