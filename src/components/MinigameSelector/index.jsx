@@ -29,7 +29,7 @@ const MinigameSelector = ({
       >
         <h2>{minigameName}</h2>
       </button>
-      {isMinigameSelectorOpen &&
+      {isMinigameSelectorOpen && (
         <div className="minigameSelector">
           {realms.map((realm) => {
             return (
@@ -44,7 +44,7 @@ const MinigameSelector = ({
             );
           })}
         </div>
-      }
+      )}
     </>
   );
 };
