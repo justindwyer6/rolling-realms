@@ -14,9 +14,9 @@ export const validRealmOrderString = new RegExp(/[1-9]{9}/gm);
 export const getOrderStringFromRealms = (realmArray) =>
   realmArray.map((r) => r.id).join("");
 export const getRealmByProp = (prop) => (val) =>
-  realms.filter((r) => r[prop] === val)[0];
+  realms.filter((r) => r[prop] === val)[0] || {};
 
-export const getRealmById = (id) => getRealmByProp("id")(id) || {};
+export const getRealmById = (id) => getRealmByProp("id")(id);
 // export const getRealmByName = (name) =>
 //   getRealmByProp("name")(name) || {};
 // export const getRealmBySlug = (slug) =>
