@@ -9,7 +9,7 @@ const ResourceTracker = ({ resourceType }) => {
   const [
     resetConfirmationRequested,
     setResetConfirmationRequested,
-  ] = useBooleanTimeout();
+  ] = useBooleanTimeout(4000);
 
   const resource = getResource(resourceType);
 
