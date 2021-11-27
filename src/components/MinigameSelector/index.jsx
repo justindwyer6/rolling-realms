@@ -20,31 +20,33 @@ const MinigameSelector = ({
     }
   };
 
-  return [
-    <button
-      className="minigameHeader"
-      type="button"
-      onClick={() => toggleMinigameSelector()}
-    >
-      <h2>{minigameName}</h2>
-    </button>,
-    isMinigameSelectorOpen ? (
-      <div className="minigameSelector">
-        {Object.keys(realms).map((key) => {
-          return (
-            <button
-              className="minigameOption"
-              key={`${realms[key]}-selector`}
-              type="button"
-              onClick={() => updateMinigame(realms[key], index)}
-            >
-              {realms[key]}
-            </button>
-          );
-        })}
-      </div>
-    ) : null,
-  ];
+  return (
+    <>
+      <button
+        className="minigameHeader"
+        type="button"
+        onClick={() => toggleMinigameSelector()}
+      >
+        <h2>{minigameName}</h2>
+      </button>
+      {isMinigameSelectorOpen && (
+        <div className="minigameSelector">
+          {realms.map((realm) => {
+            return (
+              <button
+                className="minigameOption"
+                key={`${realm.id}-selector`}
+                type="button"
+                onClick={() => updateMinigame(realm, index)}
+              >
+                {realm.name}
+              </button>
+            );
+          })}
+        </div>
+      )}
+    </>
+  );
 };
 
 export default MinigameSelector;

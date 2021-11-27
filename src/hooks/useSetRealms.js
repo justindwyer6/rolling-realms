@@ -1,36 +1,41 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
-  setQueryStringValue,
-  setRealmsUsingQueryString,
+  setQueryString,
+  generateRealmOrderArray,
 } from "utilities/queryString";
+import { getOrderStringFromRealms } from "realms";
 import { actionCreators } from "reducers/app";
 
 const useSetRealms = () => {
+  // Action Creators
   const dispatch = useDispatch();
-
-  const realms = useSelector((state) => state.app.realms);
-  const setRealms = (payload) =>
-    dispatch(actionCreators.setRealms(payload));
-
+  const setRealms = (realmsArray) =>
+    dispatch(actionCreators.setRealms(realmsArray));
+  const setRealm = (realm, round) =>
+    dispatch(actionCreators.setRealm(realm, round));
   const randomizeRealms = () =>
     dispatch(actionCreators.randomizeRealms());
 
+  // Selectors
+  const realms = useSelector((state) => state.app.realms);
+
+  // useEffects
   useEffect(() => {
-    setRealmsUsingQueryString(realms, setRealms);
+    setRealms(generateRealmOrderArray());
   }, []);
 
   useEffect(() => {
-    setQueryStringValue(realms);
+    setQueryString(`realmOrder=${getOrderStringFromRealms(realms)}`);
   }, [realms]);
 
-  const updateGameOrder = (minigame, round) => {
-    const updatingRoundOrder = { ...realms };
-    updatingRoundOrder[round] = minigame;
-    setRealms({ ...updatingRoundOrder });
+  // Returns
+  return {
+    randomizeRealms,
+    realms,
+    setRealm,
+    setRealms,
   };
-
-  return { updateGameOrder, randomizeRealms, realms, setRealms };
 };
 
 export default useSetRealms;
