@@ -40,28 +40,30 @@ const App = () => {
       <Rules rulesOpen={areRulesOpen} />
       <Header />
       <div className="utilities">
+        <DiceRoller />
         <IconButton
-          name="Open rules"
+          name="Rules"
           imgSrc={rulesIconSrc}
           onClickFunction={() => toggleRules()}
         />
         <IconButton
-          name="Copy layout link"
+          name="Copy URL"
           imgSrc={linkIconSrc}
           onClickFunction={copyLink}
+          giveSuccessFeedback
         />
         <IconButton
-          name="Randomize minigames"
+          name="Randomize"
           imgSrc={randomizeIconSrc}
           onClickFunction={() => randomizeRealms(realms, setRealms)}
           confirmationRequired
+          giveSuccessFeedback
         />
         <IconButton
-          name="Print your game"
+          name="Print"
           imgSrc={printIconSrc}
           onClickFunction={() => window.print()}
         />
-        <DiceRoller />
       </div>
       {Object.keys(realms).map((key, i) => {
         // Generate RoundTracker before every third Minigame

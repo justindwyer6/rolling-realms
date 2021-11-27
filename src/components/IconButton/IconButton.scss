@@ -4,6 +4,11 @@
   display: inline-flex;
   padding: 5px;
   border: $border-thick;
-  border-radius: $border-radius-circle;
+  border-radius: $border-radius-standard;
   background: white;
+  margin: 0 5px;
+
+  span {
+    margin-left: 0.5em;
+  }
 }

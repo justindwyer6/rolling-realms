@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import getResource from "utilities/getResource";
-import useConfirmation from "hooks/useConfirmation";
+import useBooleanTimeout from "hooks/useBooleanTimeout";
 import "./ResourceTracker.scss";
 
 const ResourceTracker = ({ resourceType }) => {
@@ -9,7 +9,7 @@ const ResourceTracker = ({ resourceType }) => {
   const [
     resetConfirmationRequested,
     setResetConfirmationRequested,
-  ] = useConfirmation();
+  ] = useBooleanTimeout();
 
   const resource = getResource(resourceType);
 

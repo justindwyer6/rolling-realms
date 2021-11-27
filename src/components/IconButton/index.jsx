@@ -1,18 +1,23 @@
 import React from "react";
-import useConfirmation from "hooks/useConfirmation";
+import useBooleanTimeout from "hooks/useBooleanTimeout";
 import "./IconButton.scss";
 import questionMarkIcon from "images/question-mark.png";
+import checkMarkIcon from "images/checkmark.png";
 
 const IconButton = ({
   name,
   imgSrc,
   onClickFunction,
   confirmationRequired = false,
+  giveSuccessFeedback = false,
 }) => {
   const [
     confirmationRequested,
     setConfirmationRequested,
-  ] = useConfirmation();
+  ] = useBooleanTimeout(4000);
+  const [actionSucceeded, setActionSucceeded] = useBooleanTimeout(
+    2000,
+  );
 
   const handleClick = () => {
     if (confirmationRequired && !confirmationRequested) {
@@ -20,9 +25,21 @@ const IconButton = ({
     } else if (confirmationRequired && confirmationRequested) {
       setConfirmationRequested(false);
       onClickFunction();
+      setActionSucceeded(true);
     } else {
       onClickFunction();
+      setActionSucceeded(true);
     }
+  };
+
+  const getIcon = () => {
+    if (confirmationRequested) {
+      return questionMarkIcon;
+    }
+    if (giveSuccessFeedback && actionSucceeded) {
+      return checkMarkIcon;
+    }
+    return imgSrc;
   };
 
   return (
@@ -33,10 +50,12 @@ const IconButton = ({
         .toLowerCase()}-button`}
       onClick={handleClick}
     >
-      <img
-        src={confirmationRequested ? questionMarkIcon : imgSrc}
-        alt={name}
-      />
+      <img src={getIcon()} alt={name} />
+      <span>
+        {confirmationRequested
+          ? "Confirm"
+          : name.replace(" ", "\u00A0")}
+      </span>
     </button>
   );
 };

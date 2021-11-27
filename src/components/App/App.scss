@@ -11,9 +11,10 @@
 
   .utilities {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 100%;
     position: sticky;
+    overflow: scroll;
     top: 0;
     z-index: 3;
     padding: 5px;
