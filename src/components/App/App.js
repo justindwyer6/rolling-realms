@@ -27,9 +27,9 @@ const useToggleRules = () => {
 
 const App = () => {
   const {
-    updateGameOrder,
     randomizeRealms,
     realms,
+    setRealm,
     setRealms,
   } = useSetRealms();
   const toggleRules = useToggleRules();
@@ -65,9 +65,9 @@ const App = () => {
           onClickFunction={() => window.print()}
         />
       </div>
-      {Object.keys(realms).map((key, i) => {
-        // Generate RoundTracker before every third Minigame
-        const roundNumber = key / 3 + 1;
+      {realms.map((realm, i) => {
+        // Generate RoundTracker before every third Realm
+        const roundNumber = i / 3 + 1;
         return [
           (i + 1) % 3 === 1 ? (
             <RoundTracker
@@ -76,11 +76,11 @@ const App = () => {
             />
           ) : null,
           <Minigame
-            key={`minigame-${realms[key]}`}
-            index={key}
-            minigameName={realms[key]}
+            key={`minigame-${realm.name}`}
+            index={i}
+            realm={realm}
             roundNumber={roundNumber}
-            updateMinigame={updateGameOrder}
+            updateMinigame={setRealm}
           />,
         ];
       })}

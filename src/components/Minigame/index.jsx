@@ -5,17 +5,19 @@ import MinigameSelector from "components/MinigameSelector";
 import Star from "components/Star";
 import "./Minigame.scss";
 
-const Minigame = ({ index, minigameName, updateMinigame }) => {
+const Minigame = ({ index, realm, updateMinigame }) => {
+  const { name, slug } = realm;
   const stars = [1, 2, 3, 4, 5, 6];
+
   return (
     <ErrorBoundary>
-      <div className={`Minigame ${minigameName.replace(/ +/g, "")}`}>
+      <div className={`Minigame ${slug}`}>
         <MinigameSelector
           index={index}
-          minigameName={minigameName}
+          minigameName={name}
           updateMinigame={updateMinigame}
         />
-        <Board minigameName={minigameName} />
+        <Board minigameName={name} />
         <>
           {stars.map((star) => (
             <Star key={star} index={`${index}-star-${star}`} />
@@ -25,5 +27,15 @@ const Minigame = ({ index, minigameName, updateMinigame }) => {
     </ErrorBoundary>
   );
 };
+
+// Minigame.propTypes = {
+//   index: PropTypes.number.isRequired,
+//   realm: PropTypes.shape({
+//     id: PropTypes.number.isRequired,
+//     realm: PropTypes.string.isRequired,
+//     slug: PropTypes.string.isRequired,
+//   }),
+//   updateMinigame: PropTypes.func.isRequired,
+// };
 
 export default Minigame;
