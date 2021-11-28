@@ -1,4 +1,6 @@
 import React from "react";
+import kebabCase from "lodash";
+import makeSpacesNonBreaking from "utilities/makeSpacesNonBreaking";
 import useBooleanTimeout from "hooks/useBooleanTimeout";
 import "./IconButton.scss";
 import questionMarkIcon from "images/question-mark.png";
@@ -7,7 +9,7 @@ import checkMarkIcon from "images/checkmark.png";
 const IconButton = ({
   name,
   imgSrc,
-  onClickFunction,
+  onClick,
   confirmationRequired = false,
   giveSuccessFeedback = false,
 }) => {
@@ -24,10 +26,10 @@ const IconButton = ({
       setConfirmationRequested(true);
     } else if (confirmationRequired && confirmationRequested) {
       setConfirmationRequested(false);
-      onClickFunction();
+      onClick();
       setActionSucceeded(true);
     } else {
-      onClickFunction();
+      onClick();
       setActionSucceeded(true);
     }
   };
@@ -45,16 +47,14 @@ const IconButton = ({
   return (
     <button
       type="button"
-      className={`IconButton ${name
-        .replace(/\s+/g, "-")
-        .toLowerCase()}-button`}
+      className={`IconButton ${kebabCase(name)}-button`}
       onClick={handleClick}
     >
       <img src={getIcon()} alt={name} />
       <span>
         {confirmationRequested
           ? "Confirm"
-          : name.replace(" ", "\u00A0")}
+          : makeSpacesNonBreaking(name)}
       </span>
     </button>
   );
