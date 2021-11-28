@@ -16,17 +16,17 @@ export const Print = Template.bind({});
 Print.args = {
   name: "Print your game",
   imageSrc: printIconSrc,
-  onClickFunction: () => window.print(),
+  onClick: () => window.print(),
 };
 export const Link = Template.bind({});
 Link.args = {
   name: "Copy layout link",
   imageSrc: linkIconSrc,
-  onClickFunction: () => console.log("Copying a link works!"),
+  onClick: () => console.log("Copying a link works!"),
 };
 export const Randomize = Template.bind({});
 Randomize.args = {
   name: "Randomize minigames",
   imageSrc: randomizeIconSrc,
-  onClickFunction: () => console.log("Randomizing minigames works!"),
+  onClick: () => console.log("Randomizing minigames works!"),
 };

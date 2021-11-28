@@ -44,25 +44,25 @@ const App = () => {
         <IconButton
           name="Rules"
           imgSrc={rulesIconSrc}
-          onClickFunction={() => toggleRules()}
+          onClick={() => toggleRules()}
         />
         <IconButton
           name="Copy URL"
           imgSrc={linkIconSrc}
-          onClickFunction={copyLink}
+          onClick={copyLink}
           giveSuccessFeedback
         />
         <IconButton
           name="Randomize"
           imgSrc={randomizeIconSrc}
-          onClickFunction={() => randomizeRealms(realms, setRealms)}
+          onClick={() => randomizeRealms(realms, setRealms)}
           confirmationRequired
           giveSuccessFeedback
         />
         <IconButton
           name="Print"
           imgSrc={printIconSrc}
-          onClickFunction={() => window.print()}
+          onClick={() => window.print()}
         />
       </div>
       {realms.map((realm, i) => {
