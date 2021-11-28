@@ -40,28 +40,30 @@ const App = () => {
       <Rules rulesOpen={areRulesOpen} />
       <Header />
       <div className="utilities">
-        <IconButton
-          name="Open rules"
-          imgSrc={rulesIconSrc}
-          onClickFunction={() => toggleRules()}
-        />
-        <IconButton
-          name="Copy layout link"
-          imgSrc={linkIconSrc}
-          onClickFunction={copyLink}
-        />
-        <IconButton
-          name="Randomize minigames"
-          imgSrc={randomizeIconSrc}
-          onClickFunction={() => randomizeRealms(realms, setRealms)}
-          confirmationRequired
-        />
-        <IconButton
-          name="Print your game"
-          imgSrc={printIconSrc}
-          onClickFunction={() => window.print()}
-        />
         <DiceRoller />
+        <IconButton
+          name="Rules"
+          imgSrc={rulesIconSrc}
+          onClick={() => toggleRules()}
+        />
+        <IconButton
+          name="Copy URL"
+          imgSrc={linkIconSrc}
+          onClick={copyLink}
+          giveSuccessFeedback
+        />
+        <IconButton
+          name="Randomize"
+          imgSrc={randomizeIconSrc}
+          onClick={() => randomizeRealms(realms, setRealms)}
+          confirmationRequired
+          giveSuccessFeedback
+        />
+        <IconButton
+          name="Print"
+          imgSrc={printIconSrc}
+          onClick={() => window.print()}
+        />
       </div>
       {realms.map((realm, i) => {
         // Generate RoundTracker before every third Realm
