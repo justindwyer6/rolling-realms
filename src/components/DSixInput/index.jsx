@@ -21,12 +21,10 @@ const DSixInput = ({ className }) => {
   };
 
   const preventInvalidKeyStrokes = (e) => {
-    // Prevents React from losing control when characters like "e" or "." are entered
-    const validKeyStrokeWhitelist = ["1", "2", "3", "4", "5", "6"];
-    if (
-      !validKeyStrokeWhitelist.includes(e.key) &&
-      e.key.length === 1 // Allow keys like backspace and arrows
-    ) {
+    // Prevents React from losing control when "scientific" characters are entered
+    const invalidKeyStrokeBlacklist = ["e", "E", ".", "-", "+"];
+
+    if (invalidKeyStrokeBlacklist.includes(e.key)) {
       e.preventDefault();
     }
   };
