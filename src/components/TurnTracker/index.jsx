@@ -1,6 +1,6 @@
 import React from "react";
 import { times } from "lodash";
-import DSixInput from "../DSixInput";
+import DSixInput from "components/DSixInput";
 import "./TurnTracker.scss";
 
 const TurnTracker = () => {
