@@ -39,7 +39,7 @@ const DSixInput = ({ className }) => {
       max="6"
       min="1"
       maxLength="1"
-      value={"" || value}
+      value={value}
       onKeyDown={(e) => preventInvalidKeyStrokes(e)}
       onChange={(e) => setValue(sanitizeInput(e.target.value))}
       onPaste={(e) => e.preventDefault()}
