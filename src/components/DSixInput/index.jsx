@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const DSixInput = ({ className }) => {
-  const [value, setValue] = useState();
+  const [value, setValue] = useState("");
 
   const sanitizeInput = (rawInput) => {
     const currentValue = value;
