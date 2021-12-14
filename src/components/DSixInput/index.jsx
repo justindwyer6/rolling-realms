@@ -7,11 +7,9 @@ const DSixInput = ({ className }) => {
     const currentValue = value;
     const newValue = rawInput.replace(currentValue, "");
 
-    if (newValue !== "" && (newValue < 1 || newValue > 6)) {
-      return currentValue;
-    }
-
-    return newValue;
+    return newValue !== "" && (newValue < 1 || newValue > 6)
+      ? currentValue
+      : newValue;
   };
 
   const preventInvalidKeyStrokes = (e) => {
