@@ -1,33 +1,39 @@
 import React, { useState } from "react";
 
 const DSixInput = ({ className }) => {
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState(null);
 
   const sanitizeInput = (rawInput) => {
+    console.log(
+      "🚀 ~ file: index.jsx ~ line 7 ~ sanitizeInput ~ rawInput",
+      rawInput,
+    );
     const currentValue = value;
-    const validValueWhitelist = ["", "1", "2", "3", "4", "5", "6"];
+    const newValue = rawInput.replace(currentValue, "");
+    console.log(
+      "🚀 ~ file: index.jsx ~ line 9 ~ sanitizeInput ~ newValue",
+      newValue,
+    );
+    console.log(
+      "🚀 ~ file: index.jsx ~ line 9 ~ sanitizeInput ~ currentValue",
+      currentValue,
+    );
 
-    if (rawInput.length < 0 || rawInput.length > 2) {
+    if (newValue < 1 || newValue > 6) {
       return currentValue;
     }
 
-    const newValue = rawInput.replace(currentValue, "");
-
-    if (validValueWhitelist.includes(newValue)) {
-      return newValue;
-    }
-
-    return currentValue;
+    return newValue;
   };
 
-  const preventInvalidKeyStrokes = (e) => {
-    // Prevents React from losing control when "scientific" characters are entered
-    const invalidKeyStrokeBlacklist = ["e", "E", ".", "-", "+"];
+  // const preventInvalidKeyStrokes = (e) => {
+  //   // Prevents React from losing control when "scientific" characters are entered
+  //   const invalidKeyStrokeBlacklist = ["e", "E", ".", "-", "+"];
 
-    if (invalidKeyStrokeBlacklist.includes(e.key)) {
-      e.preventDefault();
-    }
-  };
+  //   if (invalidKeyStrokeBlacklist.includes(e.key)) {
+  //     e.preventDefault();
+  //   }
+  // };
 
   return (
     <input
@@ -40,7 +46,7 @@ const DSixInput = ({ className }) => {
       min="1"
       maxLength="1"
       value={value}
-      onKeyDown={(e) => preventInvalidKeyStrokes(e)}
+      // onKeyDown={(e) => preventInvalidKeyStrokes(e)}
       onChange={(e) => setValue(sanitizeInput(e.target.value))}
       onPaste={(e) => e.preventDefault()}
     />
