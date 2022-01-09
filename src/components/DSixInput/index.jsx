@@ -14,9 +14,27 @@ const DSixInput = ({ className }) => {
 
   const preventInvalidKeyStrokes = (e) => {
     // Prevents React from losing control when "scientific" characters are entered
-    const invalidKeyStrokeBlacklist = ["e", "E", ".", "-", "+"];
+    // const invalidKeyStrokeBlacklist = ["e", "E", ".", "-", "+"];
+    const invalidKeyStrokeWhitelist = [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "Backspace",
+      "Delete",
+      "ArrowLeft",
+      "ArrowRight",
+      "ArrowUp",
+      "ArrowDown",
+      "Tab",
+    ];
 
-    if (invalidKeyStrokeBlacklist.includes(e.key)) {
+    // if (invalidKeyStrokeBlacklist.includes(e.key)) {
+    //   e.preventDefault();
+    // }
+    if (!invalidKeyStrokeWhitelist.includes(e.key)) {
       e.preventDefault();
     }
   };
