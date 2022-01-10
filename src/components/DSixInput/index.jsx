@@ -17,8 +17,8 @@ const useDSixInput = (initial = "") => {
     const newInt = parseInt(key, 10);
 
     if (
-      (Number.isNaN(newInt) || newInt < 1 || newInt > 6) &&
-      key.length === 1 // Don't prevent "Backspace", "Tab", etc.
+      key.length === 1 && // Don't prevent "Backspace", "Tab", etc.
+      (Number.isNaN(newInt) || newInt < 1 || newInt > 6)
     ) {
       e.preventDefault();
     }
