@@ -1,43 +1,32 @@
 import React, { useState } from "react";
 
-const DSixInput = ({ className }) => {
-  const [value, setValue] = useState(null);
+const useDSixInput = (initial = "") => {
+  const [value, setValue] = useState(initial);
 
-  const sanitizeInput = (rawInput) => {
-    const currentValue = value;
-    const newValue = rawInput.replace(currentValue, "");
+  const updateValue = (e) => {
+    const rawValue = e.target.value;
+    const newValue = rawValue.replace(value, ""); // Remove the old value
 
-    return newValue !== "" && (newValue < 1 || newValue > 6)
-      ? currentValue
-      : newValue;
+    setValue(newValue);
   };
 
   const preventInvalidKeyStrokes = (e) => {
-    // Prevents React from losing control when "scientific" characters are entered
-    // const invalidKeyStrokeBlacklist = ["e", "E", ".", "-", "+"];
-    const invalidKeyStrokeWhitelist = [
-      "1",
-      "2",
-      "3",
-      "4",
-      "5",
-      "6",
-      "Backspace",
-      "Delete",
-      "ArrowLeft",
-      "ArrowRight",
-      "ArrowUp",
-      "ArrowDown",
-      "Tab",
-    ];
+    const { key } = e;
+    const newInt = parseInt(key, 10);
 
-    // if (invalidKeyStrokeBlacklist.includes(e.key)) {
-    //   e.preventDefault();
-    // }
-    if (!invalidKeyStrokeWhitelist.includes(e.key)) {
+    if (
+      (Number.isNaN(newInt) || newInt < 1 || newInt > 6) &&
+      key.length === 1 // Don't prevent Backspace, Tab, etc.
+    ) {
       e.preventDefault();
     }
   };
+
+  return [value, updateValue, preventInvalidKeyStrokes];
+};
+
+const DSixInput = ({ className }) => {
+  const [value, onChange, onKeyDown] = useDSixInput();
 
   return (
     <input
@@ -50,9 +39,8 @@ const DSixInput = ({ className }) => {
       min="1"
       maxLength="1"
       value={value}
-      onKeyDown={(e) => preventInvalidKeyStrokes(e)}
-      onChange={(e) => setValue(sanitizeInput(e.target.value))}
-      onPaste={(e) => e.preventDefault()}
+      onKeyDown={onKeyDown}
+      onChange={onChange}
     />
   );
 };
