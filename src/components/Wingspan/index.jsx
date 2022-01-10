@@ -1,6 +1,7 @@
 import React from "react";
 import { times } from "lodash";
 import Resource from "components/Resource";
+import DSixInput from "components/DSixInput";
 import "./Wingspan.scss";
 import featherSrc from "images/feather.png";
 
@@ -14,7 +15,7 @@ const Wingspan = () => {
           key={`bird-${i}-input-${j}`}
           className="inputResourceContainer"
         >
-          <input type="number" />
+          <DSixInput />
           <Resource name={resourceList[j]} alt={resourceList[j]} />
         </div>
       ))}

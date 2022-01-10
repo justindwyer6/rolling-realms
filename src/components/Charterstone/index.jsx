@@ -2,6 +2,7 @@ import React from "react";
 import { times } from "lodash";
 import Resource from "components/Resource";
 import ResourceDie from "components/ResourceDie";
+import DSixInput from "components/DSixInput";
 import "./Charterstone.scss";
 import crateSrc from "images/crate.png";
 
@@ -41,7 +42,7 @@ const Charterstone = () => {
 
         {times(6, (i) => (
           <div className="crateInput" key={i}>
-            <input type="number" min="1" max="6" />
+            <DSixInput />
             <img className="crate" src={crateSrc} alt="crate" />
             <Resource name="star" />
           </div>
