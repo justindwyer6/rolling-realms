@@ -4,7 +4,7 @@ import useResource from "hooks/useResource";
 import useBooleanTimeout from "hooks/useBooleanTimeout";
 import "./ResourceTracker.scss";
 
-const ResourceTracker = ({ resourceType, round }) => {
+const ResourceTracker = ({ round, resourceType }) => {
   const {
     resourcesEarned,
     resourcesSpent,

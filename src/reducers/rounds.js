@@ -25,7 +25,8 @@ const defaultResources = {
   },
 };
 
-const generateInitialRoundResources = () => ({ ...defaultResources });
+const generateInitialRoundResources = () =>
+  cloneDeep(defaultResources);
 
 const generateInitialRoundsState = () => [
   generateInitialRoundResources(),
