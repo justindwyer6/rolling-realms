@@ -1,32 +1,32 @@
 import React from "react";
 import getResource from "utilities/getResource";
 import useResource from "hooks/useResource";
-// import useBooleanTimeout from "hooks/useBooleanTimeout";
+import useBooleanTimeout from "hooks/useBooleanTimeout";
 import "./ResourceTracker.scss";
 
 const ResourceTracker = ({ resourceType, round }) => {
-  const [
+  const {
     resourcesEarned,
     resourcesSpent,
     earnResource,
     spendResource,
-  ] = useResource(round, resourceType);
-  // const [
-  //   resetConfirmationRequested,
-  //   setResetConfirmationRequested,
-  // ] = useBooleanTimeout(4000);
+    resetResource,
+  } = useResource(round, resourceType);
+  const [
+    resetConfirmationRequested,
+    setResetConfirmationRequested,
+  ] = useBooleanTimeout(4000);
 
   const resource = getResource(resourceType);
 
-  // const handleReset = () => {
-  //   if (!resetConfirmationRequested) {
-  //     setResetConfirmationRequested(true);
-  //   } else {
-  //     setResourcesEarned(0);
-  //     setResourcesUsed(0);
-  //     setResetConfirmationRequested(false);
-  //   }
-  // };
+  const handleReset = () => {
+    if (!resetConfirmationRequested) {
+      setResetConfirmationRequested(true);
+    } else {
+      resetResource();
+      setResetConfirmationRequested(false);
+    }
+  };
 
   return (
     <div className="ResourceTracker">
@@ -42,9 +42,9 @@ const ResourceTracker = ({ resourceType, round }) => {
       </button>
       <div className="earned">
         Earned: {resourcesEarned}{" "}
-        {/* <button type="button" className="reset" onClick={handleReset}>
+        <button type="button" className="reset" onClick={handleReset}>
           reset{resetConfirmationRequested ? "?" : ""}
-        </button> */}
+        </button>
       </div>
     </div>
   );

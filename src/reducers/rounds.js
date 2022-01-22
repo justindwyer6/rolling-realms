@@ -37,27 +37,24 @@ const generateInitialRoundsState = () => [
 export const actions = {
   EARN_RESOURCE: "rolling-realms/app/earn-resource",
   SPEND_RESOURCE: "rolling-realms/app/spend-resource",
+  RESET_RESOURCE: "rolling-realms/app/reset-resource",
 };
+
 const incrementResource = (state, round, resourceType) => {
   if (!isValidResourceChange(round, resourceType)) {
     return state;
   }
 
   const copyOfState = cloneDeep(state);
-  console.log(copyOfState);
   const resourceData = copyOfState[round - 1].resources[resourceType];
   if (resourceData.earned === RESOURCE_MAX) {
     return state;
   }
 
-  console.log("PLUS Before: ", copyOfState);
-
   resourceData.earned += 1;
-
-  console.log("PLUS After: ", copyOfState);
-
   return copyOfState;
 };
+
 const decrementResource = (state, round, resourceType) => {
   if (!isValidResourceChange(round, resourceType)) {
     return state;
@@ -72,11 +69,20 @@ const decrementResource = (state, round, resourceType) => {
     return state;
   }
 
-  console.log("MINUS Before: ", copyOfState);
-
   resourceData.spent += 1;
+  return copyOfState;
+};
 
-  console.log("MINUS After: ", copyOfState);
+const resetResource = (state, round, resourceType) => {
+  if (!isValidResourceChange(round, resourceType)) {
+    return state;
+  }
+
+  const copyOfState = cloneDeep(state);
+  const resourceData = copyOfState[round - 1].resources[resourceType];
+
+  resourceData.earned = 0;
+  resourceData.spent = 0;
 
   return copyOfState;
 };
@@ -99,6 +105,8 @@ const rounds = (
         action.round,
         action.resourceType,
       );
+    case actions.RESET_RESOURCE:
+      return resetResource(state, action.round, action.resourceType);
     default:
       return state;
   }
@@ -113,6 +121,11 @@ export const actionCreators = {
   }),
   spendResource: (round, resourceType) => ({
     type: actions.SPEND_RESOURCE,
+    round,
+    resourceType,
+  }),
+  resetResource: (round, resourceType) => ({
+    type: actions.RESET_RESOURCE,
     round,
     resourceType,
   }),

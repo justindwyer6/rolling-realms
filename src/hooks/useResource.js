@@ -16,6 +16,16 @@ export default (round, resourceType) => {
     () => dispatch(actionCreators.spendResource(round, resourceType)),
     [round, resourceType],
   );
+  const resetResource = useCallback(
+    () => dispatch(actionCreators.resetResource(round, resourceType)),
+    [round, resourceType],
+  );
 
-  return [earned, spent, earnResource, spendResource];
+  return {
+    resourcesEarned: earned,
+    resourcesSpent: spent,
+    earnResource,
+    spendResource,
+    resetResource,
+  };
 };
