@@ -1,38 +1,11 @@
 import { cloneDeep } from "lodash";
-
-const RESOURCE_MIN = 0;
-const RESOURCE_MAX = 12;
-const VALID_RESOURCE_TYPES = ["coin", "heart", "pumpkin"];
-const isValidResourceChange = (round, resourceType) =>
-  round >= 1 ||
-  round <= 3 ||
-  VALID_RESOURCE_TYPES.includes(resourceType);
-
-const defaultResources = {
-  resources: {
-    pumpkin: {
-      earned: RESOURCE_MIN,
-      spent: RESOURCE_MIN,
-    },
-    heart: {
-      earned: RESOURCE_MIN,
-      spent: RESOURCE_MIN,
-    },
-    coin: {
-      earned: RESOURCE_MIN,
-      spent: RESOURCE_MIN,
-    },
-  },
-};
-
-const generateInitialRoundResources = () =>
-  cloneDeep(defaultResources);
-
-const generateInitialRoundsState = () => [
-  generateInitialRoundResources(),
-  generateInitialRoundResources(),
-  generateInitialRoundResources(),
-];
+import {
+  RESOURCE_MIN,
+  RESOURCE_MAX,
+  isValidResourceChange,
+  generateInitialRoundsState,
+  getResourceDataFromState,
+} from "./rounds.utils";
 
 // Actions
 export const actions = {
@@ -47,7 +20,11 @@ const incrementResource = (state, round, resourceType) => {
   }
 
   const copyOfState = cloneDeep(state);
-  const resourceData = copyOfState[round - 1].resources[resourceType];
+  const resourceData = getResourceDataFromState(
+    copyOfState,
+    round,
+    resourceType,
+  );
   if (resourceData.earned === RESOURCE_MAX) {
     return state;
   }
@@ -62,7 +39,11 @@ const decrementResource = (state, round, resourceType) => {
   }
 
   const copyOfState = cloneDeep(state);
-  const resourceData = copyOfState[round - 1].resources[resourceType];
+  const resourceData = getResourceDataFromState(
+    copyOfState,
+    round,
+    resourceType,
+  );
   if (
     resourceData.earned === RESOURCE_MIN ||
     resourceData.earned === resourceData.spent
@@ -80,7 +61,11 @@ const resetResource = (state, round, resourceType) => {
   }
 
   const copyOfState = cloneDeep(state);
-  const resourceData = copyOfState[round - 1].resources[resourceType];
+  const resourceData = getResourceDataFromState(
+    copyOfState,
+    round,
+    resourceType,
+  );
 
   resourceData.earned = 0;
   resourceData.spent = 0;
