@@ -1,11 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 import getResource from "utilities/getResource";
+import useResource from "hooks/useResource";
 import useBooleanTimeout from "hooks/useBooleanTimeout";
 import "./ResourceTracker.scss";
 
-const ResourceTracker = ({ resourceType }) => {
-  const [resourcesEarned, setResourcesEarned] = useState(0);
-  const [resourcesUsed, setResourcesUsed] = useState(0);
+const ResourceTracker = ({ round, resourceType }) => {
+  const {
+    resourcesEarned,
+    resourcesSpent,
+    earnResource,
+    spendResource,
+    resetResource,
+  } = useResource(round, resourceType);
   const [
     resetConfirmationRequested,
     setResetConfirmationRequested,
@@ -13,37 +19,22 @@ const ResourceTracker = ({ resourceType }) => {
 
   const resource = getResource(resourceType);
 
-  const earnResource = () => {
-    setResourcesEarned(resourcesEarned + 1);
-  };
-
-  const useResource = () => {
-    if (resourcesEarned === 0) {
-      return;
-    }
-    if (resourcesEarned - resourcesUsed === 0) {
-      return;
-    }
-    setResourcesUsed(resourcesUsed + 1);
-  };
-
   const handleReset = () => {
     if (!resetConfirmationRequested) {
       setResetConfirmationRequested(true);
     } else {
-      setResourcesEarned(0);
-      setResourcesUsed(0);
+      resetResource();
       setResetConfirmationRequested(false);
     }
   };
 
   return (
     <div className="ResourceTracker">
-      <button type="button" className="use" onClick={useResource}>
+      <button type="button" className="use" onClick={spendResource}>
         –
       </button>
       <div className="resourceCount">
-        {resourcesEarned - resourcesUsed}
+        {resourcesEarned - resourcesSpent}
       </div>
       <img src={resource.src} alt={resource.name} />
       <button type="button" className="earn" onClick={earnResource}>

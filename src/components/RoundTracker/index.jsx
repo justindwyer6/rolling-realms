@@ -9,9 +9,9 @@ const RoundTracker = ({ round }) => {
     <div className="RoundTracker">
       <StarTracker round={round} />
       <TurnTracker />
-      <ResourceTracker resourceType="pumpkin" />
-      <ResourceTracker resourceType="heart" />
-      <ResourceTracker resourceType="coin" />
+      <ResourceTracker round={round} resourceType="pumpkin" />
+      <ResourceTracker round={round} resourceType="heart" />
+      <ResourceTracker round={round} resourceType="coin" />
     </div>
   );
 };
