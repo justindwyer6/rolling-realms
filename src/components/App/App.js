@@ -37,6 +37,11 @@ const App = () => {
 
   return (
     <div className="appContainer">
+      <img
+        style={{ display: "none" }}
+        src="images/rolling-realms-cover.jpg"
+        alt="Rolling Realms Logo"
+      />
       <Rules rulesOpen={areRulesOpen} />
       <Header />
       <div className="utilities">
