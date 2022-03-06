@@ -4,7 +4,7 @@
 
 ## A fan-made, web-based version of Stonemaier Games' living roll-and-write game
 
-#### Note: This digital implementation is based on [version 10.1 of the original print-and-play Rolling Realms](https://www.dropbox.com/sh/kj5tunjjx1xfhn5/AACc63pMv-erHHfN69_xM2nAa?dl=0&preview=Rolling+Realms+v10.1.pdf). Stonemaier has requested that this implementation remain based on version 10.1, so we will not be adding any new realms outside of the original nine. You can support Stonemaier and play all the new realms digitally with the [Tabletopia implementation of Rolling Realms](https://tabletopia.com/games/rolling-realms), or buy the [physical version](https://stonemaiergames.com/games/rolling-realms/).
+#### Note: This digital implementation is based on [version 10.1 of the original print-and-play Rolling Realms](https://www.dropbox.com/sh/kj5tunjjx1xfhn5/AACc63pMv-erHHfN69_xM2nAa?dl=0&preview=Rolling+Realms+v10.1.pdf). Stonemaier Games has requested that this implementation remain based on version 10.1, so this project will never include any new realms or adjustments to existing realms to achieve parity with the physical version. You can support Stonemaier and play all the new realms digitally with the [Tabletopia implementation of Rolling Realms](https://tabletopia.com/games/rolling-realms), or buy the [physical version](https://stonemaiergames.com/games/rolling-realms/).
 
 > In the early days of the coronavirus, a time of self-isolation for many people, Jamey decided to create an infinitely scaling roll-and-write game to teach and play with people around the world via Facebook Live.
 >
