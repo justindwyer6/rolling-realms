@@ -70,24 +70,27 @@ const App = () => {
           onClick={() => window.print()}
         />
       </div>
-      {realms.map((realm, i) => {
-        // Generate RoundTracker before every third Realm
-        const roundNumber = i / 3 + 1;
-        return [
-          (i + 1) % 3 === 1 ? (
+      {rounds.map((round, i) => {
+        const roundNumber = i + 1;
+        return (
+          <>
             <RoundTracker
               key={`round-${roundNumber}-tracker`}
               round={roundNumber}
             />
-          ) : null,
-          <Minigame
-            key={`minigame-${realm.name}`}
-            index={i}
-            realm={realm}
-            roundNumber={roundNumber}
-            updateMinigame={setRealm}
-          />,
-        ];
+            {round.realms.map((realm, j) => {
+              return (
+                <Minigame
+                  key={`minigame-${realm.name}`}
+                  index={j}
+                  realm={realm}
+                  roundNumber={roundNumber}
+                  updateMinigame={setRealm}
+                />
+              );
+            })}
+          </>
+        );
       })}
       <Footer />
     </div>
