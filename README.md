@@ -4,6 +4,8 @@
 
 ## A fan-made, web-based version of Stonemaier Games' living roll-and-write game
 
+#### Note: This digital implementation is based on [version 10.1 of the original print-and-play Rolling Realms](https://www.dropbox.com/sh/kj5tunjjx1xfhn5/AACc63pMv-erHHfN69_xM2nAa?dl=0&preview=Rolling+Realms+v10.1.pdf). Stonemaier Games has requested that this implementation remain based on version 10.1, so this project will never include any new realms or adjustments to existing realms to achieve parity with the physical version. You can support Stonemaier and play all the new realms digitally with the [Tabletopia implementation of Rolling Realms](https://tabletopia.com/games/rolling-realms), or buy the [physical version](https://stonemaiergames.com/games/rolling-realms/).
+
 > In the early days of the coronavirus, a time of self-isolation for many people, Jamey decided to create an infinitely scaling roll-and-write game to teach and play with people around the world via Facebook Live.
 >
 > In Rolling Realms, players compete to earn the most stars in a series of minigames over 3 rounds. This is a roll-and-write game, meaning that players will write on the game components using dry-erase markers.
@@ -53,16 +55,6 @@ The build is minified and the filenames include the hashes.<br />
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
 ## Learn More
 
