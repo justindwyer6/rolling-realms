@@ -13,22 +13,33 @@ const defaultResourceStats = {
   spent: RESOURCE_MIN,
 };
 
+const defaultStarState = [false, false, false, false, false, false];
+
 const defaultResourceSet = {
-  resources: {
-    pumpkin: cloneDeep(defaultResourceStats),
-    heart: cloneDeep(defaultResourceStats),
-    coin: cloneDeep(defaultResourceStats),
-  },
+  pumpkin: cloneDeep(defaultResourceStats),
+  heart: cloneDeep(defaultResourceStats),
+  coin: cloneDeep(defaultResourceStats),
+};
+
+const defaultRoundState = {
+  stars: defaultStarState,
+  resources: defaultResourceSet,
 };
 
 const generateInitialRoundsState = () => [
-  cloneDeep(defaultResourceSet),
-  cloneDeep(defaultResourceSet),
-  cloneDeep(defaultResourceSet),
+  cloneDeep(defaultRoundState),
+  cloneDeep(defaultRoundState),
+  cloneDeep(defaultRoundState),
 ];
 
 const getResourceDataFromState = (state, round, resourceType) =>
   state[round - 1].resources[resourceType];
+
+const getStarCountFromState = (state, round) =>
+  state[round - 1].stars.reduce(
+    (starCount, star) => starCount + star,
+    0,
+  );
 
 export {
   RESOURCE_MIN,
@@ -36,4 +47,5 @@ export {
   isValidResourceChange,
   generateInitialRoundsState,
   getResourceDataFromState,
+  getStarCountFromState,
 };

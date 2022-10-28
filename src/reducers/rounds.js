@@ -12,6 +12,8 @@ export const actions = {
   EARN_RESOURCE: "rolling-realms/app/earn-resource",
   SPEND_RESOURCE: "rolling-realms/app/spend-resource",
   RESET_RESOURCE: "rolling-realms/app/reset-resource",
+  EARN_STAR: "rolling-realms/app/earn-star",
+  RESET_STAR: "rolling-realms/app/reset-star",
 };
 
 const incrementResource = (state, round, resourceType) => {
@@ -73,6 +75,18 @@ const resetResource = (state, round, resourceType) => {
   return copyOfState;
 };
 
+const earnStar = (state, round, starIndex) => {
+  const copyOfState = cloneDeep(state);
+  copyOfState[round - 1].stars[starIndex] = true;
+  return copyOfState;
+};
+
+const resetStar = (state, round, starIndex) => {
+  const copyOfState = cloneDeep(state);
+  copyOfState[round - 1].stars[starIndex] = false;
+  return copyOfState;
+};
+
 // Reducer
 const rounds = (
   state = generateInitialRoundsState(),
@@ -93,6 +107,10 @@ const rounds = (
       );
     case actions.RESET_RESOURCE:
       return resetResource(state, action.round, action.resourceType);
+    case actions.EARN_STAR:
+      return earnStar(state, action.round, action.starIndex);
+    case actions.RESET_STAR:
+      return resetStar(state, action.round, action.starIndex);
     default:
       return state;
   }
@@ -114,6 +132,16 @@ export const actionCreators = {
     type: actions.RESET_RESOURCE,
     round,
     resourceType,
+  }),
+  earnStar: (round, starIndex) => ({
+    type: actions.EARN_STAR,
+    round,
+    starIndex,
+  }),
+  resetStar: (round, starIndex) => ({
+    type: actions.RESET_STAR,
+    round,
+    starIndex,
   }),
 };
 
